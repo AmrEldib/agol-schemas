@@ -1,0 +1,63 @@
+{
+  "id": "registeredApp",
+  "type": "object",
+  "description": "An app registered with the portal. An app item can be registered by invoking the register app operation. Every registered app gets an App ID and App Secret which in OAuth speak are known as client_id and client_secret respectively. The app owner has access to the registered app resource. This would include the organization administrator as well. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Registered_App/02r30000026v000000/",
+  "title": "registeredApp",
+  "properties": {
+    "itemId": {
+      "id": "itemId",
+      "type": "string",
+      "description": "The unique ID for this item",
+      "chance": "hash"
+    },
+    "client_id": {
+      "id": "client_id",
+      "type": "string",
+      "description": "The ID of the registered application. Also referred to as APPID",
+      "chance": "hash"
+    },
+    "client_secret": {
+      "id": "client_secret",
+      "type": "string",
+      "description": "The secret of the registered application. Also referred to as APPSECRET",
+      "chance": "hash"
+    },
+    "appType": {
+      "id": "appType",
+      "type": "string",
+      "description": "The type of app that was registered indicating whether it's a browser app, native app, server app or a multiple interface app",
+      "enum": [ "browser", "native", "server", "multiple" ],
+      "pattern": "browser|native|server|multiple"
+    },
+    "redirect_uris": {
+      "id": "redirect_uris",
+      "type": "array",
+      "description": "The URIs where the access_token or authorization code will be delivered to upon successful authorization. The redirect_uri specified during authorization must be match one of the registered URIs otherwise authorization will be rejected. A special value of urn:ietf:wg:oauth:2.0:oob can also be specified for authorization grants. This will result in the authorization code being delivered to a portal URL (/oauth2/approval). This value is typically used by applications that don't have a web server or a custom URI scheme to deliver the code to. The value is a JSON string array",
+      "items": {
+        "type": "string",
+        "chance": "url"
+      }
+    },
+    "created": {
+      "id": "created",
+      "type": "integer",
+      "description": "The date when the app was created (in UNIX time in milliseconds)",
+      "chance": "timestamp"
+    },
+    "modified": {
+      "id": "modified",
+      "type": "integer",
+      "description": "The date when the app was last modified (in UNIX time in milliseconds)",
+      "chance": "timestamp"
+    }
+  },
+  "required": [
+    "itemId",
+    "client_id",
+    "client_secret",
+    "appType",
+    "redirect_uris",
+    "created",
+    "modified"
+  ]
+}

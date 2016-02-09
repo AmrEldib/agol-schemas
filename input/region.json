@@ -1,0 +1,35 @@
+{
+  "id": "region",
+  "type": "object",
+  "description": "Avaliable region. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Regions/02r300000099000000/",
+  "title": "region",
+  "properties": {
+    "name": {
+      "id": "region.name",
+      "type": "string",
+      "description": "Region's name",
+      "chance": "word"
+    },
+    "region": {
+      "id": "region.region",
+      "type": "string",
+      "description": "Region's short name",
+      "chance": {
+        "word": {
+          "length": 2
+        }
+      }
+    },
+    "localizedName": {
+      "id": "region.localizedName",
+      "type": "string",
+      "description": "Region's localized name",
+      "chance": "word"
+    }
+  },
+  "required": [
+    "name",
+    "region",
+    "localizedName"
+  ]
+}

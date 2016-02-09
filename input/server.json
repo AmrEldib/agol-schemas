@@ -1,0 +1,65 @@
+{
+  "id": "server",
+  "type": "object",
+  "description": "This resource represents an ArcGIS Server site that has been federated with the portal. This resource is not applicable to ArcGIS Online; it is only applicable to Portal for ArcGIS. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Server/02r300000219000000/",
+  "title": "server",
+  "properties": {
+    "id": {
+      "id": "id",
+      "type": "string",
+      "description": "ID of the ArcGIS Server site",
+      "chance": "hash"
+    },
+    "name": {
+      "id": "name",
+      "type": "string",
+      "description": "The fully qualified name of the machine hosting the ArcGIS Server site, followed by the port",
+      "faker": "internet.domainName"
+    },
+    "adminUrl": {
+      "id": "adminUrl",
+      "type": "string",
+      "description": "The administrative URL of the ArcGIS Server site, using the fully qualified name of the machine",
+      "format": "uri",
+      "chance": "url"
+    },
+    "url": {
+      "id": "url",
+      "type": "string",
+      "description": "The externally visible URL of the ArcGIS Server site, using the fully qualified name of the machine",
+      "format": "uri",
+      "chance": "url"
+    },
+    "isHosted": {
+      "id": "isHosted",
+      "type": "boolean",
+      "description": "A Boolean property denoting whether the ArcGIS Server site is allowed to host services for the portal (true) or is not allowed to host services (false)",
+      "chance": {
+        "bool": {
+          "likelihood": 80
+        }
+      }
+    },
+    "serverKey": {
+      "id": "serverKey",
+      "type": [ "string", "null" ],
+      "description": "The key returned when the Register Server operation is called for this server. The key is only displayed once; hence, this property usually returns null",
+      "chance": "hash"
+    },
+    "serverType": {
+      "id": "serverType",
+      "type": "string",
+      "description": "The type of server being registered with the portal. For example: ArcGIS",
+      "chance": "word"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "adminUrl",
+    "url",
+    "isHosted",
+    "serverKey",
+    "serverType"
+  ]
+}

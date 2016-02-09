@@ -1,0 +1,24 @@
+{
+  "id": "updateUser",
+  "type": "object",
+  "description": "",
+  "title": "updateUser",
+  "properties": {
+    "success": {
+      "id": "updateUser.success",
+      "type": "boolean",
+      "description": "Indicates if the operation was successful",
+      "chance": "word"
+    },
+    "username": {
+      "id": "updateUser.username",
+      "type": "string",
+      "description": "The username of the modified user",
+      "chance": "first"
+    }
+  },
+  "required": [
+    "success",
+    "username"
+  ]
+}

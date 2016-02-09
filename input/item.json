@@ -1,0 +1,387 @@
+{
+  "id": "item",
+  "type": "object",
+  "description": "An item (a unit of content) in the portal. Each item has a unique identifier and a well known URL that is independent of the user owning the item. An item can have associated binary or textual data that's available via the item data resource. For example, an item of type Map Package returns the actual bits corresponding to the map package via the item data resource. The numViews is incremented when an item is opened. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Item/02r30000007w000000/",
+  "title": "item",
+  "properties": {
+    "id": {
+      "id": "id",
+      "type": "string",
+      "description": "The unique ID for this item",
+      "chance": "hash"
+    },
+    "owner": {
+      "id": "owner",
+      "type": "string",
+      "description": "The username of the user who owns this item",
+      "chance": "first"
+    },
+    "created": {
+      "id": "created",
+      "type": "integer",
+      "description": "The date the folder was created. Shown in UNIX time",
+      "chance": "timestamp"
+    },
+    "modified": {
+      "id": "modified",
+      "type": "integer",
+      "description": "The date the folder was last modified. Shown in UNIX time",
+      "chance": "timestamp"
+    },
+    "guid": {
+      "id": "guid",
+      "type": [ "string", "null" ],
+      "description": "Unique global ID",
+      "chance": "guid"
+    },
+    "name": {
+      "id": "name",
+      "type": [ "string", "null" ],
+      "description": "The file name of the item for file types. Read-only",
+      "chance": "word"
+    },
+    "title": {
+      "id": "title",
+      "type": "string",
+      "description": "The title of the item. This is the name that's displayed to users and by which they refer to the item. Every item must have a title",
+      "chance": {
+        "sentence": {
+          "words": 3
+        }
+      }
+    },
+    "type": {
+      "id": "type",
+      "type": "string",
+      "description": "The GIS content type of this item. Example types include Web Map, Map Service, Shapefile, and Web Mapping Application. See the overview section of Items and item types to get an understanding of the item type hierarchy",
+      "enum": [
+        "Web Map",
+        "CityEngine Web Scene",
+        "Web Scene",
+        "Pro Map",
+        "Feature Service",
+        "Map Service",
+        "Image Service",
+        "KML",
+        "WMS",
+        "Feature Collection",
+        "Feature Collection Template",
+        "Geodata Service",
+        "Globe Service",
+        "Geometry Service",
+        "Geocoding Service",
+        "Network Analysis Service",
+        "Geoprocessing Service",
+        "Workflow Manager Service",
+        "Web Mapping Application",
+        "Mobile Application",
+        "Code Attachment",
+        "Operations Dashboard Add In",
+        "Operation View",
+        "Operations Dashboard Extension",
+        "Native Application",
+        "Native Application Template",
+        "Native Application Installer",
+        "Symbol Set",
+        "Color Set",
+        "Shapefile",
+        "File geodatabase",
+        "CSV",
+        "CAD Drawing",
+        "Service Definition",
+        "Document Link",
+        "Microsoft Word",
+        "Microsoft Powerpoint",
+        "Microsoft Excel",
+        "PDF",
+        "Image",
+        "Visio Document",
+        "iWork Keynote",
+        "iWork Pages",
+        "iWork Numbers",
+        "Map Document",
+        "Map Package",
+        "Mobile Basemap Package",
+        "Tile Package",
+        "Project Package",
+        "Task File",
+        "ArcPad Package",
+        "Explorer Map",
+        "Globe Document",
+        "Scene Document",
+        "Published Map",
+        "Map Template",
+        "Windows Mobile Package",
+        "Layout",
+        "Project Template",
+        "Layer",
+        "Layer Package",
+        "Explorer Layer",
+        "Desktop Style",
+        "Geoprocessing Package",
+        "Geoprocessing Package (Pro Version)",
+        "Geoprocessing Sample",
+        "Locator Package",
+        "Rule Package",
+        "Raster function template",
+        "Workflow Manager Package",
+        "Desktop Application",
+        "Desktop Application Template",
+        "Code Sample",
+        "Desktop Add In",
+        "Explorer Add In"
+      ],
+      "pattern": "Web Map|CityEngine Web Scene|Web Scene|Pro Map|Feature Service|Map Service|Image Service|KML|WMS|Feature Collection|Feature Collection Template|Geodata Service|Globe Service|Geometry Service|Geocoding Service|Network Analysis Service|Geoprocessing Service|Workflow Manager Service|Web Mapping Application|Mobile Application|Code Attachment|Operations Dashboard Add In|Operation View|Operations Dashboard Extension|Native Application|Native Application Template|Native Application Installer|Symbol Set|Color Set|Shapefile|File geodatabase|CSV|CAD Drawing|Service Definition|Document Link|Microsoft Word|Microsoft Powerpoint|Microsoft Excel|PDF|Image|Visio Document|iWork Keynote|iWork Pages|iWork Numbers|Map Document|Map Package|Mobile Basemap Package|Tile Package|Project Package|Task File|ArcPad Package|Explorer Map|Globe Document|Scene Document|Published Map|Map Template|Windows Mobile Package|Layout|Project Template|Layer|Layer Package|Explorer Layer|Desktop Style|Geoprocessing Package|Geoprocessing Package (Pro Version)|Geoprocessing Sample|Locator Package|Rule Package|Raster function template|Workflow Manager Package|Desktop Application|Desktop Application Template|Code Sample|Desktop Add In|Explorer Add In"
+    },
+    "typeKeywords": {
+      "id": "typeKeywords",
+      "type": "array",
+      "description": "A set of keywords that further describes the type of this item. Each item is tagged with a set of type keywords that are derived based on its primary type",
+      "items": {
+        "type": "string",
+        "chance": "word"
+      },
+      "uniqueItems": true
+    },
+    "description": {
+      "id": "description",
+      "type": [ "string", "null" ],
+      "description": "Item's description",
+      "chance": {
+        "paragraph": { "sentences": 7 }
+      }
+    },
+    "tags": {
+      "id": "tags",
+      "type": "array",
+      "description": "User defined tags that describe the item",
+      "items": {
+        "type": "string",
+        "chance": "word"
+      },
+      "uniqueItems": true
+    },
+    "snippet": {
+      "id": "snippet",
+      "type": [ "string", "null" ],
+      "description": "A short summary description of the item",
+      "chance": "sentence"
+    },
+    "thumbnail": {
+      "id": "thumbnail",
+      "type": [ "string", "null" ],
+      "description": "The URL to the thumbnail used for the item. Relative to Item's URL",
+      "faker": "image.cats"
+    },
+    "largeThumbnail": {
+      "id": "largeThumbnail",
+      "type": [ "string", "null" ],
+      "description": "Primarily applies to thumbnails associated with an application. The URL to the thumbnail used for the application. Relative to Item's URL",
+      "faker": "image.nature"
+    },
+    "banner": {
+      "id": "banner",
+      "type": [ "string", "null" ],
+      "description": "Primarily applies to the banner associated with an application. The URL to the banner used for the application. Relative to Item's URL",
+      "faker": "image.abstract"
+    },
+    "screenshots": {
+      "id": "screenshots",
+      "type": "array",
+      "description": "Primarily applies to screenshots associated with an application. The URL to the screenshots used for the application",
+      "items": {
+        "type": "string",
+        "faker": "image.city"
+      }
+    },
+    "extent": {
+      "$ref": "extent"
+    },
+    "spatialReference": {
+      "id": "spatialReference",
+      "type": [ "string", "null" ],
+      "description": "The coordinate system of the item",
+      "chance": "word"
+    },
+    "accessInformation": {
+      "id": "accessInformation",
+      "type": [ "string", "null" ],
+      "description": "Information on the source of the item and its copyright status",
+      "chance": {
+        "paragraph": { "sentences": 15 }
+      }
+    },
+    "licenseInfo": {
+      "id": "licenseInfo",
+      "type": [ "string", "null" ],
+      "description": "Any license information or restrictions",
+      "chance": {
+        "paragraph": { "sentences": 10 }
+      }
+    },
+    "culture": {
+      "id": "culture",
+      "type": "string",
+      "description": "The item locale information (language and country)",
+      "chance": {
+        "word": {
+          "length": 2
+        }
+      }
+    },
+    "languages": {
+      "id": "languages",
+      "type": "array",
+      "description": "Primarily applies to languages associated with the application",
+      "items": {
+        "type": "string",
+        "chance": {
+          "word": {
+            "length": 5
+          }
+        }
+      }
+    },
+    "url": {
+      "id": "url",
+      "type": [ "string", "null" ],
+      "description": "The URL for the resource represented by the item. Applies only to items that represent web-accessible resources such as map services",
+      "format": "uri",
+      "chance": "url"
+    },
+    "access": {
+      "id": "access",
+      "type": "string",
+      "description": "Indicates the level of access to this item: private, shared, org, or public",
+      "enum": [ "private", "shared", "org", "public" ],
+      "pattern": "private|shared|org|public"
+    },
+    "size": {
+      "id": "size",
+      "type": "integer",
+      "description": "File size",
+      "chance": {
+        "natural": {
+          "min": 1,
+          "max": 10000000
+        }
+      }
+    },
+    "commentsEnabled": {
+      "id": "commentsEnabled",
+      "type": "boolean",
+      "description": "Indicates if comments are allowed on the item",
+      "chance": {
+        "bool": {
+          "likelihood": 80
+        }
+      }
+    },
+    "numComments": {
+      "id": "numComments",
+      "type": "integer",
+      "description": "Number of comments on this item",
+      "chance": {
+        "integer": {
+          "min": 0,
+          "max": 999
+        }
+      }
+    },
+    "numRatings": {
+      "id": "numRatings",
+      "type": "integer",
+      "description": "Number of ratings for this item",
+      "chance": {
+        "integer": {
+          "min": 0,
+          "max": 999
+        }
+      }
+    },
+    "avgRating": {
+      "id": "avgRating",
+      "type": "number",
+      "description": "Average rating",
+      "chance": {
+        "floating": {
+          "min": 0,
+          "max": 5,
+          "fixed": 1
+        }
+      }
+    },
+    "numViews": {
+      "id": "numViews",
+      "type": "integer",
+      "description": "Total number of views for this item",
+      "chance": {
+        "integer": {
+          "min": 0,
+          "max": 999
+        }
+      }
+    },
+    "industries": {
+      "id": "industries",
+      "type": "array",
+      "description": "Primarily applies to industries associated with the application",
+      "items": {
+        "type": "string",
+        "chance": "word"
+      }
+    },
+    "listed": {
+      "id": "listed",
+      "type": "boolean",
+      "description": "If true, the item is listed in the marketplace",
+      "chance": {
+        "bool": {
+          "likelihood": 30
+        }
+      }
+    },
+    "ownerFolder": {
+      "id": "ownerFolder",
+      "type": "string",
+      "description": "The ID of the folder in which the owner has stored the item. The property is only returned to the item owner or the org admin",
+      "chance": "hash"
+    },
+    "protected": {
+      "id": "protected",
+      "type": "boolean",
+      "description": "Protects the item from deletion. false is the default",
+      "chance": {
+        "bool": {
+          "likelihood": 20
+        }
+      }
+    }
+  },
+  "required": [
+    "id",
+    "owner",
+    "created",
+    "modified",
+    "name",
+    "title",
+    "type",
+    "typeKeywords",
+    "description",
+    "tags",
+    "snippet",
+    "thumbnail",
+    "extent",
+    "spatialReference",
+    "accessInformation",
+    "licenseInfo",
+    "culture",
+    "url",
+    "access",
+    "size",
+    "numComments",
+    "numRatings",
+    "numViews",
+    "avgRating"
+  ]
+}

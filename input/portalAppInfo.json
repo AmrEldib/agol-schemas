@@ -1,0 +1,49 @@
+{
+  "id": "portalAppInfo",
+  "type": "object",
+  "description": "Information about the Application through which this resource was accessed. This information is based on the token used to acces this resource. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Portal_Self/02r3000001m7000000/",
+  "title": "portalAppInfo",
+  "properties": {
+    "appID": {
+      "id": "appID",
+      "type": "string",
+      "description": "The AppID of the registered Application. This is also the OAuth client_id",
+      "chance": "hash"
+    },
+    "itemId": {
+      "id": "itemId",
+      "type": "string",
+      "description": "The item ID of the registered Application",
+      "chance": "hash"
+    },
+    "appOwner": {
+      "id": "appOwner",
+      "type": "string",
+      "description": "The owner of the Application",
+      "chance": "first"
+    },
+    "orgId": {
+      "id": "orgId",
+      "type": "string",
+      "description": "The organization to which the Application owner belongs",
+      "chance": "hash"
+    },
+    "appTitle": {
+      "id": "appTitle",
+      "type": "string",
+      "description": "The title of the Application",
+      "chance": {
+        "sentence": {
+          "words": 3
+        }
+      }
+    }
+  },
+  "required": [
+    "appID",
+    "itemId",
+    "appOwner",
+    "orgId",
+    "appTitle"
+  ]
+}

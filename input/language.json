@@ -1,0 +1,35 @@
+{
+  "id": "language",
+  "type": "object",
+  "description": "Available language. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Languages/02r300000095000000/",
+  "title": "language",
+  "properties": {
+    "language": {
+      "id": "language.language",
+      "type": "string",
+      "description": "Language's name",
+      "chance": "word"
+    },
+    "culture": {
+      "id": "language.culture",
+      "type": "string",
+      "description": "Language's culture",
+      "chance": {
+        "word": {
+          "length": 2
+        }
+      }
+    },
+    "localizedName": {
+      "id": "language.localizedName",
+      "type": "string",
+      "description": "Language's localized name",
+      "chance": "word"
+    }
+  },
+  "required": [
+    "language",
+    "culture",
+    "localizedName"
+  ]
+}

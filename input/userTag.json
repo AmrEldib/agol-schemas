@@ -1,0 +1,29 @@
+{
+  "id": "userTag",
+  "type": "object",
+  "description": "User tag. Object in the userTags array. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/User_Tags/02r3000000m9000000/",
+  "title": "userTag",
+  "properties": {
+    "tag": {
+      "id": "tag",
+      "type": "string",
+      "description": "Tag",
+      "chance": "word"
+    },
+    "count": {
+      "id": "count",
+      "type": "integer",
+      "description": "The number of times the tag was used",
+      "chance": {
+        "integer": {
+          "min": 0,
+          "max": 20
+        }
+      }
+    }
+  },
+  "required": [
+    "tag",
+    "count"
+  ]
+}

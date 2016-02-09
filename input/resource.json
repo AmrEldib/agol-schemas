@@ -1,0 +1,36 @@
+{
+  "id": "resource",
+  "type": "object",
+  "description": "resource objects that contain the key, size, and created date of the resource. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Resources/02r30000009r000000/",
+  "title": "resource",
+  "properties": {
+    "key": {
+      "id": "key",
+      "type": "string",
+      "description": "The ID of the comment",
+      "chance": "word"
+    },
+    "size": {
+      "id": "size",
+      "type": "integer",
+      "description": "Size of the resource",
+      "chance": {
+        "natural": {
+          "min": 1,
+          "max": 10000000
+        }
+      }
+    },
+    "created": {
+      "id": "created",
+      "type": "integer",
+      "description": "The date and time the resource was created. Shown in UNIX time",
+      "chance": "timestamp"
+    }
+  },
+  "required": [
+    "key",
+    "size",
+    "created"
+  ]
+}

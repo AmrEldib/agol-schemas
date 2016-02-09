@@ -1,0 +1,40 @@
+{
+  "id": "comment",
+  "type": "object",
+  "description": "Gets details for a particular comment. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Item_Comment/02r300000091000000/",
+  "title": "comment",
+  "properties": {
+    "id": {
+      "id": "id",
+      "type": "string",
+      "description": "The ID of the comment",
+      "chance": "hash"
+    },
+    "owner": {
+      "id": "owner",
+      "type": "string",
+      "description": "The username of the user who submitted the comment",
+      "chance": "first"
+    },
+    "created": {
+      "id": "created",
+      "type": "integer",
+      "description": "The date and time the comment was created. Shown in UNIX time",
+      "chance": "timestamp"
+    },
+    "comment": {
+      "id": "commentText",
+      "type": "string",
+      "description": "The comment text",
+      "chance": {
+        "paragraph": { "sentences": 3 }
+      }
+    }
+  },
+  "required": [
+    "id",
+    "owner",
+    "created",
+    "comment"
+  ]
+}

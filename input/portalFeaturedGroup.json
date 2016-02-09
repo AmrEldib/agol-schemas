@@ -1,0 +1,28 @@
+{
+  "id": "portalFeaturedGroup",
+  "type": "object",
+  "description": "The featured groups for the organization. These are the groups that will be highlighted on the Groups page. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Portal_Self/02r3000001m7000000/",
+  "title": "portalFeaturedGroup",
+  "properties": {
+    "owner": {
+      "id": "owner",
+      "type": "string",
+      "description": "The owner of the featured group",
+      "chance": "first"
+    },
+    "title": {
+      "id": "title",
+      "type": "string",
+      "description": "The title of the featured group",
+      "chance": {
+        "sentence": {
+          "words": 3
+        }
+      }
+    }
+  },
+  "required": [
+    "owner",
+    "title"
+  ]
+}

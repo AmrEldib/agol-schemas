@@ -1,0 +1,833 @@
+{
+  "id": "portal",
+  "type": "object",
+  "description": "The Portal Self resource is used to return the view of the portal as seen by the current user, anonymous or logged in. It includes information such as the name, logo, featured items, and supported protocols (HTTP vs. HTTPS) for this portal. If the user is not logged in, this call will return the default view of the portal. If the user is logged in, the view of the returned portal will be specific to the organization to which the user belongs. The default view of the portal is dependent on the culture of the user, which is obtained from the user's profile. A parameter to pass in the locale/culture is available for anonymous users. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Portal_Self/02r3000001m7000000/",
+  "title": "portal",
+  "properties": {
+    "access": {
+      "id": "access",
+      "type": "string",
+      "description": "Indicates the level of access to your organization for anonymous users. If set to private, only members of the organization will be able to access your site. public allows public access",
+      "enum": [ "private", "public" ],
+      "pattern": "private|public"
+    },
+    "allSSL": {
+      "id": "allSSL",
+      "type": "boolean",
+      "description": "Indicates if the organization is using SSL. If true, all calls made against resources that belong to the organization will require SSL. false is the default.",
+      "chance": {
+        "bool": {
+          "likelihood": 60
+        }
+      }
+    },
+    "appInfo": {
+      "$ref": "portalAppInfo"
+    },
+    "backgroundImage": {
+      "id": "backgroundImage",
+      "type": [ "string", "null" ],
+      "description": "The background image that displays behind all other components on the home page. Accept the default background image, specify a URL for a custom background image, or specify that no background image will display",
+      "faker": "image.abstract"
+    },
+    "basemapGalleryGroupQuery": {
+      "id": "basemapGalleryGroupQuery",
+      "type": "string",
+      "description": "The query that identifies the group containing the web maps that display in the basemap gallery for the map viewer",
+      "chance": {
+        "word": {
+          "length": 8
+        }
+      }
+    },
+    "bingKey": {
+      "id": "bingKey",
+      "type": "string",
+      "description": "The Bing key to use for web maps using Bing Maps",
+      "chance": "hash"
+    },
+    "canListApps": {
+      "id": "canListApps",
+      "type": "boolean",
+      "description": "An organization can list applications in the marketplace only if canListApps is true",
+      "chance": {
+        "bool": {
+          "likelihood": 80
+        }
+      }
+    },
+    "canListData": {
+      "id": "canListData",
+      "type": "boolean",
+      "description": "An organization can list data services in the marketplace only if canListData is true",
+      "chance": {
+        "bool": {
+          "likelihood": 80
+        }
+      }
+    },
+    "canListPreProvisionedItems": {
+      "id": "canListPreProvisionedItems",
+      "type": "boolean",
+      "description": "An organization can list pre-provisioned items in the marketplace only if canListPreProvisionedItems is true",
+      "chance": {
+        "bool": {
+          "likelihood": 80
+        }
+      }
+    },
+    "canProvisionDirectPurchase": {
+      "id": "canProvisionDirectPurchase",
+      "type": "boolean",
+      "description": "An organization can provision direct purchases in the marketplace without customer request only if canProvisionDirectPurchase is true",
+      "chance": {
+        "bool": {
+          "likelihood": 80
+        }
+      }
+    },
+    "canSearchPublic": {
+      "id": "canSearchPublic",
+      "type": "boolean",
+      "description": "Includes or excludes public items, groups, and users in search queries. When canSearchPublic is false, no public items outside of the organization are included in searches. However, public items that are part of the organization are returned. The default is true",
+      "chance": {
+        "bool": {
+          "likelihood": 80
+        }
+      }
+    },
+    "canShareBingPublic": {
+      "id": "canShareBingPublic",
+      "type": "boolean",
+      "description": "The Bing key can be shared to the public and is returned as part of a portal's description call (/sharing/rest/portals/<orgid>). This requires the access of the portal to be set to public. The canShareBingPublic property is not returned publicly but only shown to users within the organization",
+      "chance": {
+        "bool": {
+          "likelihood": 80
+        }
+      }
+    },
+    "canSharePublic": {
+      "id": "canSharePublic",
+      "type": "boolean",
+      "description": "Allows or disallows an organization to share groups or items publicly. false denotes that content can not be shared with everyone. The default is true",
+      "chance": {
+        "bool": {
+          "likelihood": 80
+        }
+      }
+    },
+    "canSignInArcGIS": {
+      "id": "canSignInArcGIS",
+      "type": "boolean",
+      "description": "Allows an organization with an enterprise IDP configured to be able to turn on or off the ArcGIS sign in. The default is true",
+      "chance": {
+        "bool": {
+          "likelihood": 80
+        }
+      }
+    },
+    "canSignInIDP": {
+      "id": "canSignInIDP",
+      "type": "boolean",
+      "description": "Allows an organization with an enterprise IDP configured to be able to turn on or off the enterprise sign in. The default is true",
+      "chance": {
+        "bool": {
+          "likelihood": 80
+        }
+      }
+    },
+    "colorSetsGroupQuery": {
+      "id": "colorSetsGroupQuery",
+      "type": "string",
+      "description": "The query that identifies the group containing the color sets used for rendering in the map viewer",
+      "chance": {
+        "word": {
+          "length": 8
+        }
+      }
+    },
+    "commentsEnabled": {
+      "id": "commentsEnabled",
+      "type": "boolean",
+      "description": "Allows the organization to disable commenting. true is the default. When commentsEnabled is false, comments are hidden and not removed. numComments are set to zero for all items in the organization. Calls to add a comment and view comments will fail. If the organization re-enables comments, the comments display and numComments are restored",
+      "chance": {
+        "bool": {
+          "likelihood": 80
+        }
+      }
+    },
+    "created": {
+      "id": "created",
+      "type": "integer",
+      "description": "Date the organization was created, in UTC, using milliseconds since epoch",
+      "chance": "timestamp"
+    },
+    "culture": {
+      "id": "culture",
+      "type": "string",
+      "description": "The item locale information (language and country)",
+      "chance": {
+        "word": {
+          "length": 2
+        }
+      }
+    },
+    "customBaseUrl": {
+      "id": "customBaseUrl",
+      "type": "string",
+      "description": "The custom base URL for the portal",
+      "format": "uri",
+      "chance": "url"
+    },
+    "defaultBaseMap": {
+      "id": "defaultBaseMap",
+      "type": "string",
+      "description": "The default basemap displayed in the map viewer",
+      "enum": [ "streets", "satellite", "hybrid", "topo", "gray", "dark-gray", "oceans", "national-geographic", "terrain", "osm" ],
+      "pattern": "streets|satellite|hybrid|topo|gray|dark-gray|oceans|national-geographic|terrain|osm"
+    },
+    "defaultExtent": {
+      "$ref": "extent"
+    },
+    "description": {
+      "id": "description",
+      "type": [ "string", "null" ],
+      "description": "The description of the organization",
+      "chance": {
+        "paragraph": { "sentences": 7 }
+      }
+    },
+    "featuredGroups": {
+      "id": "featuredGroups",
+      "type": "array",
+      "description": "The featured groups for the organization. These are the groups that will be highlighted on the Groups page",
+      "title": "featuredGroups",
+      "minLength": 0,
+      "items": {
+        "$ref": "portalFeaturedGroup"
+      }
+    },
+    "featuredItemsGroupQuery": {
+      "id": "featuredItemsGroupQuery",
+      "type": [ "string", "null" ],
+      "description": "The query that identifies the group containing features items for the gallery. Set a Group ID or, if null, then the most viewed items in your organization are displayed in the gallery",
+      "chance": {
+        "word": {
+          "length": 8
+        }
+      }
+    },
+    "helpBase": {
+      "id": "helpBase",
+      "type": "string",
+      "description": "The helpBase property provides the base URL of the help documentation. This is used to build all the help URLs within the portal",
+      "format": "uri",
+      "chance": "url"
+    },
+    "helperServices": {
+      "id": "helperServices",
+      "type": "object",
+      "description": "A JSON object of various services needed by client applications. They can be overridden by the organization or the portal",
+      "properties": {
+        "geocode": {
+          "id": "geocode",
+          "type": "array",
+          "description": "Array of ArcGIS GeocodeServers to use for geocoding",
+          "items": {
+            "type": "object",
+            "properties": {
+              "url": {
+                "id": "url",
+                "type": "string",
+                "description": "URL for geocode service",
+                "chance": "url"
+              },
+              "northLat": {
+                "id": "northLat",
+                "type": "string",
+                "description": "Ymax",
+                "pattern": "Ymax"
+              },
+              "southLat": {
+                "id": "southLat",
+                "type": "string",
+                "description": "Ymin",
+                "pattern": "Ymin"
+              },
+              "eastLon": {
+                "id": "eastLon",
+                "type": "string",
+                "description": "Xmax",
+                "pattern": "Xmax"
+              },
+              "westLon": {
+                "id": "westLon",
+                "type": "string",
+                "description": "Xmin",
+                "pattern": "Xmin"
+              }
+            },
+            "required": [
+              "url",
+              "northLat",
+              "southLat",
+              "eastLon",
+              "westLon"
+            ]
+          }
+        },
+        "geometry": {
+          "id": "geometry",
+          "type": "object",
+          "description": "ArcGIS GeometryServer to use for geometry functions. URL to Geometry Service",
+          "properties": {
+            "url": {
+              "id": "url",
+              "type": "string",
+              "description": "URL for geometry service",
+              "chance": "url"
+            }
+          },
+          "required": [
+            "url"
+          ]
+        },
+        "hydrologoy": {
+          "id": "hydrologoy",
+          "type": "object",
+          "description": "ArcGIS Geoprocessing services for hydrologic analysis. URL to Hydrology Service",
+          "properties": {
+            "url": {
+              "id": "url",
+              "type": "string",
+              "description": "URL for hydrologoy service",
+              "chance": "url"
+            }
+          },
+          "required": [
+            "url"
+          ]
+        },
+        "printTask": {
+          "id": "printTask",
+          "type": "object",
+          "description": "ArcGIS PrintServer task to use for printing functionality. URL to Print Service",
+          "properties": {
+            "url": {
+              "id": "url",
+              "type": "string",
+              "description": "URL for printTask service",
+              "chance": "url"
+            }
+          },
+          "required": [
+            "url"
+          ]
+        },
+        "route": {
+          "id": "route",
+          "type": "object",
+          "description": "ArcGIS NAServer to use for routing functionality. URL to Network Analysis Service",
+          "properties": {
+            "url": {
+              "id": "url",
+              "type": "string",
+              "description": "URL for route service",
+              "chance": "url"
+            }
+          },
+          "required": [
+            "url"
+          ]
+        },
+        "closestFacility": {
+          "id": "closestFacility",
+          "type": "object",
+          "description": "ArcGIS NAServer service for synchronous closest facility analysis. URL to Network Analysis Service",
+          "properties": {
+            "url": {
+              "id": "url",
+              "type": "string",
+              "description": "URL for closestFacility service",
+              "chance": "url"
+            }
+          },
+          "required": [
+            "url"
+          ]
+        },
+        "asyncClosestFacility": {
+          "id": "asyncClosestFacility",
+          "type": "object",
+          "description": "ArcGIS Geoprocessing service for asynchronous closest facility analysis. URL to Network Analysis Service",
+          "properties": {
+            "url": {
+              "id": "url",
+              "type": "string",
+              "description": "URL for asyncClosestFacility service",
+              "chance": "url"
+            }
+          },
+          "required": [
+            "url"
+          ]
+        },
+        "elevation": {
+          "id": "elevation",
+          "type": "object",
+          "description": "ArcGIS Geoprocessing services for elevation analysis. URL to Elevation Service",
+          "properties": {
+            "url": {
+              "id": "url",
+              "type": "string",
+              "description": "URL for elevation service",
+              "chance": "url"
+            }
+          },
+          "required": [
+            "url"
+          ]
+        },
+        "elevationSync": {
+          "id": "elevationSync",
+          "type": "object",
+          "description": "ArcGIS Geoprocessing services for elevation analysis. URL to Elevation Service",
+          "properties": {
+            "url": {
+              "id": "url",
+              "type": "string",
+              "description": "URL for elevationSync service",
+              "chance": "url"
+            }
+          },
+          "required": [
+            "url"
+          ]
+        },
+        "traffic": {
+          "id": "traffic",
+          "type": "object",
+          "description": "ArcGIS TrafficMapServer service for traffic functionality. URL to Traffic Map Service",
+          "properties": {
+            "url": {
+              "id": "url",
+              "type": "string",
+              "description": "URL for traffic service",
+              "chance": "url"
+            }
+          },
+          "required": [
+            "url"
+          ]
+        },
+        "serviceArea": {
+          "id": "serviceArea",
+          "type": "object",
+          "description": "ArcGIS NAServer service for synchronous service-area analysis. URL to Network Analysis Service",
+          "properties": {
+            "url": {
+              "id": "url",
+              "type": "string",
+              "description": "URL for serviceArea service",
+              "chance": "url"
+            }
+          },
+          "required": [
+            "url"
+          ]
+        },
+        "asyncServiceArea": {
+          "id": "asyncServiceArea",
+          "type": "object",
+          "description": "ArcGIS Geoprocessing service for asynchronous service-area analysis. URL to Network Analysis Service",
+          "properties": {
+            "url": {
+              "id": "url",
+              "type": "string",
+              "description": "URL for asyncServiceArea service",
+              "chance": "url"
+            }
+          },
+          "required": [
+            "url"
+          ]
+        },
+        "syncVRP": {
+          "id": "syncVRP",
+          "type": "object",
+          "description": "ArcGIS NAServer service for solving synchronous vehicle routing problems. URL to Network Analysis Service",
+          "properties": {
+            "url": {
+              "id": "url",
+              "type": "string",
+              "description": "URL for syncVRP service",
+              "chance": "url"
+            }
+          },
+          "required": [
+            "url"
+          ]
+        },
+        "asyncVRP": {
+          "id": "asyncVRP",
+          "type": "object",
+          "description": "ArcGIS Geoprocessing service for solving asynchronous vehicle routing problems. URL to Network Analysis Service",
+          "properties": {
+            "url": {
+              "id": "url",
+              "type": "string",
+              "description": "URL for asyncVRP service",
+              "chance": "url"
+            }
+          },
+          "required": [
+            "url"
+          ]
+        },
+        "analysis": {
+          "id": "analysis",
+          "type": "object",
+          "description": "URL to Hosted GP Service",
+          "properties": {
+            "url": {
+              "id": "url",
+              "type": "string",
+              "description": "Hosted GPServices that perform analyses. URL for analysis service",
+              "chance": "url"
+            }
+          },
+          "required": [
+            "url"
+          ]
+        },
+        "geoenrichment": {
+          "id": "geoenrichment",
+          "type": "object",
+          "description": "ArcGIS GeoenrichmentServer. URL to Geoenrichment Service",
+          "properties": {
+            "url": {
+              "id": "url",
+              "type": "string",
+              "description": "URL for geoenrichment service",
+              "chance": "url"
+            }
+          },
+          "required": [
+            "url"
+          ]
+        }
+      }
+    },
+    "homePageFeaturedContent": {
+      "id": "homePageFeaturedContent",
+      "type": "string",
+      "description": "The group that contains featured content to be displayed on the home page",
+      "chance": "hash"
+    },
+    "homePageFeaturedContentCount": {
+      "id": "homePageFeaturedContentCount",
+      "type": "integer",
+      "description": "The number of featured items that can be displayed on the home page. The max is 100. Integers only",
+      "chance": {
+        "integer": {
+          "min": 0,
+          "max": 100
+        }
+      }
+    },
+    "httpPort": {
+      "id": "httpPort",
+      "type": "integer",
+      "description": "The port used by the portal for HTTP communication",
+      "pattern": "80"
+    },
+    "httpsPort": {
+      "id": "httpsPort",
+      "type": "integer",
+      "description": "The port used by the portal for HTTPS communication",
+      "pattern": "443"
+    },
+    "id": {
+      "id": "id",
+      "type": [ "string", "null" ],
+      "description": "Organization ID. If null, then this is the default portal for anonymous and non-organizational users",
+      "chance": "hash"
+    },
+    "ipCntryCode": {
+      "id": "ipCntryCode",
+      "type": "integer",
+      "description": "The country code of the calling IP (ArcGIS Online only)",
+      "chance": {
+        "integer": {
+          "min": 1,
+          "max": 100
+        }
+      }
+    },
+    "isPortal": {
+      "id": "isPortal",
+      "type": "boolean",
+      "description": "Indicates if the portal is on premises",
+      "chance": {
+        "bool": {
+          "likelihood": 80
+        }
+      }
+    },
+    "layerTemplatesGroupQuery": {
+      "id": "layerTemplatesGroupQuery",
+      "type": "string",
+      "description": "The query that identifies the group containing editing templates used in the map viewer",
+      "chance": {
+        "word": {
+          "length": 8
+        }
+      }
+    },
+    "maxTokenExpiration": {
+      "id": "maxTokenExpiration",
+      "type": "integer",
+      "description": "The maximum validity in minutes of tokens issued for users of the organization. -1 is the default and is a special value that indicates infinite timeout or permanent tokens. For tokens granted using OAuth2 authorization grant, it represents the maximum validity of refresh tokens. For access tokens, the maximum validity is the lower of two weeks or this value",
+      "chance": {
+        "integer": {
+          "min": -1,
+          "max": 1000000
+        }
+      }
+    },
+    "modified": {
+      "id": "modified",
+      "type": "integer",
+      "description": "Date the organization was last modified, in UTC, milliseconds since epoch",
+      "chance": "timestamp"
+    },
+    "name": {
+      "id": "name",
+      "type": "string",
+      "description": "The organization's name",
+      "chance": {
+        "word": {
+          "length": 14
+        }
+      }
+    },
+    "portalHostname": {
+      "id": "portalHostname",
+      "type": "string",
+      "description": "The portal host's URL",
+      "format": "uri",
+      "chance": "url"
+    },
+    "portalMode": {
+      "id": "portalMode",
+      "type": "string",
+      "description": "Identifies if multitenant or singletenant",
+      "enum": [ "multitenant", "singletenant" ],
+      "pattern": "multitenant|singletenant"
+    },
+    "portalName": {
+      "id": "portalName",
+      "type": "string",
+      "description": "The portal's name",
+      "chance": {
+        "word": {
+          "length": 10
+        }
+      }
+    },
+    "portalProperties": {
+      "id": "portalProperties",
+      "type": "object",
+      "description": "Stores properties specific to the organization, for example the 'contact us' link. if the organization is public, the properties are visible to the anonymous user",
+      "properties": {
+        "links": {
+          "id": "links",
+          "type": "object",
+          "description": "URL for geometry service",
+          "properties": {
+            "contactUs": {
+              "id": "contactUs",
+              "type": "object",
+              "description": "Links to 'Contact Us",
+              "properties": {
+                "url": {
+                  "id": "url",
+                  "type": "string",
+                  "description": "URL or mailto",
+                  "chance": "url"
+                },
+                "visible": {
+                  "id": "visible",
+                  "type": "boolean",
+                  "description": "Whether or not portalProperties are visible",
+                  "chance": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "portalThumbnail": {
+      "id": "portalThumbnail",
+      "type": [ "string", "null" ],
+      "description": "The URL to the thumbnail of the portal",
+      "faker": "image.nature"
+    },
+    "region": {
+      "id": "region",
+      "type": "string",
+      "description": "The region for the organization",
+      "chance": "word"
+    },
+    "rotatorPanels": {
+      "id": "rotatorPanels",
+      "type": "string",
+      "description": "The region for the organization",
+      "chance": "paragraph"
+    },
+    "showHomePageDescription": {
+      "id": "showHomePageDescription",
+      "type": "boolean",
+      "description": "If true, the description of your organization displays on the home page",
+      "chance": {
+        "bool": {
+          "likelihood": 80
+        }
+      }
+    },
+    "supportsHostedServices": {
+      "id": "supportsHostedServices",
+      "type": "boolean",
+      "description": "Indicates if hosted services are supported",
+      "chance": {
+        "bool": {
+          "likelihood": 80
+        }
+      }
+    },
+    "supportsOAuth": {
+      "id": "supportsOAuth",
+      "type": "boolean",
+      "description": "Indicates if OAuth is supported",
+      "chance": {
+        "bool": {
+          "likelihood": 80
+        }
+      }
+    },
+    "symbolSetsGroupQuery": {
+      "id": "symbolSetsGroupQuery",
+      "type": "string",
+      "description": "The query that identifies the symbol set group for rendering in the map viewer",
+      "chance": {
+        "word": {
+          "length": 8
+        }
+      }
+    },
+    "templatesGroupQuery": {
+      "id": "templatesGroupQuery",
+      "type": "string",
+      "description": "The query that identifies the template group used in the map viewer",
+      "chance": {
+        "word": {
+          "length": 8
+        }
+      }
+    },
+    "thumbnail": {
+      "id": "thumbnail",
+      "type": "string",
+      "description": "The URL to the thumbnail of the organization",
+      "faker": "image.sports"
+    },
+    "units": {
+      "id": "units",
+      "type": "string",
+      "description": "Sets the units of measure for the organization's users. The user default is derived from the organization's Region. Set units to english for US standards or metric",
+      "enum": [ "english", "metric" ],
+      "pattern": "english|metric"
+    },
+    "urlKey": {
+      "id": "urlKey",
+      "type": "string",
+      "description": "The prefix selected by the organization's administrator to be used with the customBaseURL",
+      "chance": {
+        "word": {
+          "length": 8
+        }
+      }
+    },
+    "useStandardizedQuery": {
+      "id": "useStandardizedQuery",
+      "type": "boolean",
+      "description": "If true, only simple where clauses that are complaint with SQL92 can be used when querying layers and tables. The recommended security setting is true",
+      "chance": {
+        "bool": {
+          "likelihood": 60
+        }
+      }
+    },
+    "user": {
+      "$ref": "user"
+    }
+  },
+  "required": [
+    "access",
+    "allSSL",
+    "appInfo",
+    "backgroundImage",
+    "basemapGalleryGroupQuery",
+    "bingKey",
+    "canListApps",
+    "canListData",
+    "canListPreProvisionedItems",
+    "canProvisionDirectPurchase",
+    "canSearchPublic",
+    "canShareBingPublic",
+    "canSharePublic",
+    "canSignInArcGIS",
+    "canSignInIDP",
+    "colorSetsGroupQuery",
+    "commentsEnabled",
+    "created",
+    "culture",
+    "customBaseUrl",
+    "defaultBaseMap",
+    "defaultExtent",
+    "description",
+    "featuredGroups",
+    "featuredItemsGroupQuery",
+    "helpBase",
+    "helperServices",
+    "homePageFeaturedContent",
+    "homePageFeaturedContentCount",
+    "httpPort",
+    "httpsPort",
+    "id",
+    "ipCntryCode",
+    "isPortal",
+    "layerTemplatesGroupQuery",
+    "maxTokenExpiration",
+    "modified",
+    "name",
+    "portalHostname",
+    "portalMode",
+    "portalName",
+    "portalProperties",
+    "portalThumbnail",
+    "region",
+    "rotatorPanels",
+    "showHomePageDescription",
+    "supportsHostedServices",
+    "supportsOAuth",
+    "symbolSetsGroupQuery",
+    "templatesGroupQuery",
+    "thumbnail",
+    "units",
+    "urlKey",
+    "useStandardizedQuery",
+    "user"
+  ]
+}

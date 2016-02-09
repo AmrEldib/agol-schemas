@@ -1,0 +1,20 @@
+{
+  "id": "userTags",
+  "type": "object",
+  "description": "Users tag the content they publish in their portal via the add and update item calls. This resource lists all the tags used by the user along with the number of times the tags have been used. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/User_Tags/02r3000000m9000000/",
+  "title": "userTags",
+  "properties": {
+    "tags": {
+      "id": "tags",
+      "type": "array",
+      "description": "Array of tag objects. Each tag object contains a tag property with the name of the tag along with a count that reports the number of times the tag was used",
+      "minLength": 0,
+      "items": {
+        "$ref": "userTag"
+      }
+    }
+  },
+  "required": [
+    "tags"
+  ]
+}

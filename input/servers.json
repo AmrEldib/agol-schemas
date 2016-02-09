@@ -1,0 +1,20 @@
+{
+  "id": "servers",
+  "type": "object",
+  "description": "This resource lists the ArcGIS Server sites that have been federated with the portal. This resource is not applicable to ArcGIS Online; it is only applicable to Portal for ArcGIS. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Servers/02r300000218000000/",
+  "title": "servers",
+  "properties": {
+    "servers": {
+      "id": "servers",
+      "type": "array",
+      "description": "An array of JSON objects representing ArcGIS Server sites",
+      "minLength": 0,
+      "items": {
+        "$ref": "server"
+      }
+    }
+  },
+  "required": [
+    "servers"
+  ]
+}

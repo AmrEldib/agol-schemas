@@ -1,0 +1,68 @@
+{
+  "id": "users",
+  "type": "object",
+  "description": "Lists all the members of the organization. The start and num paging parameters are supported. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Users/02r30000009q000000/",
+  "title": "users",
+  "properties": {
+    "total": {
+      "id": "total",
+      "type": "integer",
+      "description": "The total number of results found",
+      "chance": {
+        "integer": {
+          "min": 0,
+          "max": 999
+        }
+      }
+    },
+    "start": {
+      "id": "start",
+      "type": "integer",
+      "description": "The number of the first entry in the result set response. The index number is 1-based",
+      "chance": {
+        "integer": {
+          "min": 0,
+          "max": 999
+        }
+      }
+    },
+    "num": {
+      "id": "num",
+      "type": "integer",
+      "description": "The number of results included in this result set response",
+      "chance": {
+        "integer": {
+          "min": 0,
+          "max": 999
+        }
+      }
+    },
+    "nextStart": {
+      "id": "nextStart",
+      "type": "integer",
+      "description": "The next entry index if the current result set doesn't contain all results",
+      "chance": {
+        "integer": {
+          "min": 0,
+          "max": 999
+        }
+      }
+    },
+    "users": {
+      "id": "users",
+      "type": "array",
+      "description": "A JSON array of user objects. See User for possible response properties",
+      "minLength": 0,
+      "items": {
+        "$ref": "user"
+      }
+    }
+  },
+  "required": [
+    "total",
+    "start",
+    "num",
+    "nextStart",
+    "users"
+  ]
+}
