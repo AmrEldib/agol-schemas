@@ -13,5 +13,8 @@
     "rest"
   ],
   "author": "Amr Eldib",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "read-multiple-files": "^1.1.1"
+  }
 }
