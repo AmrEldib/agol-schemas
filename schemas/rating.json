@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "description": "Returns the rating given by the current user to the item, if any. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Item_Rating/02r300000098000000/",
+  "title": "rating",
+  "properties": {
+    "rating": {
+      "type": "integer",
+      "description": "The rating given to the item by the calling user",
+      "chance": {
+        "integer": {
+          "min": 0,
+          "max": 5
+        }
+      }
+    },
+    "created": {
+      "type": "integer",
+      "description": "The date and time the comment was created. Shown in UNIX time",
+      "chance": "timestamp"
+    }
+  },
+  "required": [
+    "rating",
+    "created"
+  ],
+  "definitions": {}
+}

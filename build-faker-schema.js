@@ -3,13 +3,21 @@ var path = require('path');
 var readMultipleFiles = require('read-multiple-files');
 var fakerConfig = require('./faker-config');
 
-// Check if a schema has any dependencies
-var hasRefs = function (schemaName) {
+/*
+ * Check if a schema has any dependencies.
+ * @param {string} schemaName The name of the schema to check whether it has references or not.
+ * @returns {boolean} True if the schema has references, False if not.
+ */
+function hasRefs(schemaName) {
   return (fakerConfig.schemas[schemaName]);
 }
 
-// Resolve dependencies of a certain schema
-var getSchemaRefs = function (schemaName) {
+/*
+ * Resolve dependencies of a certain schema.
+ * @param {string} schemaName The name of the schema to get its references.
+ * @returns {array} List of strings naming the schemas referenced in the input schema.
+ */
+function getSchemaRefs(schemaName) {
   var schemaRefs = fakerConfig.schemas[schemaName];
   schemaRefs.forEach(function (schemaRef) {
     if (schemaRefs.indexOf(schemaRef) === -1) {
@@ -26,8 +34,11 @@ var getSchemaRefs = function (schemaName) {
   return schemaRefs;
 }
 
-// Gets a list of all available schemas
-var getSchemaList = function () {
+/*
+ * Gets a list of all available schemas.
+ * @returns {array} List of strings naming the available schemas.
+ */
+function getSchemaList() {
   var keys = [];
   for (var key in fakerConfig.schemas) {
     keys.push(key);
@@ -35,8 +46,30 @@ var getSchemaList = function () {
   return keys;
 }
 
-// Accept a schema name and returns an object of that schema with the 'definitions' object filled out correctly.
-var getSchemaWithDefinitions = function (schemaName, callback) {
+/*
+ * Cleans up a schema object by removing IDs and modifying $ref properties
+ * @param {object} schema The schema to be cleaned up. This object is modified in place. Nothing is returned.
+ */
+function cleanUpSchema(schema) {
+  for (var prop in schema) {
+    if (schema === "$ref" && typeof (schema[prop]) == "string") {
+      schema[prop] = "#/definitions/" + schema[prop];
+    }
+    else if (prop === "id" && typeof (schema[prop]) == "string") {
+      delete schema[prop];
+    }
+    else if (typeof (schema[prop]) === "object") {
+      cleanUpSchema(schema[prop]);
+    }
+  }
+}
+
+/*
+ * Accept a schema name and returns an object of that schema with the 'definitions' object filled out correctly.
+ * @param {string} schemaName Name of the schema to modify
+ * @param {function} callback A callback function with one parameter of object type representing the schema with definitions.
+ */
+function getSchemaWithDefinitions(schemaName, callback) {
 
   // Check if schema name if valid
   if (fakerConfig.schemas[schemaName] == undefined) {
@@ -66,22 +99,54 @@ var getSchemaWithDefinitions = function (schemaName, callback) {
 
       // Parse schema and refs into JSON objects
       var schema = JSON.parse(schemaFileContent);
+      // Modify $ref values, and remove IDs
+      cleanUpSchema(schema);
+      // Add definitions object
       schema.definitions = {};
       contents.forEach(function (refFileContent, index) {
-        //refs.push(JSON.parse(refFileContent));
-        schema.definitions[schemaRefs[index]] = JSON.parse(refFileContent);
+        var schemaRef = JSON.parse(refFileContent);
+        // Modify $ref values, and remove IDs
+        cleanUpSchema(schemaRef);
+        // Add schema reference
+        schema.definitions[schemaRefs[index]] = schemaRef;
       })
-            
+
       // return full schema object
       callback(schema);
     })
   })
 }
 
-module.exports = {
-  getSchemaWithDefinitions: getSchemaWithDefinitions
-};
+/*
+ * Writes output schema to file
+ * @param {string} schemaName Name of the schema to be written.
+ * @param {object} schema Schema object to be written to file.
+ * @param {string} [outputFile=""] Path to output file. If nothing is specified, the schema is saved to a file with the schema name under the output folder specified in the fakerConfig file.
+ */
+function writeSchemaToFile(schemaName, schema, outputFile) {
+  // Get path of schema file
+  if (!outputFile) {
+    outputFile = fakerConfig.outputFolder + '/' + schemaName + '.json';
+  }
 
-getSchemaWithDefinitions("comments", function (s) {
-  console.log(s);
-});
+  // Write fake data to file
+  fs.writeFile(path.resolve(__dirname, outputFile), JSON.stringify(schema, null, 2));
+}
+
+/*
+ * Writes output schemas for all available schemas for faker settings
+ */
+function writeFakerSchemas() {
+  var schemas = getSchemaList();
+  schemas.forEach(function (schemaName) {
+    getSchemaWithDefinitions(schemaName, function (schema) {
+      writeSchemaToFile(schemaName, schema);
+    });
+  })
+}
+
+module.exports = {
+  getSchemaWithDefinitions: getSchemaWithDefinitions,
+  getSchemaList: getSchemaList,
+  writeFakerSchemas: writeFakerSchemas
+};

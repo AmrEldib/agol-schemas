@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "description": "The Root resource only returns the version of the containing portal. It acts as a root to its child resources and operations. To obtain descriptive information about this portal including its name, logo, featured items, and supported protocols (HTTP vs HTTPS), access the Self resource under Portals. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Root/02r30000009t000000/",
+  "title": "root",
+  "properties": {
+    "currentVersion": {
+      "type": "string",
+      "description": "The release version for this portal",
+      "chance": "word"
+    }
+  },
+  "required": [
+    "currentVersion"
+  ],
+  "definitions": {}
+}

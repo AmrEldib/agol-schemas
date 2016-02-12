@@ -1,0 +1,39 @@
+{
+  "type": [
+    "array",
+    "null"
+  ],
+  "description": "The bounding rectangle of the item. Should always be in WGS84",
+  "title": "extent",
+  "minLength": 2,
+  "maxLength": 2,
+  "items": {
+    "type": "object",
+    "oneOf": [
+      {
+        "$ref": "#/definitions/coordinate"
+      }
+    ]
+  },
+  "definitions": {
+    "coordinate": {
+      "type": "array",
+      "description": "Coordinate",
+      "title": "coordinate",
+      "minLength": 2,
+      "maxLength": 2,
+      "items": [
+        {
+          "title": "XCoordinate",
+          "type": "integer",
+          "chance": "longitude"
+        },
+        {
+          "title": "YCoordinate",
+          "type": "integer",
+          "chance": "latitude"
+        }
+      ]
+    }
+  }
+}

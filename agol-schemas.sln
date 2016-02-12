@@ -21,6 +21,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "agol-schemas", ".", "{0CC2B
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "60074"
+		SlnRelativePath = "..\agol-schemas\"
 	EndProjectSection
 EndProject
 Global
