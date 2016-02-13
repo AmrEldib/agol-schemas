@@ -3,7 +3,7 @@
   "description": "Lists the available languages. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Languages/02r300000095000000/",
   "title": "languages",
   "items": {
-    "$ref": "#/definitions/language"
+    "$ref": "language"
   },
   "definitions": {
     "language": {

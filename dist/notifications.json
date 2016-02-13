@@ -8,7 +8,7 @@
       "description": "JSON array of notification objects. See Notification for the properties of an invitation",
       "minLength": 0,
       "items": {
-        "$ref": "#/definitions/notification"
+        "$ref": "notification"
       }
     }
   },

@@ -3,12 +3,12 @@
   "description": "Lists the available regions. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Regions/02r300000099000000/",
   "title": "regions",
   "items": {
-    "$ref": "#/definitions/region"
+    "$ref": "region"
   },
   "definitions": {
     "region": {
       "type": "object",
-      "description": "Avaliable region. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Regions/02r300000099000000/",
+      "description": "Available region. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Regions/02r300000099000000/",
       "title": "region",
       "properties": {
         "name": {

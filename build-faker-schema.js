@@ -1,7 +1,7 @@
 ﻿var fs = require('fs');
 var path = require('path');
 var readMultipleFiles = require('read-multiple-files');
-var fakerConfig = require('./faker-config');
+var config = require('./config');
 
 /*
  * Check if a schema has any dependencies.
@@ -9,7 +9,7 @@ var fakerConfig = require('./faker-config');
  * @returns {boolean} True if the schema has references, False if not.
  */
 function hasRefs(schemaName) {
-  return (fakerConfig.schemas[schemaName]);
+  return (config.schemas[schemaName]);
 }
 
 /*
@@ -18,7 +18,7 @@ function hasRefs(schemaName) {
  * @returns {array} List of strings naming the schemas referenced in the input schema.
  */
 function getSchemaRefs(schemaName) {
-  var schemaRefs = fakerConfig.schemas[schemaName];
+  var schemaRefs = config.schemas[schemaName];
   schemaRefs.forEach(function (schemaRef) {
     if (schemaRefs.indexOf(schemaRef) === -1) {
       schemaRefs.push(schemaRef);
@@ -40,7 +40,7 @@ function getSchemaRefs(schemaName) {
  */
 function getSchemaList() {
   var keys = [];
-  for (var key in fakerConfig.schemas) {
+  for (var key in config.schemas) {
     keys.push(key);
   }
   return keys;
@@ -72,7 +72,7 @@ function cleanUpSchema(schema) {
 function getSchemaWithDefinitions(schemaName, callback) {
 
   // Check if schema name if valid
-  if (fakerConfig.schemas[schemaName] == undefined) {
+  if (config.schemas[schemaName] == undefined) {
     throw Error("Invalid schema name. Name must be one of: " + getSchemaList());
   }
 
@@ -84,11 +84,11 @@ function getSchemaWithDefinitions(schemaName, callback) {
 
   // Get paths of referenced files
   var schemaRefsFiles = schemaRefs.map(function (ref) {
-    return path.resolve(__dirname, fakerConfig.schemasFolder + '/' + ref + '.json');
+    return path.resolve(__dirname, config.schemasFolder + '/' + ref + '.json');
   })
 
   // Read schema file
-  fs.readFile(path.resolve(__dirname, fakerConfig.schemasFolder + '/' + schemaName + '.json'), function (err, schemaFileContent) {
+  fs.readFile(path.resolve(__dirname, config.schemasFolder + '/' + schemaName + '.json'), function (err, schemaFileContent) {
 
     // Read reference files
     readMultipleFiles(schemaRefsFiles, 'utf8',
@@ -126,7 +126,7 @@ function getSchemaWithDefinitions(schemaName, callback) {
 function writeSchemaToFile(schemaName, schema, outputFile) {
   // Get path of schema file
   if (!outputFile) {
-    outputFile = fakerConfig.outputFolder + '/' + schemaName + '.json';
+    outputFile = config.outputFolder + '/' + schemaName + '.json';
   }
 
   // Write fake data to file

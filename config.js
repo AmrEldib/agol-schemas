@@ -1,9 +1,12 @@
 
 var config = {
   // Folder where schemas are stored
-  "schemasFolder": "input",
+  "schemasFolder": "data",
   // Folder where fake data is stored
-  "outputFolder": "schemas",
+  "outputFolder": "dist",
+  // Name of the output documentation file
+  // This file will be saved in the output folder
+  "docFile": "schemas.md",
   // Schemas and objects that they reference
   // Top level items are schemas that can be generated
   // If a schema is not listed in the top level, it can't be generated

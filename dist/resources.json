@@ -48,7 +48,7 @@
       "description": "A JSON array of resource objects that contain the key, size, and created date of the resource",
       "minLength": 0,
       "items": {
-        "$ref": "#/definitions/resource"
+        "$ref": "resource"
       }
     }
   },

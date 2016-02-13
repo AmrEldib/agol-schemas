@@ -22,7 +22,7 @@
       }
     },
     "appInfo": {
-      "$ref": "#/definitions/portalAppInfo"
+      "$ref": "portalAppInfo"
     },
     "backgroundImage": {
       "type": [
@@ -183,7 +183,7 @@
       "pattern": "streets|satellite|hybrid|topo|gray|dark-gray|oceans|national-geographic|terrain|osm"
     },
     "defaultExtent": {
-      "$ref": "#/definitions/extent"
+      "$ref": "extent"
     },
     "description": {
       "type": [
@@ -203,7 +203,7 @@
       "title": "featuredGroups",
       "minLength": 0,
       "items": {
-        "$ref": "#/definitions/portalFeaturedGroup"
+        "$ref": "portalFeaturedGroup"
       }
     },
     "featuredItemsGroupQuery": {
@@ -714,7 +714,7 @@
       }
     },
     "user": {
-      "$ref": "#/definitions/user"
+      "$ref": "user"
     }
   },
   "required": [
@@ -936,7 +936,7 @@
           "description": "A JSON array of groups the user belongs to. See Group for properties of a group",
           "minLength": 0,
           "items": {
-            "$ref": "#/definitions/group"
+            "$ref": "group"
           }
         },
         "provider": {
@@ -988,7 +988,7 @@
         "type": "object",
         "oneOf": [
           {
-            "$ref": "#/definitions/coordinate"
+            "$ref": "coordinate"
           }
         ]
       }
