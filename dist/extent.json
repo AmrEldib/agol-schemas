@@ -11,7 +11,7 @@
     "type": "object",
     "oneOf": [
       {
-        "$ref": "coordinate"
+        "$ref": "#/definitions/coordinate"
       }
     ]
   },

@@ -8,7 +8,7 @@
       "description": "A JSON array of item objects. See Item for response properties for more details",
       "minLength": 0,
       "items": {
-        "$ref": "item"
+        "$ref": "#/definitions/item"
       }
     }
   },
@@ -219,7 +219,7 @@
           }
         },
         "extent": {
-          "$ref": "extent"
+          "$ref": "#/definitions/extent"
         },
         "spatialReference": {
           "type": [
@@ -467,7 +467,7 @@
         "type": "object",
         "oneOf": [
           {
-            "$ref": "coordinate"
+            "$ref": "#/definitions/coordinate"
           }
         ]
       }

@@ -52,7 +52,7 @@ function getSchemaList() {
  */
 function cleanUpSchema(schema) {
   for (var prop in schema) {
-    if (schema === "$ref" && typeof (schema[prop]) == "string") {
+    if (prop === "$ref" && typeof (schema[prop]) == "string") {
       schema[prop] = "#/definitions/" + schema[prop];
     }
     else if (prop === "id" && typeof (schema[prop]) == "string") {

@@ -3,7 +3,7 @@
   "description": "Lists the available regions. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Regions/02r300000099000000/",
   "title": "regions",
   "items": {
-    "$ref": "region"
+    "$ref": "#/definitions/region"
   },
   "definitions": {
     "region": {

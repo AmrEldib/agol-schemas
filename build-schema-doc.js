@@ -1,4 +1,4 @@
-﻿var fs = require('fs');
+var fs = require('fs');
 var path = require('path');
 var readMultipleFiles = require('read-multiple-files');
 var config = require('./config');
@@ -24,18 +24,6 @@ function markdownLinks(paragraph, linkText) {
 }
 
 /*
- * Gets a list of all available schemas.
- * @returns {array} List of strings naming the available schemas.
- */
-function getSchemaList() {
-  var keys = [];
-  for (var key in config.schemas) {
-    keys.push(key);
-  }
-  return keys;
-}
-
-/*
  * Gets all files from a folder
  * @param {string} dir Path to folder
  * @returns {array} List of files in the folder.
@@ -51,7 +39,7 @@ function getAllFilesFromFolder(dir) {
     } else results.push(file);
   });
   return results;
-};
+}
 
 /*
  * Extract Description from Schema and correctly markdown URLs in it.

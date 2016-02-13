@@ -201,7 +201,7 @@
       }
     },
     "extent": {
-      "$ref": "extent"
+      "$ref": "#/definitions/extent"
     },
     "spatialReference": {
       "type": [
@@ -449,7 +449,7 @@
         "type": "object",
         "oneOf": [
           {
-            "$ref": "coordinate"
+            "$ref": "#/definitions/coordinate"
           }
         ]
       }

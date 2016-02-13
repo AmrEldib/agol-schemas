@@ -1,0 +1,2126 @@
+{
+  "comment": {
+    "type": "object",
+    "description": "Gets details for a particular comment. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Item_Comment/02r300000091000000/",
+    "title": "comment",
+    "properties": {
+      "id": {
+        "type": "string",
+        "description": "The ID of the comment"
+      },
+      "owner": {
+        "type": "string",
+        "description": "The username of the user who submitted the comment"
+      },
+      "created": {
+        "type": "integer",
+        "description": "The date and time the comment was created. Shown in UNIX time"
+      },
+      "comment": {
+        "type": "string",
+        "description": "The comment text"
+      }
+    },
+    "required": [
+      "id",
+      "owner",
+      "created",
+      "comment"
+    ]
+  },
+  "comments": {
+    "type": "object",
+    "description": "Lists all comments for an item. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Item_Comments/02r300000088000000/",
+    "title": "comments",
+    "properties": {
+      "comments": {
+        "type": "array",
+        "description": "A JSON array of comment objects. See the response properties for Comment for details",
+        "minLength": 0,
+        "items": {
+          "$ref": "#/definitions/comment"
+        }
+      }
+    },
+    "required": [
+      "comments"
+    ]
+  },
+  "coordinate": {
+    "type": "array",
+    "description": "Coordinate",
+    "title": "coordinate",
+    "minLength": 2,
+    "maxLength": 2,
+    "items": [
+      {
+        "title": "XCoordinate",
+        "type": "integer"
+      },
+      {
+        "title": "YCoordinate",
+        "type": "integer"
+      }
+    ]
+  },
+  "extent": {
+    "type": [
+      "array",
+      "null"
+    ],
+    "description": "The bounding rectangle of the item. Should always be in WGS84",
+    "title": "extent",
+    "minLength": 2,
+    "maxLength": 2,
+    "items": {
+      "type": "object",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/coordinate"
+        }
+      ]
+    }
+  },
+  "folder": {
+    "type": [
+      "object",
+      "null"
+    ],
+    "description": "The current folder listing the user's items",
+    "title": "folder",
+    "additionalProperties": false,
+    "properties": {
+      "username": {
+        "type": "string",
+        "description": "The folder's owner."
+      },
+      "id": {
+        "type": "string",
+        "description": "The folder ID."
+      },
+      "title": {
+        "type": "string",
+        "description": "The folder Name."
+      },
+      "created": {
+        "type": "integer",
+        "description": "The date the folder was created. Shown in UNIX time."
+      }
+    },
+    "required": [
+      "created",
+      "id",
+      "title",
+      "username"
+    ]
+  },
+  "group": {
+    "type": "object",
+    "description": "The Group resource represents a group within the portal. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Group/02r30000006m000000/",
+    "title": "group",
+    "properties": {
+      "id": {
+        "type": "string",
+        "description": "The given group ID"
+      },
+      "title": {
+        "type": "string",
+        "description": "The title of the group. This is the name that is displayed to users and by which they refer to the group. Every group must have a title, and it must be unique for a user."
+      },
+      "isInvitationOnly": {
+        "type": "boolean",
+        "description": "If this is set to true, users will not be able to apply to join the group"
+      },
+      "owner": {
+        "type": "string",
+        "description": "The owner username of the group"
+      },
+      "description": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The group description"
+      },
+      "snippet": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The group summary"
+      },
+      "tags": {
+        "type": "array",
+        "description": "User-defined tags that describe the group",
+        "items": {
+          "type": "string"
+        },
+        "uniqueItems": true
+      },
+      "phone": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The contact information for the group"
+      },
+      "sortField": {
+        "type": "string",
+        "description": "The sorted field"
+      },
+      "sortOrder": {
+        "type": "string",
+        "description": "The sort order, either descending or ascending",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "pattern": "asc|desc"
+      },
+      "isViewOnly": {
+        "type": "boolean",
+        "description": "Boolean value indicating whether the results are only for viewing"
+      },
+      "isFav": {
+        "type": "boolean",
+        "description": "Boolean value indicating whether marked in favorites"
+      },
+      "thumbnail": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The URL to the thumbnail used for the group. All group thumbnails are relative to the URL: http://<community-url>/groups/<groupId>/info"
+      },
+      "created": {
+        "type": "integer",
+        "description": "The date the group was created. Shown in UNIX time in milliseconds"
+      },
+      "modified": {
+        "type": "integer",
+        "description": "The date the group was last modified. Shown in UNIX time in milliseconds"
+      },
+      "access": {
+        "type": "string",
+        "description": "The access privileges of the group that determine who can see and access the group. Can be: private, org, or public",
+        "enum": [
+          "private",
+          "org",
+          "public"
+        ],
+        "pattern": "private|org|public"
+      },
+      "userMembership": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "description": "If the request is made by an authenticated user, a JSON object is returned containing information about the user's access to the group. This includes the username of the calling user, the memberType, which specifies the type of membership the user has in the group (owner, member, admin, none), and the applications (number of requests to join the group) count available to admins and owners",
+        "properties": {
+          "username": {
+            "type": "string",
+            "description": "requestor username"
+          },
+          "memberType": {
+            "type": "string",
+            "description": "specifies the type of membership the user has in the group (owner, member, admin, none)",
+            "enum": [
+              "owner",
+              "member",
+              "admin",
+              "none"
+            ],
+            "pattern": "owner|member|admin|none"
+          },
+          "applications": {
+            "type": "integer",
+            "description": "Number of requests to join the group available to admins and owners."
+          }
+        },
+        "required": [
+          "applications",
+          "memberType",
+          "username"
+        ]
+      }
+    },
+    "required": [
+      "id",
+      "title",
+      "isInvitationOnly",
+      "owner",
+      "description",
+      "snippet",
+      "tags",
+      "phone",
+      "sortField",
+      "sortOrder",
+      "isViewOnly",
+      "isFav",
+      "thumbnail",
+      "created",
+      "modified",
+      "access",
+      "userMembership"
+    ]
+  },
+  "groupApplication": {
+    "type": "object",
+    "description": "When an individual user applies to join a group, a group application is created. The group administrators can accept or decline the application. Available only to the group administrators and the administrator of the organization if the group belongs to an organization. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Group_Application/02r30000006r000000/",
+    "title": "groupApplication",
+    "properties": {
+      "username": {
+        "type": "string",
+        "description": "The username of the user applying to join the group"
+      },
+      "fullname": {
+        "type": "string",
+        "description": "The full name of the user applying to join the group"
+      },
+      "received": {
+        "type": "integer",
+        "description": "The date the application was received in UNIX time in milliseconds"
+      }
+    },
+    "required": [
+      "fullname",
+      "received",
+      "username"
+    ]
+  },
+  "groupApplications": {
+    "type": "object",
+    "description": "Lists the group applications for the given group. Available to administrators of the group or administrators of an organization if the group is part of one. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Group_Applications/02r300000068000000/",
+    "title": "groupApplications",
+    "properties": {
+      "applications": {
+        "type": "array",
+        "description": "A JSON array of application objects. See Group Application for property information",
+        "minLength": 0,
+        "items": {
+          "$ref": "#/definitions/groupApplication"
+        }
+      }
+    },
+    "required": [
+      "applications"
+    ]
+  },
+  "groupContent": {
+    "type": "object",
+    "description": "The group's content provides access to the items that are shared with the group. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Group_Content/02r300000081000000/",
+    "title": "groupContent",
+    "properties": {
+      "items": {
+        "type": "array",
+        "description": "A JSON array of item objects. See Item for response properties for more details",
+        "minLength": 0,
+        "items": {
+          "$ref": "#/definitions/item"
+        }
+      }
+    },
+    "required": [
+      "items"
+    ]
+  },
+  "groups": {
+    "type": "object",
+    "description": "Lists the groups of which the item is a part. Only shows the groups that the calling user can access http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Groups/02r30000009p000000/",
+    "title": "groups",
+    "properties": {
+      "admin": {
+        "type": "array",
+        "description": "Groups which user is an administrator. This is a JSON Array of group objects. See Group for possible response properties",
+        "minLength": 0,
+        "items": {
+          "$ref": "#/definitions/group"
+        }
+      },
+      "member": {
+        "type": "array",
+        "description": "Groups which user is a member",
+        "minLength": 0,
+        "items": {
+          "$ref": "#/definitions/group"
+        }
+      },
+      "other": {
+        "type": "array",
+        "description": "Other groups that are public or shared to the user's organization but that the user is not a member of",
+        "minLength": 0,
+        "items": {
+          "$ref": "#/definitions/group"
+        }
+      }
+    },
+    "required": [
+      "admin",
+      "member",
+      "other"
+    ]
+  },
+  "groupUsers": {
+    "type": "object",
+    "description": "Lists the users, owner, and administrators of a given group. Only available to members or administrators of the group http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Group_Users/02r30000006p000000/",
+    "title": "groupUsers",
+    "properties": {
+      "owner": {
+        "type": "string",
+        "description": "The username of the owner of the group"
+      },
+      "admins": {
+        "type": "array",
+        "description": "A JSON array containing the usernames of the administrators of the group",
+        "minLength": 0,
+        "items": {
+          "type": "string"
+        }
+      },
+      "users": {
+        "type": "array",
+        "description": "A JSON array containing the usernames of the members of the group",
+        "minLength": 0,
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "owner",
+      "admins",
+      "users"
+    ]
+  },
+  "item": {
+    "type": "object",
+    "description": "An item (a unit of content) in the portal. Each item has a unique identifier and a well known URL that is independent of the user owning the item. An item can have associated binary or textual data that's available via the item data resource. For example, an item of type Map Package returns the actual bits corresponding to the map package via the item data resource. The numViews is incremented when an item is opened. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Item/02r30000007w000000/",
+    "title": "item",
+    "properties": {
+      "id": {
+        "type": "string",
+        "description": "The unique ID for this item"
+      },
+      "owner": {
+        "type": "string",
+        "description": "The username of the user who owns this item"
+      },
+      "created": {
+        "type": "integer",
+        "description": "The date the folder was created. Shown in UNIX time"
+      },
+      "modified": {
+        "type": "integer",
+        "description": "The date the folder was last modified. Shown in UNIX time"
+      },
+      "guid": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Unique global ID"
+      },
+      "name": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The file name of the item for file types. Read-only"
+      },
+      "title": {
+        "type": "string",
+        "description": "The title of the item. This is the name that's displayed to users and by which they refer to the item. Every item must have a title"
+      },
+      "type": {
+        "type": "string",
+        "description": "The GIS content type of this item. Example types include Web Map, Map Service, Shapefile, and Web Mapping Application. See the overview section of Items and item types to get an understanding of the item type hierarchy",
+        "enum": [
+          "Web Map",
+          "CityEngine Web Scene",
+          "Web Scene",
+          "Pro Map",
+          "Feature Service",
+          "Map Service",
+          "Image Service",
+          "KML",
+          "WMS",
+          "Feature Collection",
+          "Feature Collection Template",
+          "Geodata Service",
+          "Globe Service",
+          "Geometry Service",
+          "Geocoding Service",
+          "Network Analysis Service",
+          "Geoprocessing Service",
+          "Workflow Manager Service",
+          "Web Mapping Application",
+          "Mobile Application",
+          "Code Attachment",
+          "Operations Dashboard Add In",
+          "Operation View",
+          "Operations Dashboard Extension",
+          "Native Application",
+          "Native Application Template",
+          "Native Application Installer",
+          "Symbol Set",
+          "Color Set",
+          "Shapefile",
+          "File geodatabase",
+          "CSV",
+          "CAD Drawing",
+          "Service Definition",
+          "Document Link",
+          "Microsoft Word",
+          "Microsoft Powerpoint",
+          "Microsoft Excel",
+          "PDF",
+          "Image",
+          "Visio Document",
+          "iWork Keynote",
+          "iWork Pages",
+          "iWork Numbers",
+          "Map Document",
+          "Map Package",
+          "Mobile Basemap Package",
+          "Tile Package",
+          "Project Package",
+          "Task File",
+          "ArcPad Package",
+          "Explorer Map",
+          "Globe Document",
+          "Scene Document",
+          "Published Map",
+          "Map Template",
+          "Windows Mobile Package",
+          "Layout",
+          "Project Template",
+          "Layer",
+          "Layer Package",
+          "Explorer Layer",
+          "Desktop Style",
+          "Geoprocessing Package",
+          "Geoprocessing Package (Pro Version)",
+          "Geoprocessing Sample",
+          "Locator Package",
+          "Rule Package",
+          "Raster function template",
+          "Workflow Manager Package",
+          "Desktop Application",
+          "Desktop Application Template",
+          "Code Sample",
+          "Desktop Add In",
+          "Explorer Add In"
+        ],
+        "pattern": "Web Map|CityEngine Web Scene|Web Scene|Pro Map|Feature Service|Map Service|Image Service|KML|WMS|Feature Collection|Feature Collection Template|Geodata Service|Globe Service|Geometry Service|Geocoding Service|Network Analysis Service|Geoprocessing Service|Workflow Manager Service|Web Mapping Application|Mobile Application|Code Attachment|Operations Dashboard Add In|Operation View|Operations Dashboard Extension|Native Application|Native Application Template|Native Application Installer|Symbol Set|Color Set|Shapefile|File geodatabase|CSV|CAD Drawing|Service Definition|Document Link|Microsoft Word|Microsoft Powerpoint|Microsoft Excel|PDF|Image|Visio Document|iWork Keynote|iWork Pages|iWork Numbers|Map Document|Map Package|Mobile Basemap Package|Tile Package|Project Package|Task File|ArcPad Package|Explorer Map|Globe Document|Scene Document|Published Map|Map Template|Windows Mobile Package|Layout|Project Template|Layer|Layer Package|Explorer Layer|Desktop Style|Geoprocessing Package|Geoprocessing Package (Pro Version)|Geoprocessing Sample|Locator Package|Rule Package|Raster function template|Workflow Manager Package|Desktop Application|Desktop Application Template|Code Sample|Desktop Add In|Explorer Add In"
+      },
+      "typeKeywords": {
+        "type": "array",
+        "description": "A set of keywords that further describes the type of this item. Each item is tagged with a set of type keywords that are derived based on its primary type",
+        "items": {
+          "type": "string"
+        },
+        "uniqueItems": true
+      },
+      "description": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Item's description"
+      },
+      "tags": {
+        "type": "array",
+        "description": "User defined tags that describe the item",
+        "items": {
+          "type": "string"
+        },
+        "uniqueItems": true
+      },
+      "snippet": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "A short summary description of the item"
+      },
+      "thumbnail": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The URL to the thumbnail used for the item. Relative to Item's URL"
+      },
+      "largeThumbnail": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Primarily applies to thumbnails associated with an application. The URL to the thumbnail used for the application. Relative to Item's URL"
+      },
+      "banner": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Primarily applies to the banner associated with an application. The URL to the banner used for the application. Relative to Item's URL"
+      },
+      "screenshots": {
+        "type": "array",
+        "description": "Primarily applies to screenshots associated with an application. The URL to the screenshots used for the application",
+        "items": {
+          "type": "string"
+        }
+      },
+      "extent": {
+        "$ref": "#/definitions/extent"
+      },
+      "spatialReference": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The coordinate system of the item"
+      },
+      "accessInformation": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Information on the source of the item and its copyright status"
+      },
+      "licenseInfo": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Any license information or restrictions"
+      },
+      "culture": {
+        "type": "string",
+        "description": "The item locale information (language and country)"
+      },
+      "languages": {
+        "type": "array",
+        "description": "Primarily applies to languages associated with the application",
+        "items": {
+          "type": "string"
+        }
+      },
+      "url": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The URL for the resource represented by the item. Applies only to items that represent web-accessible resources such as map services",
+        "format": "uri"
+      },
+      "access": {
+        "type": "string",
+        "description": "Indicates the level of access to this item: private, shared, org, or public",
+        "enum": [
+          "private",
+          "shared",
+          "org",
+          "public"
+        ],
+        "pattern": "private|shared|org|public"
+      },
+      "size": {
+        "type": "integer",
+        "description": "File size"
+      },
+      "commentsEnabled": {
+        "type": "boolean",
+        "description": "Indicates if comments are allowed on the item"
+      },
+      "numComments": {
+        "type": "integer",
+        "description": "Number of comments on this item"
+      },
+      "numRatings": {
+        "type": "integer",
+        "description": "Number of ratings for this item"
+      },
+      "avgRating": {
+        "type": "number",
+        "description": "Average rating"
+      },
+      "numViews": {
+        "type": "integer",
+        "description": "Total number of views for this item"
+      },
+      "industries": {
+        "type": "array",
+        "description": "Primarily applies to industries associated with the application",
+        "items": {
+          "type": "string"
+        }
+      },
+      "listed": {
+        "type": "boolean",
+        "description": "If true, the item is listed in the marketplace"
+      },
+      "ownerFolder": {
+        "type": "string",
+        "description": "The ID of the folder in which the owner has stored the item. The property is only returned to the item owner or the org admin"
+      },
+      "protected": {
+        "type": "boolean",
+        "description": "Protects the item from deletion. false is the default"
+      }
+    },
+    "required": [
+      "id",
+      "owner",
+      "created",
+      "modified",
+      "name",
+      "title",
+      "type",
+      "typeKeywords",
+      "description",
+      "tags",
+      "snippet",
+      "thumbnail",
+      "extent",
+      "spatialReference",
+      "accessInformation",
+      "licenseInfo",
+      "culture",
+      "url",
+      "access",
+      "size",
+      "numComments",
+      "numRatings",
+      "numViews",
+      "avgRating"
+    ]
+  },
+  "language": {
+    "type": "object",
+    "description": "Available language. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Languages/02r300000095000000/",
+    "title": "language",
+    "properties": {
+      "language": {
+        "type": "string",
+        "description": "Language's name"
+      },
+      "culture": {
+        "type": "string",
+        "description": "Language's culture"
+      },
+      "localizedName": {
+        "type": "string",
+        "description": "Language's localized name"
+      }
+    },
+    "required": [
+      "language",
+      "culture",
+      "localizedName"
+    ]
+  },
+  "languages": {
+    "type": "array",
+    "description": "Lists the available languages. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Languages/02r300000095000000/",
+    "title": "languages",
+    "items": {
+      "$ref": "#/definitions/language"
+    }
+  },
+  "notification": {
+    "type": "object",
+    "description": " An individual notification for the given user that can be of different types. Available only to the user recipient of the notification. In the JSON response for a notification, the data property will vary based on the notification type. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Notification/02r30000006t000000/",
+    "title": "notification",
+    "properties": {
+      "id": {
+        "type": "string",
+        "description": "The ID of the notification"
+      },
+      "type": {
+        "type": "string",
+        "description": "The notification type. See the Notification types section for the list of notification types",
+        "enum": [
+          "group_join",
+          "group_application_accepted",
+          "group_application_declined",
+          "user_invite",
+          "user_invitation_accepted",
+          "user_invitation_declined"
+        ],
+        "pattern": "group_join|group_application_accepted|group_application_declined|user_invite|user_invitation_accepted|user_invitation_declined"
+      },
+      "target": {
+        "type": "string",
+        "description": "The intended user of the notification"
+      },
+      "targetType": {
+        "type": "string",
+        "description": "Currently, only \"user\" is acceptable, but in the future, there may be other target types for notifications",
+        "enum": [
+          "user"
+        ],
+        "pattern": "user"
+      },
+      "received": {
+        "type": "integer",
+        "description": "Date the notification was received, in UNIX time in milliseconds"
+      },
+      "data": {
+        "type": "object",
+        "description": "The data for the notification. See the Notification types section for data properties for each notification type",
+        "properties": {
+          "groupId": {
+            "type": "string",
+            "description": "Group ID"
+          },
+          "groupTitle": {
+            "type": "string",
+            "description": "Group title"
+          }
+        },
+        "required": [
+          "groupId",
+          "groupTitle"
+        ]
+      }
+    },
+    "required": [
+      "id",
+      "type",
+      "target",
+      "targetType",
+      "received",
+      "data"
+    ]
+  },
+  "notifications": {
+    "type": "object",
+    "description": "The list of notifications available for the given user. These can have different types as described in the documentation for the Notification resource. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Notifications/02r30000006s000000/",
+    "title": "notifications",
+    "properties": {
+      "notifications": {
+        "type": "array",
+        "description": "JSON array of notification objects. See Notification for the properties of an invitation",
+        "minLength": 0,
+        "items": {
+          "$ref": "#/definitions/notification"
+        }
+      }
+    },
+    "required": [
+      "notifications"
+    ]
+  },
+  "portal": {
+    "type": "object",
+    "description": "The Portal Self resource is used to return the view of the portal as seen by the current user, anonymous or logged in. It includes information such as the name, logo, featured items, and supported protocols (HTTP vs. HTTPS) for this portal. If the user is not logged in, this call will return the default view of the portal. If the user is logged in, the view of the returned portal will be specific to the organization to which the user belongs. The default view of the portal is dependent on the culture of the user, which is obtained from the user's profile. A parameter to pass in the locale/culture is available for anonymous users. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Portal_Self/02r3000001m7000000/",
+    "title": "portal",
+    "properties": {
+      "access": {
+        "type": "string",
+        "description": "Indicates the level of access to your organization for anonymous users. If set to private, only members of the organization will be able to access your site. public allows public access",
+        "enum": [
+          "private",
+          "public"
+        ],
+        "pattern": "private|public"
+      },
+      "allSSL": {
+        "type": "boolean",
+        "description": "Indicates if the organization is using SSL. If true, all calls made against resources that belong to the organization will require SSL. false is the default."
+      },
+      "appInfo": {
+        "$ref": "#/definitions/portalAppInfo"
+      },
+      "backgroundImage": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The background image that displays behind all other components on the home page. Accept the default background image, specify a URL for a custom background image, or specify that no background image will display"
+      },
+      "basemapGalleryGroupQuery": {
+        "type": "string",
+        "description": "The query that identifies the group containing the web maps that display in the basemap gallery for the map viewer"
+      },
+      "bingKey": {
+        "type": "string",
+        "description": "The Bing key to use for web maps using Bing Maps"
+      },
+      "canListApps": {
+        "type": "boolean",
+        "description": "An organization can list applications in the marketplace only if canListApps is true"
+      },
+      "canListData": {
+        "type": "boolean",
+        "description": "An organization can list data services in the marketplace only if canListData is true"
+      },
+      "canListPreProvisionedItems": {
+        "type": "boolean",
+        "description": "An organization can list pre-provisioned items in the marketplace only if canListPreProvisionedItems is true"
+      },
+      "canProvisionDirectPurchase": {
+        "type": "boolean",
+        "description": "An organization can provision direct purchases in the marketplace without customer request only if canProvisionDirectPurchase is true"
+      },
+      "canSearchPublic": {
+        "type": "boolean",
+        "description": "Includes or excludes public items, groups, and users in search queries. When canSearchPublic is false, no public items outside of the organization are included in searches. However, public items that are part of the organization are returned. The default is true"
+      },
+      "canShareBingPublic": {
+        "type": "boolean",
+        "description": "The Bing key can be shared to the public and is returned as part of a portal's description call (/sharing/rest/portals/<orgid>). This requires the access of the portal to be set to public. The canShareBingPublic property is not returned publicly but only shown to users within the organization"
+      },
+      "canSharePublic": {
+        "type": "boolean",
+        "description": "Allows or disallows an organization to share groups or items publicly. false denotes that content can not be shared with everyone. The default is true"
+      },
+      "canSignInArcGIS": {
+        "type": "boolean",
+        "description": "Allows an organization with an enterprise IDP configured to be able to turn on or off the ArcGIS sign in. The default is true"
+      },
+      "canSignInIDP": {
+        "type": "boolean",
+        "description": "Allows an organization with an enterprise IDP configured to be able to turn on or off the enterprise sign in. The default is true"
+      },
+      "colorSetsGroupQuery": {
+        "type": "string",
+        "description": "The query that identifies the group containing the color sets used for rendering in the map viewer"
+      },
+      "commentsEnabled": {
+        "type": "boolean",
+        "description": "Allows the organization to disable commenting. true is the default. When commentsEnabled is false, comments are hidden and not removed. numComments are set to zero for all items in the organization. Calls to add a comment and view comments will fail. If the organization re-enables comments, the comments display and numComments are restored"
+      },
+      "created": {
+        "type": "integer",
+        "description": "Date the organization was created, in UTC, using milliseconds since epoch"
+      },
+      "culture": {
+        "type": "string",
+        "description": "The item locale information (language and country)"
+      },
+      "customBaseUrl": {
+        "type": "string",
+        "description": "The custom base URL for the portal",
+        "format": "uri"
+      },
+      "defaultBaseMap": {
+        "type": "string",
+        "description": "The default basemap displayed in the map viewer",
+        "enum": [
+          "streets",
+          "satellite",
+          "hybrid",
+          "topo",
+          "gray",
+          "dark-gray",
+          "oceans",
+          "national-geographic",
+          "terrain",
+          "osm"
+        ],
+        "pattern": "streets|satellite|hybrid|topo|gray|dark-gray|oceans|national-geographic|terrain|osm"
+      },
+      "defaultExtent": {
+        "$ref": "#/definitions/extent"
+      },
+      "description": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The description of the organization"
+      },
+      "featuredGroups": {
+        "type": "array",
+        "description": "The featured groups for the organization. These are the groups that will be highlighted on the Groups page",
+        "title": "featuredGroups",
+        "minLength": 0,
+        "items": {
+          "$ref": "#/definitions/portalFeaturedGroup"
+        }
+      },
+      "featuredItemsGroupQuery": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The query that identifies the group containing features items for the gallery. Set a Group ID or, if null, then the most viewed items in your organization are displayed in the gallery"
+      },
+      "helpBase": {
+        "type": "string",
+        "description": "The helpBase property provides the base URL of the help documentation. This is used to build all the help URLs within the portal",
+        "format": "uri"
+      },
+      "helperServices": {
+        "type": "object",
+        "description": "A JSON object of various services needed by client applications. They can be overridden by the organization or the portal",
+        "properties": {
+          "geocode": {
+            "type": "array",
+            "description": "Array of ArcGIS GeocodeServers to use for geocoding",
+            "items": {
+              "type": "object",
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "description": "URL for geocode service"
+                },
+                "northLat": {
+                  "type": "string",
+                  "description": "Ymax",
+                  "pattern": "Ymax"
+                },
+                "southLat": {
+                  "type": "string",
+                  "description": "Ymin",
+                  "pattern": "Ymin"
+                },
+                "eastLon": {
+                  "type": "string",
+                  "description": "Xmax",
+                  "pattern": "Xmax"
+                },
+                "westLon": {
+                  "type": "string",
+                  "description": "Xmin",
+                  "pattern": "Xmin"
+                }
+              },
+              "required": [
+                "url",
+                "northLat",
+                "southLat",
+                "eastLon",
+                "westLon"
+              ]
+            }
+          },
+          "geometry": {
+            "type": "object",
+            "description": "ArcGIS GeometryServer to use for geometry functions. URL to Geometry Service",
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "URL for geometry service"
+              }
+            },
+            "required": [
+              "url"
+            ]
+          },
+          "hydrologoy": {
+            "type": "object",
+            "description": "ArcGIS Geoprocessing services for hydrologic analysis. URL to Hydrology Service",
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "URL for hydrologoy service"
+              }
+            },
+            "required": [
+              "url"
+            ]
+          },
+          "printTask": {
+            "type": "object",
+            "description": "ArcGIS PrintServer task to use for printing functionality. URL to Print Service",
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "URL for printTask service"
+              }
+            },
+            "required": [
+              "url"
+            ]
+          },
+          "route": {
+            "type": "object",
+            "description": "ArcGIS NAServer to use for routing functionality. URL to Network Analysis Service",
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "URL for route service"
+              }
+            },
+            "required": [
+              "url"
+            ]
+          },
+          "closestFacility": {
+            "type": "object",
+            "description": "ArcGIS NAServer service for synchronous closest facility analysis. URL to Network Analysis Service",
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "URL for closestFacility service"
+              }
+            },
+            "required": [
+              "url"
+            ]
+          },
+          "asyncClosestFacility": {
+            "type": "object",
+            "description": "ArcGIS Geoprocessing service for asynchronous closest facility analysis. URL to Network Analysis Service",
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "URL for asyncClosestFacility service"
+              }
+            },
+            "required": [
+              "url"
+            ]
+          },
+          "elevation": {
+            "type": "object",
+            "description": "ArcGIS Geoprocessing services for elevation analysis. URL to Elevation Service",
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "URL for elevation service"
+              }
+            },
+            "required": [
+              "url"
+            ]
+          },
+          "elevationSync": {
+            "type": "object",
+            "description": "ArcGIS Geoprocessing services for elevation analysis. URL to Elevation Service",
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "URL for elevationSync service"
+              }
+            },
+            "required": [
+              "url"
+            ]
+          },
+          "traffic": {
+            "type": "object",
+            "description": "ArcGIS TrafficMapServer service for traffic functionality. URL to Traffic Map Service",
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "URL for traffic service"
+              }
+            },
+            "required": [
+              "url"
+            ]
+          },
+          "serviceArea": {
+            "type": "object",
+            "description": "ArcGIS NAServer service for synchronous service-area analysis. URL to Network Analysis Service",
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "URL for serviceArea service"
+              }
+            },
+            "required": [
+              "url"
+            ]
+          },
+          "asyncServiceArea": {
+            "type": "object",
+            "description": "ArcGIS Geoprocessing service for asynchronous service-area analysis. URL to Network Analysis Service",
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "URL for asyncServiceArea service"
+              }
+            },
+            "required": [
+              "url"
+            ]
+          },
+          "syncVRP": {
+            "type": "object",
+            "description": "ArcGIS NAServer service for solving synchronous vehicle routing problems. URL to Network Analysis Service",
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "URL for syncVRP service"
+              }
+            },
+            "required": [
+              "url"
+            ]
+          },
+          "asyncVRP": {
+            "type": "object",
+            "description": "ArcGIS Geoprocessing service for solving asynchronous vehicle routing problems. URL to Network Analysis Service",
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "URL for asyncVRP service"
+              }
+            },
+            "required": [
+              "url"
+            ]
+          },
+          "analysis": {
+            "type": "object",
+            "description": "URL to Hosted GP Service",
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "Hosted GPServices that perform analyses. URL for analysis service"
+              }
+            },
+            "required": [
+              "url"
+            ]
+          },
+          "geoenrichment": {
+            "type": "object",
+            "description": "ArcGIS GeoenrichmentServer. URL to Geoenrichment Service",
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "URL for geoenrichment service"
+              }
+            },
+            "required": [
+              "url"
+            ]
+          }
+        }
+      },
+      "homePageFeaturedContent": {
+        "type": "string",
+        "description": "The group that contains featured content to be displayed on the home page"
+      },
+      "homePageFeaturedContentCount": {
+        "type": "integer",
+        "description": "The number of featured items that can be displayed on the home page. The max is 100. Integers only"
+      },
+      "httpPort": {
+        "type": "integer",
+        "description": "The port used by the portal for HTTP communication",
+        "pattern": "80"
+      },
+      "httpsPort": {
+        "type": "integer",
+        "description": "The port used by the portal for HTTPS communication",
+        "pattern": "443"
+      },
+      "id": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Organization ID. If null, then this is the default portal for anonymous and non-organizational users"
+      },
+      "ipCntryCode": {
+        "type": "integer",
+        "description": "The country code of the calling IP (ArcGIS Online only)"
+      },
+      "isPortal": {
+        "type": "boolean",
+        "description": "Indicates if the portal is on premises"
+      },
+      "layerTemplatesGroupQuery": {
+        "type": "string",
+        "description": "The query that identifies the group containing editing templates used in the map viewer"
+      },
+      "maxTokenExpiration": {
+        "type": "integer",
+        "description": "The maximum validity in minutes of tokens issued for users of the organization. -1 is the default and is a special value that indicates infinite timeout or permanent tokens. For tokens granted using OAuth2 authorization grant, it represents the maximum validity of refresh tokens. For access tokens, the maximum validity is the lower of two weeks or this value"
+      },
+      "modified": {
+        "type": "integer",
+        "description": "Date the organization was last modified, in UTC, milliseconds since epoch"
+      },
+      "name": {
+        "type": "string",
+        "description": "The organization's name"
+      },
+      "portalHostname": {
+        "type": "string",
+        "description": "The portal host's URL",
+        "format": "uri"
+      },
+      "portalMode": {
+        "type": "string",
+        "description": "Identifies if multitenant or singletenant",
+        "enum": [
+          "multitenant",
+          "singletenant"
+        ],
+        "pattern": "multitenant|singletenant"
+      },
+      "portalName": {
+        "type": "string",
+        "description": "The portal's name"
+      },
+      "portalProperties": {
+        "type": "object",
+        "description": "Stores properties specific to the organization, for example the 'contact us' link. if the organization is public, the properties are visible to the anonymous user",
+        "properties": {
+          "links": {
+            "type": "object",
+            "description": "URL for geometry service",
+            "properties": {
+              "contactUs": {
+                "type": "object",
+                "description": "Links to 'Contact Us",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "description": "URL or mailto"
+                  },
+                  "visible": {
+                    "type": "boolean",
+                    "description": "Whether or not portalProperties are visible"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "portalThumbnail": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The URL to the thumbnail of the portal"
+      },
+      "region": {
+        "type": "string",
+        "description": "The region for the organization"
+      },
+      "rotatorPanels": {
+        "type": "string",
+        "description": "The region for the organization"
+      },
+      "showHomePageDescription": {
+        "type": "boolean",
+        "description": "If true, the description of your organization displays on the home page"
+      },
+      "supportsHostedServices": {
+        "type": "boolean",
+        "description": "Indicates if hosted services are supported"
+      },
+      "supportsOAuth": {
+        "type": "boolean",
+        "description": "Indicates if OAuth is supported"
+      },
+      "symbolSetsGroupQuery": {
+        "type": "string",
+        "description": "The query that identifies the symbol set group for rendering in the map viewer"
+      },
+      "templatesGroupQuery": {
+        "type": "string",
+        "description": "The query that identifies the template group used in the map viewer"
+      },
+      "thumbnail": {
+        "type": "string",
+        "description": "The URL to the thumbnail of the organization"
+      },
+      "units": {
+        "type": "string",
+        "description": "Sets the units of measure for the organization's users. The user default is derived from the organization's Region. Set units to english for US standards or metric",
+        "enum": [
+          "english",
+          "metric"
+        ],
+        "pattern": "english|metric"
+      },
+      "urlKey": {
+        "type": "string",
+        "description": "The prefix selected by the organization's administrator to be used with the customBaseURL"
+      },
+      "useStandardizedQuery": {
+        "type": "boolean",
+        "description": "If true, only simple where clauses that are complaint with SQL92 can be used when querying layers and tables. The recommended security setting is true"
+      },
+      "user": {
+        "$ref": "#/definitions/user"
+      }
+    },
+    "required": [
+      "access",
+      "allSSL",
+      "appInfo",
+      "backgroundImage",
+      "basemapGalleryGroupQuery",
+      "bingKey",
+      "canListApps",
+      "canListData",
+      "canListPreProvisionedItems",
+      "canProvisionDirectPurchase",
+      "canSearchPublic",
+      "canShareBingPublic",
+      "canSharePublic",
+      "canSignInArcGIS",
+      "canSignInIDP",
+      "colorSetsGroupQuery",
+      "commentsEnabled",
+      "created",
+      "culture",
+      "customBaseUrl",
+      "defaultBaseMap",
+      "defaultExtent",
+      "description",
+      "featuredGroups",
+      "featuredItemsGroupQuery",
+      "helpBase",
+      "helperServices",
+      "homePageFeaturedContent",
+      "homePageFeaturedContentCount",
+      "httpPort",
+      "httpsPort",
+      "id",
+      "ipCntryCode",
+      "isPortal",
+      "layerTemplatesGroupQuery",
+      "maxTokenExpiration",
+      "modified",
+      "name",
+      "portalHostname",
+      "portalMode",
+      "portalName",
+      "portalProperties",
+      "portalThumbnail",
+      "region",
+      "rotatorPanels",
+      "showHomePageDescription",
+      "supportsHostedServices",
+      "supportsOAuth",
+      "symbolSetsGroupQuery",
+      "templatesGroupQuery",
+      "thumbnail",
+      "units",
+      "urlKey",
+      "useStandardizedQuery",
+      "user"
+    ]
+  },
+  "portalAppInfo": {
+    "type": "object",
+    "description": "Information about the Application through which this resource was accessed. This information is based on the token used to acces this resource. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Portal_Self/02r3000001m7000000/",
+    "title": "portalAppInfo",
+    "properties": {
+      "appID": {
+        "type": "string",
+        "description": "The AppID of the registered Application. This is also the OAuth client_id"
+      },
+      "itemId": {
+        "type": "string",
+        "description": "The item ID of the registered Application"
+      },
+      "appOwner": {
+        "type": "string",
+        "description": "The owner of the Application"
+      },
+      "orgId": {
+        "type": "string",
+        "description": "The organization to which the Application owner belongs"
+      },
+      "appTitle": {
+        "type": "string",
+        "description": "The title of the Application"
+      }
+    },
+    "required": [
+      "appID",
+      "itemId",
+      "appOwner",
+      "orgId",
+      "appTitle"
+    ]
+  },
+  "portalFeaturedGroup": {
+    "type": "object",
+    "description": "The featured groups for the organization. These are the groups that will be highlighted on the Groups page. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Portal_Self/02r3000001m7000000/",
+    "title": "portalFeaturedGroup",
+    "properties": {
+      "owner": {
+        "type": "string",
+        "description": "The owner of the featured group"
+      },
+      "title": {
+        "type": "string",
+        "description": "The title of the featured group"
+      }
+    },
+    "required": [
+      "owner",
+      "title"
+    ]
+  },
+  "rating": {
+    "type": "object",
+    "description": "Returns the rating given by the current user to the item, if any. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Item_Rating/02r300000098000000/",
+    "title": "rating",
+    "properties": {
+      "rating": {
+        "type": "integer",
+        "description": "The rating given to the item by the calling user"
+      },
+      "created": {
+        "type": "integer",
+        "description": "The date and time the comment was created. Shown in UNIX time"
+      }
+    },
+    "required": [
+      "rating",
+      "created"
+    ]
+  },
+  "region": {
+    "type": "object",
+    "description": "Available region. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Regions/02r300000099000000/",
+    "title": "region",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "Region's name"
+      },
+      "region": {
+        "type": "string",
+        "description": "Region's short name"
+      },
+      "localizedName": {
+        "type": "string",
+        "description": "Region's localized name"
+      }
+    },
+    "required": [
+      "name",
+      "region",
+      "localizedName"
+    ]
+  },
+  "regions": {
+    "type": "array",
+    "description": "Lists the available regions. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Regions/02r300000099000000/",
+    "title": "regions",
+    "items": {
+      "$ref": "#/definitions/region"
+    }
+  },
+  "registeredApp": {
+    "type": "object",
+    "description": "An app registered with the portal. An app item can be registered by invoking the register app operation. Every registered app gets an App ID and App Secret which in OAuth speak are known as client_id and client_secret respectively. The app owner has access to the registered app resource. This would include the organization administrator as well. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Registered_App/02r30000026v000000/",
+    "title": "registeredApp",
+    "properties": {
+      "itemId": {
+        "type": "string",
+        "description": "The unique ID for this item"
+      },
+      "client_id": {
+        "type": "string",
+        "description": "The ID of the registered application. Also referred to as APPID"
+      },
+      "client_secret": {
+        "type": "string",
+        "description": "The secret of the registered application. Also referred to as APPSECRET"
+      },
+      "appType": {
+        "type": "string",
+        "description": "The type of app that was registered indicating whether it's a browser app, native app, server app or a multiple interface app",
+        "enum": [
+          "browser",
+          "native",
+          "server",
+          "multiple"
+        ],
+        "pattern": "browser|native|server|multiple"
+      },
+      "redirect_uris": {
+        "type": "array",
+        "description": "The URIs where the access_token or authorization code will be delivered to upon successful authorization. The redirect_uri specified during authorization must be match one of the registered URIs otherwise authorization will be rejected. A special value of urn:ietf:wg:oauth:2.0:oob can also be specified for authorization grants. This will result in the authorization code being delivered to a portal URL (/oauth2/approval). This value is typically used by applications that don't have a web server or a custom URI scheme to deliver the code to. The value is a JSON string array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "created": {
+        "type": "integer",
+        "description": "The date when the app was created (in UNIX time in milliseconds)"
+      },
+      "modified": {
+        "type": "integer",
+        "description": "The date when the app was last modified (in UNIX time in milliseconds)"
+      }
+    },
+    "required": [
+      "itemId",
+      "client_id",
+      "client_secret",
+      "appType",
+      "redirect_uris",
+      "created",
+      "modified"
+    ]
+  },
+  "relatedItems": {
+    "type": "object",
+    "description": "Gets all the related items of a certain relationship type for that item. An optional direction can be specified if the direction of the relationship is ambiguous. Otherwise, the service will try to infer it. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Related_Items/02r300000085000000/",
+    "title": "Related Items",
+    "properties": {
+      "total": {
+        "type": "integer",
+        "description": "The number of items related using the provided relationship type"
+      },
+      "relatedItems": {
+        "type": "array",
+        "description": "A JSON array of related item objects",
+        "minLength": 0,
+        "items": {
+          "$ref": "#/definitions/item"
+        }
+      }
+    },
+    "required": [
+      "relatedItems",
+      "total"
+    ]
+  },
+  "resource": {
+    "type": "object",
+    "description": "resource objects that contain the key, size, and created date of the resource. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Resources/02r30000009r000000/",
+    "title": "resource",
+    "properties": {
+      "key": {
+        "type": "string",
+        "description": "The ID of the comment"
+      },
+      "size": {
+        "type": "integer",
+        "description": "Size of the resource"
+      },
+      "created": {
+        "type": "integer",
+        "description": "The date and time the resource was created. Shown in UNIX time"
+      }
+    },
+    "required": [
+      "key",
+      "size",
+      "created"
+    ]
+  },
+  "resources": {
+    "type": "object",
+    "description": "Resources lists all file resources for the organization. The start and num paging parameters are supported. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Resources/02r30000009r000000/",
+    "title": "resources",
+    "properties": {
+      "total": {
+        "type": "integer",
+        "description": "The total number of results found"
+      },
+      "start": {
+        "type": "integer",
+        "description": "The number of the first entry in the result set response. The index number is 1-based"
+      },
+      "num": {
+        "type": "integer",
+        "description": "The number of results included in this result set response"
+      },
+      "nextStart": {
+        "type": "integer",
+        "description": "The next entry index if the current result set doesn't contain all results"
+      },
+      "resources": {
+        "type": "array",
+        "description": "A JSON array of resource objects that contain the key, size, and created date of the resource",
+        "minLength": 0,
+        "items": {
+          "$ref": "#/definitions/resource"
+        }
+      }
+    },
+    "required": [
+      "total",
+      "start",
+      "num",
+      "nextStart",
+      "resources"
+    ]
+  },
+  "root": {
+    "type": "object",
+    "description": "The Root resource only returns the version of the containing portal. It acts as a root to its child resources and operations. To obtain descriptive information about this portal including its name, logo, featured items, and supported protocols (HTTP vs HTTPS), access the Self resource under Portals. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Root/02r30000009t000000/",
+    "title": "root",
+    "properties": {
+      "currentVersion": {
+        "type": "string",
+        "description": "The release version for this portal"
+      }
+    },
+    "required": [
+      "currentVersion"
+    ]
+  },
+  "server": {
+    "type": "object",
+    "description": "This resource represents an ArcGIS Server site that has been federated with the portal. This resource is not applicable to ArcGIS Online; it is only applicable to Portal for ArcGIS. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Server/02r300000219000000/",
+    "title": "server",
+    "properties": {
+      "id": {
+        "type": "string",
+        "description": "ID of the ArcGIS Server site"
+      },
+      "name": {
+        "type": "string",
+        "description": "The fully qualified name of the machine hosting the ArcGIS Server site, followed by the port"
+      },
+      "adminUrl": {
+        "type": "string",
+        "description": "The administrative URL of the ArcGIS Server site, using the fully qualified name of the machine",
+        "format": "uri"
+      },
+      "url": {
+        "type": "string",
+        "description": "The externally visible URL of the ArcGIS Server site, using the fully qualified name of the machine",
+        "format": "uri"
+      },
+      "isHosted": {
+        "type": "boolean",
+        "description": "A Boolean property denoting whether the ArcGIS Server site is allowed to host services for the portal (true) or is not allowed to host services (false)"
+      },
+      "serverKey": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The key returned when the Register Server operation is called for this server. The key is only displayed once; hence, this property usually returns null"
+      },
+      "serverType": {
+        "type": "string",
+        "description": "The type of server being registered with the portal. For example: ArcGIS"
+      }
+    },
+    "required": [
+      "id",
+      "name",
+      "adminUrl",
+      "url",
+      "isHosted",
+      "serverKey",
+      "serverType"
+    ]
+  },
+  "servers": {
+    "type": "object",
+    "description": "This resource lists the ArcGIS Server sites that have been federated with the portal. This resource is not applicable to ArcGIS Online; it is only applicable to Portal for ArcGIS. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Servers/02r300000218000000/",
+    "title": "servers",
+    "properties": {
+      "servers": {
+        "type": "array",
+        "description": "An array of JSON objects representing ArcGIS Server sites",
+        "minLength": 0,
+        "items": {
+          "$ref": "#/definitions/server"
+        }
+      }
+    },
+    "required": [
+      "servers"
+    ]
+  },
+  "updateUser": {
+    "type": "object",
+    "description": "",
+    "title": "updateUser",
+    "properties": {
+      "success": {
+        "type": "boolean",
+        "description": "Indicates if the operation was successful"
+      },
+      "username": {
+        "type": "string",
+        "description": "The username of the modified user"
+      }
+    },
+    "required": [
+      "success",
+      "username"
+    ]
+  },
+  "user": {
+    "type": "object",
+    "description": "A user resource representing a registered user of the portal. Personal details of the user, such as e-mail and groups, are returned only to the user or the administrator of the user's organization (the properties in the Response Properties table below). A user is not visible to any other user (except the organization's administrator) if their access setting is set to private. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/User/02r3000000m2000000/",
+    "title": "user",
+    "properties": {
+      "username": {
+        "type": "string",
+        "description": "The username of the given user"
+      },
+      "fullname": {
+        "type": "string",
+        "description": "The user's full name"
+      },
+      "preferredView": {
+        "type": "string",
+        "description": "The user's preferred view for content, either web or GIS",
+        "enum": [
+          "web",
+          "GIS"
+        ],
+        "pattern": "web|GIS"
+      },
+      "description": {
+        "type": "string",
+        "description": "A description of the user"
+      },
+      "email": {
+        "type": "string",
+        "description": "The user's e-mail address"
+      },
+      "idpUsername": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The original username if using enterprise logins"
+      },
+      "favGroupId": {
+        "type": "string",
+        "description": "The user's favorites group and is created automatically for each user"
+      },
+      "lastLogin": {
+        "type": "integer",
+        "description": "The last login date of the user"
+      },
+      "access": {
+        "type": "string",
+        "description": "Indicates the level of access of the user: private, org, or public. If private, the user descriptive information will not be available to others nor will the username be searchable",
+        "enum": [
+          "private",
+          "org",
+          "public"
+        ],
+        "pattern": "private|org|public"
+      },
+      "storageusage": {
+        "type": "integer",
+        "description": "The amount of storage used for the user's subscription"
+      },
+      "storageQuota": {
+        "type": "integer",
+        "description": "Applicable to public users as it sets the total amount of storage available for a subscription. The maximum quota is 2GB"
+      },
+      "orgId": {
+        "type": "string",
+        "description": "The ID of the organization the user belongs to"
+      },
+      "role": {
+        "type": "string",
+        "description": "Defines the user's role in the organization: administrator (org_admin), publisher (org_publisher), information worker (org_user), or custom (<custom_role_name>)",
+        "enum": [
+          "org_admin",
+          "org_publisher",
+          "org_user"
+        ],
+        "pattern": "org_admin|org_publisher|org_user"
+      },
+      "disabled": {
+        "type": "boolean",
+        "description": "Disables access to the organization by the user"
+      },
+      "units": {
+        "type": "string",
+        "description": "User-defined units for measurement",
+        "enum": [
+          "english",
+          "metric"
+        ],
+        "pattern": "english|metric"
+      },
+      "tags": {
+        "type": "array",
+        "description": "User-defined tags that describe the user",
+        "items": {
+          "type": "string"
+        },
+        "uniqueItems": true
+      },
+      "culture": {
+        "type": "string",
+        "description": "The item locale information (language and country)"
+      },
+      "region": {
+        "type": "string",
+        "description": "The user preferred region, used to set the featured maps on the home page, content in the gallery, and the default extent of new maps in the Viewer"
+      },
+      "thumbnail": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The file name of the thumbnail used for the user. All user thumbnails are relative to the URL http://<community-url>/users/<userName>/info"
+      },
+      "created": {
+        "type": "integer",
+        "description": "The date the user was created. Shown in UNIX time"
+      },
+      "modified": {
+        "type": "integer",
+        "description": "The date the user was last modified. Shown in UNIX time"
+      },
+      "groups": {
+        "type": "array",
+        "description": "A JSON array of groups the user belongs to. See Group for properties of a group",
+        "minLength": 0,
+        "items": {
+          "$ref": "#/definitions/group"
+        }
+      },
+      "provider": {
+        "type": "string",
+        "description": "The identity provider for the organization. Either arcgis (for built-in users) or enterprise (for external users managed by an enterprise identity store). This was added at Portal for ArcGIS 10.3.1",
+        "enum": [
+          "arcgis",
+          "enterprise"
+        ],
+        "pattern": "arcgis|enterprise"
+      }
+    },
+    "required": [
+      "username",
+      "fullname",
+      "preferredView",
+      "description",
+      "email",
+      "idpUsername",
+      "favGroupId",
+      "lastLogin",
+      "access",
+      "storageusage",
+      "storageQuota",
+      "orgId",
+      "role",
+      "disabled",
+      "units",
+      "tags",
+      "culture",
+      "region",
+      "thumbnail",
+      "created",
+      "modified",
+      "groups",
+      "provider"
+    ]
+  },
+  "userContent": {
+    "type": "object",
+    "description": "The user's content are items either in the home folder for the user, e.g. /content/users/<username>, or in a subfolder of the home folder with the given folder ID. Multilevel folders are not supported. You can also see the Quick reference topic for additional information on this. Items in a folder are stored by reference and are not physically in a folder. Rather, they're stored as links to the original item, e.g. /content/items/<itemId>. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/User_Content/02r30000007p000000/",
+    "title": "userContent",
+    "properties": {
+      "username": {
+        "type": "string",
+        "description": "The username of the content"
+      },
+      "currentFolder": {
+        "$ref": "#/definitions/folder"
+      },
+      "items": {
+        "type": "array",
+        "description": "The list of the user's items. See Item for response properties for more details",
+        "minLength": 0,
+        "items": {
+          "$ref": "#/definitions/item"
+        }
+      }
+    },
+    "required": [
+      "username",
+      "currentFolder",
+      "items"
+    ]
+  },
+  "userInvitation": {
+    "type": "object",
+    "description": " An individual invitation to join a given group. The user can accept the invitation or decline the invitation. Invitations are currently only to join groups but may be extended in the future to allow for other targetTypes. Developers should design their applications so that targetTypes is checked and unknown targetTypes are ignored. Invitations are also currently only sent to usernames. This is determined by the type property of the invitation. In the future, other types of invitations may be introduced. Developers should design their applications to make sure they check type and ignore unknown types. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/User_Invitation/02r3000000mr000000/",
+    "title": "userInvitation",
+    "properties": {
+      "id": {
+        "type": "string",
+        "description": "The ID of the invitation"
+      },
+      "targetType": {
+        "type": "string",
+        "description": "The type of invitation. For now, this will only be set to group, but other types may be added in the future",
+        "enum": [
+          "group"
+        ],
+        "pattern": "group"
+      },
+      "targetId": {
+        "type": "string",
+        "description": "The ID of the group (if targetType is set to group) that the user is invited to join"
+      },
+      "received": {
+        "type": "integer",
+        "description": "The date received. Shown in UNIX time in milliseconds"
+      },
+      "role": {
+        "type": "string",
+        "description": "The role that the invitee will have in the group, either group_member or group_admin",
+        "enum": [
+          "group_member",
+          "group_admin"
+        ],
+        "pattern": "group_member|group_admin"
+      },
+      "expiration": {
+        "type": "integer",
+        "description": "Expiration of the invitation. Shown in UNIX time in milliseconds"
+      },
+      "type": {
+        "type": "string",
+        "description": "For now, always set to \"user.\" In the future, the type may include other types of invitations",
+        "enum": [
+          "user"
+        ],
+        "pattern": "user"
+      },
+      "created": {
+        "type": "integer",
+        "description": "The date the invitation was created. Shown in UNIX time in milliseconds"
+      },
+      "username": {
+        "type": "string",
+        "description": "The name of the user receiving the invitation if the type is set to \"user."
+      },
+      "fromUsername": {
+        "type": "object",
+        "description": "A JSON object about the user who sent the invitation. This includes their username and fullname",
+        "properties": {
+          "username": {
+            "type": "string",
+            "description": "requestor username"
+          },
+          "fullname": {
+            "type": "string",
+            "description": "The full name of the user who sent the invitation"
+          }
+        },
+        "required": [
+          "username",
+          "fullname"
+        ]
+      },
+      "group": {
+        "$ref": "#/definitions/group"
+      }
+    },
+    "required": [
+      "id",
+      "targetType",
+      "targetId",
+      "received",
+      "role",
+      "expiration",
+      "type",
+      "created",
+      "username",
+      "fromUsername",
+      "group"
+    ]
+  },
+  "userInvitations": {
+    "type": "object",
+    "description": "Shows the invitations sent to the authenticated user. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/User_Invitations/02r3000000m7000000/",
+    "title": "userInvitations",
+    "properties": {
+      "userInvitations": {
+        "type": "array",
+        "description": "A JSON array of invitation objects. For details, see the response properties for User Invitation",
+        "minLength": 0,
+        "items": {
+          "$ref": "#/definitions/userInvitation"
+        }
+      }
+    },
+    "required": [
+      "userInvitations"
+    ]
+  },
+  "users": {
+    "type": "object",
+    "description": "Lists all the members of the organization. The start and num paging parameters are supported. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Users/02r30000009q000000/",
+    "title": "users",
+    "properties": {
+      "total": {
+        "type": "integer",
+        "description": "The total number of results found"
+      },
+      "start": {
+        "type": "integer",
+        "description": "The number of the first entry in the result set response. The index number is 1-based"
+      },
+      "num": {
+        "type": "integer",
+        "description": "The number of results included in this result set response"
+      },
+      "nextStart": {
+        "type": "integer",
+        "description": "The next entry index if the current result set doesn't contain all results"
+      },
+      "users": {
+        "type": "array",
+        "description": "A JSON array of user objects. See User for possible response properties",
+        "minLength": 0,
+        "items": {
+          "$ref": "#/definitions/user"
+        }
+      }
+    },
+    "required": [
+      "total",
+      "start",
+      "num",
+      "nextStart",
+      "users"
+    ]
+  },
+  "userTag": {
+    "type": "object",
+    "description": "User tag. Object in the userTags array. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/User_Tags/02r3000000m9000000/",
+    "title": "userTag",
+    "properties": {
+      "tag": {
+        "type": "string",
+        "description": "Tag"
+      },
+      "count": {
+        "type": "integer",
+        "description": "The number of times the tag was used"
+      }
+    },
+    "required": [
+      "tag",
+      "count"
+    ]
+  },
+  "userTags": {
+    "type": "object",
+    "description": "Users tag the content they publish in their portal via the add and update item calls. This resource lists all the tags used by the user along with the number of times the tags have been used. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/User_Tags/02r3000000m9000000/",
+    "title": "userTags",
+    "properties": {
+      "tags": {
+        "type": "array",
+        "description": "Array of tag objects. Each tag object contains a tag property with the name of the tag along with a count that reports the number of times the tag was used",
+        "minLength": 0,
+        "items": {
+          "$ref": "#/definitions/userTag"
+        }
+      }
+    },
+    "required": [
+      "tags"
+    ]
+  }
+}

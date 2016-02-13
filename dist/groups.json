@@ -8,7 +8,7 @@
       "description": "Groups which user is an administrator. This is a JSON Array of group objects. See Group for possible response properties",
       "minLength": 0,
       "items": {
-        "$ref": "group"
+        "$ref": "#/definitions/group"
       }
     },
     "member": {
@@ -16,7 +16,7 @@
       "description": "Groups which user is a member",
       "minLength": 0,
       "items": {
-        "$ref": "group"
+        "$ref": "#/definitions/group"
       }
     },
     "other": {
@@ -24,7 +24,7 @@
       "description": "Other groups that are public or shared to the user's organization but that the user is not a member of",
       "minLength": 0,
       "items": {
-        "$ref": "group"
+        "$ref": "#/definitions/group"
       }
     }
   },

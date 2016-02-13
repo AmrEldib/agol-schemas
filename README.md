@@ -13,6 +13,7 @@ Schemas are avaliable in 2 formats: `swagger` and `json-schema-faker`
 - Definitions for [OpenAPI](https://openapis.org/) specifications ([swagger.io](http://swagger.io/specification/)).  
 - This is the Definitions sction of the swagger.json file.  
 - It removes faker, chance, and id properties.  
+- Stored in `/dist/swaggerDefinitions.json`.  
 
 ####json-schema-faker  
 - Definitions for [json-schema-faker](https://github.com/json-schema-faker/json-schema-faker)  

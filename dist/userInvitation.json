@@ -79,7 +79,7 @@
       ]
     },
     "group": {
-      "$ref": "group"
+      "$ref": "#/definitions/group"
     }
   },
   "required": [
