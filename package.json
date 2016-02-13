@@ -2,10 +2,9 @@
   "name": "agol-schemas",
   "version": "0.1.0",
   "description": "JSON Schemas for ArcGIS Online's requests and responses",
-  "main": "index.js",
+  "main": "build.js",
   "scripts": {
-    "build": "node build-faker-schema.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node build-faker-schema.js"
   },
   "keywords": [
     "arcgis",
@@ -13,8 +12,18 @@
     "agol",
     "swagger"
   ],
-  "author": "Amr Eldib",
-  "license": "ISC",
+  "contributors": [
+    {
+      "name": "Amr Eldib",
+      "url": "http://amreldib.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AmrEldib/agol-schemas"
+  },
+  "bugs": "https://github.com/AmrEldib/agol-schemas",
+  "license": "MIT",
   "devDependencies": {
     "read-multiple-files": "^1.1.1"
   }
