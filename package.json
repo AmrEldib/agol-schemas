@@ -24,7 +24,6 @@
   },
   "bugs": "https://github.com/AmrEldib/agol-schemas/issues",
   "license": "MIT",
-  "readme": "README.md",
   "dependencies": {
     "read-multiple-files": "^1.1.1"
   }
