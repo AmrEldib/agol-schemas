@@ -1,6 +1,6 @@
 {
   "name": "agol-schemas",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "JSON Schemas for ArcGIS Online's requests and responses",
   "main": "index.js",
   "scripts": {
