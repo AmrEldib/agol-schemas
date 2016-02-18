@@ -102,5 +102,9 @@
     
   
     
+  
+    
+  
+    <UserProperties data_4coordinate_1json__JSONSchema="http://json-schema.org/draft-04/schema" data_4userContent_1json__JSONSchema="http://json-schema.org/draft-04/schema"/>
   </Globals>
 </VisualWebDeveloper>

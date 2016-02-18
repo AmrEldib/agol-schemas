@@ -1,8 +1,8 @@
 {
   "name": "agol-schemas",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "JSON Schemas for ArcGIS Online's requests and responses",
-  "main": "build.js",
+  "main": "index.js",
   "scripts": {
     "build": "node build-faker-schema.js"
   },
@@ -24,6 +24,7 @@
   },
   "bugs": "https://github.com/AmrEldib/agol-schemas/issues",
   "license": "MIT",
+  "readme": "README.md",
   "devDependencies": {
     "read-multiple-files": "^1.1.1"
   }

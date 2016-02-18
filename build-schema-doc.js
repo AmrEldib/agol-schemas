@@ -2,6 +2,7 @@ var fs = require('fs');
 var path = require('path');
 var readMultipleFiles = require('read-multiple-files');
 var config = require('./config');
+var util = require('./util');
 
 /*
  * Takes a block of text and wraps URL into a Markdown link.
@@ -24,24 +25,6 @@ function markdownLinks(paragraph, linkText) {
 }
 
 /*
- * Gets all files from a folder
- * @param {string} dir Path to folder
- * @returns {array} List of files in the folder.
- */
-function getAllFilesFromFolder(dir) {
-  var filesystem = require("fs");
-  var results = [];
-  filesystem.readdirSync(dir).forEach(function (file) {
-    file = dir + '/' + file;
-    var stat = filesystem.statSync(file);
-    if (stat && stat.isDirectory()) {
-      results = results.concat(_getAllFilesFromFolder(file))
-    } else results.push(file);
-  });
-  return results;
-}
-
-/*
  * Extract Description from Schema and correctly markdown URLs in it.
  * @param {object} schema The schema who's name and description will be extracted.
  * @returns {string} Schema description with URLs markdowned.
@@ -59,7 +42,7 @@ function getSchemaDescription(schema) {
  */
 function collectDescriptions() {
   var schemasWithDesc = "";
-  var schemaFiles = getAllFilesFromFolder(config.schemasFolder);
+  var schemaFiles = util.getAllFilesFromFolder(config.schemasFolder);
 
   // Get path of schema file
   var schemas = schemaFiles.map(function (sf) {
