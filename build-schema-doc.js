@@ -3,8 +3,9 @@ var path = require('path');
 var readMultipleFiles = require('read-multiple-files');
 var config = require('./config');
 var util = require('./util');
+var documentation = require('documentation');
 
-/*
+/**
  * Takes a block of text and wraps URL into a Markdown link.
  * For example: this text "Search using http://google.com"
  * is turned into "Search using [http://google.com](http://google.com)"
@@ -24,7 +25,7 @@ function markdownLinks(paragraph, linkText) {
   })
 }
 
-/*
+/**
  * Extract Description from Schema and correctly markdown URLs in it.
  * @param {object} schema The schema who's name and description will be extracted.
  * @returns {string} Schema description with URLs markdowned.
@@ -37,7 +38,7 @@ function getSchemaDescription(schema) {
   }
 }
 
-/*
+/**
  * Collect descriptions of all schemas.
  */
 function collectDescriptions() {
@@ -58,10 +59,26 @@ function collectDescriptions() {
     })
 
     // Write to file
-    fs.writeFile(path.resolve(__dirname, config.outputFolder + "/" + config.docFile), schemasWithDesc);
+    fs.writeFile(path.resolve(__dirname, config.docFolder + "/" + config.schemasDocFile), schemasWithDesc);
+  });
+}
+
+/**
+ * Generate documentation for code files. It reads the JSDoc comments and generate markdown files for them. One markdown file is generated for each code file.
+ */
+function generateCodeDocs() {
+  config.codeFiles.forEach(function (jsFile) {
+    var jf = [jsFile];
+    documentation(jf, {}, function (err, result) {
+      documentation.formats.md(result, {}, function (err, md) {
+        // Write to file
+        fs.writeFile(path.resolve(__dirname, config.docFolder + "/" + jsFile + ".md"), md);
+      });
+    });
   });
 }
 
 module.exports = {
-  collectDescriptions: collectDescriptions
+  collectDescriptions: collectDescriptions,
+  generateCodeDocs: generateCodeDocs
 };

@@ -4,7 +4,7 @@ var readMultipleFiles = require('read-multiple-files');
 var config = require('./config');
 var util = require('./util');
 
-/*
+/**
  * Gets a list of all available schemas.
  */
 function listAllSchemas() {
@@ -18,7 +18,7 @@ function listAllSchemas() {
   return schemaFiles;
 }
 
-/*
+/**
  * Gets the JSON object of a specific schema.
  * @param {string} schemaName Name of the schema to get.
  * @param {function} callback Callback function. It has one parameter of a JSON object representing the schema.
@@ -30,8 +30,9 @@ function getSchema(schemaName, callback) {
     });
 }
 
-/*
+/**
  * Gets an object whose properties are all the schema names and values are JSON objects representing those schemas.
+ * @param {function} callback Callback function to be invoked after all schemas are collected. This function has one parameter of the schemas JSON object.
  */
 function getSchemas(callback) {
   var schemaFiles = util.getAllFilesFromFolder(config.outputFolder)

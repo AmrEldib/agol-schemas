@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-/*
+/**
  * Gets all files from a folder
  * @param {string} dir Path to folder
  * @param {boolean} [recursive=false] List files in child directories as well

@@ -3,7 +3,7 @@ var path = require('path');
 var readMultipleFiles = require('read-multiple-files');
 var config = require('./config');
 
-/*
+/**
  * Check if a schema has any dependencies.
  * @param {string} schemaName The name of the schema to check whether it has references or not.
  * @returns {boolean} True if the schema has references, False if not.
@@ -12,7 +12,7 @@ function hasRefs(schemaName) {
   return (config.schemas[schemaName]);
 }
 
-/*
+/**
  * Resolve dependencies of a certain schema.
  * @param {string} schemaName The name of the schema to get its references.
  * @returns {array} List of strings naming the schemas referenced in the input schema.
@@ -34,7 +34,7 @@ function getSchemaRefs(schemaName) {
   return schemaRefs;
 }
 
-/*
+/**
  * Gets a list of all available schemas.
  * @returns {array} List of strings naming the available schemas.
  */
@@ -46,7 +46,7 @@ function getSchemaList() {
   return keys;
 }
 
-/*
+/**
  * Cleans up a schema object by removing IDs and modifying $ref properties
  * @param {object} schema The schema to be cleaned up. This object is modified in place. Nothing is returned.
  */
@@ -64,7 +64,7 @@ function cleanUpSchema(schema) {
   }
 }
 
-/*
+/**
  * Accept a schema name and returns an object of that schema with the 'definitions' object filled out correctly.
  * @param {string} schemaName Name of the schema to modify
  * @param {function} callback A callback function with one parameter of object type representing the schema with definitions.
@@ -117,7 +117,7 @@ function getSchemaWithDefinitions(schemaName, callback) {
   })
 }
 
-/*
+/**
  * Writes output schema to file
  * @param {string} schemaName Name of the schema to be written.
  * @param {object} schema Schema object to be written to file.
@@ -133,7 +133,7 @@ function writeSchemaToFile(schemaName, schema, outputFile) {
   fs.writeFile(path.resolve(__dirname, outputFile), JSON.stringify(schema, null, 2));
 }
 
-/*
+/**
  * Writes output schemas for all available schemas for faker settings
  */
 function writeFakerSchemas() {

@@ -6,7 +6,11 @@ var config = {
   "outputFolder": "dist",
   // Name of the output documentation file
   // This file will be saved in the output folder
-  "docFile": "schemas.md",
+  "schemasDocFile": "schemas.md",
+  // Folder where documentation is generated
+  "docFolder": "docs",
+  // List of code files to generate documentation for
+  "codeFiles": ['build-faker-schema.js', 'build-schema-doc.js', 'build-swagger-schema.js', 'build.js'],
   // Name of output file used to swagger definitions
   "swaggerFile": "swaggerDefinitions",
   // Schemas and objects that they reference
