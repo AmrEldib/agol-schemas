@@ -21,4 +21,4 @@ Schemas are avaliable in 2 formats: `swagger` and `json-schema-faker`
 - This includes [faker.js](https://github.com/Marak/faker.js), and [chance.js](https://github.com/victorquinn/chancejs) info.  
 
 A list of all schemas and their descriptions is in the [schemas doc file](/doc/schemas.md).  
-For documentation of code files, read the doc for each file in the [doc folder](/doc/).  
+For documentation of code files, read the doc for each file in the [doc folder](/docs/).  
