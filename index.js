@@ -10,10 +10,16 @@ var util = require('./util');
 function listAllSchemas() {
   var schemaFiles = util.getAllFilesFromFolder(config.outputFolder)
     .filter(function (f) {
+      // Remove all files that aren't JSON files.
       return f.slice(-4) === "json";
     })
     .map(function (s) {
+      // Remove ".json" from file names
       return s.substring(0, s.length - 5).substring(config.outputFolder.length + 1);
+    })
+    .map(function (s) {
+      // Get only the name of the schema
+      return s.substring(s.lastIndexOf("/") + 1);
     });
   return schemaFiles;
 }

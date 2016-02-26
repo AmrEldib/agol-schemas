@@ -1,4 +1,5 @@
 var fs = require('fs');
+var path = require('path');
 
 /**
  * Gets all files from a folder
@@ -9,6 +10,7 @@ var fs = require('fs');
 function getAllFilesFromFolder(dir, recursive) {
   recursive = recursive || false;
   var results = [];
+  dir = path.resolve(__dirname, dir);
   fs.readdirSync(dir).forEach(function (file) {
     file = dir + '/' + file;
     var stat = fs.statSync(file);

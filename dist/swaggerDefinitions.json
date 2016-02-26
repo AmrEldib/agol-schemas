@@ -29,7 +29,6 @@
     ]
   },
   "comments": {
-    "$schema": "http://json-schema.org/draft-04/schema",
     "type": "object",
     "description": "Lists all comments for an item. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Item_Comments/02r300000088000000/",
     "title": "comments",

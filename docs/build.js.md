@@ -1,13 +1,5 @@
 # cleanUpSchema
 
-Cleans up a schema object by removing IDs and modifying $ref properties
-
-**Parameters**
-
--   `schema` **object** The schema to be cleaned up. This object is modified in place. Nothing is returned.
-
-# cleanUpSchema
-
 Cleans up a schema object by removing extra properties and modifying $ref properties
 Properties that are removed are: id, faker, chance
 The input object is modified in place. Nothing is returned.
@@ -15,6 +7,14 @@ The input object is modified in place. Nothing is returned.
 **Parameters**
 
 -   `schema` **object** The schema to be cleaned up.
+
+# cleanUpSchema
+
+Cleans up a schema object by removing IDs and modifying $ref properties
+
+**Parameters**
+
+-   `schema` **object** The schema to be cleaned up. This object is modified in place. Nothing is returned.
 
 # collectDescriptions
 
