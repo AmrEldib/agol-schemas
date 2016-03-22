@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "description": "The Disable operation (POST only) disables login access for the user. It is only available to the administrator of the organization. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Disable/02r30000026m000000/",
+  "title": "disableUser",
+  "properties": {
+    "success": {
+      "type": "boolean",
+      "description": "Indicates if the operation was successful",
+      "chance": {
+        "bool": {
+          "likelihood": 95
+        }
+      }
+    },
+    "user": {
+      "type": "string",
+      "description": "The username of the user to disable",
+      "faker": "internet.userName"
+    }
+  },
+  "required": [
+    "success",
+    "user"
+  ],
+  "definitions": {}
+}
