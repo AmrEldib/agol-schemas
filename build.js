@@ -6,3 +6,5 @@ buildFakerSchema.writeFakerSchemas();
 buildSwaggerSchema.writeSwaggerDefinitions();
 buildDocs.collectDescriptions();
 buildDocs.generateCodeDocs();
+
+console.log('Build complete');
