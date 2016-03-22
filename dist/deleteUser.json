@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "description": "The Delete User operation (POST only) is available only to the user in question or to the administrator of the user's organization. If deleting a user who is part of an organization, their content and groups must be transferred to another member or deleted prior to deleting the user. If the user is not part of an organization, all content and groups of the user must first be deleted. Deleting a user whose identity provider is the Esri Global Account will not delete the user from the Esri Global Account system. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_User/02r3000000mw000000/",
+  "title": "deleteUser",
+  "properties": {
+    "success": {
+      "type": "boolean",
+      "description": "Indicates if the operation was successful",
+      "chance": {
+        "bool": {
+          "likelihood": 95
+        }
+      }
+    },
+    "username": {
+      "type": "string",
+      "description": "The username of the deleted user",
+      "faker": "internet.userName"
+    }
+  },
+  "required": [
+    "success",
+    "username"
+  ],
+  "definitions": {}
+}
