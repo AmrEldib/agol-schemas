@@ -88,7 +88,8 @@ var config = {
       "language"
     ],
     "updateUser": [],
-    "deleteUser": []
+    "deleteUser": [],
+    "disableUser": []
   }
 }
 

@@ -2,6 +2,7 @@
 * **comments**: Lists all comments for an item. [source](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Item_Comments/02r300000088000000/)  
 * **coordinate**: Coordinate  
 * **deleteUser**: The Delete User operation (POST only) is available only to the user in question or to the administrator of the user's organization. If deleting a user who is part of an organization, their content and groups must be transferred to another member or deleted prior to deleting the user. If the user is not part of an organization, all content and groups of the user must first be deleted. Deleting a user whose identity provider is the Esri Global Account will not delete the user from the Esri Global Account system. [source](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_User/02r3000000mw000000/)  
+* **disableUser**: The Disable operation (POST only) disables login access for the user. It is only available to the administrator of the organization. [source](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Disable/02r30000026m000000/)  
 * **extent**: The bounding rectangle of the item. Should always be in WGS84  
 * **folder**: The current folder listing the user's items  
 * **group**: The Group resource represents a group within the portal. [source](http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Group/02r30000006m000000/)  
