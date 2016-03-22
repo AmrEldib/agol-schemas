@@ -86,7 +86,8 @@ var config = {
     ],
     "languages": [
       "language"
-    ]
+    ],
+    "updateUser": []
   }
 }
 

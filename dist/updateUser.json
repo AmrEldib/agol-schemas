@@ -1,11 +1,9 @@
 {
-  "id": "updateUser",
   "type": "object",
   "description": "The Update User operation (POST only) modifies properties such as description, preferred view, tags, access, and thumbnail. The user name cannot be modified. For the 'ecas' identity provider, password, e-mail, and full name must be modified by editing your Esri Global Account. For the 'arcgis' identity provider, password, full name, security question, and security answer can be updated with Update User. Update User is available only to the user or to the administrator of the user's organization. Only the properties that are to be updated need to be specified in the request. Properties not specified will not be affected. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_User/02r3000000m0000000/",
   "title": "updateUser",
   "properties": {
     "success": {
-      "id": "updateUserSuccess",
       "type": "boolean",
       "description": "Indicates if the operation was successful",
       "chance": {
@@ -15,7 +13,6 @@
       }
     },
     "username": {
-      "id": "updateUserUsername",
       "type": "string",
       "description": "The username of the modified user",
       "faker": "internet.userName"
@@ -24,5 +21,6 @@
   "required": [
     "success",
     "username"
-  ]
+  ],
+  "definitions": {}
 }
