@@ -34,7 +34,7 @@
         "created": {
           "type": "integer",
           "description": "The date and time the comment was created. Shown in UNIX time",
-          "chance": "timestamp"
+          "chance": "hammertime"
         },
         "comment": {
           "type": "string",

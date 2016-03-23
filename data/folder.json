@@ -31,7 +31,7 @@
       "id": "created",
       "type": "integer",
       "description": "The date the folder was created. Shown in UNIX time.",
-      "chance": "timestamp"
+      "chance": "hammertime"
     }
   },
   "required": [ "created", "id", "title", "username" ]

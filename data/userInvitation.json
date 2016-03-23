@@ -27,7 +27,7 @@
       "id": "received",
       "type": "integer",
       "description": "The date received. Shown in UNIX time in milliseconds",
-      "chance": "timestamp"
+      "chance": "hammertime"
     },
     "role": {
       "id": "role",
@@ -40,7 +40,7 @@
       "id": "expiration",
       "type": "integer",
       "description": "Expiration of the invitation. Shown in UNIX time in milliseconds",
-      "chance": "timestamp"
+      "chance": "hammertime"
     },
     "type": {
       "id": "type",
@@ -53,7 +53,7 @@
       "id": "created",
       "type": "integer",
       "description": "The date the invitation was created. Shown in UNIX time in milliseconds",
-      "chance": "timestamp"
+      "chance": "hammertime"
     },
     "username": {
       "id": "username",

@@ -308,12 +308,12 @@
         "created": {
           "type": "integer",
           "description": "The date the group was created. Shown in UNIX time in milliseconds",
-          "chance": "timestamp"
+          "chance": "hammertime"
         },
         "modified": {
           "type": "integer",
           "description": "The date the group was last modified. Shown in UNIX time in milliseconds",
-          "chance": "timestamp"
+          "chance": "hammertime"
         },
         "access": {
           "type": "string",

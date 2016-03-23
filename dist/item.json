@@ -16,12 +16,12 @@
     "created": {
       "type": "integer",
       "description": "The date the folder was created. Shown in UNIX time",
-      "chance": "timestamp"
+      "chance": "hammertime"
     },
     "modified": {
       "type": "integer",
       "description": "The date the folder was last modified. Shown in UNIX time",
-      "chance": "timestamp"
+      "chance": "hammertime"
     },
     "guid": {
       "type": [
@@ -426,7 +426,7 @@
         "created": {
           "type": "integer",
           "description": "The date the folder was created. Shown in UNIX time.",
-          "chance": "timestamp"
+          "chance": "hammertime"
         }
       },
       "required": [

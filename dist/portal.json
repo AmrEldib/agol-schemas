@@ -148,7 +148,7 @@
     "created": {
       "type": "integer",
       "description": "Date the organization was created, in UTC, using milliseconds since epoch",
-      "chance": "timestamp"
+      "chance": "hammertime"
     },
     "culture": {
       "type": "string",
@@ -555,7 +555,7 @@
     "modified": {
       "type": "integer",
       "description": "Date the organization was last modified, in UTC, milliseconds since epoch",
-      "chance": "timestamp"
+      "chance": "hammertime"
     },
     "name": {
       "type": "string",
@@ -1171,12 +1171,12 @@
         "created": {
           "type": "integer",
           "description": "The date the group was created. Shown in UNIX time in milliseconds",
-          "chance": "timestamp"
+          "chance": "hammertime"
         },
         "modified": {
           "type": "integer",
           "description": "The date the group was last modified. Shown in UNIX time in milliseconds",
-          "chance": "timestamp"
+          "chance": "hammertime"
         },
         "access": {
           "type": "string",
