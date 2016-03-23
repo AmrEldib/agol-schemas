@@ -84,7 +84,7 @@
         "username": {
           "type": "string",
           "description": "The username of the given user",
-          "chance": "first"
+          "faker": "internet.userName"
         },
         "fullname": {
           "type": "string",
@@ -95,10 +95,9 @@
           "type": "string",
           "description": "The user's preferred view for content, either web or GIS",
           "enum": [
-            "web",
+            "Web",
             "GIS"
-          ],
-          "pattern": "web|GIS"
+          ]
         },
         "description": {
           "type": "string",
@@ -116,7 +115,7 @@
             "null"
           ],
           "description": "The original username if using enterprise logins",
-          "chance": "first"
+          "faker": "internet.userName"
         },
         "favGroupId": {
           "type": "string",
@@ -126,7 +125,7 @@
         "lastLogin": {
           "type": "integer",
           "description": "The last login date of the user",
-          "chance": "timestamp"
+          "chance": "hammertime"
         },
         "access": {
           "type": "string",
@@ -135,8 +134,7 @@
             "private",
             "org",
             "public"
-          ],
-          "pattern": "private|org|public"
+          ]
         },
         "storageusage": {
           "type": "integer",
@@ -161,7 +159,11 @@
         "orgId": {
           "type": "string",
           "description": "The ID of the organization the user belongs to",
-          "chance": "hash"
+          "chance": {
+            "hash": {
+              "length": 16
+            }
+          }
         },
         "role": {
           "type": "string",
@@ -170,8 +172,7 @@
             "org_admin",
             "org_publisher",
             "org_user"
-          ],
-          "pattern": "org_admin|org_publisher|org_user"
+          ]
         },
         "disabled": {
           "type": "boolean",
@@ -188,8 +189,7 @@
           "enum": [
             "english",
             "metric"
-          ],
-          "pattern": "english|metric"
+          ]
         },
         "tags": {
           "type": "array",
@@ -203,16 +203,12 @@
         "culture": {
           "type": "string",
           "description": "The item locale information (language and country)",
-          "chance": {
-            "word": {
-              "length": 2
-            }
-          }
+          "faker": "random.locale"
         },
         "region": {
           "type": "string",
           "description": "The user preferred region, used to set the featured maps on the home page, content in the gallery, and the default extent of new maps in the Viewer",
-          "chance": "word"
+          "faker": "address.countryCode"
         },
         "thumbnail": {
           "type": [
@@ -225,12 +221,12 @@
         "created": {
           "type": "integer",
           "description": "The date the user was created. Shown in UNIX time",
-          "chance": "timestamp"
+          "chance": "hammertime"
         },
         "modified": {
           "type": "integer",
           "description": "The date the user was last modified. Shown in UNIX time",
-          "chance": "timestamp"
+          "chance": "hammertime"
         },
         "groups": {
           "type": "array",
@@ -245,9 +241,10 @@
           "description": "The identity provider for the organization. Either arcgis (for built-in users) or enterprise (for external users managed by an enterprise identity store). This was added at Portal for ArcGIS 10.3.1",
           "enum": [
             "arcgis",
-            "enterprise"
-          ],
-          "pattern": "arcgis|enterprise"
+            "enterprise",
+            "facebook",
+            "google"
+          ]
         }
       },
       "required": [

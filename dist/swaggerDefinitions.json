@@ -1842,10 +1842,9 @@
         "type": "string",
         "description": "The user's preferred view for content, either web or GIS",
         "enum": [
-          "web",
+          "Web",
           "GIS"
-        ],
-        "pattern": "web|GIS"
+        ]
       },
       "description": {
         "type": "string",
@@ -1877,8 +1876,7 @@
           "private",
           "org",
           "public"
-        ],
-        "pattern": "private|org|public"
+        ]
       },
       "storageusage": {
         "type": "integer",
@@ -1899,8 +1897,7 @@
           "org_admin",
           "org_publisher",
           "org_user"
-        ],
-        "pattern": "org_admin|org_publisher|org_user"
+        ]
       },
       "disabled": {
         "type": "boolean",
@@ -1912,8 +1909,7 @@
         "enum": [
           "english",
           "metric"
-        ],
-        "pattern": "english|metric"
+        ]
       },
       "tags": {
         "type": "array",
@@ -1959,9 +1955,10 @@
         "description": "The identity provider for the organization. Either arcgis (for built-in users) or enterprise (for external users managed by an enterprise identity store). This was added at Portal for ArcGIS 10.3.1",
         "enum": [
           "arcgis",
-          "enterprise"
-        ],
-        "pattern": "arcgis|enterprise"
+          "enterprise",
+          "facebook",
+          "google"
+        ]
       }
     },
     "required": [
