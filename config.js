@@ -90,7 +90,10 @@ var config = {
     "updateUser": [],
     "deleteUser": [],
     "disableUser": [],
-    "enableUser": []
+    "enableUser": [],
+    "userSearch": [
+      "user"
+    ]
   }
 }
 
