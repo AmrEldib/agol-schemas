@@ -93,7 +93,8 @@ var config = {
     "enableUser": [],
     "userSearch": [
       "user"
-    ]
+    ],
+    "deleteNotification": []
   }
 }
 
