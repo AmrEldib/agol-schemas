@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "description": "The Delete Notification operation (POST only) is available only to the user who receives the notification. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Notification/02r3000000mv000000/",
+  "title": "deleteNotification",
+  "properties": {
+    "success": {
+      "type": "boolean",
+      "description": "Indicates if the operation was successful",
+      "chance": {
+        "bool": {
+          "likelihood": 95
+        }
+      }
+    },
+    "notificationId": {
+      "type": "string",
+      "description": "The ID of the deleted notification",
+      "chance": "hash"
+    }
+  },
+  "required": [
+    "success",
+    "notificationId"
+  ],
+  "definitions": {}
+}

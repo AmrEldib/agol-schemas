@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "description": "The Enable operation (POST only) enables login access for the user. It is only available to the administrator of the organization. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Enable/02r30000026p000000/",
+  "title": "enableUser",
+  "properties": {
+    "success": {
+      "type": "boolean",
+      "description": "Indicates if the operation was successful",
+      "chance": {
+        "bool": {
+          "likelihood": 95
+        }
+      }
+    },
+    "user": {
+      "type": "string",
+      "description": "The username of the user to enable",
+      "faker": "internet.userName"
+    }
+  },
+  "required": [
+    "success",
+    "user"
+  ],
+  "definitions": {}
+}

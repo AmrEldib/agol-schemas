@@ -89,7 +89,12 @@ var config = {
     ],
     "updateUser": [],
     "deleteUser": [],
-    "disableUser": []
+    "disableUser": [],
+    "enableUser": [],
+    "userSearch": [
+      "user"
+    ],
+    "deleteNotification": []
   }
 }
 
