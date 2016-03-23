@@ -40,12 +40,12 @@
     "created": {
       "type": "integer",
       "description": "The date when the app was created (in UNIX time in milliseconds)",
-      "chance": "timestamp"
+      "chance": "hammertime"
     },
     "modified": {
       "type": "integer",
       "description": "The date when the app was last modified (in UNIX time in milliseconds)",
-      "chance": "timestamp"
+      "chance": "hammertime"
     }
   },
   "required": [

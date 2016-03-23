@@ -34,7 +34,7 @@
         "received": {
           "type": "integer",
           "description": "The date the application was received in UNIX time in milliseconds",
-          "chance": "timestamp"
+          "chance": "hammertime"
         }
       },
       "required": [

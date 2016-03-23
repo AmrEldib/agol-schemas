@@ -37,7 +37,7 @@
     "received": {
       "type": "integer",
       "description": "Date the notification was received, in UNIX time in milliseconds",
-      "chance": "timestamp"
+      "chance": "hammertime"
     },
     "data": {
       "type": "object",

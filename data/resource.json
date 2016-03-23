@@ -25,7 +25,7 @@
       "id": "created",
       "type": "integer",
       "description": "The date and time the resource was created. Shown in UNIX time",
-      "chance": "timestamp"
+      "chance": "hammertime"
     }
   },
   "required": [

@@ -160,7 +160,7 @@
       "id": "created",
       "type": "integer",
       "description": "Date the organization was created, in UTC, using milliseconds since epoch",
-      "chance": "timestamp"
+      "chance": "hammertime"
     },
     "culture": {
       "id": "culture",
@@ -599,7 +599,7 @@
       "id": "modified",
       "type": "integer",
       "description": "Date the organization was last modified, in UTC, milliseconds since epoch",
-      "chance": "timestamp"
+      "chance": "hammertime"
     },
     "name": {
       "id": "name",
