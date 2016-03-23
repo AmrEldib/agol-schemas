@@ -2199,8 +2199,81 @@
         "minItems": 0,
         "maxItems": 100,
         "items": {
-          "$ref": "#/definitions/user"
+          "created": {
+            "type": "integer",
+            "description": "The date the user was created. Shown in UNIX time"
+          },
+          "culture": {
+            "type": "string",
+            "description": "The item locale information (language and country)"
+          },
+          "description": {
+            "type": "string",
+            "description": "A description of the user"
+          },
+          "fullname": {
+            "type": "string",
+            "description": "The user's full name"
+          },
+          "modified": {
+            "type": "integer",
+            "description": "The date the user was last modified. Shown in UNIX time"
+          },
+          "provider": {
+            "type": "string",
+            "description": "The identity provider for the organization. Either arcgis (for built-in users) or enterprise (for external users managed by an enterprise identity store). This was added at Portal for ArcGIS 10.3.1",
+            "enum": [
+              "arcgis",
+              "enterprise",
+              "facebook",
+              "google"
+            ]
+          },
+          "region": {
+            "type": "string",
+            "description": "The user preferred region, used to set the featured maps on the home page, content in the gallery, and the default extent of new maps in the Viewer"
+          },
+          "tags": {
+            "type": "array",
+            "description": "User-defined tags that describe the user",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "thumbnail": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The file name of the thumbnail used for the user. All user thumbnails are relative to the URL http://<community-url>/users/<userName>/info"
+          },
+          "units": {
+            "type": "string",
+            "description": "User-defined units for measurement",
+            "enum": [
+              "english",
+              "metric"
+            ]
+          },
+          "username": {
+            "type": "string",
+            "description": "The username of the given user"
+          }
         },
+        "required": [
+          "created",
+          "culture",
+          "description",
+          "fullName",
+          "modified",
+          "provider",
+          "region",
+          "tags",
+          "thumbnail",
+          "units",
+          "username"
+        ],
         "uniqueItems": true
       }
     },
