@@ -10,7 +10,7 @@ var config = {
   // Folder where documentation is generated
   "docFolder": "docs",
   // List of code files to generate documentation for
-  "codeFiles": ['build-faker-schema.js', 'build-schema-doc.js', 'build-swagger-schema.js', 'build.js'],
+  "codeFiles": ['build-faker-schema.js', 'build-schema-doc.js', 'build-swagger-schema.js', 'build.js', 'util.js'],
   // Name of output file used to swagger definitions
   "swaggerFile": "swaggerDefinitions",
   // Schemas and objects that they reference
