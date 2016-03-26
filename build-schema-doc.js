@@ -69,7 +69,7 @@ function collectDescriptions() {
 function generateCodeDocs() {
   config.codeFiles.forEach(function (jsFile) {
     var jf = [jsFile];
-    documentation(jf, {}, function (err, result) {
+    documentation(jf, { shallow: true }, function (err, result) {
       documentation.formats.md(result, {}, function (err, md) {
         // Write to file
         fs.writeFile(path.resolve(__dirname, config.docFolder + "/" + jsFile + ".md"), md);

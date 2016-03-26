@@ -6,17 +6,6 @@ Collect descriptions of all schemas.
 
 Generate documentation for code files. It reads the JSDoc comments and generate markdown files for them. One markdown file is generated for each code file.
 
-# getAllFilesFromFolder
-
-Gets all files from a folder
-
-**Parameters**
-
--   `dir` **string** Path to folder
--   `recursive` **[boolean]** List files in child directories as well (optional, default `false`)
-
-Returns **array** List of files in the folder.
-
 # getSchemaDescription
 
 Extract Description from Schema and correctly markdown URLs in it.
