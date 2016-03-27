@@ -13,6 +13,8 @@ var config = {
   "codeFiles": ['build-faker-schema.js', 'build-schema-doc.js', 'build-swagger-schema.js', 'build.js', 'util.js'],
   // Name of output file used to swagger definitions
   "swaggerFile": "swaggerDefinitions",
+  // List of how much of the REST API schema is done
+  "coverageFile": "coverage.md",
   // Schemas and objects that they reference
   // Top level items are schemas that can be generated
   // If a schema is not listed in the top level, it can't be generated
