@@ -19,7 +19,7 @@ function getCoverage(prev, coverageItem) {
     return prev + coverageDescriptions;
   }
   else if (!coverageItem.hasOwnProperty("children") && coverageItem.title != "") {
-    return prev + "- " + (checkIfSchemaExist(coverageItem.schema) ? "![DONE](greencheckmark.png) " : "![NOT YET](redx.png) ") + "[" + coverageItem.title + "](" + coverageItem.url + ")" + "  \n";
+    return prev + +(checkIfSchemaExist(coverageItem.schema) ? "✔ " : "✘ ") + "[" + coverageItem.title + "](" + coverageItem.url + ")" + "  \n";
   }
   else {
     return prev;
