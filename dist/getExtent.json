@@ -16,7 +16,7 @@
     ]
   },
   "definitions": {
-    "coordinate": {
+    "getCoordinate": {
       "$schema": "http://json-schema.org/draft-04/schema",
       "type": "array",
       "description": "Coordinate",

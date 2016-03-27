@@ -1,120 +1,102 @@
 {
   "type": "object",
-  "description": "Shows the invitations sent to the authenticated user. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/User_Invitations/02r3000000m7000000/",
-  "title": "userInvitations",
+  "description": " An individual invitation to join a given group. The user can accept the invitation or decline the invitation. Invitations are currently only to join groups but may be extended in the future to allow for other targetTypes. Developers should design their applications so that targetTypes is checked and unknown targetTypes are ignored. Invitations are also currently only sent to usernames. This is determined by the type property of the invitation. In the future, other types of invitations may be introduced. Developers should design their applications to make sure they check type and ignore unknown types. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/User_Invitation/02r3000000mr000000/",
+  "title": "userInvitation",
   "properties": {
-    "userInvitations": {
-      "type": "array",
-      "description": "A JSON array of invitation objects. For details, see the response properties for User Invitation",
-      "minLength": 0,
-      "items": {
-        "$ref": "#/definitions/userInvitation"
-      }
-    }
-  },
-  "required": [
-    "userInvitations"
-  ],
-  "definitions": {
-    "userInvitation": {
+    "id": {
+      "type": "string",
+      "description": "The ID of the invitation",
+      "chance": "hash"
+    },
+    "targetType": {
+      "type": "string",
+      "description": "The type of invitation. For now, this will only be set to group, but other types may be added in the future",
+      "enum": [
+        "group"
+      ],
+      "pattern": "group"
+    },
+    "targetId": {
+      "type": "string",
+      "description": "The ID of the group (if targetType is set to group) that the user is invited to join",
+      "chance": "hash"
+    },
+    "received": {
+      "type": "integer",
+      "description": "The date received. Shown in UNIX time in milliseconds",
+      "chance": "hammertime"
+    },
+    "role": {
+      "type": "string",
+      "description": "The role that the invitee will have in the group, either group_member or group_admin",
+      "enum": [
+        "group_member",
+        "group_admin"
+      ],
+      "pattern": "group_member|group_admin"
+    },
+    "expiration": {
+      "type": "integer",
+      "description": "Expiration of the invitation. Shown in UNIX time in milliseconds",
+      "chance": "hammertime"
+    },
+    "type": {
+      "type": "string",
+      "description": "For now, always set to \"user.\" In the future, the type may include other types of invitations",
+      "enum": [
+        "user"
+      ],
+      "pattern": "user"
+    },
+    "created": {
+      "type": "integer",
+      "description": "The date the invitation was created. Shown in UNIX time in milliseconds",
+      "chance": "hammertime"
+    },
+    "username": {
+      "type": "string",
+      "description": "The name of the user receiving the invitation if the type is set to \"user.",
+      "chance": "first"
+    },
+    "fromUsername": {
       "type": "object",
-      "description": " An individual invitation to join a given group. The user can accept the invitation or decline the invitation. Invitations are currently only to join groups but may be extended in the future to allow for other targetTypes. Developers should design their applications so that targetTypes is checked and unknown targetTypes are ignored. Invitations are also currently only sent to usernames. This is determined by the type property of the invitation. In the future, other types of invitations may be introduced. Developers should design their applications to make sure they check type and ignore unknown types. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/User_Invitation/02r3000000mr000000/",
-      "title": "userInvitation",
+      "description": "A JSON object about the user who sent the invitation. This includes their username and fullname",
       "properties": {
-        "id": {
-          "type": "string",
-          "description": "The ID of the invitation",
-          "chance": "hash"
-        },
-        "targetType": {
-          "type": "string",
-          "description": "The type of invitation. For now, this will only be set to group, but other types may be added in the future",
-          "enum": [
-            "group"
-          ],
-          "pattern": "group"
-        },
-        "targetId": {
-          "type": "string",
-          "description": "The ID of the group (if targetType is set to group) that the user is invited to join",
-          "chance": "hash"
-        },
-        "received": {
-          "type": "integer",
-          "description": "The date received. Shown in UNIX time in milliseconds",
-          "chance": "hammertime"
-        },
-        "role": {
-          "type": "string",
-          "description": "The role that the invitee will have in the group, either group_member or group_admin",
-          "enum": [
-            "group_member",
-            "group_admin"
-          ],
-          "pattern": "group_member|group_admin"
-        },
-        "expiration": {
-          "type": "integer",
-          "description": "Expiration of the invitation. Shown in UNIX time in milliseconds",
-          "chance": "hammertime"
-        },
-        "type": {
-          "type": "string",
-          "description": "For now, always set to \"user.\" In the future, the type may include other types of invitations",
-          "enum": [
-            "user"
-          ],
-          "pattern": "user"
-        },
-        "created": {
-          "type": "integer",
-          "description": "The date the invitation was created. Shown in UNIX time in milliseconds",
-          "chance": "hammertime"
-        },
         "username": {
           "type": "string",
-          "description": "The name of the user receiving the invitation if the type is set to \"user.",
+          "description": "requestor username",
           "chance": "first"
         },
-        "fromUsername": {
-          "type": "object",
-          "description": "A JSON object about the user who sent the invitation. This includes their username and fullname",
-          "properties": {
-            "username": {
-              "type": "string",
-              "description": "requestor username",
-              "chance": "first"
-            },
-            "fullname": {
-              "type": "string",
-              "description": "The full name of the user who sent the invitation",
-              "chance": "name"
-            }
-          },
-          "required": [
-            "username",
-            "fullname"
-          ]
-        },
-        "group": {
-          "$ref": "#/definitions/group"
+        "fullname": {
+          "type": "string",
+          "description": "The full name of the user who sent the invitation",
+          "chance": "name"
         }
       },
       "required": [
-        "id",
-        "targetType",
-        "targetId",
-        "received",
-        "role",
-        "expiration",
-        "type",
-        "created",
         "username",
-        "fromUsername",
-        "group"
+        "fullname"
       ]
     },
     "group": {
+      "$ref": "#/definitions/group"
+    }
+  },
+  "required": [
+    "id",
+    "targetType",
+    "targetId",
+    "received",
+    "role",
+    "expiration",
+    "type",
+    "created",
+    "username",
+    "fromUsername",
+    "group"
+  ],
+  "definitions": {
+    "getGroup": {
       "type": "object",
       "description": "The Group resource represents a group within the portal. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Group/02r30000006m000000/",
       "title": "group",

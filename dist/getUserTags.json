@@ -16,7 +16,7 @@
     "tags"
   ],
   "definitions": {
-    "userTag": {
+    "getUserTag": {
       "type": "object",
       "description": "User tag. Object in the userTags array. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/User_Tags/02r3000000m9000000/",
       "title": "userTag",

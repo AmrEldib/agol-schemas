@@ -16,7 +16,7 @@
     "servers"
   ],
   "definitions": {
-    "server": {
+    "getServer": {
       "type": "object",
       "description": "This resource represents an ArcGIS Server site that has been federated with the portal. This resource is not applicable to ArcGIS Online; it is only applicable to Portal for ArcGIS. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Server/02r300000219000000/",
       "title": "server",

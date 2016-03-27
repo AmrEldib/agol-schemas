@@ -6,7 +6,7 @@
     "$ref": "#/definitions/language"
   },
   "definitions": {
-    "language": {
+    "getLanguage": {
       "type": "object",
       "description": "Available language. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Languages/02r300000095000000/",
       "title": "language",

@@ -16,7 +16,7 @@
     "applications"
   ],
   "definitions": {
-    "groupApplication": {
+    "getGroupApplication": {
       "type": "object",
       "description": "When an individual user applies to join a group, a group application is created. The group administrators can accept or decline the application. Available only to the group administrators and the administrator of the organization if the group belongs to an organization. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Group_Application/02r30000006r000000/",
       "title": "groupApplication",

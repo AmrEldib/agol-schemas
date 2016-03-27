@@ -1,69 +1,4 @@
 {
-  "comment": {
-    "type": "object",
-    "description": "Gets details for a particular comment. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Item_Comment/02r300000091000000/",
-    "title": "comment",
-    "properties": {
-      "id": {
-        "type": "string",
-        "description": "The ID of the comment"
-      },
-      "owner": {
-        "type": "string",
-        "description": "The username of the user who submitted the comment"
-      },
-      "created": {
-        "type": "integer",
-        "description": "The date and time the comment was created. Shown in UNIX time"
-      },
-      "comment": {
-        "type": "string",
-        "description": "The comment text"
-      }
-    },
-    "required": [
-      "id",
-      "owner",
-      "created",
-      "comment"
-    ]
-  },
-  "comments": {
-    "type": "object",
-    "description": "Lists all comments for an item. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Item_Comments/02r300000088000000/",
-    "title": "comments",
-    "properties": {
-      "comments": {
-        "type": "array",
-        "description": "A JSON array of comment objects. See the response properties for Comment for details",
-        "minLength": 0,
-        "items": {
-          "$ref": "#/definitions/comment"
-        }
-      }
-    },
-    "required": [
-      "comments"
-    ]
-  },
-  "coordinate": {
-    "$schema": "http://json-schema.org/draft-04/schema",
-    "type": "array",
-    "description": "Coordinate",
-    "title": "coordinate",
-    "minLength": 2,
-    "maxLength": 2,
-    "items": [
-      {
-        "title": "XCoordinate",
-        "type": "integer"
-      },
-      {
-        "title": "YCoordinate",
-        "type": "integer"
-      }
-    ]
-  },
   "deleteNotification": {
     "type": "object",
     "description": "The Delete Notification operation (POST only) is available only to the user who receives the notification. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Notification/02r3000000mv000000/",
@@ -140,7 +75,25 @@
       "user"
     ]
   },
-  "extent": {
+  "getCoordinate": {
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "type": "array",
+    "description": "Coordinate",
+    "title": "coordinate",
+    "minLength": 2,
+    "maxLength": 2,
+    "items": [
+      {
+        "title": "XCoordinate",
+        "type": "integer"
+      },
+      {
+        "title": "YCoordinate",
+        "type": "integer"
+      }
+    ]
+  },
+  "getExtent": {
     "type": [
       "array",
       "null"
@@ -158,7 +111,7 @@
       ]
     }
   },
-  "folder": {
+  "getFolder": {
     "type": [
       "object",
       "null"
@@ -191,7 +144,7 @@
       "username"
     ]
   },
-  "group": {
+  "getGroup": {
     "type": "object",
     "description": "The Group resource represents a group within the portal. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Group/02r30000006m000000/",
     "title": "group",
@@ -341,7 +294,7 @@
       "userMembership"
     ]
   },
-  "groupApplication": {
+  "getGroupApplication": {
     "type": "object",
     "description": "When an individual user applies to join a group, a group application is created. The group administrators can accept or decline the application. Available only to the group administrators and the administrator of the organization if the group belongs to an organization. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Group_Application/02r30000006r000000/",
     "title": "groupApplication",
@@ -365,7 +318,7 @@
       "username"
     ]
   },
-  "groupApplications": {
+  "getGroupApplications": {
     "type": "object",
     "description": "Lists the group applications for the given group. Available to administrators of the group or administrators of an organization if the group is part of one. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Group_Applications/02r300000068000000/",
     "title": "groupApplications",
@@ -383,7 +336,7 @@
       "applications"
     ]
   },
-  "groupContent": {
+  "getGroupContent": {
     "type": "object",
     "description": "The group's content provides access to the items that are shared with the group. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Group_Content/02r300000081000000/",
     "title": "groupContent",
@@ -401,7 +354,7 @@
       "items"
     ]
   },
-  "groups": {
+  "getGroups": {
     "type": "object",
     "description": "Lists the groups of which the item is a part. Only shows the groups that the calling user can access http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Groups/02r30000009p000000/",
     "title": "groups",
@@ -437,7 +390,7 @@
       "other"
     ]
   },
-  "groupUsers": {
+  "getGroupUsers": {
     "type": "object",
     "description": "Lists the users, owner, and administrators of a given group. Only available to members or administrators of the group http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Group_Users/02r30000006p000000/",
     "title": "groupUsers",
@@ -469,7 +422,7 @@
       "users"
     ]
   },
-  "item": {
+  "getItem": {
     "type": "object",
     "description": "An item (a unit of content) in the portal. Each item has a unique identifier and a well known URL that is independent of the user owning the item. An item can have associated binary or textual data that's available via the item data resource. For example, an item of type Map Package returns the actual bits corresponding to the map package via the item data resource. The numViews is incremented when an item is opened. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Item/02r30000007w000000/",
     "title": "item",
@@ -773,7 +726,54 @@
       "avgRating"
     ]
   },
-  "language": {
+  "getItemComment": {
+    "type": "object",
+    "description": "Gets details for a particular comment. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Item_Comment/02r300000091000000/",
+    "title": "comment",
+    "properties": {
+      "id": {
+        "type": "string",
+        "description": "The ID of the comment"
+      },
+      "owner": {
+        "type": "string",
+        "description": "The username of the user who submitted the comment"
+      },
+      "created": {
+        "type": "integer",
+        "description": "The date and time the comment was created. Shown in UNIX time"
+      },
+      "comment": {
+        "type": "string",
+        "description": "The comment text"
+      }
+    },
+    "required": [
+      "id",
+      "owner",
+      "created",
+      "comment"
+    ]
+  },
+  "getItemComments": {
+    "type": "object",
+    "description": "Lists all comments for an item. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Item_Comments/02r300000088000000/",
+    "title": "comments",
+    "properties": {
+      "comments": {
+        "type": "array",
+        "description": "A JSON array of comment objects. See the response properties for Comment for details",
+        "minLength": 0,
+        "items": {
+          "$ref": "#/definitions/comment"
+        }
+      }
+    },
+    "required": [
+      "comments"
+    ]
+  },
+  "getLanguage": {
     "type": "object",
     "description": "Available language. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Languages/02r300000095000000/",
     "title": "language",
@@ -797,7 +797,7 @@
       "localizedName"
     ]
   },
-  "languages": {
+  "getLanguages": {
     "type": "array",
     "description": "Lists the available languages. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Languages/02r300000095000000/",
     "title": "languages",
@@ -805,7 +805,7 @@
       "$ref": "#/definitions/language"
     }
   },
-  "notification": {
+  "getNotification": {
     "type": "object",
     "description": " An individual notification for the given user that can be of different types. Available only to the user recipient of the notification. In the JSON response for a notification, the data property will vary based on the notification type. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Notification/02r30000006t000000/",
     "title": "notification",
@@ -871,7 +871,7 @@
       "data"
     ]
   },
-  "notifications": {
+  "getNotifications": {
     "type": "object",
     "description": "The list of notifications available for the given user. These can have different types as described in the documentation for the Notification resource. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Notifications/02r30000006s000000/",
     "title": "notifications",
@@ -889,7 +889,21 @@
       "notifications"
     ]
   },
-  "portal": {
+  "getOrgRoot": {
+    "type": "object",
+    "description": "The Root resource only returns the version of the containing portal. It acts as a root to its child resources and operations. To obtain descriptive information about this portal including its name, logo, featured items, and supported protocols (HTTP vs HTTPS), access the Self resource under Portals. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Root/02r30000009t000000/",
+    "title": "root",
+    "properties": {
+      "currentVersion": {
+        "type": "string",
+        "description": "The release version for this portal"
+      }
+    },
+    "required": [
+      "currentVersion"
+    ]
+  },
+  "getPortal": {
     "type": "object",
     "description": "The Portal Self resource is used to return the view of the portal as seen by the current user, anonymous or logged in. It includes information such as the name, logo, featured items, and supported protocols (HTTP vs. HTTPS) for this portal. If the user is not logged in, this call will return the default view of the portal. If the user is logged in, the view of the returned portal will be specific to the organization to which the user belongs. The default view of the portal is dependent on the culture of the user, which is obtained from the user's profile. A parameter to pass in the locale/culture is available for anonymous users. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Portal_Self/02r3000001m7000000/",
     "title": "portal",
@@ -1482,7 +1496,7 @@
       "user"
     ]
   },
-  "portalAppInfo": {
+  "getPortalAppInfo": {
     "type": "object",
     "description": "Information about the Application through which this resource was accessed. This information is based on the token used to acces this resource. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Portal_Self/02r3000001m7000000/",
     "title": "portalAppInfo",
@@ -1516,7 +1530,7 @@
       "appTitle"
     ]
   },
-  "portalFeaturedGroup": {
+  "getPortalFeaturedGroup": {
     "type": "object",
     "description": "The featured groups for the organization. These are the groups that will be highlighted on the Groups page. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Portal_Self/02r3000001m7000000/",
     "title": "portalFeaturedGroup",
@@ -1535,7 +1549,7 @@
       "title"
     ]
   },
-  "rating": {
+  "getRating": {
     "type": "object",
     "description": "Returns the rating given by the current user to the item, if any. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Item_Rating/02r300000098000000/",
     "title": "rating",
@@ -1554,7 +1568,7 @@
       "created"
     ]
   },
-  "region": {
+  "getRegion": {
     "type": "object",
     "description": "Available region. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Regions/02r300000099000000/",
     "title": "region",
@@ -1578,7 +1592,7 @@
       "localizedName"
     ]
   },
-  "regions": {
+  "getRegions": {
     "type": "array",
     "description": "Lists the available regions. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Regions/02r300000099000000/",
     "title": "regions",
@@ -1586,7 +1600,7 @@
       "$ref": "#/definitions/region"
     }
   },
-  "registeredApp": {
+  "getRegisteredApp": {
     "type": "object",
     "description": "An app registered with the portal. An app item can be registered by invoking the register app operation. Every registered app gets an App ID and App Secret which in OAuth speak are known as client_id and client_secret respectively. The app owner has access to the registered app resource. This would include the organization administrator as well. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Registered_App/02r30000026v000000/",
     "title": "registeredApp",
@@ -1640,7 +1654,7 @@
       "modified"
     ]
   },
-  "relatedItems": {
+  "getRelatedItems": {
     "type": "object",
     "description": "Gets all the related items of a certain relationship type for that item. An optional direction can be specified if the direction of the relationship is ambiguous. Otherwise, the service will try to infer it. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Related_Items/02r300000085000000/",
     "title": "Related Items",
@@ -1663,7 +1677,7 @@
       "total"
     ]
   },
-  "resource": {
+  "getResource": {
     "type": "object",
     "description": "resource objects that contain the key, size, and created date of the resource. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Resources/02r30000009r000000/",
     "title": "resource",
@@ -1687,7 +1701,7 @@
       "created"
     ]
   },
-  "resources": {
+  "getResources": {
     "type": "object",
     "description": "Resources lists all file resources for the organization. The start and num paging parameters are supported. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Resources/02r30000009r000000/",
     "title": "resources",
@@ -1725,21 +1739,7 @@
       "resources"
     ]
   },
-  "root": {
-    "type": "object",
-    "description": "The Root resource only returns the version of the containing portal. It acts as a root to its child resources and operations. To obtain descriptive information about this portal including its name, logo, featured items, and supported protocols (HTTP vs HTTPS), access the Self resource under Portals. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Root/02r30000009t000000/",
-    "title": "root",
-    "properties": {
-      "currentVersion": {
-        "type": "string",
-        "description": "The release version for this portal"
-      }
-    },
-    "required": [
-      "currentVersion"
-    ]
-  },
-  "server": {
+  "getServer": {
     "type": "object",
     "description": "This resource represents an ArcGIS Server site that has been federated with the portal. This resource is not applicable to ArcGIS Online; it is only applicable to Portal for ArcGIS. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Server/02r300000219000000/",
     "title": "server",
@@ -1788,7 +1788,7 @@
       "serverType"
     ]
   },
-  "servers": {
+  "getServers": {
     "type": "object",
     "description": "This resource lists the ArcGIS Server sites that have been federated with the portal. This resource is not applicable to ArcGIS Online; it is only applicable to Portal for ArcGIS. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Servers/02r300000218000000/",
     "title": "servers",
@@ -1806,26 +1806,7 @@
       "servers"
     ]
   },
-  "updateUser": {
-    "type": "object",
-    "description": "The Update User operation (POST only) modifies properties such as description, preferred view, tags, access, and thumbnail. The user name cannot be modified. For the 'ecas' identity provider, password, e-mail, and full name must be modified by editing your Esri Global Account. For the 'arcgis' identity provider, password, full name, security question, and security answer can be updated with Update User. Update User is available only to the user or to the administrator of the user's organization. Only the properties that are to be updated need to be specified in the request. Properties not specified will not be affected. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_User/02r3000000m0000000/",
-    "title": "updateUser",
-    "properties": {
-      "success": {
-        "type": "boolean",
-        "description": "Indicates if the operation was successful"
-      },
-      "username": {
-        "type": "string",
-        "description": "The username of the modified user"
-      }
-    },
-    "required": [
-      "success",
-      "username"
-    ]
-  },
-  "user": {
+  "getUser": {
     "type": "object",
     "description": "A user resource representing a registered user of the portal. Personal details of the user, such as e-mail and groups, are returned only to the user or the administrator of the user's organization (the properties in the Response Properties table below). A user is not visible to any other user (except the organization's administrator) if their access setting is set to private. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/User/02r3000000m2000000/",
     "title": "user",
@@ -1987,7 +1968,7 @@
       "provider"
     ]
   },
-  "userContent": {
+  "getUserContent": {
     "type": "object",
     "description": "The user's content are items either in the home folder for the user, e.g. /content/users/<username>, or in a subfolder of the home folder with the given folder ID. Multilevel folders are not supported. You can also see the Quick reference topic for additional information on this. Items in a folder are stored by reference and are not physically in a folder. Rather, they're stored as links to the original item, e.g. /content/items/<itemId>. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/User_Content/02r30000007p000000/",
     "title": "userContent",
@@ -2014,7 +1995,7 @@
       "items"
     ]
   },
-  "userInvitation": {
+  "getUserInvitation": {
     "type": "object",
     "description": " An individual invitation to join a given group. The user can accept the invitation or decline the invitation. Invitations are currently only to join groups but may be extended in the future to allow for other targetTypes. Developers should design their applications so that targetTypes is checked and unknown targetTypes are ignored. Invitations are also currently only sent to usernames. This is determined by the type property of the invitation. In the future, other types of invitations may be introduced. Developers should design their applications to make sure they check type and ignore unknown types. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/User_Invitation/02r3000000mr000000/",
     "title": "userInvitation",
@@ -2104,7 +2085,7 @@
       "group"
     ]
   },
-  "userInvitations": {
+  "getUserInvitations": {
     "type": "object",
     "description": "Shows the invitations sent to the authenticated user. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/User_Invitations/02r3000000m7000000/",
     "title": "userInvitations",
@@ -2122,7 +2103,7 @@
       "userInvitations"
     ]
   },
-  "users": {
+  "getUsers": {
     "type": "object",
     "description": "Lists all the members of the organization. The start and num paging parameters are supported. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Users/02r30000009q000000/",
     "title": "users",
@@ -2160,7 +2141,44 @@
       "users"
     ]
   },
-  "userSearch": {
+  "getUserTag": {
+    "type": "object",
+    "description": "User tag. Object in the userTags array. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/User_Tags/02r3000000m9000000/",
+    "title": "userTag",
+    "properties": {
+      "tag": {
+        "type": "string",
+        "description": "Tag"
+      },
+      "count": {
+        "type": "integer",
+        "description": "The number of times the tag was used"
+      }
+    },
+    "required": [
+      "tag",
+      "count"
+    ]
+  },
+  "getUserTags": {
+    "type": "object",
+    "description": "Users tag the content they publish in their portal via the add and update item calls. This resource lists all the tags used by the user along with the number of times the tags have been used. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/User_Tags/02r3000000m9000000/",
+    "title": "userTags",
+    "properties": {
+      "tags": {
+        "type": "array",
+        "description": "Array of tag objects. Each tag object contains a tag property with the name of the tag along with a count that reports the number of times the tag was used",
+        "minLength": 0,
+        "items": {
+          "$ref": "#/definitions/userTag"
+        }
+      }
+    },
+    "required": [
+      "tags"
+    ]
+  },
+  "searchUsers": {
     "type": "object",
     "description": "The User Search operation searches for users in the portal. The search index is updated whenever users are created, updated, or deleted. There can be a lag between the time that the user is updated and the time when it's reflected in the search results. The results only contain users that the calling user has permissions to see. Users can control this visibility by changing the access property of their user. Care should be taken when using ArcGIS REST API search operations (search, user search, group search) to find items, groups, and users programmatically. The Portal uses a powerful search engine to index information and to allow full text searching on it. This search engine uses many different inputs to find the appropriate results and rank them. This often makes search 'fuzzy', making it ideal for human interaction, but not necessarily ideal for looking for specific records programmatically. Developers should avoid using search to find specific items (e.g. by title) as the results of these types of queries might change as the search engine evolves. http://resources.arcgis.com/en/help/arcgis-rest-api/#/User_Search/02r3000000m6000000/",
     "title": "userSearch",
@@ -2286,41 +2304,23 @@
       "results"
     ]
   },
-  "userTag": {
+  "updateUser": {
     "type": "object",
-    "description": "User tag. Object in the userTags array. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/User_Tags/02r3000000m9000000/",
-    "title": "userTag",
+    "description": "The Update User operation (POST only) modifies properties such as description, preferred view, tags, access, and thumbnail. The user name cannot be modified. For the 'ecas' identity provider, password, e-mail, and full name must be modified by editing your Esri Global Account. For the 'arcgis' identity provider, password, full name, security question, and security answer can be updated with Update User. Update User is available only to the user or to the administrator of the user's organization. Only the properties that are to be updated need to be specified in the request. Properties not specified will not be affected. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_User/02r3000000m0000000/",
+    "title": "updateUser",
     "properties": {
-      "tag": {
-        "type": "string",
-        "description": "Tag"
+      "success": {
+        "type": "boolean",
+        "description": "Indicates if the operation was successful"
       },
-      "count": {
-        "type": "integer",
-        "description": "The number of times the tag was used"
+      "username": {
+        "type": "string",
+        "description": "The username of the modified user"
       }
     },
     "required": [
-      "tag",
-      "count"
-    ]
-  },
-  "userTags": {
-    "type": "object",
-    "description": "Users tag the content they publish in their portal via the add and update item calls. This resource lists all the tags used by the user along with the number of times the tags have been used. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/User_Tags/02r3000000m9000000/",
-    "title": "userTags",
-    "properties": {
-      "tags": {
-        "type": "array",
-        "description": "Array of tag objects. Each tag object contains a tag property with the name of the tag along with a count that reports the number of times the tag was used",
-        "minLength": 0,
-        "items": {
-          "$ref": "#/definitions/userTag"
-        }
-      }
-    },
-    "required": [
-      "tags"
+      "success",
+      "username"
     ]
   }
 }

@@ -6,7 +6,7 @@
     "$ref": "#/definitions/region"
   },
   "definitions": {
-    "region": {
+    "getRegion": {
       "type": "object",
       "description": "Available region. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Regions/02r300000099000000/",
       "title": "region",

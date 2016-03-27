@@ -11,7 +11,7 @@ var coverageConfig = [
       {
         "title": "Root",
         "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Root/02r30000009t000000/",
-        "schema": "root"
+        "schema": "getOrgRoot"
       },
       {
         "title": "Search",

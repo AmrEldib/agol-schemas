@@ -26,7 +26,7 @@
     "items"
   ],
   "definitions": {
-    "item": {
+    "getItem": {
       "type": "object",
       "description": "An item (a unit of content) in the portal. Each item has a unique identifier and a well known URL that is independent of the user owning the item. An item can have associated binary or textual data that's available via the item data resource. For example, an item of type Map Package returns the actual bits corresponding to the map package via the item data resource. The numViews is incremented when an item is opened. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Item/02r30000007w000000/",
       "title": "item",
@@ -423,7 +423,7 @@
         "avgRating"
       ]
     },
-    "folder": {
+    "getFolder": {
       "type": [
         "object",
         "null"
@@ -464,7 +464,7 @@
         "username"
       ]
     },
-    "extent": {
+    "getExtent": {
       "type": [
         "array",
         "null"
@@ -482,7 +482,7 @@
         ]
       }
     },
-    "coordinate": {
+    "getCoordinate": {
       "$schema": "http://json-schema.org/draft-04/schema",
       "type": "array",
       "description": "Coordinate",

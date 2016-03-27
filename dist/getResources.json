@@ -60,7 +60,7 @@
     "resources"
   ],
   "definitions": {
-    "resource": {
+    "getResource": {
       "type": "object",
       "description": "resource objects that contain the key, size, and created date of the resource. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Resources/02r30000009r000000/",
       "title": "resource",

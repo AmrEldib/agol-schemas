@@ -19,82 +19,82 @@ var config = {
   // Top level items are schemas that can be generated
   // If a schema is not listed in the top level, it can't be generated
   "schemas": {
-    "userContent": [
-      "item"
+    "getUserContent": [
+      "getItem"
     ],
-    "item": [
-      "folder",
-      "extent"
+    "getItem": [
+      "getFolder",
+      "getExtent"
     ],
-    "extent": [
-      "coordinate"
+    "getExtent": [
+      "getCoordinate"
     ],
-    "comments": [
-      "comment"
+    "getItemComments": [
+      "getItemComment"
     ],
-    "comment": [],
-    "relatedItems": [
-      "item"
+    "getItemComment": [],
+    "getRelatedItems": [
+      "getItem"
     ],
-    "rating": [],
-    "groupContent": [
-      "item"
+    "getRating": [],
+    "getGroupContent": [
+      "getItem"
     ],
-    "group": [],
-    "groupApplication": [],
-    "groupApplications": [
-      "groupApplication"
+    "getGroup": [],
+    "getGroupApplication": [],
+    "getGroupApplications": [
+      "getGroupApplication"
     ],
-    "groupUsers": [],
-    "userInvitation": [
-      "group"
+    "getGroupUsers": [],
+    "getUserInvitation": [
+      "getGroup"
     ],
-    "userInvitations": [
-      "userInvitation"
+    "getUserInvitations": [
+      "getUserInvitation"
     ],
-    "groups": [
-      "group"
+    "getGroups": [
+      "getGroup"
     ],
-    "notification": [],
-    "notifications": [
-      "notification"
+    "getNotification": [],
+    "getNotifications": [
+      "getNotification"
     ],
-    "user": [
-      "group"
+    "getUser": [
+      "getGroup"
     ],
-    "userTags": [
-      "userTag"
+    "getUserTags": [
+      "getUserTag"
     ],
-    "users": [
-      "user"
+    "getUsers": [
+      "getUser"
     ],
-    "registeredApp": [],
-    "root": [],
-    "portal": [
-      "user",
-      "extent",
-      "portalAppInfo",
-      "portalFeaturedGroup"
+    "getRegisteredApp": [],
+    "getOrgRoot": [],
+    "getPortal": [
+      "getUser",
+      "getExtent",
+      "getPortalAppInfo",
+      "getPortalFeaturedGroup"
     ],
-    "resources": [
-      "resource"
+    "getResources": [
+      "getResource"
     ],
-    "servers": [
-      "server"
+    "getServers": [
+      "getServer"
     ],
-    "server": [],
-    "regions": [
-      "region"
+    "getServer": [],
+    "getRegions": [
+      "getRegion"
     ],
-    "languages": [
-      "language"
+    "getLanguages": [
+      "getLanguage"
     ],
     "updateUser": [],
     "deleteUser": [],
     "disableUser": [],
     "enableUser": [],
-    "userSearch": [
-      "user"
+    "searchUsers": [
+      "getUser"
     ],
     "deleteNotification": []
   }
