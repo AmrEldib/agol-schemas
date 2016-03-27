@@ -68,7 +68,7 @@ var config = {
     "getUsers": [
       "getUser"
     ],
-    "getRegisteredApp": [],
+    "getRegisteredAppInfo": [],
     "getOrgRoot": [],
     "getPortal": [
       "getUser",

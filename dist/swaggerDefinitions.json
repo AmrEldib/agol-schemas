@@ -1600,7 +1600,7 @@
       "$ref": "#/definitions/region"
     }
   },
-  "getRegisteredApp": {
+  "getRegisteredAppInfo": {
     "type": "object",
     "description": "An app registered with the portal. An app item can be registered by invoking the register app operation. Every registered app gets an App ID and App Secret which in OAuth speak are known as client_id and client_secret respectively. The app owner has access to the registered app resource. This would include the organization administrator as well. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Registered_App/02r30000026v000000/",
     "title": "registeredApp",
