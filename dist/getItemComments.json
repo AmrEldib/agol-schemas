@@ -1,0 +1,57 @@
+{
+  "type": "object",
+  "description": "Lists all comments for an item. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Item_Comments/02r300000088000000/",
+  "title": "comments",
+  "properties": {
+    "comments": {
+      "type": "array",
+      "description": "A JSON array of comment objects. See the response properties for Comment for details",
+      "minLength": 0,
+      "items": {
+        "$ref": "#/definitions/getItemComment"
+      }
+    }
+  },
+  "required": [
+    "comments"
+  ],
+  "definitions": {
+    "getItemComment": {
+      "type": "object",
+      "description": "Gets details for a particular comment. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Item_Comment/02r300000091000000/",
+      "title": "comment",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the comment",
+          "chance": "hash"
+        },
+        "owner": {
+          "type": "string",
+          "description": "The username of the user who submitted the comment",
+          "chance": "first"
+        },
+        "created": {
+          "type": "integer",
+          "description": "The date and time the comment was created. Shown in UNIX time",
+          "chance": "hammertime"
+        },
+        "comment": {
+          "type": "string",
+          "description": "The comment text",
+          "chance": {
+            "paragraph": {
+              "sentences": 3
+            }
+          }
+        }
+      },
+      "required": [
+        "id",
+        "owner",
+        "created",
+        "comment"
+      ]
+    }
+  }
+}

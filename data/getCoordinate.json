@@ -1,0 +1,22 @@
+{
+  "id": "coordinate",
+  "type": "array",
+  "description": "Coordinate",
+  "title": "coordinate",
+  "minLength": 2,
+  "maxLength": 2,
+  "items": [
+    {
+      "id": "xCoordinate",
+      "title": "XCoordinate",
+      "type": "integer",
+      "chance": "longitude"
+    },
+    {
+      "id": "yCoordinate",
+      "title": "YCoordinate",
+      "type": "integer",
+      "chance": "latitude"
+    }
+  ]
+}

@@ -1,0 +1,309 @@
+{
+  "type": "object",
+  "description": "Shows the invitations sent to the authenticated user. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/User_Invitations/02r3000000m7000000/",
+  "title": "userInvitations",
+  "properties": {
+    "userInvitations": {
+      "type": "array",
+      "description": "A JSON array of invitation objects. For details, see the response properties for User Invitation",
+      "minLength": 0,
+      "items": {
+        "$ref": "#/definitions/getUserInvitation"
+      }
+    }
+  },
+  "required": [
+    "userInvitations"
+  ],
+  "definitions": {
+    "getUserInvitation": {
+      "type": "object",
+      "description": " An individual invitation to join a given group. The user can accept the invitation or decline the invitation. Invitations are currently only to join groups but may be extended in the future to allow for other targetTypes. Developers should design their applications so that targetTypes is checked and unknown targetTypes are ignored. Invitations are also currently only sent to usernames. This is determined by the type property of the invitation. In the future, other types of invitations may be introduced. Developers should design their applications to make sure they check type and ignore unknown types. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/User_Invitation/02r3000000mr000000/",
+      "title": "userInvitation",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the invitation",
+          "chance": "hash"
+        },
+        "targetType": {
+          "type": "string",
+          "description": "The type of invitation. For now, this will only be set to group, but other types may be added in the future",
+          "enum": [
+            "group"
+          ],
+          "pattern": "group"
+        },
+        "targetId": {
+          "type": "string",
+          "description": "The ID of the group (if targetType is set to group) that the user is invited to join",
+          "chance": "hash"
+        },
+        "received": {
+          "type": "integer",
+          "description": "The date received. Shown in UNIX time in milliseconds",
+          "chance": "hammertime"
+        },
+        "role": {
+          "type": "string",
+          "description": "The role that the invitee will have in the group, either group_member or group_admin",
+          "enum": [
+            "group_member",
+            "group_admin"
+          ],
+          "pattern": "group_member|group_admin"
+        },
+        "expiration": {
+          "type": "integer",
+          "description": "Expiration of the invitation. Shown in UNIX time in milliseconds",
+          "chance": "hammertime"
+        },
+        "type": {
+          "type": "string",
+          "description": "For now, always set to \"user.\" In the future, the type may include other types of invitations",
+          "enum": [
+            "user"
+          ],
+          "pattern": "user"
+        },
+        "created": {
+          "type": "integer",
+          "description": "The date the invitation was created. Shown in UNIX time in milliseconds",
+          "chance": "hammertime"
+        },
+        "username": {
+          "type": "string",
+          "description": "The name of the user receiving the invitation if the type is set to \"user.",
+          "chance": "first"
+        },
+        "fromUsername": {
+          "type": "object",
+          "description": "A JSON object about the user who sent the invitation. This includes their username and fullname",
+          "properties": {
+            "username": {
+              "type": "string",
+              "description": "requestor username",
+              "chance": "first"
+            },
+            "fullname": {
+              "type": "string",
+              "description": "The full name of the user who sent the invitation",
+              "chance": "name"
+            }
+          },
+          "required": [
+            "username",
+            "fullname"
+          ]
+        },
+        "group": {
+          "$ref": "#/definitions/getGroup"
+        }
+      },
+      "required": [
+        "id",
+        "targetType",
+        "targetId",
+        "received",
+        "role",
+        "expiration",
+        "type",
+        "created",
+        "username",
+        "fromUsername",
+        "group"
+      ]
+    },
+    "getGroup": {
+      "type": "object",
+      "description": "The Group resource represents a group within the portal. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Group/02r30000006m000000/",
+      "title": "group",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The given group ID",
+          "chance": "hash"
+        },
+        "title": {
+          "type": "string",
+          "description": "The title of the group. This is the name that is displayed to users and by which they refer to the group. Every group must have a title, and it must be unique for a user.",
+          "chance": {
+            "sentence": {
+              "words": 3
+            }
+          }
+        },
+        "isInvitationOnly": {
+          "type": "boolean",
+          "description": "If this is set to true, users will not be able to apply to join the group",
+          "chance": {
+            "bool": {
+              "likelihood": 80
+            }
+          }
+        },
+        "owner": {
+          "type": "string",
+          "description": "The owner username of the group",
+          "chance": "first"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The group description",
+          "chance": {
+            "paragraph": {
+              "sentences": 7
+            }
+          }
+        },
+        "snippet": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The group summary",
+          "chance": "sentence"
+        },
+        "tags": {
+          "type": "array",
+          "description": "User-defined tags that describe the group",
+          "items": {
+            "type": "string",
+            "chance": "word"
+          },
+          "uniqueItems": true
+        },
+        "phone": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The contact information for the group",
+          "chance": "phone"
+        },
+        "sortField": {
+          "type": "string",
+          "description": "The sorted field",
+          "chance": "word"
+        },
+        "sortOrder": {
+          "type": "string",
+          "description": "The sort order, either descending or ascending",
+          "enum": [
+            "asc",
+            "desc"
+          ],
+          "pattern": "asc|desc"
+        },
+        "isViewOnly": {
+          "type": "boolean",
+          "description": "Boolean value indicating whether the results are only for viewing",
+          "chance": {
+            "bool": {
+              "likelihood": 20
+            }
+          }
+        },
+        "isFav": {
+          "type": "boolean",
+          "description": "Boolean value indicating whether marked in favorites",
+          "chance": {
+            "bool": {
+              "likelihood": 20
+            }
+          }
+        },
+        "thumbnail": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The URL to the thumbnail used for the group. All group thumbnails are relative to the URL: http://<community-url>/groups/<groupId>/info",
+          "faker": "image.cats"
+        },
+        "created": {
+          "type": "integer",
+          "description": "The date the group was created. Shown in UNIX time in milliseconds",
+          "chance": "hammertime"
+        },
+        "modified": {
+          "type": "integer",
+          "description": "The date the group was last modified. Shown in UNIX time in milliseconds",
+          "chance": "hammertime"
+        },
+        "access": {
+          "type": "string",
+          "description": "The access privileges of the group that determine who can see and access the group. Can be: private, org, or public",
+          "enum": [
+            "private",
+            "org",
+            "public"
+          ],
+          "pattern": "private|org|public"
+        },
+        "userMembership": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "description": "If the request is made by an authenticated user, a JSON object is returned containing information about the user's access to the group. This includes the username of the calling user, the memberType, which specifies the type of membership the user has in the group (owner, member, admin, none), and the applications (number of requests to join the group) count available to admins and owners",
+          "properties": {
+            "username": {
+              "type": "string",
+              "description": "requestor username",
+              "chance": "first"
+            },
+            "memberType": {
+              "type": "string",
+              "description": "specifies the type of membership the user has in the group (owner, member, admin, none)",
+              "enum": [
+                "owner",
+                "member",
+                "admin",
+                "none"
+              ],
+              "pattern": "owner|member|admin|none"
+            },
+            "applications": {
+              "type": "integer",
+              "description": "Number of requests to join the group available to admins and owners.",
+              "chance": {
+                "integer": {
+                  "min": 0,
+                  "max": 50
+                }
+              }
+            }
+          },
+          "required": [
+            "applications",
+            "memberType",
+            "username"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "isInvitationOnly",
+        "owner",
+        "description",
+        "snippet",
+        "tags",
+        "phone",
+        "sortField",
+        "sortOrder",
+        "isViewOnly",
+        "isFav",
+        "thumbnail",
+        "created",
+        "modified",
+        "access",
+        "userMembership"
+      ]
+    }
+  }
+}

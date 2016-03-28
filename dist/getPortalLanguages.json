@@ -1,0 +1,41 @@
+{
+  "type": "array",
+  "description": "Lists the available languages. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Languages/02r300000095000000/",
+  "title": "languages",
+  "items": {
+    "$ref": "#/definitions/getPortalLanguage"
+  },
+  "definitions": {
+    "getPortalLanguage": {
+      "type": "object",
+      "description": "Available language. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Languages/02r300000095000000/",
+      "title": "language",
+      "properties": {
+        "language": {
+          "type": "string",
+          "description": "Language's name",
+          "chance": "word"
+        },
+        "culture": {
+          "type": "string",
+          "description": "Language's culture",
+          "chance": {
+            "word": {
+              "length": 2
+            }
+          }
+        },
+        "localizedName": {
+          "type": "string",
+          "description": "Language's localized name",
+          "chance": "word"
+        }
+      },
+      "required": [
+        "language",
+        "culture",
+        "localizedName"
+      ]
+    }
+  }
+}

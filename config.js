@@ -10,89 +10,92 @@ var config = {
   // Folder where documentation is generated
   "docFolder": "docs",
   // List of code files to generate documentation for
-  "codeFiles": ['build-faker-schema.js', 'build-schema-doc.js', 'build-swagger-schema.js', 'build.js'],
+  "codeFiles": ['build-faker-schema.js', 'build-schema-doc.js', 'build-swagger-schema.js', 'build-coverage.js', 'build.js', 'util.js'],
   // Name of output file used to swagger definitions
   "swaggerFile": "swaggerDefinitions",
+  // List of how much of the REST API schema is done
+  "coverageFile": "coverage.md",
   // Schemas and objects that they reference
   // Top level items are schemas that can be generated
   // If a schema is not listed in the top level, it can't be generated
   "schemas": {
-    "userContent": [
-      "item"
+    "getUserContent": [
+      "getItem"
     ],
-    "item": [
-      "folder",
-      "extent"
+    "getItem": [
+      "getFolder",
+      "getExtent"
     ],
-    "extent": [
-      "coordinate"
+    "getExtent": [
+      "getCoordinate"
     ],
-    "comments": [
-      "comment"
+    "getItemComments": [
+      "getItemComment"
     ],
-    "comment": [],
-    "relatedItems": [
-      "item"
+    "getItemComment": [],
+    "getRelatedItems": [
+      "getItem"
     ],
-    "rating": [],
-    "groupContent": [
-      "item"
+    "getItemRating": [],
+    "getGroupContent": [
+      "getItem"
     ],
-    "group": [],
-    "groupApplication": [],
-    "groupApplications": [
-      "groupApplication"
+    "getGroup": [],
+    "getGroupApplication": [],
+    "getGroupApplications": [
+      "getGroupApplication"
     ],
-    "groupUsers": [],
-    "userInvitation": [
-      "group"
+    "getGroupUsers": [],
+    "getUserInvitation": [
+      "getGroup"
     ],
-    "userInvitations": [
-      "userInvitation"
+    "getUserInvitations": [
+      "getUserInvitation"
     ],
-    "groups": [
-      "group"
+    "getItemGroups": [
+      "getGroup"
     ],
-    "notification": [],
-    "notifications": [
-      "notification"
+    "getNotification": [],
+    "getNotifications": [
+      "getNotification"
     ],
-    "user": [
-      "group"
+    "getUser": [
+      "getGroup"
     ],
-    "userTags": [
-      "userTag"
+    "getUserTags": [
+      "getUserTag"
     ],
-    "users": [
-      "user"
+    "getUsers": [
+      "getUser"
     ],
-    "registeredApp": [],
-    "root": [],
-    "portal": [
-      "user",
-      "extent",
-      "portalAppInfo",
-      "portalFeaturedGroup"
+    "getRegisteredAppInfo": [],
+    "getOrgRoot": [],
+    "getPortal": [
+      "getUser",
+      "getExtent",
+      "getPortalAppInfo",
+      "getPortalFeaturedGroup"
     ],
-    "resources": [
-      "resource"
+    "getPortalResources": [
+      "getPortalResource"
     ],
-    "servers": [
-      "server"
+    "getPortalServers": [
+      "getPortalServer"
     ],
-    "server": [],
-    "regions": [
-      "region"
+    "getPortalServer": [],
+    "getPortalRegions": [
+      "getPortalRegion"
     ],
-    "languages": [
-      "language"
+    "getPortalLanguages": [
+      "getPortalLanguage"
     ],
     "updateUser": [],
     "deleteUser": [],
     "disableUser": [],
     "enableUser": [],
-    "userSearch": [
-      "user"
+    "searchUsers": [
+      "getUser",
+      "searchUsersResultItem"
     ],
     "deleteNotification": []
   }
