@@ -1,3 +1,9 @@
+### Coverage  
+Completed items: 38  
+Total items: 488  
+Completed: 8 %  
+
+
 **Managing your organization**  
 ✖ [Generate Token](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Generate_Token/02r3000000m5000000/)  
 ✔ [Root](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Root/02r30000009t000000/)  
@@ -34,7 +40,7 @@
 ✔ [User Invitations](http://resources.arcgis.com/en/help/arcgis-rest-api/#/User_Invitations/02r3000000m7000000/)  
 ✔ [User Search](http://resources.arcgis.com/en/help/arcgis-rest-api/#/User_Search/02r3000000m6000000/)  
 ✔ [User Tags](http://resources.arcgis.com/en/help/arcgis-rest-api/#/User_Tags/02r3000000m9000000/)  
-**Content**  
+[object Object]**Content**  
 ✖ [Add Comment](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_Comment/02r300000090000000/)  
 ✖ [Add Item](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_Item/02r30000008q000000/)  
 ✖ [Add Item Part](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_Item_Part/02r300000094000000/)  
@@ -89,7 +95,7 @@
 ✖ [Update Item](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Item/02r30000009s000000/)  
 ✔ [User Content](http://resources.arcgis.com/en/help/arcgis-rest-api/#/User_Content/02r30000007p000000/)  
 ✖ [User Item (Link)](http://resources.arcgis.com/en/help/arcgis-rest-api/#/User_Item_Link/02r300000087000000/)  
-**Portals**  
+[object Object]**Portals**  
 ✖ [Add Resource](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_Resource/02r300000082000000/)  
 ✖ [Check Service Name](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Check_Service_Name/02r300000076000000/)  
 ✔ [Languages](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Languages/02r300000095000000/)  
@@ -107,7 +113,7 @@
 ✖ [Update Server](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Server/02r30000021m000000/)  
 ✖ [Update User Role](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_User_Role/02r30000007z000000/)  
 ✔ [Users](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Users/02r30000009q000000/)  
-**Marketplace**  
+[object Object]**Marketplace**  
 ✖ [Customers List](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Customers_List/02r30000023p000000/)  
 ✖ [Delete Provision](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Provision/02r300000241000000/)  
 ✖ [Express Interest](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Express_Interest/02r30000023v000000/)  
@@ -118,12 +124,12 @@
 ✖ [Purchases](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Purchases/02r30000023q000000/)  
 ✖ [Start Trial](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Start_Trial/02r300000240000000/)  
 ✖ [Unlist Item](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Unlist_Item/02r30000023m000000/)  
-**OAuth 2.0**  
+[object Object]**OAuth 2.0**  
 ✖ [Authorize](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Authorize/02r300000214000000/)  
 ✖ [Register App](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Register_App/02r30000026q000000/)  
 ✖ [Registered App](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Registered_App/02r30000026v000000/)  
 ✖ [Token](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Token/02r300000213000000/)  
-**Administering your server**  
+[object Object][object Object]**Administering your server**  
 **Clusters**  
 ✖ [Add Machines To Cluster](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_Machines_To_Cluster/02r300000208000000/)  
 ✖ [Cluster](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Cluster/02r3000001tq000000/)  
@@ -137,7 +143,7 @@
 ✖ [Services In Cluster](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Services_In_Cluster/02r3000001t0000000/)  
 ✖ [Start Cluster](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Start_Cluster/02r3000001vv000000/)  
 ✖ [Stop Cluster](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Stop_Cluster/02r3000001r0000000/)  
-**Data**  
+[object Object]**Data**  
 ✖ [Compute Ref Count](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Compute_Ref_Count/02r3000001r3000000/)  
 ✖ [Datastore Configuration](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Datastore_Configuration/02r3000001qn000000/)  
 ✖ [Find Data Items](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Find_Data_Items/02r3000001sw000000/)  
@@ -153,20 +159,20 @@
 ✖ [Validate All Data Items](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Validate_All_Data_Items/02r3000001s5000000/)  
 ✖ [Validate Data Item](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Validate_Data_Item/02r3000001sq000000/)  
 ✖ [Validate Data Store](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Validate_Data_Store/02r300000285000000/)  
-**Info**  
+[object Object]**Info**  
 ✖ [Info](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Info/02r3000001z8000000/)  
-**KML**  
+[object Object]**KML**  
 ✖ [Create Kmz](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Kmz/02r3000001tm000000/)  
 ✖ [Kml](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Kml/02r3000001pq000000/)  
 ✖ [Kmz File](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Kmz_File/02r3000001v4000000/)  
-**Logs**  
+[object Object]**Logs**  
 ✖ [Clean Logs](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Clean_Logs/02r3000001s2000000/)  
 ✖ [Count Error Reports](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Count_Error_Reports/02r3000001z2000000/)  
 ✖ [Edit Log Settings](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Edit_Log_Settings/02r300000206000000/)  
 ✖ [Log Settings](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Log_Settings/02r3000001t6000000/)  
 ✖ [Logs](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Logs/02r3000001w7000000/)  
 ✖ [Query Logs](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Query_Logs/02r3000001w4000000/)  
-**Machines**  
+[object Object]**Machines**  
 ✖ [Delete Certificate](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Certificate/02r30000020m000000/)  
 ✖ [Edit Machine](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Edit_Machine/02r3000001st000000/)  
 ✖ [Export Certificate](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Export_Certificate/02r300000201000000/)  
@@ -184,10 +190,10 @@
 ✖ [Start Machine](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Start_Machine/02r3000001tn000000/)  
 ✖ [Stop Machine](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Stop_Machine/02r3000001zn000000/)  
 ✖ [Unregister Machine](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Unregister_Machine/02r3000001vr000000/)  
-**Mode**  
+[object Object]**Mode**  
 ✖ [Mode](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Mode/02r3000002p0000000/)  
 ✖ [Update Site Mode](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Site_Mode/02r3000002q4000000/)  
-**Security**  
+[object Object]**Security**  
 ✖ [Add Role](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_Role/02r3000001qm000000/)  
 ✖ [Add User](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_User/02r3000001s4000000/)  
 ✖ [Add Users To Role](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_Users_To_Role/02r3000001vz000000/)  
@@ -221,7 +227,7 @@
 ✖ [Update Token Configuration](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Token_Configuration/02r3000001v3000000/)  
 ✔ [Update User](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_User/02r3000001sm000000/)  
 ✔ [Users](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Users/02r3000001ps000000/)  
-**Services**  
+[object Object]**Services**  
 ✖ [Add Permission](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_Permission/02r3000001pw000000/)  
 ✖ [Clean Permissions](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Clean_Permissions/02r3000001z1000000/)  
 ✖ [Create Folder](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Folder/02r3000001t4000000/)  
@@ -255,7 +261,7 @@
 ✖ [Unregister Extension](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Unregister_Extension/02r3000001pz000000/)  
 ✖ [Update Extension](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Extension/02r300000203000000/)  
 ✖ [Upload Item Information File](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Upload_Item_Information_File/02r3000001t1000000/)  
-**Site**  
+[object Object]**Site**  
 ✖ [Create Site](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Site/02r3000001zs000000/)  
 ✖ [Delete Site](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Site/02r3000001zv000000/)  
 ✖ [Export Site](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Export_Site/02r30000020s000000/)  
@@ -264,7 +270,7 @@
 ✖ [Join Site](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Join_Site/02r300000205000000/)  
 ✖ [Public Key](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Public_Key/02r3000001wp000000/)  
 ✖ [Site](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Site/02r3000001pr000000/)  
-**System**  
+[object Object]**System**  
 ✖ [Clean Directory](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Clean_Directory/02r3000001vq000000/)  
 ✖ [Clear Rest Cache](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Clear_Rest_Cache/02r3000001w3000000/)  
 ✖ [Configuration Store](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Configuration_Store/02r300000202000000/)  
@@ -293,7 +299,7 @@
 ✖ [Web Adaptor](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Web_Adaptor/02r3000001ws000000/)  
 ✖ [Web Adaptors](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Web_Adaptors/02r3000001wn000000/)  
 ✖ [Web Adaptors Configuration](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Web_Adaptors_Configuration/02r3000001r7000000/)  
-**Uploads**  
+[object Object]**Uploads**  
 ✖ [Commit Item](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Commit_Item/02r3000001r1000000/)  
 ✖ [Delete Item](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Item/02r3000001s3000000/)  
 ✖ [Item](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Item/02r300000207000000/)  
@@ -302,7 +308,7 @@
 ✖ [Upload Item](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Upload_Item/02r3000001zw000000/)  
 ✖ [Upload Part](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Upload_Part/02r3000001q3000000/)  
 ✖ [Uploads](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Uploads/02r3000001qr000000/)  
-**Usage Reports**  
+[object Object]**Usage Reports**  
 ✖ [Create Usage Report](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Usage_Report/02r30000027n000000/)  
 ✖ [Delete Usage Report](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Usage_Report/02r30000027m000000/)  
 ✖ [Edit Usage Report](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Edit_Usage_Report/02r300000277000000/)  
@@ -311,7 +317,7 @@
 ✖ [Usage Report](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Usage_Report/02r300000276000000/)  
 ✖ [Usage Reports](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Usage_Reports/02r300000278000000/)  
 ✖ [Usage Reports Settings](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Usage_Reports_Settings/02r30000027q000000/)  
-**Administering your portal**  
+[object Object][object Object]**Administering your portal**  
 **Portal Administration Root**  
 ✖ [Create Site](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Site/02r300000257000000/)  
 ✖ [Export Site](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Export_Site/02r3000002pv000000/)  
@@ -321,7 +327,7 @@
 ✖ [Portal Administration Root](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Portal_Administration_Root/02r300000253000000/)  
 ✖ [Status](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Status/02r3000002pm000000/)  
 ✖ [Unregister Machine](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Unregister_Machine/02r3000002p2000000/)  
-**System**  
+[object Object]**System**  
 ✖ [Database](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Database/02r30000025n000000/)  
 ✖ [Directories](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Directories/02r30000024r000000/)  
 ✖ [Directory](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Directory/02r30000025q000000/)  
@@ -347,7 +353,7 @@
 ✖ [Web Adaptors](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Web_Adaptors/02r300000248000000/)  
 ✖ [Web Adaptors Configuration](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Web_Adaptors_Configuration/02r300000259000000/)  
 ✖ [Web Adaptor](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Web_Adaptor/02r30000025p000000/)  
-**Security**  
+[object Object]**Security**  
 ✖ [Change App ID](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Change_App_ID/02r300000291000000/)  
 ✖ [Create User](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_User/02r30000024z000000/)  
 ✖ [Delete Certificate](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Certificate/02r3000002mm000000/)  
@@ -378,7 +384,7 @@
 ✖ [Update Security Configuration](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Security_Configuration/02r300000247000000/)  
 ✖ [Update Token Configuration](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Token_Configuration/02r300000264000000/)  
 ✖ [Update Web Server Certificate](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Web_Server_Certificate/02r3000002m6000000/)  
-**Federation**  
+[object Object]**Federation**  
 ✖ [Federate Servers](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Federate_Servers/02r3000002nw000000/)  
 ✖ [Federation](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Federation/02r3000002p5000000/)  
 ✖ [Servers](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Servers/02r3000002ns000000/)  
@@ -386,13 +392,13 @@
 ✖ [Update Server](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Server/02r3000002pp000000/)  
 ✖ [Validate Server](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Validate_Server/02r3000002nz000000/)  
 ✖ [Validate Servers](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Validate_Servers/02r3000002q0000000/)  
-**Logs**  
+[object Object]**Logs**  
 ✖ [Clean Logs](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Clean_Logs/02r30000028p000000/)  
 ✖ [Edit Log Settings](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Edit_Log_Settings/02r300000289000000/)  
 ✖ [Log Settings](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Log_Settings/02r300000299000000/)  
 ✖ [Logs](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Logs/02r30000028t000000/)  
 ✖ [Query Logs](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Query_Logs/02r30000028v000000/)  
-**Administering ArcGIS Online hosted services**  
+[object Object][object Object]**Administering ArcGIS Online hosted services**  
 **Map Services**  
 ✖ [Map Service](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Map_Service/02r30000022w000000/)  
 ✖ [Cancel Job](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Cancel_Job/02r30000022r000000/)  
@@ -406,7 +412,7 @@
 ✖ [Status (Map Service)](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Status_Map_Service/02r30000022m000000/)  
 ✖ [Tile Service Job Summary](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Tile_Service_Job_Summary/02r30000022s000000/)  
 ✖ [Update Tiles](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Tiles/02r30000022v000000/)  
-**Feature Services**  
+[object Object]**Feature Services**  
 ✖ [Feature Service](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Feature_Service/02r300000231000000/)  
 ✖ [Add to Definition (Feature Layer)](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_to_Definition_Feature_Layer/02r300000228000000/)  
 ✖ [Add to Definition (Feature Service)](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_to_Definition_Feature_Service/02r300000230000000/)  
@@ -418,29 +424,29 @@
 ✖ [Status (Feature Service)](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Status_Feature_Service/02r30000022n000000/)  
 ✖ [Update Definition (Feature Layer)](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Definition_Feature_Layer/02r30000022p000000/)  
 ✖ [Update Definition (Feature Service)](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Definition_Feature_Service/02r30000021z000000/)  
-**Common data types**  
+[object Object][object Object]**Common data types**  
 **Classification objects**  
 ✖ [Class breaks](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Classification_objects/02r30000019z000000/)  
 ✖ [Unique value](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Classification_objects/02r30000019z000000/)  
-**Color ramp objects**  
+[object Object]**Color ramp objects**  
 ✖ [Algorithmic color ramp](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Color_ramp_objects/02r3000001m0000000/)  
 ✖ [Multipart color ramp](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Color_ramp_objects/02r3000001m0000000/)  
-**Data Source object**  
+[object Object]**Data Source object**  
 ✖ [Table data source](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r30000019q000000.htm#ESRI_SECTION1_1334D2D53F914E418968DE2BA6D4B3A8)  
 ✖ [Query table data source](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r30000019q000000.htm#ESRI_SECTION1_5FA60C9F75BE4A64983203545BA46C20)  
 ✖ [Raster data source](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r30000019q000000.htm#ESRI_SECTION1_573C021CDB5F4547B606E2F47BF71A4A)  
 ✖ [Join table data source](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r30000019q000000.htm#ESRI_SECTION1_E8A2D86F658E4272B1B44B9CFB295A7A)  
-**Domain objects**  
+[object Object]**Domain objects**  
 ✖ [Range domain](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r30000019r000000.htm#RANGE)  
 ✖ [Coded value domain](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r30000019r000000.htm#CV)  
 ✖ [Inherited domain](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r30000019r000000.htm#INHERITED)  
-✖ [Feature object](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Feature_object/02r3000000n8000000/)  
+[object Object]✖ [Feature object](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Feature_object/02r3000000n8000000/)  
 ✖ [FeatureSet object](http://resources.arcgis.com/en/help/arcgis-rest-api/#/FeatureSet_object/02r3000002mn000000/)  
 **Geodata transformation objects**  
 ✖ [Polynomial transformation](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r3000001m2000000.htm#GUID-52C3ED6A-D975-4881-BE67-6F9D4E173603)  
 ✖ [Projective transformation](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r3000001m2000000.htm#GUID-20E3BFF9-88CF-4658-8DD2-EAC95EBF087D)  
 ✖ [Identity transformation](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r3000001m2000000.htm#GUID-FB6AF2D5-4920-444A-8F1D-22AC14F7B590)  
-**Geometry objects**  
+[object Object]**Geometry objects**  
 ✖ [WKID Spatial reference](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Geometry_objects/02r3000000n1000000/)  
 ✖ [WKT Spatial reference](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Geometry_objects/02r3000000n1000000/)  
 ✖ [Point](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r3000000n1000000.htm#POINT)  
@@ -448,18 +454,18 @@
 ✖ [Polyline](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r3000000n1000000.htm#POLYLINE)  
 ✖ [Polygon](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r3000000n1000000.htm#POLYGON)  
 ✖ [Envelope](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r3000000n1000000.htm#ENVELOPE)  
-✖ [Histogram object](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Histogram_object/02r3000000p9000000/)  
+[object Object]✖ [Histogram object](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Histogram_object/02r3000000p9000000/)  
 **Image coordinate systems**  
 ✖ [icsid-based syntax](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Image_coordinate_systems/02r30000029w000000/)  
 ✖ [ics-based syntax](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Image_coordinate_systems/02r30000029w000000/)  
-**Labeling objects**  
+[object Object]**Labeling objects**  
 ✖ [Label placement](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r3000001m1000000.htm#GUID-0243157A-D1B7-45B6-8E02-12D4E3BFB82C)  
 ✖ [Label class](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r3000001m1000000.htm#GUID-CF045D5B-E7AC-4D81-A6F6-2EF6621E8B87)  
 ✖ [Labeling info](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r3000001m1000000.htm#GUID-B12B075F-91B4-423B-B5AC-75AEAE7627A3)  
-**Layer source object**  
+[object Object]**Layer source object**  
 ✖ [Dynamic map layer](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r30000019v000000.htm#GUID-BA24A71E-6BCA-4FC5-893D-C087E91C5735)  
 ✖ [Dynamic data layer](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r30000019v000000.htm#GUID-259EADC4-4C38-4F86-BA0D-2E3A0A362FE7)  
-✖ [Mosaic rule objects](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Mosaic_rule_objects/02r3000000s4000000/)  
+[object Object]✖ [Mosaic rule objects](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Mosaic_rule_objects/02r3000000s4000000/)  
 ✖ [Multidimensional Definition](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Multidimensional_Definition/02r300000290000000/)  
 **Raster function objects**  
 ✖ [Aspect](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r3000000rv000000.htm#GUID-6853A45D-D705-419B-9CC1-4EE7A7CFC630)  
@@ -493,11 +499,11 @@
 ✖ [TransposeBits](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r3000000rv000000.htm#ESRI_SECTION1_5F58B4CB2D1B41A1A71B51E341423E21)  
 ✖ [ElevationVoidFill](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r3000000rv000000.htm#ESRI_SECTION1_8AF75FB08A594DF1B9E0DE6DBDC06900)  
 ✖ [Curvature](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r3000000rv000000.htm#ESRI_SECTION1_F80E20840BFB4A35B217240F849B969D)  
-**Renderer objects**  
+[object Object]**Renderer objects**  
 ✖ [Simple renderer](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r30000019t000000.htm#GUID-4B5C4DD2-5F99-4DF2-95E2-7E89F5F47E8A)  
 ✖ [Unique value renderer](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r30000019t000000.htm#GUID-35C6482C-9BB2-4839-A180-25DCF62CB504)  
 ✖ [Class breaks renderer](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r30000019t000000.htm#GUID-F7C99737-E033-48A2-8BF0-665F54CB1680)  
-✖ [Schematic Diagram Content object](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Schematic_Diagram_Content_object/02r30000019p000000/)  
+[object Object]✖ [Schematic Diagram Content object](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Schematic_Diagram_Content_object/02r30000019p000000/)  
 ✖ [Schematic Diagram Information object](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Schematic_Diagram_Information_object/02r30000019w000000/)  
 ✖ [Schematic Folder object](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Schematic_Folder_object/02r30000019s000000/)  
 ✖ [Schematic Sublayer Object](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Schematic_Sublayer_Object/02r3000000ps000000/)  
@@ -509,7 +515,7 @@
 ✖ [Picture Marker Symbol](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r3000000n5000000.htm#GUID-E5E7E64B-3FF6-4FE8-8C97-3FAED1E5F842)  
 ✖ [Picture Fill Symbol](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r3000000n5000000.htm#ESRI_SECTION1_E0DB3264B3EA424CB0BB2C34D625BB73)  
 ✖ [Text Symbol](http://resources.arcgis.com/en/help/arcgis-rest-api/02r3/02r3000000n5000000.htm#ESRI_SECTION1_94E8CE0A9F614ABC8BEDDBCB0E9DC53A)  
-**Web map**  
+[object Object]**Web map**  
 ✖ [Web map format](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Web_map_format/02r30000004n000000/)  
 **Objects**  
 ✖ [baseMap](http://resources.arcgis.com/en/help/arcgis-rest-api/#/baseMap/02r30000003w000000/)  
@@ -530,3 +536,4 @@
 ✖ [template](http://resources.arcgis.com/en/help/arcgis-rest-api/#/template/02r30000004r000000/)  
 ✖ [type](http://resources.arcgis.com/en/help/arcgis-rest-api/#/type/02r300000038000000/)  
 ✖ [value](http://resources.arcgis.com/en/help/arcgis-rest-api/#/value/02r30000004p000000/)  
+[object Object][object Object][object Object]
