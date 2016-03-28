@@ -10,7 +10,7 @@
       "description": "Array of tag objects. Each tag object contains a tag property with the name of the tag along with a count that reports the number of times the tag was used",
       "minLength": 0,
       "items": {
-        "$ref": "userTag"
+        "$ref": "getUserTag"
       }
     }
   },

@@ -8,7 +8,7 @@
       "description": "JSON array of notification objects. See Notification for the properties of an invitation",
       "minLength": 0,
       "items": {
-        "$ref": "#/definitions/notification"
+        "$ref": "#/definitions/getNotification"
       }
     }
   },
@@ -36,8 +36,7 @@
             "user_invite",
             "user_invitation_accepted",
             "user_invitation_declined"
-          ],
-          "pattern": "group_join|group_application_accepted|group_application_declined|user_invite|user_invitation_accepted|user_invitation_declined"
+          ]
         },
         "target": {
           "type": "string",

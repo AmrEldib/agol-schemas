@@ -8,7 +8,7 @@
       "description": "A JSON array of invitation objects. For details, see the response properties for User Invitation",
       "minLength": 0,
       "items": {
-        "$ref": "#/definitions/userInvitation"
+        "$ref": "#/definitions/getUserInvitation"
       }
     }
   },
@@ -97,7 +97,7 @@
           ]
         },
         "group": {
-          "$ref": "#/definitions/group"
+          "$ref": "#/definitions/getGroup"
         }
       },
       "required": [

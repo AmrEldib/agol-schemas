@@ -21,6 +21,22 @@ function getAllFilesFromFolder(dir, recursive) {
   return results;
 }
 
+/**
+ * Check if a file exists and process has access to it
+ * @param string folder Path to the folder where the file should exist
+ * @param string fileName Name of the file included exention
+ * @returns boolean True if file exists. Fales if it doesn't
+ */
+function checkIfFileExists(folder, fileName) {
+  try {
+    fs.accessSync(path.resolve(__dirname, folder + "/" + fileName));
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
 module.exports = {
-  getAllFilesFromFolder: getAllFilesFromFolder
+  getAllFilesFromFolder: getAllFilesFromFolder,
+  checkIfFileExists: checkIfFileExists
 };

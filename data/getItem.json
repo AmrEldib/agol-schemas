@@ -195,7 +195,7 @@
       }
     },
     "extent": {
-      "$ref": "extent"
+      "$ref": "getExtent"
     },
     "spatialReference": {
       "id": "spatialReference",

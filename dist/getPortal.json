@@ -9,8 +9,7 @@
       "enum": [
         "private",
         "public"
-      ],
-      "pattern": "private|public"
+      ]
     },
     "allSSL": {
       "type": "boolean",
@@ -22,7 +21,7 @@
       }
     },
     "appInfo": {
-      "$ref": "#/definitions/portalAppInfo"
+      "$ref": "#/definitions/getPortalAppInfo"
     },
     "backgroundImage": {
       "type": [
@@ -183,7 +182,7 @@
       "pattern": "streets|satellite|hybrid|topo|gray|dark-gray|oceans|national-geographic|terrain|osm"
     },
     "defaultExtent": {
-      "$ref": "#/definitions/extent"
+      "$ref": "#/definitions/getExtent"
     },
     "description": {
       "type": [
@@ -203,7 +202,7 @@
       "title": "featuredGroups",
       "minLength": 0,
       "items": {
-        "$ref": "#/definitions/portalFeaturedGroup"
+        "$ref": "#/definitions/getPortalFeaturedGroup"
       }
     },
     "featuredItemsGroupQuery": {
@@ -714,7 +713,7 @@
       }
     },
     "user": {
-      "$ref": "#/definitions/user"
+      "$ref": "#/definitions/getUser"
     }
   },
   "required": [
@@ -932,7 +931,7 @@
           "description": "A JSON array of groups the user belongs to. See Group for properties of a group",
           "minLength": 0,
           "items": {
-            "$ref": "#/definitions/group"
+            "$ref": "#/definitions/getGroup"
           }
         },
         "provider": {
@@ -985,7 +984,7 @@
         "type": "object",
         "oneOf": [
           {
-            "$ref": "#/definitions/coordinate"
+            "$ref": "#/definitions/getCoordinate"
           }
         ]
       }

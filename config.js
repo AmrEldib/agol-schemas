@@ -10,7 +10,7 @@ var config = {
   // Folder where documentation is generated
   "docFolder": "docs",
   // List of code files to generate documentation for
-  "codeFiles": ['build-faker-schema.js', 'build-schema-doc.js', 'build-swagger-schema.js', 'build.js', 'util.js'],
+  "codeFiles": ['build-faker-schema.js', 'build-schema-doc.js', 'build-swagger-schema.js', 'build-coverage.js', 'build.js', 'util.js'],
   // Name of output file used to swagger definitions
   "swaggerFile": "swaggerDefinitions",
   // List of how much of the REST API schema is done
@@ -36,7 +36,7 @@ var config = {
     "getRelatedItems": [
       "getItem"
     ],
-    "getRating": [],
+    "getItemRating": [],
     "getGroupContent": [
       "getItem"
     ],
@@ -52,7 +52,7 @@ var config = {
     "getUserInvitations": [
       "getUserInvitation"
     ],
-    "getGroups": [
+    "getItemGroups": [
       "getGroup"
     ],
     "getNotification": [],
@@ -76,18 +76,18 @@ var config = {
       "getPortalAppInfo",
       "getPortalFeaturedGroup"
     ],
-    "getResources": [
-      "getResource"
+    "getPortalResources": [
+      "getPortalResource"
     ],
-    "getServers": [
-      "getServer"
+    "getPortalServers": [
+      "getPortalServer"
     ],
-    "getServer": [],
-    "getRegions": [
-      "getRegion"
+    "getPortalServer": [],
+    "getPortalRegions": [
+      "getPortalRegion"
     ],
-    "getLanguages": [
-      "getLanguage"
+    "getPortalLanguages": [
+      "getPortalLanguage"
     ],
     "updateUser": [],
     "deleteUser": [],

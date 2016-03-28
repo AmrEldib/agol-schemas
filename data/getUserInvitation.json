@@ -82,7 +82,7 @@
       "required": [ "username", "fullname" ]
     },
     "group": {
-      "$ref": "group"
+      "$ref": "getGroup"
     }
   },
   "required": [

@@ -299,7 +299,7 @@ var coverageConfig = [
           {
             "title": "Groups",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Groups/02r30000009p000000/",
-            "schema": "getGroups"
+            "schema": "getItemGroups"
           },
           {
             "title": "Item",
@@ -459,7 +459,7 @@ var coverageConfig = [
           {
             "title": "Add Resource",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_Resource/02r300000082000000/",
-            "schema": "addResource"
+            "schema": "addPortalResource"
           },
           {
             "title": "Check Service Name",
@@ -469,7 +469,7 @@ var coverageConfig = [
           {
             "title": "Languages",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Languages/02r300000095000000/",
-            "schema": "getLanguages"
+            "schema": "getPortalLanguages"
           },
           {
             "title": "Portal",
@@ -479,12 +479,12 @@ var coverageConfig = [
           {
             "title": "Portal Self",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Portal_Self/02r3000001m7000000/",
-            "schema": "getPortalSelf"
+            "schema": "getPortal"
           },
           {
             "title": "Regions",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Regions/02r300000099000000/",
-            "schema": "getRegions"
+            "schema": "getPortalRegions"
           },
           {
             "title": "Register Server",
@@ -494,7 +494,7 @@ var coverageConfig = [
           {
             "title": "Remove Resource",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Remove_Resource/02r300000073000000/",
-            "schema": "removeResource"
+            "schema": "removePortalResource"
           },
           {
             "title": "Remove Users",
@@ -504,7 +504,7 @@ var coverageConfig = [
           {
             "title": "Resources",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Resources/02r30000009r000000/",
-            "schema": "getResources"
+            "schema": "getPortalResources"
           },
           {
             "title": "Server",
@@ -514,7 +514,7 @@ var coverageConfig = [
           {
             "title": "Servers",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Servers/02r300000218000000/",
-            "schema": "getServers"
+            "schema": "getPortalServers"
           },
           {
             "title": "Unregister Server",

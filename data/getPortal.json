@@ -8,8 +8,7 @@
       "id": "access",
       "type": "string",
       "description": "Indicates the level of access to your organization for anonymous users. If set to private, only members of the organization will be able to access your site. public allows public access",
-      "enum": [ "private", "public" ],
-      "pattern": "private|public"
+      "enum": [ "private", "public" ]
     },
     "allSSL": {
       "id": "allSSL",
@@ -22,7 +21,7 @@
       }
     },
     "appInfo": {
-      "$ref": "portalAppInfo"
+      "$ref": "getPortalAppInfo"
     },
     "backgroundImage": {
       "id": "backgroundImage",
@@ -187,7 +186,7 @@
       "pattern": "streets|satellite|hybrid|topo|gray|dark-gray|oceans|national-geographic|terrain|osm"
     },
     "defaultExtent": {
-      "$ref": "extent"
+      "$ref": "getExtent"
     },
     "description": {
       "id": "description",
@@ -204,7 +203,7 @@
       "title": "featuredGroups",
       "minLength": 0,
       "items": {
-        "$ref": "portalFeaturedGroup"
+        "$ref": "getPortalFeaturedGroup"
       }
     },
     "featuredItemsGroupQuery": {
@@ -770,7 +769,7 @@
       }
     },
     "user": {
-      "$ref": "user"
+      "$ref": "getUser"
     }
   },
   "required": [

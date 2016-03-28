@@ -18,8 +18,7 @@
         "user_invite",
         "user_invitation_accepted",
         "user_invitation_declined"
-      ],
-      "pattern": "group_join|group_application_accepted|group_application_declined|user_invite|user_invitation_accepted|user_invitation_declined"
+      ]
     },
     "target": {
       "type": "string",

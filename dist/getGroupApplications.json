@@ -8,7 +8,7 @@
       "description": "A JSON array of application objects. See Group Application for property information",
       "minLength": 0,
       "items": {
-        "$ref": "#/definitions/groupApplication"
+        "$ref": "#/definitions/getGroupApplication"
       }
     }
   },

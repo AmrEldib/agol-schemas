@@ -106,7 +106,7 @@
       "type": "object",
       "oneOf": [
         {
-          "$ref": "#/definitions/coordinate"
+          "$ref": "#/definitions/getCoordinate"
         }
       ]
     }
@@ -328,7 +328,7 @@
         "description": "A JSON array of application objects. See Group Application for property information",
         "minLength": 0,
         "items": {
-          "$ref": "#/definitions/groupApplication"
+          "$ref": "#/definitions/getGroupApplication"
         }
       }
     },
@@ -346,48 +346,12 @@
         "description": "A JSON array of item objects. See Item for response properties for more details",
         "minLength": 0,
         "items": {
-          "$ref": "#/definitions/item"
+          "$ref": "#/definitions/getItem"
         }
       }
     },
     "required": [
       "items"
-    ]
-  },
-  "getGroups": {
-    "type": "object",
-    "description": "Lists the groups of which the item is a part. Only shows the groups that the calling user can access http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Groups/02r30000009p000000/",
-    "title": "groups",
-    "properties": {
-      "admin": {
-        "type": "array",
-        "description": "Groups which user is an administrator. This is a JSON Array of group objects. See Group for possible response properties",
-        "minLength": 0,
-        "items": {
-          "$ref": "#/definitions/group"
-        }
-      },
-      "member": {
-        "type": "array",
-        "description": "Groups which user is a member",
-        "minLength": 0,
-        "items": {
-          "$ref": "#/definitions/group"
-        }
-      },
-      "other": {
-        "type": "array",
-        "description": "Other groups that are public or shared to the user's organization but that the user is not a member of",
-        "minLength": 0,
-        "items": {
-          "$ref": "#/definitions/group"
-        }
-      }
-    },
-    "required": [
-      "admin",
-      "member",
-      "other"
     ]
   },
   "getGroupUsers": {
@@ -602,7 +566,7 @@
         }
       },
       "extent": {
-        "$ref": "#/definitions/extent"
+        "$ref": "#/definitions/getExtent"
       },
       "spatialReference": {
         "type": [
@@ -765,7 +729,7 @@
         "description": "A JSON array of comment objects. See the response properties for Comment for details",
         "minLength": 0,
         "items": {
-          "$ref": "#/definitions/comment"
+          "$ref": "#/definitions/getItemComment"
         }
       }
     },
@@ -773,37 +737,60 @@
       "comments"
     ]
   },
-  "getLanguage": {
+  "getItemGroups": {
     "type": "object",
-    "description": "Available language. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Languages/02r300000095000000/",
-    "title": "language",
+    "description": "Lists the groups of which the item is a part. Only shows the groups that the calling user can access http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Groups/02r30000009p000000/",
+    "title": "groups",
     "properties": {
-      "language": {
-        "type": "string",
-        "description": "Language's name"
+      "admin": {
+        "type": "array",
+        "description": "Groups which user is an administrator. This is a JSON Array of group objects. See Group for possible response properties",
+        "minLength": 0,
+        "items": {
+          "$ref": "#/definitions/group"
+        }
       },
-      "culture": {
-        "type": "string",
-        "description": "Language's culture"
+      "member": {
+        "type": "array",
+        "description": "Groups which user is a member",
+        "minLength": 0,
+        "items": {
+          "$ref": "#/definitions/group"
+        }
       },
-      "localizedName": {
-        "type": "string",
-        "description": "Language's localized name"
+      "other": {
+        "type": "array",
+        "description": "Other groups that are public or shared to the user's organization but that the user is not a member of",
+        "minLength": 0,
+        "items": {
+          "$ref": "#/definitions/group"
+        }
       }
     },
     "required": [
-      "language",
-      "culture",
-      "localizedName"
+      "admin",
+      "member",
+      "other"
     ]
   },
-  "getLanguages": {
-    "type": "array",
-    "description": "Lists the available languages. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Languages/02r300000095000000/",
-    "title": "languages",
-    "items": {
-      "$ref": "#/definitions/language"
-    }
+  "getItemRating": {
+    "type": "object",
+    "description": "Returns the rating given by the current user to the item, if any. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Item_Rating/02r300000098000000/",
+    "title": "rating",
+    "properties": {
+      "rating": {
+        "type": "integer",
+        "description": "The rating given to the item by the calling user"
+      },
+      "created": {
+        "type": "integer",
+        "description": "The date and time the comment was created. Shown in UNIX time"
+      }
+    },
+    "required": [
+      "rating",
+      "created"
+    ]
   },
   "getNotification": {
     "type": "object",
@@ -824,8 +811,7 @@
           "user_invite",
           "user_invitation_accepted",
           "user_invitation_declined"
-        ],
-        "pattern": "group_join|group_application_accepted|group_application_declined|user_invite|user_invitation_accepted|user_invitation_declined"
+        ]
       },
       "target": {
         "type": "string",
@@ -881,7 +867,7 @@
         "description": "JSON array of notification objects. See Notification for the properties of an invitation",
         "minLength": 0,
         "items": {
-          "$ref": "#/definitions/notification"
+          "$ref": "#/definitions/getNotification"
         }
       }
     },
@@ -914,15 +900,14 @@
         "enum": [
           "private",
           "public"
-        ],
-        "pattern": "private|public"
+        ]
       },
       "allSSL": {
         "type": "boolean",
         "description": "Indicates if the organization is using SSL. If true, all calls made against resources that belong to the organization will require SSL. false is the default."
       },
       "appInfo": {
-        "$ref": "#/definitions/portalAppInfo"
+        "$ref": "#/definitions/getPortalAppInfo"
       },
       "backgroundImage": {
         "type": [
@@ -1014,7 +999,7 @@
         "pattern": "streets|satellite|hybrid|topo|gray|dark-gray|oceans|national-geographic|terrain|osm"
       },
       "defaultExtent": {
-        "$ref": "#/definitions/extent"
+        "$ref": "#/definitions/getExtent"
       },
       "description": {
         "type": [
@@ -1029,7 +1014,7 @@
         "title": "featuredGroups",
         "minLength": 0,
         "items": {
-          "$ref": "#/definitions/portalFeaturedGroup"
+          "$ref": "#/definitions/getPortalFeaturedGroup"
         }
       },
       "featuredItemsGroupQuery": {
@@ -1435,7 +1420,7 @@
         "description": "If true, only simple where clauses that are complaint with SQL92 can be used when querying layers and tables. The recommended security setting is true"
       },
       "user": {
-        "$ref": "#/definitions/user"
+        "$ref": "#/definitions/getUser"
       }
     },
     "required": [
@@ -1549,26 +1534,39 @@
       "title"
     ]
   },
-  "getRating": {
+  "getPortalLanguage": {
     "type": "object",
-    "description": "Returns the rating given by the current user to the item, if any. http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Item_Rating/02r300000098000000/",
-    "title": "rating",
+    "description": "Available language. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Languages/02r300000095000000/",
+    "title": "language",
     "properties": {
-      "rating": {
-        "type": "integer",
-        "description": "The rating given to the item by the calling user"
+      "language": {
+        "type": "string",
+        "description": "Language's name"
       },
-      "created": {
-        "type": "integer",
-        "description": "The date and time the comment was created. Shown in UNIX time"
+      "culture": {
+        "type": "string",
+        "description": "Language's culture"
+      },
+      "localizedName": {
+        "type": "string",
+        "description": "Language's localized name"
       }
     },
     "required": [
-      "rating",
-      "created"
+      "language",
+      "culture",
+      "localizedName"
     ]
   },
-  "getRegion": {
+  "getPortalLanguages": {
+    "type": "array",
+    "description": "Lists the available languages. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Languages/02r300000095000000/",
+    "title": "languages",
+    "items": {
+      "$ref": "#/definitions/getPortalLanguage"
+    }
+  },
+  "getPortalRegion": {
     "type": "object",
     "description": "Available region. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Regions/02r300000099000000/",
     "title": "region",
@@ -1592,13 +1590,142 @@
       "localizedName"
     ]
   },
-  "getRegions": {
+  "getPortalRegions": {
     "type": "array",
     "description": "Lists the available regions. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Regions/02r300000099000000/",
     "title": "regions",
     "items": {
-      "$ref": "#/definitions/region"
+      "$ref": "#/definitions/getPortalRegion"
     }
+  },
+  "getPortalResource": {
+    "type": "object",
+    "description": "resource objects that contain the key, size, and created date of the resource. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Resources/02r30000009r000000/",
+    "title": "resource",
+    "properties": {
+      "key": {
+        "type": "string",
+        "description": "The ID of the comment"
+      },
+      "size": {
+        "type": "integer",
+        "description": "Size of the resource"
+      },
+      "created": {
+        "type": "integer",
+        "description": "The date and time the resource was created. Shown in UNIX time"
+      }
+    },
+    "required": [
+      "key",
+      "size",
+      "created"
+    ]
+  },
+  "getPortalResources": {
+    "type": "object",
+    "description": "Resources lists all file resources for the organization. The start and num paging parameters are supported. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Resources/02r30000009r000000/",
+    "title": "resources",
+    "properties": {
+      "total": {
+        "type": "integer",
+        "description": "The total number of results found"
+      },
+      "start": {
+        "type": "integer",
+        "description": "The number of the first entry in the result set response. The index number is 1-based"
+      },
+      "num": {
+        "type": "integer",
+        "description": "The number of results included in this result set response"
+      },
+      "nextStart": {
+        "type": "integer",
+        "description": "The next entry index if the current result set doesn't contain all results"
+      },
+      "resources": {
+        "type": "array",
+        "description": "A JSON array of resource objects that contain the key, size, and created date of the resource",
+        "minLength": 0,
+        "items": {
+          "$ref": "#/definitions/getPortalResource"
+        }
+      }
+    },
+    "required": [
+      "total",
+      "start",
+      "num",
+      "nextStart",
+      "resources"
+    ]
+  },
+  "getPortalServer": {
+    "type": "object",
+    "description": "This resource represents an ArcGIS Server site that has been federated with the portal. This resource is not applicable to ArcGIS Online; it is only applicable to Portal for ArcGIS. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Server/02r300000219000000/",
+    "title": "server",
+    "properties": {
+      "id": {
+        "type": "string",
+        "description": "ID of the ArcGIS Server site"
+      },
+      "name": {
+        "type": "string",
+        "description": "The fully qualified name of the machine hosting the ArcGIS Server site, followed by the port"
+      },
+      "adminUrl": {
+        "type": "string",
+        "description": "The administrative URL of the ArcGIS Server site, using the fully qualified name of the machine",
+        "format": "uri"
+      },
+      "url": {
+        "type": "string",
+        "description": "The externally visible URL of the ArcGIS Server site, using the fully qualified name of the machine",
+        "format": "uri"
+      },
+      "isHosted": {
+        "type": "boolean",
+        "description": "A Boolean property denoting whether the ArcGIS Server site is allowed to host services for the portal (true) or is not allowed to host services (false)"
+      },
+      "serverKey": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "The key returned when the Register Server operation is called for this server. The key is only displayed once; hence, this property usually returns null"
+      },
+      "serverType": {
+        "type": "string",
+        "description": "The type of server being registered with the portal. For example: ArcGIS"
+      }
+    },
+    "required": [
+      "id",
+      "name",
+      "adminUrl",
+      "url",
+      "isHosted",
+      "serverKey",
+      "serverType"
+    ]
+  },
+  "getPortalServers": {
+    "type": "object",
+    "description": "This resource lists the ArcGIS Server sites that have been federated with the portal. This resource is not applicable to ArcGIS Online; it is only applicable to Portal for ArcGIS. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Servers/02r300000218000000/",
+    "title": "servers",
+    "properties": {
+      "servers": {
+        "type": "array",
+        "description": "An array of JSON objects representing ArcGIS Server sites",
+        "minLength": 0,
+        "items": {
+          "$ref": "#/definitions/getPortalServer"
+        }
+      }
+    },
+    "required": [
+      "servers"
+    ]
   },
   "getRegisteredAppInfo": {
     "type": "object",
@@ -1668,142 +1795,13 @@
         "description": "A JSON array of related item objects",
         "minLength": 0,
         "items": {
-          "$ref": "#/definitions/item"
+          "$ref": "#/definitions/getItem"
         }
       }
     },
     "required": [
       "relatedItems",
       "total"
-    ]
-  },
-  "getResource": {
-    "type": "object",
-    "description": "resource objects that contain the key, size, and created date of the resource. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Resources/02r30000009r000000/",
-    "title": "resource",
-    "properties": {
-      "key": {
-        "type": "string",
-        "description": "The ID of the comment"
-      },
-      "size": {
-        "type": "integer",
-        "description": "Size of the resource"
-      },
-      "created": {
-        "type": "integer",
-        "description": "The date and time the resource was created. Shown in UNIX time"
-      }
-    },
-    "required": [
-      "key",
-      "size",
-      "created"
-    ]
-  },
-  "getResources": {
-    "type": "object",
-    "description": "Resources lists all file resources for the organization. The start and num paging parameters are supported. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Resources/02r30000009r000000/",
-    "title": "resources",
-    "properties": {
-      "total": {
-        "type": "integer",
-        "description": "The total number of results found"
-      },
-      "start": {
-        "type": "integer",
-        "description": "The number of the first entry in the result set response. The index number is 1-based"
-      },
-      "num": {
-        "type": "integer",
-        "description": "The number of results included in this result set response"
-      },
-      "nextStart": {
-        "type": "integer",
-        "description": "The next entry index if the current result set doesn't contain all results"
-      },
-      "resources": {
-        "type": "array",
-        "description": "A JSON array of resource objects that contain the key, size, and created date of the resource",
-        "minLength": 0,
-        "items": {
-          "$ref": "#/definitions/resource"
-        }
-      }
-    },
-    "required": [
-      "total",
-      "start",
-      "num",
-      "nextStart",
-      "resources"
-    ]
-  },
-  "getServer": {
-    "type": "object",
-    "description": "This resource represents an ArcGIS Server site that has been federated with the portal. This resource is not applicable to ArcGIS Online; it is only applicable to Portal for ArcGIS. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Server/02r300000219000000/",
-    "title": "server",
-    "properties": {
-      "id": {
-        "type": "string",
-        "description": "ID of the ArcGIS Server site"
-      },
-      "name": {
-        "type": "string",
-        "description": "The fully qualified name of the machine hosting the ArcGIS Server site, followed by the port"
-      },
-      "adminUrl": {
-        "type": "string",
-        "description": "The administrative URL of the ArcGIS Server site, using the fully qualified name of the machine",
-        "format": "uri"
-      },
-      "url": {
-        "type": "string",
-        "description": "The externally visible URL of the ArcGIS Server site, using the fully qualified name of the machine",
-        "format": "uri"
-      },
-      "isHosted": {
-        "type": "boolean",
-        "description": "A Boolean property denoting whether the ArcGIS Server site is allowed to host services for the portal (true) or is not allowed to host services (false)"
-      },
-      "serverKey": {
-        "type": [
-          "string",
-          "null"
-        ],
-        "description": "The key returned when the Register Server operation is called for this server. The key is only displayed once; hence, this property usually returns null"
-      },
-      "serverType": {
-        "type": "string",
-        "description": "The type of server being registered with the portal. For example: ArcGIS"
-      }
-    },
-    "required": [
-      "id",
-      "name",
-      "adminUrl",
-      "url",
-      "isHosted",
-      "serverKey",
-      "serverType"
-    ]
-  },
-  "getServers": {
-    "type": "object",
-    "description": "This resource lists the ArcGIS Server sites that have been federated with the portal. This resource is not applicable to ArcGIS Online; it is only applicable to Portal for ArcGIS. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Servers/02r300000218000000/",
-    "title": "servers",
-    "properties": {
-      "servers": {
-        "type": "array",
-        "description": "An array of JSON objects representing ArcGIS Server sites",
-        "minLength": 0,
-        "items": {
-          "$ref": "#/definitions/server"
-        }
-      }
-    },
-    "required": [
-      "servers"
     ]
   },
   "getUser": {
@@ -1928,7 +1926,7 @@
         "description": "A JSON array of groups the user belongs to. See Group for properties of a group",
         "minLength": 0,
         "items": {
-          "$ref": "#/definitions/group"
+          "$ref": "#/definitions/getGroup"
         }
       },
       "provider": {
@@ -1978,14 +1976,14 @@
         "description": "The username of the content"
       },
       "currentFolder": {
-        "$ref": "#/definitions/folder"
+        "$ref": "#/definitions/getFolder"
       },
       "items": {
         "type": "array",
         "description": "The list of the user's items. See Item for response properties for more details",
         "minLength": 0,
         "items": {
-          "$ref": "#/definitions/item"
+          "$ref": "#/definitions/getItem"
         }
       }
     },
@@ -2068,7 +2066,7 @@
         ]
       },
       "group": {
-        "$ref": "#/definitions/group"
+        "$ref": "#/definitions/getGroup"
       }
     },
     "required": [
@@ -2095,7 +2093,7 @@
         "description": "A JSON array of invitation objects. For details, see the response properties for User Invitation",
         "minLength": 0,
         "items": {
-          "$ref": "#/definitions/userInvitation"
+          "$ref": "#/definitions/getUserInvitation"
         }
       }
     },
@@ -2129,7 +2127,7 @@
         "description": "A JSON array of user objects. See User for possible response properties",
         "minLength": 0,
         "items": {
-          "$ref": "#/definitions/user"
+          "$ref": "#/definitions/getUser"
         }
       }
     },
@@ -2170,7 +2168,7 @@
         "description": "Array of tag objects. Each tag object contains a tag property with the name of the tag along with a count that reports the number of times the tag was used",
         "minLength": 0,
         "items": {
-          "$ref": "#/definitions/userTag"
+          "$ref": "#/definitions/getUserTag"
         }
       }
     },

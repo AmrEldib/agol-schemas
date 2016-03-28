@@ -10,7 +10,7 @@
       "description": "An array of JSON objects representing ArcGIS Server sites",
       "minLength": 0,
       "items": {
-        "$ref": "server"
+        "$ref": "getPortalServer"
       }
     }
   },

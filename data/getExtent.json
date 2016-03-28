@@ -7,6 +7,6 @@
   "maxLength": 2,
   "items": {
     "type": "object",
-    "oneOf": [ { "$ref": "coordinate" } ]
+    "oneOf": [ { "$ref": "getCoordinate" } ]
   }
 }

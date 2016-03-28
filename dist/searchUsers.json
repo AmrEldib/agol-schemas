@@ -315,7 +315,7 @@
           "description": "A JSON array of groups the user belongs to. See Group for properties of a group",
           "minLength": 0,
           "items": {
-            "$ref": "#/definitions/group"
+            "$ref": "#/definitions/getGroup"
           }
         },
         "provider": {

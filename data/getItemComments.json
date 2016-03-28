@@ -10,7 +10,7 @@
       "description": "A JSON array of comment objects. See the response properties for Comment for details",
       "minLength": 0,
       "items": {
-        "$ref": "comment"
+        "$ref": "getItemComment"
       }
     }
   },

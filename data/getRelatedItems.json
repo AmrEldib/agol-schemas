@@ -21,7 +21,7 @@
       "description": "A JSON array of related item objects",
       "minLength": 0,
       "items": {
-        "$ref": "item"
+        "$ref": "getItem"
       }
     }
   },

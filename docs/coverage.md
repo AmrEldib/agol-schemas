@@ -64,7 +64,7 @@
 ✔ [Item Comments](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Item_Comments/02r300000088000000/)  
 ✖ [Item Data](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Item_Data/02r300000075000000/)  
 ✖ [Item Info File](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Item_Info_File/02r30000007m000000/)  
-✖ [Item Rating](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Item_Rating/02r300000098000000/)  
+✔ [Item Rating](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Item_Rating/02r300000098000000/)  
 ✖ [Move Item](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Move_Item/02r300000078000000/)  
 ✖ [Move Items](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Move_Items/02r30000008v000000/)  
 ✖ [Package Info File](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Package_Info_File/02r300000077000000/)  
@@ -94,13 +94,13 @@
 ✖ [Check Service Name](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Check_Service_Name/02r300000076000000/)  
 ✔ [Languages](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Languages/02r300000095000000/)  
 ✔ [Portal](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Portal/02r30000009m000000/)  
-✖ [Portal Self](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Portal_Self/02r3000001m7000000/)  
+✔ [Portal Self](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Portal_Self/02r3000001m7000000/)  
 ✔ [Regions](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Regions/02r300000099000000/)  
 ✖ [Register Server](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Register_Server/02r300000215000000/)  
 ✖ [Remove Resource](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Remove_Resource/02r300000073000000/)  
 ✖ [Remove Users](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Remove_Users/02r30000008n000000/)  
 ✔ [Resources](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Resources/02r30000009r000000/)  
-✔ [Server](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Server/02r300000219000000/)  
+✖ [Server](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Server/02r300000219000000/)  
 ✔ [Servers](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Servers/02r300000218000000/)  
 ✖ [Unregister Server](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Unregister_Server/02r300000217000000/)  
 ✖ [Update](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update/02r30000008w000000/)  
@@ -121,7 +121,7 @@
 **OAuth 2.0**  
 ✖ [Authorize](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Authorize/02r300000214000000/)  
 ✖ [Register App](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Register_App/02r30000026q000000/)  
-✔ [Registered App](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Registered_App/02r30000026v000000/)  
+✖ [Registered App](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Registered_App/02r30000026v000000/)  
 ✖ [Token](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Token/02r300000213000000/)  
 **Administering your server**  
 **Clusters**  

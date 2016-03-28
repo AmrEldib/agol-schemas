@@ -11,7 +11,7 @@
       "chance": "first"
     },
     "currentFolder": {
-      "$ref": "folder"
+      "$ref": "getFolder"
     },
     "items": {
       "id": "items",
@@ -19,7 +19,7 @@
       "description": "The list of the user's items. See Item for response properties for more details",
       "minLength": 0,
       "items": {
-        "$ref": "item"
+        "$ref": "getItem"
       }
     }
   },

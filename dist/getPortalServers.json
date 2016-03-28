@@ -8,7 +8,7 @@
       "description": "An array of JSON objects representing ArcGIS Server sites",
       "minLength": 0,
       "items": {
-        "$ref": "#/definitions/server"
+        "$ref": "#/definitions/getPortalServer"
       }
     }
   },
@@ -16,7 +16,7 @@
     "servers"
   ],
   "definitions": {
-    "getServer": {
+    "getPortalServer": {
       "type": "object",
       "description": "This resource represents an ArcGIS Server site that has been federated with the portal. This resource is not applicable to ArcGIS Online; it is only applicable to Portal for ArcGIS. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Server/02r300000219000000/",
       "title": "server",
