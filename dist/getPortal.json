@@ -991,7 +991,7 @@
     },
     "getPortalAppInfo": {
       "type": "object",
-      "description": "Information about the Application through which this resource was accessed. This information is based on the token used to acces this resource. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Portal_Self/02r3000001m7000000/",
+      "description": "Information about the Application through which this resource was accessed. This information is based on the token used to access this resource. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Portal_Self/02r3000001m7000000/",
       "title": "portalAppInfo",
       "properties": {
         "appID": {
@@ -1249,7 +1249,6 @@
       ]
     },
     "getCoordinate": {
-      "$schema": "http://json-schema.org/draft-04/schema",
       "type": "array",
       "description": "Coordinate",
       "title": "coordinate",

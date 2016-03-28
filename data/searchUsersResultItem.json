@@ -1,0 +1,102 @@
+{
+  "id": "searchUsersResultItem",
+  "type": "object",
+  "description": "Result item of searching for Users http://resources.arcgis.com/en/help/arcgis-rest-api/#/User_Search/02r3000000m6000000/",
+  "title": "searchUsersResultItem",
+  "properties": {
+    "created": {
+      "id": "created",
+      "type": "integer",
+      "description": "The date the user was created. Shown in UNIX time",
+      "chance": "hammertime"
+    },
+    "culture": {
+      "id": "culture",
+      "type": "string",
+      "description": "The item locale information (language and country)",
+      "faker": "random.locale"
+    },
+    "description": {
+      "id": "description",
+      "type": "string",
+      "description": "A description of the user",
+      "chance": "sentence"
+    },
+    "fullname": {
+      "id": "fullname",
+      "type": "string",
+      "description": "The user's full name",
+      "chance": "name"
+    },
+    "modified": {
+      "id": "modified",
+      "type": "integer",
+      "description": "The date the user was last modified. Shown in UNIX time",
+      "chance": "hammertime"
+    },
+    "provider": {
+      "id": "provider",
+      "type": "string",
+      "description": "The identity provider for the organization. Either arcgis (for built-in users) or enterprise (for external users managed by an enterprise identity store). This was added at Portal for ArcGIS 10.3.1",
+      "enum": [
+        "arcgis",
+        "enterprise",
+        "facebook",
+        "google"
+      ]
+    },
+    "region": {
+      "id": "region",
+      "type": "string",
+      "description": "The user preferred region, used to set the featured maps on the home page, content in the gallery, and the default extent of new maps in the Viewer",
+      "faker": "address.countryCode"
+    },
+    "tags": {
+      "id": "tags",
+      "type": "array",
+      "description": "User-defined tags that describe the user",
+      "items": {
+        "type": "string",
+        "chance": "word"
+      },
+      "uniqueItems": true
+    },
+    "thumbnail": {
+      "id": "thumbnail",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The file name of the thumbnail used for the user. All user thumbnails are relative to the URL http://<community-url>/users/<userName>/info",
+      "faker": "image.avatar"
+    },
+    "units": {
+      "id": "units",
+      "type": "string",
+      "description": "User-defined units for measurement",
+      "enum": [
+        "english",
+        "metric"
+      ]
+    },
+    "username": {
+      "id": "username",
+      "type": "string",
+      "description": "The username of the given user",
+      "faker": "internet.userName"
+    }
+  },
+  "required": [
+    "created",
+    "culture",
+    "description",
+    "fullname",
+    "modified",
+    "provider",
+    "region",
+    "tags",
+    "thumbnail",
+    "units",
+    "username"
+  ]
+}

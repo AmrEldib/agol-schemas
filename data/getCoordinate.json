@@ -1,5 +1,4 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema",
   "id": "coordinate",
   "type": "array",
   "description": "Coordinate",

@@ -94,7 +94,8 @@ var config = {
     "disableUser": [],
     "enableUser": [],
     "searchUsers": [
-      "getUser"
+      "getUser",
+      "searchUsersResultItem"
     ],
     "deleteNotification": []
   }
