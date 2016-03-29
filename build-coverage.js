@@ -13,9 +13,7 @@ var util = require('./util');
 function getCoverage(coverage, coverageItem) {
   if (coverageItem.hasOwnProperty("children") && coverageItem.children.length != 0) {
     coverage.description += "**" + coverageItem.title + "**  \n";
-    var coverageDescriptions = coverageItem.children.reduce(getCoverage, coverage);
-    coverage.description += coverageDescriptions;
-    return coverage;
+    return coverageItem.children.reduce(getCoverage, coverage);
   }
   else if (!coverageItem.hasOwnProperty("children") && coverageItem.title != "") {
     if (util.checkIfFileExists(config.outputFolder, coverageItem.schema + ".json")) {
@@ -39,9 +37,9 @@ function getCoverage(coverage, coverageItem) {
  */
 function collectCoverage() {
   var coverage = {
-    "completed": 0,
-    "itemsCount": 0,
-    "description": ""
+    completed: 0,
+    itemsCount: 0,
+    description: ""
   };
   coverage = coverageConfig.reduce(getCoverage, coverage);
 
