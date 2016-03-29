@@ -1,5 +1,5 @@
 var testSchema = require('./coverage-test');
 
-testSchema.checkDuplicates();
+testSchema.findDuplicates();
 
 console.log('Tests Complete');
