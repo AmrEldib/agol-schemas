@@ -1,10 +1,10 @@
-var coverageConfig = require('../coverage-config');
+var coverageConfig = require('../config/coverage-config');
 
 /**
  * Traverse coverage-config.js file to get array of schema names, callback function of array.prototype.reduce
- * @param array schemas Previous value of iteration
- * @param object resource Current element of array
- * @returns array Array of all named schemas
+ * @param {array} schemas Previous value of iteration
+ * @param {object} resource Current element of array
+ * @returns {array} Array of all named schemas
  */
 function getSchemas(schemas, resource) {
   if (resource.hasOwnProperty('children')) {
@@ -17,8 +17,8 @@ function getSchemas(schemas, resource) {
 
 /**
  * Get duplicates schemas and their counts from full schema list
- * @param array schemas Full schema list
- * @returns array Array of objects containing schema name and counts
+ * @param {array} schemas Full schema list
+ * @returns {array} Array of objects containing schema name and counts
  */
 function getDuplicates(schemas) {
   var uniqueSchemas = schemas.map(function(schema) {
@@ -48,7 +48,7 @@ function getDuplicates(schemas) {
 
 /**
  * Exposed function to generate schema list and get duplicates
- * @returns array Array of objects containing schema name and counts
+ * @returns {array} Array of objects containing schema name and counts
  */
 function findDuplicates() {
   var schemas = coverageConfig.reduce(getSchemas, []);
@@ -62,7 +62,7 @@ function findDuplicates() {
 
 /**
  * Exposed function to return true/false if duplicates exist
- * @returns bool True if duplicates are found
+ * @returns {boolean} True if duplicates are found
  */
 function anyDuplicates() {
   return findDuplicates().length > 0 ? true : false;

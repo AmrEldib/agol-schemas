@@ -10,7 +10,7 @@ var config = {
   // Folder where documentation is generated
   "docFolder": "docs",
   // List of code files to generate documentation for
-  "codeFiles": ['build-faker-schema.js', 'build-schema-doc.js', 'build-swagger-schema.js', 'build-coverage.js', 'build.js', 'util.js'],
+  "codeFiles": ['build/build-faker-schema.js', 'build/build-schema-doc.js', 'build/build-swagger-schema.js', 'build/build-coverage.js', 'util.js'],
   // Name of output file used to swagger definitions
   "swaggerFile": "swaggerDefinitions",
   // List of how much of the REST API schema is done

@@ -4,7 +4,7 @@
   "description": "JSON Schemas for ArcGIS Online's requests and responses",
   "main": "index.js",
   "scripts": {
-    "build": "node build.js",
+    "build": "node build/build.js",
     "test": "node test/test.js"
   },
   "keywords": [

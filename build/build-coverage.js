@@ -1,14 +1,14 @@
 var fs = require('fs');
 var path = require('path');
-var config = require('./config');
-var coverageConfig = require('./coverage-config');
-var util = require('./util');
+var config = require('../config/config');
+var coverageConfig = require('../config/coverage-config');
+var util = require('../util');
 
 /**
  * Determines whether a certain item of the ArcGIS REST API is covered or not
- * @param object coverage Coverage object that contains number of completed items, total count, description all items
- * @param object coverageItem Item who coverage will be checked
- * @returns string Text representation of whether an item is covered or not
+ * @param {object} coverage Coverage object that contains number of completed items, total count, description all items
+ * @param {object} coverageItem Item who coverage will be checked
+ * @returns {string} Text representation of whether an item is covered or not
  */
 function getCoverage(coverage, coverageItem) {
   if (coverageItem.hasOwnProperty("children") && coverageItem.children.length != 0) {
@@ -33,7 +33,7 @@ function getCoverage(coverage, coverageItem) {
 }
 
 /**
- * Collect coverage for all ArcGIS REST API items. Writes results to file specified in config.coverageFile
+ * Collects coverage for all ArcGIS REST API items. Writes results to file specified in config.coverageFile
  */
 function collectCoverage() {
   var coverage = {
@@ -50,7 +50,7 @@ function collectCoverage() {
   + coverage.description;
 
   // Write to file
-  fs.writeFile(path.resolve(__dirname, config.docFolder + "/" + config.coverageFile), coverageText);
+  fs.writeFile(path.resolve(__dirname, '..', config.docFolder + "/" + config.coverageFile), coverageText);
 }
 
 

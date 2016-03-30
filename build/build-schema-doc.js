@@ -1,8 +1,8 @@
 var fs = require('fs');
 var path = require('path');
 var readMultipleFiles = require('read-multiple-files');
-var config = require('./config');
-var util = require('./util');
+var config = require('../config/config');
+var util = require('../util');
 var documentation = require('documentation');
 
 /**
@@ -59,7 +59,7 @@ function collectDescriptions() {
     })
 
     // Write to file
-    fs.writeFile(path.resolve(__dirname, config.docFolder + "/" + config.schemasDocFile), schemasWithDesc);
+    fs.writeFile(path.resolve(__dirname, '..', config.docFolder + "/" + config.schemasDocFile), schemasWithDesc);
   });
 }
 
@@ -67,15 +67,18 @@ function collectDescriptions() {
  * Generate documentation for code files. It reads the JSDoc comments and generate markdown files for them. One markdown file is generated for each code file.
  */
 function generateCodeDocs() {
-  config.codeFiles.forEach(function (jsFile) {
-    var jf = [jsFile];
-    documentation(jf, { shallow: true }, function (err, result) {
-      documentation.formats.md(result, {}, function (err, md) {
-        // Write to file
-        fs.writeFile(path.resolve(__dirname, config.docFolder + "/" + jsFile + ".md"), md);
+  config.codeFiles.map(function (jsFile) {
+    return path.resolve(__dirname, '..', jsFile);
+  })
+    .forEach(function (jsFile) {
+      var jf = [jsFile];
+      documentation(jf, { shallow: true }, function (err, result) {
+        documentation.formats.md(result, {}, function (err, md) {
+          // Write to file
+          fs.writeFile(path.resolve(__dirname, '..', config.docFolder + "/" + jsFile.replace(/^.*[\\\/]/, '') + ".md"), md);
+        });
       });
     });
-  });
 }
 
 module.exports = {

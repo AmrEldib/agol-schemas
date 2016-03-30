@@ -1,6 +1,6 @@
 var fs = require('fs');
 var path = require('path');
-var config = require('./config');
+var config = require('../config/config');
 
 /**
  * Gets all files from a folder
@@ -53,7 +53,7 @@ function cleanUpSchema(schema) {
  */
 function getSchemaForSwagger(schemaName) {
   // Read schema file
-  var schemaFileContent = fs.readFileSync(path.resolve(__dirname, config.schemasFolder + '/' + schemaName + '.json'));
+  var schemaFileContent = fs.readFileSync(path.resolve(__dirname, '..', config.schemasFolder + '/' + schemaName + '.json'));
 
   // Parse schema and refs into JSON objects
   var schema = JSON.parse(schemaFileContent);
@@ -78,7 +78,7 @@ function writeSchemaToFile(schemaName, schema, outputFile) {
   }
 
   // Write fake data to file
-  fs.writeFile(path.resolve(__dirname, outputFile), JSON.stringify(schema, null, 2));
+  fs.writeFile(path.resolve(__dirname, '..', outputFile), JSON.stringify(schema, null, 2));
 }
 
 /**
