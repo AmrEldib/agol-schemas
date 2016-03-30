@@ -1,3 +1,4 @@
+var assert = require('assert');
 var coverageConfig = require('../config/coverage-config');
 
 /**
@@ -18,46 +19,36 @@ function getSchemas(schemas, resource) {
 /**
  * Get duplicates schemas and their counts from full schema list
  * @param {array} schemas Full schema list
- * @returns {array} Array of objects containing schema name and counts
+ * @returns {object} Object whose properties are the names of the schemas with duplicates and their values are the count of their duplication
  */
 function getDuplicates(schemas) {
-  var uniqueSchemas = schemas.map(function(schema) {
-      return {
-        count: 1,
-        schema: schema
-      }
-    })
-    .reduce(function(schemaCounts, schema) {
+  var uniqueSchemas = schemas.map(function (schema) {
+    return {
+      count: 1,
+      schema: schema
+    }
+  })
+    .reduce(function (schemaCounts, schema) {
       schemaCounts[schema.schema] = (schemaCounts[schema.schema] || 0) + schema.count
       return schemaCounts
     }, {});
 
-  var schemaArray = Object.keys(uniqueSchemas).reduce(function(schemaCount, schema) {
-    schemaCount.push({
-      schema: schema,
-      count: uniqueSchemas[schema]
-    });
-    return schemaCount;
-  }, [])
-
-  var duplicates = schemaArray.filter(function(schema) {
-    return schema.count > 1;
-  })
+  var duplicates = Object.keys(uniqueSchemas).reduce(function (d, schema) {
+    if (uniqueSchemas[schema] > 1) {
+      d[schema] = uniqueSchemas[schema];
+    };
+    return d;
+  }, {});
   return duplicates;
 }
 
 /**
  * Exposed function to generate schema list and get duplicates
- * @returns {array} Array of objects containing schema name and counts
+ * @returns {object} Object whose properties are the names of the schemas with duplicates and their values are the count of their duplication
  */
 function findDuplicates() {
   var schemas = coverageConfig.reduce(getSchemas, []);
-  var duplicates = getDuplicates(schemas);
-  if (duplicates.length > 0) {
-    console.log(String(duplicates.length), 'duplicates found');
-    console.log(duplicates);
-  }
-  return duplicates;
+  return getDuplicates(schemas);
 }
 
 /**
@@ -65,10 +56,15 @@ function findDuplicates() {
  * @returns {boolean} True if duplicates are found
  */
 function anyDuplicates() {
-  return findDuplicates().length > 0 ? true : false;
+  return Object.keys(findDuplicates()).length > 0 ? true : false;
 }
 
-module.exports = {
-  findDuplicates: findDuplicates,
-  anyDuplicates: anyDuplicates
-};
+describe("coverage-config", function () {
+  it("Has duplicate schema names", function () {
+    var duplicates = findDuplicates();
+    if (Object.keys(duplicates).length > 0) {
+      console.log(duplicates);
+    }
+    assert.equal(Object.keys(duplicates).length, 0);
+  });
+});

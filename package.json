@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "node build/build.js",
-    "test": "node test/test.js"
+    "test": "mocha"
   },
   "keywords": [
     "arcgis",
@@ -30,6 +30,7 @@
     "read-multiple-files": "^1.1.1"
   },
   "devDependencies": {
-    "documentation": "^3.0.4"
+    "documentation": "^3.0.4",
+    "mocha": "^2.4.5"
   }
 }
