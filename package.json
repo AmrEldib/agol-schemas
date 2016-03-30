@@ -4,8 +4,8 @@
   "description": "JSON Schemas for ArcGIS Online's requests and responses",
   "main": "index.js",
   "scripts": {
-    "build": "node build.js",
-    "test": "node test/test.js"
+    "build": "node build/build.js",
+    "test": "mocha"
   },
   "keywords": [
     "arcgis",
@@ -30,6 +30,7 @@
     "read-multiple-files": "^1.1.1"
   },
   "devDependencies": {
-    "documentation": "^3.0.4"
+    "documentation": "^3.0.4",
+    "mocha": "^2.4.5"
   }
 }

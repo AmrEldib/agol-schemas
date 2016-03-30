@@ -1,7 +1,7 @@
 ﻿var fs = require('fs');
 var path = require('path');
 var readMultipleFiles = require('read-multiple-files');
-var config = require('./config');
+var config = require('../config/config');
 
 /**
  * Check if a schema has any dependencies.
@@ -84,11 +84,11 @@ function getSchemaWithDefinitions(schemaName, callback) {
 
   // Get paths of referenced files
   var schemaRefsFiles = schemaRefs.map(function (ref) {
-    return path.resolve(__dirname, config.schemasFolder + '/' + ref + '.json');
+    return path.resolve(__dirname, '..', config.schemasFolder + '/' + ref + '.json');
   })
 
   // Read schema file
-  fs.readFile(path.resolve(__dirname, config.schemasFolder + '/' + schemaName + '.json'), function (err, schemaFileContent) {
+  fs.readFile(path.resolve(__dirname, '..', config.schemasFolder + '/' + schemaName + '.json'), function (err, schemaFileContent) {
 
     // Read reference files
     readMultipleFiles(schemaRefsFiles, 'utf8',
@@ -130,7 +130,7 @@ function writeSchemaToFile(schemaName, schema, outputFile) {
   }
 
   // Write fake data to file
-  fs.writeFile(path.resolve(__dirname, outputFile), JSON.stringify(schema, null, 2));
+  fs.writeFile(path.resolve(__dirname, '..', outputFile), JSON.stringify(schema, null, 2));
 }
 
 /**
