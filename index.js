@@ -1,7 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 var readMultipleFiles = require('read-multiple-files');
-var config = require('./config');
+var config = require('./config/config');
 var util = require('./util');
 
 /**
