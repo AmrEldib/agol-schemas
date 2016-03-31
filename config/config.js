@@ -102,7 +102,8 @@ var config = {
     "search": [
       "getItem"
     ],
-    "acceptGroupApplication": []
+    "acceptGroupApplication": [],
+    "acceptInvitation": []
   }
 }
 

@@ -23,6 +23,35 @@
       "groupId"
     ]
   },
+  "acceptInvitation": {
+    "type": "object",
+    "description": "When a group owner or an administrator invites a user to their group, it results in a user invitation. The invited user accepts the invitation using the Accept Invitation operation (POST only). This operation adds the invited user to the group, and the invitation is deleted. This operation also creates a notification for the user indicating that the user's invitation was accepted. Available only to authenticated users. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Accept_Invitation/02r3000000m4000000/",
+    "title": "acceptInvitation",
+    "properties": {
+      "success": {
+        "type": "boolean",
+        "description": "Indicates if the operation was successful"
+      },
+      "id": {
+        "type": "string",
+        "description": "The ID of the accepted invitation"
+      },
+      "username": {
+        "type": "string",
+        "description": "The username of the user who accepted the invitation"
+      },
+      "groupId": {
+        "type": "string",
+        "description": "If the targetType of the invitation is 'group,' the groupId of the joined group is returned"
+      }
+    },
+    "required": [
+      "success",
+      "id",
+      "username",
+      "groupId"
+    ]
+  },
   "deleteNotification": {
     "type": "object",
     "description": "The Delete Notification operation (POST only) is available only to the user who receives the notification. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Notification/02r3000000mv000000/",
