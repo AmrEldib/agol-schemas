@@ -1,5 +1,5 @@
 ### Coverage  
-Completed items: 40  
+Completed items: 41  
 Total items: 488  
 Completed: 8 %  
 
@@ -7,7 +7,7 @@ Completed: 8 %
 **Managing your organization**  
 ✔ [Generate Token](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Generate_Token/02r3000000m5000000/)  
 ✔ [Root](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Root/02r30000009t000000/)  
-✖ [Search](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Search/02r3000000mp000000/)  
+✔ [Search](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Search/02r3000000mp000000/)  
 **Community**  
 ✖ [Accept Group Application](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Accept_Group_Application/02r300000069000000/)  
 ✖ [Accept Invitation](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Accept_Invitation/02r3000000m4000000/)  
