@@ -101,7 +101,8 @@ var config = {
     "generateToken": [],
     "search": [
       "getItem"
-    ]
+    ],
+    "acceptGroupApplication": []
   }
 }
 

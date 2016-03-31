@@ -1,7 +1,7 @@
 ### Coverage  
-Completed items: 41  
+Completed items: 42  
 Total items: 488  
-Completed: 8 %  
+Completed: 9 %  
 
 
 **Managing your organization**  
@@ -9,7 +9,7 @@ Completed: 8 %
 ✔ [Root](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Root/02r30000009t000000/)  
 ✔ [Search](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Search/02r3000000mp000000/)  
 **Community**  
-✖ [Accept Group Application](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Accept_Group_Application/02r300000069000000/)  
+✔ [Accept Group Application](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Accept_Group_Application/02r300000069000000/)  
 ✖ [Accept Invitation](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Accept_Invitation/02r3000000m4000000/)  
 ✖ [Add Users to Group](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_Users_to_Group/02r3000002mr000000/)  
 ✖ [Create Group](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Group/02r30000009w000000/)  

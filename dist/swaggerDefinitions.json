@@ -1,4 +1,28 @@
 {
+  "acceptGroupApplication": {
+    "type": "object",
+    "description": "When a user applies to join a group, a group application is created. Group administrators choose to accept this application using the Accept Group Application operation (POST only). This operation adds the applying user to the group then deletes the application. This operation also creates a notification for the user indicating that the user's group application was accepted. Available only to group owners and admins. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Accept_Group_Application/02r300000069000000/",
+    "title": "acceptGroupApplication",
+    "properties": {
+      "success": {
+        "type": "boolean",
+        "description": "Indicates if the operation was successful"
+      },
+      "username": {
+        "type": "string",
+        "description": "The username of the user to disable"
+      },
+      "groupId": {
+        "type": "string",
+        "description": "The group ID of the group that accepted the user's application"
+      }
+    },
+    "required": [
+      "success",
+      "username",
+      "groupId"
+    ]
+  },
   "deleteNotification": {
     "type": "object",
     "description": "The Delete Notification operation (POST only) is available only to the user who receives the notification. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Notification/02r3000000mv000000/",
