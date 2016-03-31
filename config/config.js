@@ -104,7 +104,10 @@ var config = {
     ],
     "acceptGroupApplication": [],
     "acceptInvitation": [],
-    "addUsersToGroup": []
+    "addUsersToGroup": [],
+    "createGroup": [
+      "getGroup"
+    ]
   }
 }
 
