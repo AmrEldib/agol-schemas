@@ -1,11 +1,11 @@
 ### Coverage  
-Completed items: 38  
+Completed items: 40  
 Total items: 488  
 Completed: 8 %  
 
 
 **Managing your organization**  
-✖ [Generate Token](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Generate_Token/02r3000000m5000000/)  
+✔ [Generate Token](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Generate_Token/02r3000000m5000000/)  
 ✔ [Root](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Root/02r30000009t000000/)  
 ✖ [Search](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Search/02r3000000mp000000/)  
 **Community**  
@@ -265,7 +265,7 @@ Completed: 8 %
 ✖ [Create Site](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Site/02r3000001zs000000/)  
 ✖ [Delete Site](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Site/02r3000001zv000000/)  
 ✖ [Export Site](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Export_Site/02r30000020s000000/)  
-✖ [Generate Token](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Generate_Token/02r3000001w0000000/)  
+✔ [Generate Token](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Generate_Token/02r3000001w0000000/)  
 ✖ [Import Site](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Import_Site/02r30000020p000000/)  
 ✖ [Join Site](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Join_Site/02r300000205000000/)  
 ✖ [Public Key](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Public_Key/02r3000001wp000000/)  

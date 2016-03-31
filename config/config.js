@@ -97,7 +97,8 @@ var config = {
       "getUser",
       "searchUsersResultItem"
     ],
-    "deleteNotification": []
+    "deleteNotification": [],
+    "generateToken": []
   }
 }
 

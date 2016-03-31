@@ -75,6 +75,30 @@
       "user"
     ]
   },
+  "generateToken": {
+    "type": "object",
+    "description": "This operation generates an access token in exchange for user credentials that can be used by clients when working with the ArcGIS Portal API. The call is only allowed over HTTPS and must be a POST. The access token represents the authenticated user for a certain amount of time to all other API functionality. Developers using the API must take care to protect the token against malicious use just as they would the original credentials, and they must be prepared to renew the token. Expired tokens will be rejected by the server. From version 2.1, the generateToken operation also supports generation of a server-token in exchange for a portal token. This server-token is required for clients to access resources from a federated server. The parameters token and serverUrl are required to generate a server-token. See the descriptions of these parameters below for additional information. Organizations that choose to implement higher levels of security for their organizations can set the allSSL setting to true for their organization or portal. The effect of setting allSSL to true is that all non-HTTPS requests for resources belonging to the organization will be rejected. Setting allSSL to true guarantees that all transmissions of access tokens as well as data between clients and servers is over a secure encrypted channel and provides protection to tokens and data in transit. When generateToken is called for a user in such an organization, it returns a response property of ssl=true, and the token must always be passed back via HTTPS to the portal. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Generate_Token/02r3000000m5000000/",
+    "title": "generateToken",
+    "properties": {
+      "token": {
+        "type": "string",
+        "description": "The generated token"
+      },
+      "expires": {
+        "type": "integer",
+        "description": "The expiration time of the token in milliseconds since Jan. 1, 1970 (UTC)"
+      },
+      "ssl": {
+        "type": "boolean",
+        "description": "True if the tokem must always pass over ssl"
+      }
+    },
+    "required": [
+      "token",
+      "expires",
+      "ssl"
+    ]
+  },
   "getCoordinate": {
     "type": "array",
     "description": "Coordinate",
