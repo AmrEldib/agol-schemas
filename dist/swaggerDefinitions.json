@@ -52,6 +52,25 @@
       "groupId"
     ]
   },
+  "addUsersToGroup": {
+    "type": "object",
+    "description": "The operation to Add Users to Group (POST only) is available only to the group administrators, including the owner, and to the administrator of the organization if the user is a member. Both users and admins can be added using this operation. This is useful if you wish to add users directly within an organization without requiring them to accept an invitation. For example, a member of an organization can add only other organization members but not public users. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_Users_to_Group/02r3000002mr000000/",
+    "title": "addUsersToGroup",
+    "properties": {
+      "notAdded": {
+        "type": "array",
+        "description": "A JSON array of usernames that were not added",
+        "minItems": 0,
+        "items": {
+          "type": "string"
+        },
+        "uniqueItems": true
+      }
+    },
+    "required": [
+      "notAdded"
+    ]
+  },
   "deleteNotification": {
     "type": "object",
     "description": "The Delete Notification operation (POST only) is available only to the user who receives the notification. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Notification/02r3000000mv000000/",

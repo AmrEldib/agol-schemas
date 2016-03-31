@@ -103,7 +103,8 @@ var config = {
       "getItem"
     ],
     "acceptGroupApplication": [],
-    "acceptInvitation": []
+    "acceptInvitation": [],
+    "addUsersToGroup": []
   }
 }
 
