@@ -1,0 +1,83 @@
+{
+  "id": "search",
+  "type": "object",
+  "description": "This operation searches for content items in the portal. The searches are performed against a high performance index that indexes the most popular fields of an item. See the Search reference page for information on the fields and the syntax of the query. The search index is updated whenever users add, update, or delete content. There can be a lag between the time that the content is updated and the time when it's reflected in the search results. The results of a search only contain items that the user has permission to access. Care should be taken when using ArcGIS REST API search operations (search, user search, group search) to find items, groups, and users programmatically. The Portal uses a powerful search engine to index information and to allow full text searching on it. This search engine uses many different inputs to find the appropriate results and rank them. This often makes search 'fuzzy', making it ideal for human interaction, but not necessarily ideal for looking for specific records programmatically. Developers should avoid using search to find specific items (e.g. by title) as the results of these types of queries might change as the search engine evolves. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Search/02r3000000mp000000/",
+  "title": "search",
+  "properties": {
+    "query": {
+      "id": "query",
+      "type": "string",
+      "description": "The query string searched",
+      "chance": "word"
+    },
+    "total": {
+      "id": "total",
+      "type": "integer",
+      "description": "The total number of results found for the whole query. The number of query results is limited to 10000",
+      "minimum": 0,
+      "maximum": 10000,
+      "chance": {
+        "integer": {
+          "min": 0,
+          "max": 10000
+        }
+      }
+    },
+    "start": {
+      "id": "start",
+      "type": "integer",
+      "description": "The number of the first entry in the result set for this response. The index number is 1-based",
+      "minimum": 1,
+      "maximum": 10000,
+      "chance": {
+        "integer": {
+          "min": 1,
+          "max": 10000
+        }
+      }
+    },
+    "num": {
+      "id": "num",
+      "type": "integer",
+      "description": "The number of results included in the result set for this response",
+      "minimum": 1,
+      "maximum": 100,
+      "chance": {
+        "integer": {
+          "min": 1,
+          "max": 100
+        }
+      }
+    },
+    "nextStart": {
+      "id": "nextStart",
+      "type": "integer",
+      "description": "The next entry index if the current result set doesn't contain all results",
+      "minimum": 1,
+      "maximum": 10000,
+      "chance": {
+        "integer": {
+          "min": 1,
+          "max": 10000
+        }
+      }
+    },
+    "results": {
+      "id": "results",
+      "type": "array",
+      "description": "A JSON array of item objects. See the response properties of an item",
+      "minLength": 0,
+      "items": {
+        "$ref": "getItem"
+      }
+    }
+  },
+  "required": [
+    "query",
+    "total",
+    "start",
+    "num",
+    "nextStart",
+    "results"
+  ]
+}

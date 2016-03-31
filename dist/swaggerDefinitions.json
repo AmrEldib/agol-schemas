@@ -1,4 +1,28 @@
 {
+  "acceptGroupApplication": {
+    "type": "object",
+    "description": "When a user applies to join a group, a group application is created. Group administrators choose to accept this application using the Accept Group Application operation (POST only). This operation adds the applying user to the group then deletes the application. This operation also creates a notification for the user indicating that the user's group application was accepted. Available only to group owners and admins. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Accept_Group_Application/02r300000069000000/",
+    "title": "acceptGroupApplication",
+    "properties": {
+      "success": {
+        "type": "boolean",
+        "description": "Indicates if the operation was successful"
+      },
+      "username": {
+        "type": "string",
+        "description": "The username of the user to disable"
+      },
+      "groupId": {
+        "type": "string",
+        "description": "The group ID of the group that accepted the user's application"
+      }
+    },
+    "required": [
+      "success",
+      "username",
+      "groupId"
+    ]
+  },
   "deleteNotification": {
     "type": "object",
     "description": "The Delete Notification operation (POST only) is available only to the user who receives the notification. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Notification/02r3000000mv000000/",
@@ -73,6 +97,30 @@
     "required": [
       "success",
       "user"
+    ]
+  },
+  "generateToken": {
+    "type": "object",
+    "description": "This operation generates an access token in exchange for user credentials that can be used by clients when working with the ArcGIS Portal API. The call is only allowed over HTTPS and must be a POST. The access token represents the authenticated user for a certain amount of time to all other API functionality. Developers using the API must take care to protect the token against malicious use just as they would the original credentials, and they must be prepared to renew the token. Expired tokens will be rejected by the server. From version 2.1, the generateToken operation also supports generation of a server-token in exchange for a portal token. This server-token is required for clients to access resources from a federated server. The parameters token and serverUrl are required to generate a server-token. See the descriptions of these parameters below for additional information. Organizations that choose to implement higher levels of security for their organizations can set the allSSL setting to true for their organization or portal. The effect of setting allSSL to true is that all non-HTTPS requests for resources belonging to the organization will be rejected. Setting allSSL to true guarantees that all transmissions of access tokens as well as data between clients and servers is over a secure encrypted channel and provides protection to tokens and data in transit. When generateToken is called for a user in such an organization, it returns a response property of ssl=true, and the token must always be passed back via HTTPS to the portal. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Generate_Token/02r3000000m5000000/",
+    "title": "generateToken",
+    "properties": {
+      "token": {
+        "type": "string",
+        "description": "The generated token"
+      },
+      "expires": {
+        "type": "integer",
+        "description": "The expiration time of the token in milliseconds since Jan. 1, 1970 (UTC)"
+      },
+      "ssl": {
+        "type": "boolean",
+        "description": "True if the tokem must always pass over ssl"
+      }
+    },
+    "required": [
+      "token",
+      "expires",
+      "ssl"
     ]
   },
   "getCoordinate": {
@@ -2173,6 +2221,57 @@
     },
     "required": [
       "tags"
+    ]
+  },
+  "search": {
+    "type": "object",
+    "description": "This operation searches for content items in the portal. The searches are performed against a high performance index that indexes the most popular fields of an item. See the Search reference page for information on the fields and the syntax of the query. The search index is updated whenever users add, update, or delete content. There can be a lag between the time that the content is updated and the time when it's reflected in the search results. The results of a search only contain items that the user has permission to access. Care should be taken when using ArcGIS REST API search operations (search, user search, group search) to find items, groups, and users programmatically. The Portal uses a powerful search engine to index information and to allow full text searching on it. This search engine uses many different inputs to find the appropriate results and rank them. This often makes search 'fuzzy', making it ideal for human interaction, but not necessarily ideal for looking for specific records programmatically. Developers should avoid using search to find specific items (e.g. by title) as the results of these types of queries might change as the search engine evolves. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Search/02r3000000mp000000/",
+    "title": "search",
+    "properties": {
+      "query": {
+        "type": "string",
+        "description": "The query string searched"
+      },
+      "total": {
+        "type": "integer",
+        "description": "The total number of results found for the whole query. The number of query results is limited to 10000",
+        "minimum": 0,
+        "maximum": 10000
+      },
+      "start": {
+        "type": "integer",
+        "description": "The number of the first entry in the result set for this response. The index number is 1-based",
+        "minimum": 1,
+        "maximum": 10000
+      },
+      "num": {
+        "type": "integer",
+        "description": "The number of results included in the result set for this response",
+        "minimum": 1,
+        "maximum": 100
+      },
+      "nextStart": {
+        "type": "integer",
+        "description": "The next entry index if the current result set doesn't contain all results",
+        "minimum": 1,
+        "maximum": 10000
+      },
+      "results": {
+        "type": "array",
+        "description": "A JSON array of item objects. See the response properties of an item",
+        "minLength": 0,
+        "items": {
+          "$ref": "#/definitions/getItem"
+        }
+      }
+    },
+    "required": [
+      "query",
+      "total",
+      "start",
+      "num",
+      "nextStart",
+      "results"
     ]
   },
   "searchUsers": {

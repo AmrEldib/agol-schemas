@@ -97,7 +97,12 @@ var config = {
       "getUser",
       "searchUsersResultItem"
     ],
-    "deleteNotification": []
+    "deleteNotification": [],
+    "generateToken": [],
+    "search": [
+      "getItem"
+    ],
+    "acceptGroupApplication": []
   }
 }
 
