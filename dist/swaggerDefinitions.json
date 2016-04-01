@@ -2365,6 +2365,57 @@
       "tags"
     ]
   },
+  "groupSearch": {
+    "type": "object",
+    "description": "The Group Search operation searches for groups in the portal. The search index is updated whenever groups and organizations are created, updated, or deleted. There can be a lag between the time that a group is updated and the time when it's reflected in the search results. The results only contain groups that the user has permission to access. Care should be taken when using ArcGIS REST API search operations (search, user search, group search) to find items, groups, and users programmatically. The Portal uses a powerful search engine to index information and to allow full text searching on it. This search engine uses many different inputs to find the appropriate results and rank them. This often makes search 'fuzzy', making it ideal for human interaction, but not necessarily ideal for looking for specific records programmatically. Developers should avoid using search to find specific items (e.g. by title) as the results of these types of queries might change as the search engine evolves. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Group_Search/02r3000000m1000000/",
+    "title": "groupSearch",
+    "properties": {
+      "query": {
+        "type": "string",
+        "description": "The query string searched"
+      },
+      "total": {
+        "type": "integer",
+        "description": "The total number of results found for the whole query. The number of query results is limited to 10000",
+        "minimum": 0,
+        "maximum": 10000
+      },
+      "start": {
+        "type": "integer",
+        "description": "The number of the first entry in the result set for this response. The index number is 1-based",
+        "minimum": 1,
+        "maximum": 10000
+      },
+      "num": {
+        "type": "integer",
+        "description": "The number of results included in the result set for this response",
+        "minimum": 1,
+        "maximum": 100
+      },
+      "nextStart": {
+        "type": "integer",
+        "description": "The next entry index if the current result set doesn't contain all results",
+        "minimum": -1,
+        "maximum": 10000
+      },
+      "results": {
+        "type": "array",
+        "description": "A JSON array of group objects. See the response properties for Group",
+        "minLength": 0,
+        "items": {
+          "$ref": "#/definitions/getGroup"
+        }
+      }
+    },
+    "required": [
+      "query",
+      "total",
+      "start",
+      "num",
+      "nextStart",
+      "results"
+    ]
+  },
   "search": {
     "type": "object",
     "description": "This operation searches for content items in the portal. The searches are performed against a high performance index that indexes the most popular fields of an item. See the Search reference page for information on the fields and the syntax of the query. The search index is updated whenever users add, update, or delete content. There can be a lag between the time that the content is updated and the time when it's reflected in the search results. The results of a search only contain items that the user has permission to access. Care should be taken when using ArcGIS REST API search operations (search, user search, group search) to find items, groups, and users programmatically. The Portal uses a powerful search engine to index information and to allow full text searching on it. This search engine uses many different inputs to find the appropriate results and rank them. This often makes search 'fuzzy', making it ideal for human interaction, but not necessarily ideal for looking for specific records programmatically. Developers should avoid using search to find specific items (e.g. by title) as the results of these types of queries might change as the search engine evolves. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Search/02r3000000mp000000/",

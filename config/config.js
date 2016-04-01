@@ -109,7 +109,10 @@ var config = {
     ],
     "declineGroupApplication": [],
     "declineInvitation": [],
-    "deleteGroup": []
+    "deleteGroup": [],
+    "groupSearch": [
+      "getGroup"
+    ]
   }
 }
 
