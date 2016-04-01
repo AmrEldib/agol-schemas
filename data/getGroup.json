@@ -41,7 +41,9 @@
       "type": "string",
       "description": "The group description",
       "chance": {
-        "paragraph": { "sentences": 7 }
+        "paragraph": {
+          "sentences": 7
+        }
       }
     },
     "snippet": {
@@ -103,7 +105,7 @@
     },
     "thumbnail": {
       "id": "thumbnail",
-      "type": [ "string", "null" ],
+      "type": ["string", "null"],
       "description": "The URL to the thumbnail used for the group. All group thumbnails are relative to the URL: http://<community-url>/groups/<groupId>/info",
       "faker": "image.cats"
     },
@@ -164,9 +166,8 @@
         }
       },
       "required": [
-        "applications",
-        "memberType",
-        "username"
+        "username",
+        "memberType"
       ]
     }
   },

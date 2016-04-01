@@ -1207,9 +1207,8 @@
             }
           },
           "required": [
-            "applications",
-            "memberType",
-            "username"
+            "username",
+            "memberType"
           ]
         }
       },
