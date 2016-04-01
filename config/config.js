@@ -1,4 +1,3 @@
-
 var config = {
   // Folder where schemas are stored
   "schemasFolder": "data",

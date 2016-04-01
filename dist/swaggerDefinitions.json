@@ -10,7 +10,7 @@
       },
       "username": {
         "type": "string",
-        "description": "The username of the user to disable"
+        "description": "The username of the user being accepted into the group"
       },
       "groupId": {
         "type": "string",
