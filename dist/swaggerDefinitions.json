@@ -146,6 +146,25 @@
       "groupId"
     ]
   },
+  "deleteGroup": {
+    "type": "object",
+    "description": "The Delete Group operation (POST only) is available only to the group administrators or to the administrator of the organization to which the owner belongs. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Group/02r300000070000000/",
+    "title": "deleteGroup",
+    "properties": {
+      "success": {
+        "type": "boolean",
+        "description": "Indicates if the operation was successful"
+      },
+      "groupId": {
+        "type": "string",
+        "description": "The ID of the deleted group"
+      }
+    },
+    "required": [
+      "success",
+      "groupId"
+    ]
+  },
   "deleteNotification": {
     "type": "object",
     "description": "The Delete Notification operation (POST only) is available only to the user who receives the notification. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Notification/02r3000000mv000000/",
