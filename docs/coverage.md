@@ -1,7 +1,7 @@
 ### Coverage  
-Completed items: 46  
+Completed items: 47  
 Total items: 488  
-Completed: 9 %  
+Completed: 10 %  
 
 
 **Managing your organization**  
@@ -14,7 +14,7 @@ Completed: 9 %
 ✔ [Add Users to Group](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_Users_to_Group/02r3000002mr000000/)  
 ✔ [Create Group](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Group/02r30000009w000000/)  
 ✔ [Decline Group Application](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Decline_Group_Application/02r30000006q000000/)  
-✖ [Decline Invitation](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Decline_Invitation/02r3000000m8000000/)  
+✔ [Decline Invitation](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Decline_Invitation/02r3000000m8000000/)  
 ✖ [Delete Group](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Group/02r300000070000000/)  
 ✔ [Delete Notification](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Notification/02r3000000mv000000/)  
 ✔ [Delete User](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_User/02r3000000mw000000/)  

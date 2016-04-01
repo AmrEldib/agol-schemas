@@ -107,7 +107,8 @@ var config = {
     "createGroup": [
       "getGroup"
     ],
-    "declineGroupApplication": []
+    "declineGroupApplication": [],
+    "declineInvitation": []
   }
 }
 

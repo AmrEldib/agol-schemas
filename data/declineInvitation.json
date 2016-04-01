@@ -1,0 +1,42 @@
+{
+  "id": "declineInvitation",
+  "type": "object",
+  "description": "When a group administrator invites a user to their group, it results in a group invitation. The invited user can decline the invitation using the Decline Invitation operation (POST only). The operation deletes the invitation and creates a notification for the user indicating that they declined the invitation. The invited user is not added to the group. Available only to authenticated users. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Decline_Invitation/02r3000000m8000000/",
+  "title": "declineInvitation",
+  "properties": {
+    "success": {
+      "id": "success",
+      "type": "boolean",
+      "description": "Indicates if the operation was successful",
+      "chance": {
+        "bool": {
+          "likelihood": 95
+        }
+      }
+    },
+    "id": {
+      "id": "id",
+      "type": "string",
+      "description": "The ID of the declined invitation",
+      "chance": "hash"
+    },
+    "username": {
+      "id": "username",
+      "type": "string",
+      "description": "The username of the user who declined the invitation",
+      "faker": "internet.userName"
+    },
+    "groupId": {
+      "id": "groupId",
+      "type": "string",
+      "description": "If the targetType of the invitation is 'group,' the groupId of the group declined is returned",
+      "chance": "hash"
+    }
+  },
+  "required": [
+    "success",
+    "id",
+    "username",
+    "groupId"
+  ]
+}
