@@ -107,7 +107,8 @@ var config = {
     "addUsersToGroup": [],
     "createGroup": [
       "getGroup"
-    ]
+    ],
+    "declineGroupApplication": []
   }
 }
 
