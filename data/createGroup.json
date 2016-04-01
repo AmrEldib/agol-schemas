@@ -5,7 +5,7 @@
   "title": "createGroup",
   "properties": {
     "success": {
-      "id": "deleteUserSuccess",
+      "id": "success",
       "type": "boolean",
       "description": "Indicates if the operation was successful",
       "chance": {
