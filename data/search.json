@@ -53,11 +53,11 @@
       "id": "nextStart",
       "type": "integer",
       "description": "The next entry index if the current result set doesn't contain all results",
-      "minimum": 1,
+      "minimum": -1,
       "maximum": 10000,
       "chance": {
         "integer": {
-          "min": 1,
+          "min": -1,
           "max": 10000
         }
       }

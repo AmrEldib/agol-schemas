@@ -355,17 +355,11 @@
         "description": "The owner username of the group"
       },
       "description": {
-        "type": [
-          "string",
-          "null"
-        ],
+        "type": "string",
         "description": "The group description"
       },
       "snippet": {
-        "type": [
-          "string",
-          "null"
-        ],
+        "type": "string",
         "description": "The group summary"
       },
       "tags": {
@@ -377,10 +371,7 @@
         "uniqueItems": true
       },
       "phone": {
-        "type": [
-          "string",
-          "null"
-        ],
+        "type": "string",
         "description": "The contact information for the group"
       },
       "sortField": {
@@ -393,8 +384,7 @@
         "enum": [
           "asc",
           "desc"
-        ],
-        "pattern": "asc|desc"
+        ]
       },
       "isViewOnly": {
         "type": "boolean",
@@ -426,30 +416,25 @@
           "private",
           "org",
           "public"
-        ],
-        "pattern": "private|org|public"
+        ]
       },
       "userMembership": {
-        "type": [
-          "object",
-          "null"
-        ],
+        "type": "object",
         "description": "If the request is made by an authenticated user, a JSON object is returned containing information about the user's access to the group. This includes the username of the calling user, the memberType, which specifies the type of membership the user has in the group (owner, member, admin, none), and the applications (number of requests to join the group) count available to admins and owners",
         "properties": {
           "username": {
             "type": "string",
-            "description": "requestor username"
+            "description": "Username of the calling user"
           },
           "memberType": {
             "type": "string",
-            "description": "specifies the type of membership the user has in the group (owner, member, admin, none)",
+            "description": "Specifies the type of membership the user has in the group (owner, member, admin, none)",
             "enum": [
               "owner",
               "member",
               "admin",
               "none"
-            ],
-            "pattern": "owner|member|admin|none"
+            ]
           },
           "applications": {
             "type": "integer",
@@ -479,8 +464,7 @@
       "thumbnail",
       "created",
       "modified",
-      "access",
-      "userMembership"
+      "access"
     ]
   },
   "getGroupApplication": {
@@ -2446,7 +2430,7 @@
       "nextStart": {
         "type": "integer",
         "description": "The next entry index if the current result set doesn't contain all results",
-        "minimum": 1,
+        "minimum": -1,
         "maximum": 10000
       },
       "results": {
