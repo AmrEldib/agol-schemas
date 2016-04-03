@@ -117,7 +117,10 @@ var config = {
     "joinGroup": [],
     "leaveGroup": [],
     "reassignGroup": [],
-    "removeUsersFromGroup": []
+    "removeUsersFromGroup": [],
+    "getCommunity": [
+      "getUser"
+    ]
   }
 }
 

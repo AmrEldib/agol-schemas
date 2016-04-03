@@ -265,6 +265,21 @@
       "ssl"
     ]
   },
+  "getCommunity": {
+    "type": "object",
+    "description": "This resource allows discovery of the current authenticated user identified by the token. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Self/02r300000079000000/",
+    "title": "getCommunity",
+    "properties": {
+      "user": {
+        "type": "object",
+        "description": "A user resource representing a registered user of the portal",
+        "$ref": "#/definitions/getUser"
+      }
+    },
+    "required": [
+      "user"
+    ]
+  },
   "getCoordinate": {
     "type": "array",
     "description": "Coordinate",
