@@ -1,5 +1,5 @@
 ### Coverage  
-Completed items: 53  
+Completed items: 54  
 Total items: 488  
 Completed: 11 %  
 
@@ -31,7 +31,7 @@ Completed: 11 %
 ✔ [Notification](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Notification/02r30000006t000000/)  
 ✔ [Notifications](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Notifications/02r30000006s000000/)  
 ✔ [Reassign Group](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Reassign_Group/02r300000067000000/)  
-✖ [Remove Users From Group](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Remove_Users_From_Group/02r300000066000000/)  
+✔ [Remove Users From Group](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Remove_Users_From_Group/02r300000066000000/)  
 ✖ [Self (Community)](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Self/02r300000079000000/)  
 ✖ [Update Group](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Group/02r30000006w000000/)  
 ✔ [Update User](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_User/02r3000000m0000000/)  

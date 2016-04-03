@@ -1,0 +1,22 @@
+{
+  "id": "removeUsersFromGroup",
+  "type": "object",
+  "description": "The operation to Remove Users From Group (POST only) is available only to the group administrators, including the owner, and to the administrator of the organization if the user is a member. Both users and admins can be removed using this operation. Group owners cannot be removed from the group. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Remove_Users_From_Group/02r300000066000000/",
+  "title": "removeUsersFromGroup",
+  "properties": {
+    "notRemoved": {
+      "id": "notRemoved",
+      "type": "array",
+      "description": "A JSON array of usernames that were not removed. This can happen when the username was never a member of the group",
+      "minItems": 0,
+      "items": {
+        "type": "string",
+        "faker": "internet.userName"
+      },
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "notRemoved"
+  ]
+}

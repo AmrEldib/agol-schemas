@@ -116,7 +116,8 @@ var config = {
     "inviteToGroup": [],
     "joinGroup": [],
     "leaveGroup": [],
-    "reassignGroup": []
+    "reassignGroup": [],
+    "removeUsersFromGroup": []
   }
 }
 
