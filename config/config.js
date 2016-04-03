@@ -113,7 +113,8 @@ var config = {
     "groupSearch": [
       "getGroup"
     ],
-    "inviteToGroup": []
+    "inviteToGroup": [],
+    "joinGroup": []
   }
 }
 
