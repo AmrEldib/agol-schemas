@@ -112,7 +112,8 @@ var config = {
     "deleteGroup": [],
     "groupSearch": [
       "getGroup"
-    ]
+    ],
+    "inviteToGroup": []
   }
 }
 
