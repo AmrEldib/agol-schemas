@@ -123,7 +123,8 @@ var config = {
     ],
     "updateGroup": [],
     "addComment": [],
-    "addItem": []
+    "addItem": [],
+    "addItemPart": []
   }
 }
 
