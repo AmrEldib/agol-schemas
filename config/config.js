@@ -121,7 +121,8 @@ var config = {
     "getCommunity": [
       "getUser"
     ],
-    "updateGroup": []
+    "updateGroup": [],
+    "addComment": []
   }
 }
 

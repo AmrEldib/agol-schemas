@@ -52,6 +52,25 @@
       "groupId"
     ]
   },
+  "addComment": {
+    "type": "object",
+    "description": "Adds a comment to an item (POST only). Available only to authenticated users who have access to the item. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_Comment/02r300000090000000/",
+    "title": "addComment",
+    "properties": {
+      "success": {
+        "type": "boolean",
+        "description": "Set to true if the comment was posted successfully"
+      },
+      "commentId": {
+        "type": "string",
+        "description": "The ID of the comment submitted"
+      }
+    },
+    "required": [
+      "success",
+      "commentId"
+    ]
+  },
   "addUsersToGroup": {
     "type": "object",
     "description": "The operation to Add Users to Group (POST only) is available only to the group administrators, including the owner, and to the administrator of the organization if the user is a member. Both users and admins can be added using this operation. This is useful if you wish to add users directly within an organization without requiring them to accept an invitation. For example, a member of an organization can add only other organization members but not public users. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_Users_to_Group/02r3000002mr000000/",
