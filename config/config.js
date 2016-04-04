@@ -122,7 +122,8 @@ var config = {
       "getUser"
     ],
     "updateGroup": [],
-    "addComment": []
+    "addComment": [],
+    "addItem": []
   }
 }
 

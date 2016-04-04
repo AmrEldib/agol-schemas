@@ -71,6 +71,30 @@
       "commentId"
     ]
   },
+  "addItem": {
+    "type": "object",
+    "description": "The Add Item operation (POST only) is used to upload an item file, submit text content, or submit the item URL to the specified user folder depending on documented items and item types. This operation is available only to the specified user. The request to upload an item file must be a multipart request pursuant to IETF RFC1867. The request to submit text content or a URL can be a standard HTTP POST request. The user owning the folder automatically becomes the owner of the item. The item is flagged as private (that is, not shared with any group) by default. This can be changed using the Share Item operation. The added item is available to everyone it's shared with at the item resource. The item is also available to the owner at the user item resource, which supports operations to update, delete, move, share, and unshare items. The addItem operation allows users to optionally create a relationship and share an item in one call. See Add Relationship for parameter information. The same rules apply, with the following exceptions: If you specify an originItemId, the new item is added as the destination item. If you specify a destinationitemId, the new item is added as the origin item. If you specify both, an error is thrown. The relationship creation is done after the item is created. If the item doesn’t add correctly, no relationship is created. If the item adds correctly, but the relationship fails (that is, bad relationship type, invalid origin or destination item, and so on), the item is deleted. The destination item will inherit all the sharing permissions of the origin item. The filename or URL used for an item must be unique within the particular user's folder. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_Item/02r30000008q000000/",
+    "title": "addItem",
+    "properties": {
+      "success": {
+        "type": "boolean",
+        "description": "Indicates if the operation was successful"
+      },
+      "id": {
+        "type": "string",
+        "description": "The ID of the created item"
+      },
+      "folder": {
+        "type": "string",
+        "description": "The folder in which the item was created"
+      }
+    },
+    "required": [
+      "success",
+      "id",
+      "folder"
+    ]
+  },
   "addUsersToGroup": {
     "type": "object",
     "description": "The operation to Add Users to Group (POST only) is available only to the group administrators, including the owner, and to the administrator of the organization if the user is a member. Both users and admins can be added using this operation. This is useful if you wish to add users directly within an organization without requiring them to accept an invitation. For example, a member of an organization can add only other organization members but not public users. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_Users_to_Group/02r3000002mr000000/",
