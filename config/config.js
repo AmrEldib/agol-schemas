@@ -124,7 +124,8 @@ var config = {
     "updateGroup": [],
     "addComment": [],
     "addItem": [],
-    "addItemPart": []
+    "addItemPart": [],
+    "addRating": []
   }
 }
 

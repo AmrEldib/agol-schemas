@@ -1,5 +1,5 @@
 ### Coverage  
-Completed items: 59  
+Completed items: 60  
 Total items: 488  
 Completed: 12 %  
 
@@ -44,7 +44,7 @@ Completed: 12 %
 ✔ [Add Comment](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_Comment/02r300000090000000/)  
 ✔ [Add Item](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_Item/02r30000008q000000/)  
 ✔ [Add Item Part](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_Item_Part/02r300000094000000/)  
-✖ [Add Rating](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_Rating/02r30000007v000000/)  
+✔ [Add Rating](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_Rating/02r30000007v000000/)  
 ✖ [Add Relationship](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_Relationship/02r30000009n000000/)  
 ✖ [Analyze](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Analyze/02r30000007r000000/)  
 ✖ [Cancel](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Cancel/02r30000007q000000/)  
