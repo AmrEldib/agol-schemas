@@ -1,0 +1,28 @@
+{
+  "id": "reassignGroup",
+  "type": "object",
+  "description": "The Reassign Group operation (POST only) allows the administrator of an organization to reassign a group to another member of the organization. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Reassign_Group/02r300000067000000/",
+  "title": "reassignGroup",
+  "properties": {
+    "success": {
+      "id": "success",
+      "type": "boolean",
+      "description": "Indicates if the operation was successful",
+      "chance": {
+        "bool": {
+          "likelihood": 95
+        }
+      }
+    },
+    "groupId": {
+      "id": "groupId",
+      "type": "string",
+      "description": "The ID of the reassigned group",
+      "chance": "hash"
+    }
+  },
+  "required": [
+    "success",
+    "groupId"
+  ]
+}

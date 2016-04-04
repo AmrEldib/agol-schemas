@@ -1,0 +1,109 @@
+{
+  "type": "object",
+  "description": "The Create Service operation (POST only) allows users to create a hosted feature service. You can use the API to create an empty hosted feaure service from feature service metadata JSON. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Service/02r30000027r000000/",
+  "title": "createService",
+  "properties": {
+    "encodedServiceURL": {
+      "type": "string",
+      "description": "The encoded URL to the hosted service",
+      "chance": {
+        "url": {
+          "domain": "www.arcgis.com",
+          "path": "FeatureServer"
+        }
+      }
+    },
+    "itemId": {
+      "type": "string",
+      "description": "The unique ID for this item",
+      "chance": "hash"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the service item",
+      "chance": "word"
+    },
+    "serviceItemId": {
+      "type": "string",
+      "description": "The ID of the new service item",
+      "chance": "hash"
+    },
+    "serviceurl": {
+      "type": "string",
+      "description": "The URL to the hosted service",
+      "chance": {
+        "url": {
+          "domain": "www.arcgis.com",
+          "path": "FeatureServer"
+        }
+      }
+    },
+    "size": {
+      "type": "integer",
+      "description": "The size of the item",
+      "minimum": -1,
+      "maximum": 10000000,
+      "chance": {
+        "integer": {
+          "min": -1,
+          "max": 10000000
+        }
+      }
+    },
+    "success": {
+      "type": "boolean",
+      "description": "Indicates if the operation was successful",
+      "chance": {
+        "bool": {
+          "likelihood": 95
+        }
+      }
+    },
+    "type": {
+      "type": "string",
+      "description": "The type of service created",
+      "enum": [
+        "Feature Service"
+      ]
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The description of the new service item",
+      "chance": "sentence"
+    },
+    "tags": {
+      "type": "array",
+      "description": "The tags used to describe the service item",
+      "items": {
+        "type": "string",
+        "chance": "word"
+      },
+      "uniqueItems": true
+    },
+    "snippet": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "A short summary description of the item",
+      "chance": "sentence"
+    }
+  },
+  "required": [
+    "encodedServiceURL",
+    "itemId",
+    "name",
+    "serviceItemId",
+    "serviceurl",
+    "size",
+    "success",
+    "type",
+    "description",
+    "tags",
+    "snippet"
+  ],
+  "definitions": {}
+}

@@ -1,4 +1,3 @@
-
 var config = {
   // Folder where schemas are stored
   "schemasFolder": "data",
@@ -102,7 +101,34 @@ var config = {
     "search": [
       "getItem"
     ],
-    "acceptGroupApplication": []
+    "acceptGroupApplication": [],
+    "acceptInvitation": [],
+    "addUsersToGroup": [],
+    "createGroup": [
+      "getGroup"
+    ],
+    "declineGroupApplication": [],
+    "declineInvitation": [],
+    "deleteGroup": [],
+    "groupSearch": [
+      "getGroup"
+    ],
+    "inviteToGroup": [],
+    "joinGroup": [],
+    "leaveGroup": [],
+    "reassignGroup": [],
+    "removeUsersFromGroup": [],
+    "getCommunity": [
+      "getUser"
+    ],
+    "updateGroup": [],
+    "addComment": [],
+    "addItem": [],
+    "addItemPart": [],
+    "addRating": [],
+    "createFolder": [],
+    "createService": [],
+    "deleteComment": []
   }
 }
 

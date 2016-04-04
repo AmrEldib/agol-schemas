@@ -1,0 +1,35 @@
+{
+  "id": "addItem",
+  "type": "object",
+  "description": "The Add Item operation (POST only) is used to upload an item file, submit text content, or submit the item URL to the specified user folder depending on documented items and item types. This operation is available only to the specified user. The request to upload an item file must be a multipart request pursuant to IETF RFC1867. The request to submit text content or a URL can be a standard HTTP POST request. The user owning the folder automatically becomes the owner of the item. The item is flagged as private (that is, not shared with any group) by default. This can be changed using the Share Item operation. The added item is available to everyone it's shared with at the item resource. The item is also available to the owner at the user item resource, which supports operations to update, delete, move, share, and unshare items. The addItem operation allows users to optionally create a relationship and share an item in one call. See Add Relationship for parameter information. The same rules apply, with the following exceptions: If you specify an originItemId, the new item is added as the destination item. If you specify a destinationitemId, the new item is added as the origin item. If you specify both, an error is thrown. The relationship creation is done after the item is created. If the item doesn’t add correctly, no relationship is created. If the item adds correctly, but the relationship fails (that is, bad relationship type, invalid origin or destination item, and so on), the item is deleted. The destination item will inherit all the sharing permissions of the origin item. The filename or URL used for an item must be unique within the particular user's folder. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_Item/02r30000008q000000/",
+  "title": "addItem",
+  "properties": {
+    "success": {
+      "id": "success",
+      "type": "boolean",
+      "description": "Indicates if the operation was successful",
+      "chance": {
+        "bool": {
+          "likelihood": 95
+        }
+      }
+    },
+    "id": {
+      "id": "id",
+      "type": "string",
+      "description": "The ID of the created item",
+      "chance": "hash"
+    },
+    "folder": {
+      "id": "folder",
+      "type": "string",
+      "description": "The folder in which the item was created",
+      "chance": "hash"
+    }
+  },
+  "required": [
+    "success",
+    "id",
+    "folder"
+  ]
+}

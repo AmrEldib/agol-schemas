@@ -1,0 +1,28 @@
+{
+  "id": "addItemPart",
+  "type": "object",
+  "description": "Add Item Part allows the caller to upload a file part when doing an add or update item operation in multipart mode. Each upload takes an integer part number that indicates the order of this part compared to others. Each part can be uploaded at any time, in any order, even simultaneously. Each file part must be uploaded in an HTTP multipart request pursuant to IETF RFC1867. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_Item_Part/02r300000094000000/",
+  "title": "addItemPart",
+  "properties": {
+    "success": {
+      "id": "success",
+      "type": "boolean",
+      "description": "Indicates if the operation was successful",
+      "chance": {
+        "bool": {
+          "likelihood": 95
+        }
+      }
+    },
+    "id": {
+      "id": "id",
+      "type": "string",
+      "description": "The ID of the item containing part",
+      "chance": "hash"
+    }
+  },
+  "required": [
+    "success",
+    "id"
+  ]
+}

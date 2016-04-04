@@ -1,0 +1,28 @@
+{
+  "id": "addComment",
+  "type": "object",
+  "description": "Adds a comment to an item (POST only). Available only to authenticated users who have access to the item. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_Comment/02r300000090000000/",
+  "title": "addComment",
+  "properties": {
+    "success": {
+      "id": "success",
+      "type": "boolean",
+      "description": "Set to true if the comment was posted successfully",
+      "chance": {
+        "bool": {
+          "likelihood": 95
+        }
+      }
+    },
+    "commentId": {
+      "id": "commentId",
+      "type": "string",
+      "description": "The ID of the comment submitted",
+      "chance": "hash"
+    }
+  },
+  "required": [
+    "success",
+    "commentId"
+  ]
+}

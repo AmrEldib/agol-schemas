@@ -17,7 +17,7 @@
     "username": {
       "id": "username",
       "type": "string",
-      "description": "The username of the user to disable",
+      "description": "The username of the user being accepted into the group",
       "faker": "internet.userName"
     },
     "groupId": {

@@ -145,13 +145,10 @@
         "owner": {
           "type": "string",
           "description": "The owner username of the group",
-          "chance": "first"
+          "faker": "internet.userName"
         },
         "description": {
-          "type": [
-            "string",
-            "null"
-          ],
+          "type": "string",
           "description": "The group description",
           "chance": {
             "paragraph": {
@@ -160,10 +157,7 @@
           }
         },
         "snippet": {
-          "type": [
-            "string",
-            "null"
-          ],
+          "type": "string",
           "description": "The group summary",
           "chance": "sentence"
         },
@@ -177,10 +171,7 @@
           "uniqueItems": true
         },
         "phone": {
-          "type": [
-            "string",
-            "null"
-          ],
+          "type": "string",
           "description": "The contact information for the group",
           "chance": "phone"
         },
@@ -195,8 +186,7 @@
           "enum": [
             "asc",
             "desc"
-          ],
-          "pattern": "asc|desc"
+          ]
         },
         "isViewOnly": {
           "type": "boolean",
@@ -241,31 +231,26 @@
             "private",
             "org",
             "public"
-          ],
-          "pattern": "private|org|public"
+          ]
         },
         "userMembership": {
-          "type": [
-            "object",
-            "null"
-          ],
+          "type": "object",
           "description": "If the request is made by an authenticated user, a JSON object is returned containing information about the user's access to the group. This includes the username of the calling user, the memberType, which specifies the type of membership the user has in the group (owner, member, admin, none), and the applications (number of requests to join the group) count available to admins and owners",
           "properties": {
             "username": {
               "type": "string",
-              "description": "requestor username",
-              "chance": "first"
+              "description": "Username of the calling user",
+              "faker": "internet.userName"
             },
             "memberType": {
               "type": "string",
-              "description": "specifies the type of membership the user has in the group (owner, member, admin, none)",
+              "description": "Specifies the type of membership the user has in the group (owner, member, admin, none)",
               "enum": [
                 "owner",
                 "member",
                 "admin",
                 "none"
-              ],
-              "pattern": "owner|member|admin|none"
+              ]
             },
             "applications": {
               "type": "integer",
@@ -279,9 +264,8 @@
             }
           },
           "required": [
-            "applications",
-            "memberType",
-            "username"
+            "username",
+            "memberType"
           ]
         }
       },
@@ -301,8 +285,7 @@
         "thumbnail",
         "created",
         "modified",
-        "access",
-        "userMembership"
+        "access"
       ]
     }
   }
