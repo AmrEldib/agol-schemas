@@ -125,7 +125,8 @@ var config = {
     "addComment": [],
     "addItem": [],
     "addItemPart": [],
-    "addRating": []
+    "addRating": [],
+    "createFolder": []
   }
 }
 

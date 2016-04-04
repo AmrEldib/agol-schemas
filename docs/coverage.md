@@ -1,7 +1,7 @@
 ### Coverage  
-Completed items: 60  
+Completed items: 62  
 Total items: 488  
-Completed: 12 %  
+Completed: 13 %  
 
 
 **Managing your organization**  
@@ -49,7 +49,7 @@ Completed: 12 %
 ✖ [Analyze](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Analyze/02r30000007r000000/)  
 ✖ [Cancel](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Cancel/02r30000007q000000/)  
 ✖ [Commit](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Commit/02r30000008t000000/)  
-✖ [Create Folder](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Folder/02r300000074000000/)  
+✔ [Create Folder](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Folder/02r300000074000000/)  
 ✖ [Create Proxies](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Proxies/02r3000002qw000000/)  
 ✖ [Create Service](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Service/02r30000027r000000/)  
 ✖ [Create Service (Image Service)](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Service_Image_Service/02r3000002nr000000/)  
@@ -230,7 +230,7 @@ Completed: 12 %
 **Services**  
 ✖ [Add Permission](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_Permission/02r3000001pw000000/)  
 ✖ [Clean Permissions](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Clean_Permissions/02r3000001z1000000/)  
-✖ [Create Folder](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Folder/02r3000001t4000000/)  
+✔ [Create Folder](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Folder/02r3000001t4000000/)  
 ✖ [Create Service](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Service/02r3000001tr000000/)  
 ✖ [Delete Folder](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Folder/02r3000001s1000000/)  
 ✖ [Delete Item Information](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Item_Information/02r3000001rz000000/)  
