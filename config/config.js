@@ -127,7 +127,8 @@ var config = {
     "addItemPart": [],
     "addRating": [],
     "createFolder": [],
-    "createService": []
+    "createService": [],
+    "deleteComment": []
   }
 }
 

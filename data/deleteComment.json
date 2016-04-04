@@ -1,0 +1,28 @@
+{
+  "id": "deleteComment",
+  "type": "object",
+  "description": "Deletes the particular comment (POST only). This functionality is available to authenticated users who originally created the comment and item owners on items that they own. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Comment/02r300000072000000/",
+  "title": "deleteComment",
+  "properties": {
+    "success": {
+      "id": "success",
+      "type": "boolean",
+      "description": "Set to true if the comment was deleted successfully",
+      "chance": {
+        "bool": {
+          "likelihood": 95
+        }
+      }
+    },
+    "commentId": {
+      "id": "commentId",
+      "type": "string",
+      "description": "The ID of the deleted submitted",
+      "chance": "hash"
+    }
+  },
+  "required": [
+    "success",
+    "commentId"
+  ]
+}

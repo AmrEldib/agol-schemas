@@ -339,6 +339,25 @@
       "groupId"
     ]
   },
+  "deleteComment": {
+    "type": "object",
+    "description": "Deletes the particular comment (POST only). This functionality is available to authenticated users who originally created the comment and item owners on items that they own. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Comment/02r300000072000000/",
+    "title": "deleteComment",
+    "properties": {
+      "success": {
+        "type": "boolean",
+        "description": "Set to true if the comment was deleted successfully"
+      },
+      "commentId": {
+        "type": "string",
+        "description": "The ID of the deleted submitted"
+      }
+    },
+    "required": [
+      "success",
+      "commentId"
+    ]
+  },
   "deleteGroup": {
     "type": "object",
     "description": "The Delete Group operation (POST only) is available only to the group administrators or to the administrator of the organization to which the owner belongs. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Group/02r300000070000000/",
