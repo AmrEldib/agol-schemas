@@ -120,7 +120,8 @@ var config = {
     "removeUsersFromGroup": [],
     "getCommunity": [
       "getUser"
-    ]
+    ],
+    "updateGroup": []
   }
 }
 
