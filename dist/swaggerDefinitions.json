@@ -111,8 +111,7 @@
     },
     "required": [
       "success",
-      "id",
-      "folder"
+      "id"
     ]
   },
   "addUsersToGroup": {

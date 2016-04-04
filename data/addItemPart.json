@@ -23,7 +23,6 @@
   },
   "required": [
     "success",
-    "id",
-    "folder"
+    "id"
   ]
 }
