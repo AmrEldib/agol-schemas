@@ -69,7 +69,7 @@ var config = {
     ],
     "getRegisteredAppInfo": [],
     "getOrgRoot": [],
-    "getPortal": [
+    "getPortalSelf": [
       "getUser",
       "getExtent",
       "getPortalAppInfo",
@@ -128,7 +128,8 @@ var config = {
     "addRating": [],
     "createFolder": [],
     "createService": [],
-    "deleteComment": []
+    "deleteComment": [],
+    "deleteFolder": []
   }
 }
 

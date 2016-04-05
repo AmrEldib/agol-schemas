@@ -479,7 +479,7 @@ var coverageConfig = [
           {
             "title": "Portal Self",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Portal_Self/02r3000001m7000000/",
-            "schema": "getPortal"
+            "schema": "getPortalSelf"
           },
           {
             "title": "Regions",
@@ -804,37 +804,37 @@ var coverageConfig = [
         ]
       },
       {
-        "title": "Logs",
+        "title": "Server Logs",
         "children": [
           {
             "title": "Clean Logs",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Clean_Logs/02r3000001s2000000/",
-            "schema": "cleanLogs"
+            "schema": "cleanLogsForServer"
           },
           {
             "title": "Count Error Reports",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Count_Error_Reports/02r3000001z2000000/",
-            "schema": "countErrorReports"
+            "schema": "countErrorReportsForServer"
           },
           {
             "title": "Edit Log Settings",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Edit_Log_Settings/02r300000206000000/",
-            "schema": "editLogSettings"
+            "schema": "editLogSettingsForServer"
           },
           {
             "title": "Log Settings",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Log_Settings/02r3000001t6000000/",
-            "schema": "getLogSettings"
+            "schema": "getLogSettingsForServer"
           },
           {
             "title": "Logs",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Logs/02r3000001w7000000/",
-            "schema": "getLogs"
+            "schema": "getLogsForServer"
           },
           {
             "title": "Query Logs",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Query_Logs/02r3000001w4000000/",
-            "schema": "queryLogs"
+            "schema": "queryLogsForServer"
           }
         ]
       },
@@ -844,7 +844,7 @@ var coverageConfig = [
           {
             "title": "Delete Certificate",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Certificate/02r30000020m000000/",
-            "schema": "deleteCertificate"
+            "schema": "deleteCertificateForServer"
           },
           {
             "title": "Edit Machine",
@@ -854,17 +854,17 @@ var coverageConfig = [
           {
             "title": "Export Certificate",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Export_Certificate/02r300000201000000/",
-            "schema": "exportCertificate"
+            "schema": "exportCertificateForServer"
           },
           {
             "title": "Generate Certificate",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Generate_Certificate/02r3000001tt000000/",
-            "schema": "generateCertificate"
+            "schema": "generateCertificateForServer"
           },
           {
             "title": "Generate CSR",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Generate_CSR/02r3000001qp000000/",
-            "schema": "generateCsr"
+            "schema": "generateCsrForServer"
           },
           {
             "title": "Import CA Signed Certificate",
@@ -874,7 +874,7 @@ var coverageConfig = [
           {
             "title": "Import Existing Server Certificate",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Import_Existing_Server_Certificate/02r30000020r000000/",
-            "schema": "importExistingServerCertificate"
+            "schema": "importExistingServerCertificateForServer"
           },
           {
             "title": "Import Root Certificate",
@@ -889,7 +889,7 @@ var coverageConfig = [
           {
             "title": "Machines",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Machines/02r3000001sr000000/",
-            "schema": "getMachines"
+            "schema": "getMachinesForServer"
           },
           {
             "title": "Register Machine",
@@ -904,12 +904,12 @@ var coverageConfig = [
           {
             "title": "SSL Certificate",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/SSL_Certificate/02r30000020z000000/",
-            "schema": "getSslCertificate"
+            "schema": "getSslCertificateForServer"
           },
           {
             "title": "SSL Certificates",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/SSL_Certificates/02r3000001rt000000/",
-            "schema": "getSslCertificates"
+            "schema": "getSslCertificatesForServer"
           },
           {
             "title": "Start Machine",
@@ -924,7 +924,7 @@ var coverageConfig = [
           {
             "title": "Unregister Machine",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Unregister_Machine/02r3000001vr000000/",
-            "schema": "unregisterMachine"
+            "schema": "unregisterMachineForServer"
           }
         ]
       },
@@ -944,7 +944,7 @@ var coverageConfig = [
         ]
       },
       {
-        "title": "Security",
+        "title": "Server Security",
         "children": [
           {
             "title": "Add Role",
@@ -1009,7 +1009,7 @@ var coverageConfig = [
           {
             "title": "Get Users",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Get_Users/02r3000001r8000000/",
-            "schema": "getUsers"
+            "schema": "getUsersForServer"
           },
           {
             "title": "Get Users Within Role",
@@ -1042,9 +1042,9 @@ var coverageConfig = [
             "schema": "removeUsersFromRole"
           },
           {
-            "title": "Roles",
+            "title": "Total Roles",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Roles/02r300000210000000/",
-            "schema": "getRoles"
+            "schema": "getTotalRoles"
           },
           {
             "title": "Search Roles",
@@ -1054,7 +1054,7 @@ var coverageConfig = [
           {
             "title": "Search Users",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Search_Users/02r3000001zr000000/",
-            "schema": "searchUsers"
+            "schema": "searchUsersForServer"
           },
           {
             "title": "Security",
@@ -1064,12 +1064,12 @@ var coverageConfig = [
           {
             "title": "Security Configuration",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Security_Configuration/02r3000001t9000000/",
-            "schema": "getSecurityConfiguration"
+            "schema": "getSecurityConfigurationForServer"
           },
           {
             "title": "Test Identity Store",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Test_Identity_Store/02r3000001z3000000/",
-            "schema": "testIdentityStore"
+            "schema": "testIdentityStoreForServer"
           },
           {
             "title": "Tokens",
@@ -1079,7 +1079,7 @@ var coverageConfig = [
           {
             "title": "Update Identity Store",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Identity_Store/02r3000001s0000000/",
-            "schema": "updateIdentityStore"
+            "schema": "updateIdentityStoreForServer"
           },
           {
             "title": "Update Primary Site Administrator",
@@ -1094,27 +1094,27 @@ var coverageConfig = [
           {
             "title": "Update Security Configuration",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Security_Configuration/02r3000001rw000000/",
-            "schema": "updateSecurityConfiguration"
+            "schema": "updateSecurityConfigurationForServer"
           },
           {
             "title": "Update Token Configuration",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Token_Configuration/02r3000001v3000000/",
-            "schema": "updateTokenConfiguration"
+            "schema": "updateTokenConfigurationForServer"
           },
           {
             "title": "Update User",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_User/02r3000001sm000000/",
-            "schema": "updateUser"
+            "schema": "updateUserForServer"
           },
           {
-            "title": "Users",
+            "title": "Total Users",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Users/02r3000001ps000000/",
-            "schema": "getUsers"
+            "schema": "getTotalUsersForServer"
           }
         ]
       },
       {
-        "title": "Services",
+        "title": "Server Services",
         "children": [
           {
             "title": "Add Permission",
@@ -1129,17 +1129,17 @@ var coverageConfig = [
           {
             "title": "Create Folder",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Folder/02r3000001t4000000/",
-            "schema": "createFolder"
+            "schema": "createFolderForServer"
           },
           {
             "title": "Create Service",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Service/02r3000001tr000000/",
-            "schema": "createService"
+            "schema": "createServiceForServer"
           },
           {
             "title": "Delete Folder",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Folder/02r3000001s1000000/",
-            "schema": "deleteFolder"
+            "schema": "deleteFolderForServer"
           },
           {
             "title": "Delete Item Information",
@@ -1164,7 +1164,7 @@ var coverageConfig = [
           {
             "title": "Edit Service",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Edit_Service/02r3000001zp000000/",
-            "schema": "editService"
+            "schema": "editServiceForServer"
           },
           {
             "title": "Exists",
@@ -1284,37 +1284,37 @@ var coverageConfig = [
         ]
       },
       {
-        "title": "Site",
+        "title": "Server Site",
         "children": [
           {
             "title": "Create Site",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Site/02r3000001zs000000/",
-            "schema": "createSite"
+            "schema": "createSiteForServer"
           },
           {
             "title": "Delete Site",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Site/02r3000001zv000000/",
-            "schema": "deleteSite"
+            "schema": "deleteSiteForServer"
           },
           {
             "title": "Export Site",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Export_Site/02r30000020s000000/",
-            "schema": "exportSite"
+            "schema": "exportSiteForServer"
           },
           {
             "title": "Generate Token",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Generate_Token/02r3000001w0000000/",
-            "schema": "generateToken"
+            "schema": "generateTokenForServer"
           },
           {
             "title": "Import Site",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Import_Site/02r30000020p000000/",
-            "schema": "importSite"
+            "schema": "importSiteForServer"
           },
           {
             "title": "Join Site",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Join_Site/02r300000205000000/",
-            "schema": "joinSite"
+            "schema": "joinSiteForServer"
           },
           {
             "title": "Public Key",
@@ -1324,12 +1324,12 @@ var coverageConfig = [
           {
             "title": "Site",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Site/02r3000001pr000000/",
-            "schema": "getSite"
+            "schema": "getSiteForServer"
           }
         ]
       },
       {
-        "title": "System",
+        "title": "Server System",
         "children": [
           {
             "title": "Clean Directory",
@@ -1359,7 +1359,7 @@ var coverageConfig = [
           {
             "title": "Edit Directory",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Edit_Directory/02r3000001tp000000/",
-            "schema": "editDirectory"
+            "schema": "editDirectoryForServer"
           },
           {
             "title": "Edit Services Directory",
@@ -1384,7 +1384,7 @@ var coverageConfig = [
           {
             "title": "Licenses",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Licenses/02r3000001t5000000/",
-            "schema": "getLicenses"
+            "schema": "getLicensesForServer"
           },
           {
             "title": "Recover Configuration Store",
@@ -1428,8 +1428,8 @@ var coverageConfig = [
           },
           {
             "title": "System",
-            "url": "",
-            "schema": "getSystem"
+            "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/System/02r3000001r5000000/",
+            "schema": "getSystemForServer"
           },
           {
             "title": "Unregister Directory",
@@ -1439,7 +1439,7 @@ var coverageConfig = [
           {
             "title": "Unregister Web Adaptor",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Unregister_Web_Adaptor/02r3000001rv000000/",
-            "schema": "unregisterWebAdaptor"
+            "schema": "unregisterWebAdaptorForServer"
           },
           {
             "title": "Update Server Properties",
@@ -1454,22 +1454,22 @@ var coverageConfig = [
           {
             "title": "Update Web Adaptors Configuration",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Web_Adaptors_Configuration/02r30000020v000000/",
-            "schema": "updateWebAdaptorsConfiguration"
+            "schema": "updateWebAdaptorsConfigurationForServer"
           },
           {
             "title": "Web Adaptor",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Web_Adaptor/02r3000001ws000000/",
-            "schema": "getWebAdaptor"
+            "schema": "getWebAdaptorForServer"
           },
           {
             "title": "Web Adaptors",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Web_Adaptors/02r3000001wn000000/",
-            "schema": "getWebAdaptors"
+            "schema": "getWebAdaptorsForServer"
           },
           {
             "title": "Web Adaptors Configuration",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Web_Adaptors_Configuration/02r3000001r7000000/",
-            "schema": "getWebAdaptorsConfiguration"
+            "schema": "getWebAdaptorsConfigurationForServer"
           }
         ]
       },
@@ -1484,7 +1484,7 @@ var coverageConfig = [
           {
             "title": "Delete Item",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Item/02r3000001s3000000/",
-            "schema": "deleteItem"
+            "schema": "deleteItemForServer"
           },
           {
             "title": "Item",
@@ -1574,27 +1574,27 @@ var coverageConfig = [
           {
             "title": "Create Site",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Site/02r300000257000000/",
-            "schema": "createSite"
+            "schema": "createSiteForPortal"
           },
           {
             "title": "Export Site",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Export_Site/02r3000002pv000000/",
-            "schema": "exportSite"
+            "schema": "exportSiteForPortal"
           },
           {
             "title": "Import Site",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Import_Site/02r3000002pn000000/",
-            "schema": "importSite"
+            "schema": "importSiteForPortal"
           },
           {
             "title": "Join Site",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Join_Site/02r3000002pr000000/",
-            "schema": "joinSite"
+            "schema": "joinSiteForPortal"
           },
           {
             "title": "Machines",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Machines/02r3000002pt000000/",
-            "schema": "getMachines"
+            "schema": "getMachinesForPortal"
           },
           {
             "title": "Portal Administration Root",
@@ -1609,12 +1609,12 @@ var coverageConfig = [
           {
             "title": "Unregister Machine",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Unregister_Machine/02r3000002p2000000/",
-            "schema": "unregisterMachine"
+            "schema": "unregisterMachineForPortal"
           }
         ]
       },
       {
-        "title": "System",
+        "title": "Portal System",
         "children": [
           {
             "title": "Database",
@@ -1634,7 +1634,7 @@ var coverageConfig = [
           {
             "title": "Edit Directory",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Edit_Directory/02r300000256000000/",
-            "schema": "editDirectory"
+            "schema": "editDirectoryForPortal"
           },
           {
             "title": "Get Entitlements",
@@ -1664,7 +1664,7 @@ var coverageConfig = [
           {
             "title": "Licenses",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Licenses/02r30000024q000000/",
-            "schema": "getLicenses"
+            "schema": "getLicensesForPortal"
           },
           {
             "title": "Reindex",
@@ -1684,7 +1684,7 @@ var coverageConfig = [
           {
             "title": "System",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/System/02r300000258000000/",
-            "schema": "getSystem"
+            "schema": "getSystemForPortal"
           },
           {
             "title": "System Properties",
@@ -1694,7 +1694,7 @@ var coverageConfig = [
           {
             "title": "Unregister Web Adaptor",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Unregister_Web_Adaptor/02r300000251000000/",
-            "schema": "unregisterWebAdaptor"
+            "schema": "unregisterWebAdaptorForPortal"
           },
           {
             "title": "Update Database Account",
@@ -1724,27 +1724,27 @@ var coverageConfig = [
           {
             "title": "Update Web Adaptors Configuration",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Web_Adaptors_Configuration/02r30000024n000000/",
-            "schema": "updateWebAdaptorsConfiguration"
+            "schema": "updateWebAdaptorsConfigurationForPortal"
           },
           {
             "title": "Web Adaptors",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Web_Adaptors/02r300000248000000/",
-            "schema": "getWebAdaptors"
+            "schema": "getWebAdaptorsForPortal"
           },
           {
             "title": "Web Adaptors Configuration",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Web_Adaptors_Configuration/02r300000259000000/",
-            "schema": "getWebAdaptorsConfiguration"
+            "schema": "getWebAdaptorsConfigurationForPortal"
           },
           {
             "title": "Web Adaptor",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Web_Adaptor/02r30000025p000000/",
-            "schema": "getWebAdaptor"
+            "schema": "getWebAdaptorForPortal"
           }
         ]
       },
       {
-        "title": "Security",
+        "title": "Portal Security",
         "children": [
           {
             "title": "Change App ID",
@@ -1759,22 +1759,22 @@ var coverageConfig = [
           {
             "title": "Delete Certificate",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Certificate/02r3000002mm000000/",
-            "schema": "deleteCertificate"
+            "schema": "deleteCertificateForPortal"
           },
           {
             "title": "Export Certificate",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Export_Certificate/02r3000002m4000000/",
-            "schema": "exportCertificate"
+            "schema": "exportCertificateForPortal"
           },
           {
             "title": "Generate Certificate",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Generate_Certificate/02r3000002m8000000/",
-            "schema": "generateCertificate"
+            "schema": "generateCertificateForPortal"
           },
           {
             "title": "Generate CSR",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Generate_CSR/02r3000002m3000000/",
-            "schema": "generateCsr"
+            "schema": "generateCsrForPortal"
           },
           {
             "title": "Get App Info",
@@ -1799,7 +1799,7 @@ var coverageConfig = [
           {
             "title": "Import Existing Server Certificate",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Import_Existing_Server_Certificate/02r3000002m9000000/",
-            "schema": "importExistingServerCertificate"
+            "schema": "importExistingServerCertificateForPortal"
           },
           {
             "title": "Import Root or Intermediate Certificate",
@@ -1839,22 +1839,22 @@ var coverageConfig = [
           {
             "title": "Security Configuration",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Security_Configuration/02r30000024v000000/",
-            "schema": "getSecurityConfiguration"
+            "schema": "getSecurityConfigurationForPortal"
           },
           {
             "title": "SSL Certificate",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/SSL_Certificate/02r3000002m2000000/",
-            "schema": "getSslCertificate"
+            "schema": "getSslCertificateForPortal"
           },
           {
             "title": "SSL Certificates",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/SSL_Certificates/02r3000002m5000000/",
-            "schema": "getSslCertificates"
+            "schema": "getSslCertificatesForPortal"
           },
           {
             "title": "Test Identity Store",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Test_Identity_Store/02r300000297000000/",
-            "schema": "testIdentityStore"
+            "schema": "testIdentityStoreForPortal"
           },
           {
             "title": "Token Configuration",
@@ -1862,9 +1862,9 @@ var coverageConfig = [
             "schema": "getTokenConfiguration"
           },
           {
-            "title": "Users",
+            "title": "Registered Members",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Users/02r300000250000000/",
-            "schema": "getUsers"
+            "schema": "getMembersForPortal"
           },
           {
             "title": "Update App Info",
@@ -1879,17 +1879,17 @@ var coverageConfig = [
           {
             "title": "Update Identity Store",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Identity_Store/02r300000249000000/",
-            "schema": "updateIdentityStore"
+            "schema": "updateIdentityStoreForPortal"
           },
           {
             "title": "Update Security Configuration",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Security_Configuration/02r300000247000000/",
-            "schema": "updateSecurityConfiguration"
+            "schema": "updateSecurityConfigurationForPortal"
           },
           {
             "title": "Update Token Configuration",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Token_Configuration/02r300000264000000/",
-            "schema": "updateTokenConfiguration"
+            "schema": "updateTokenConfigurationForPortal"
           },
           {
             "title": "Update Web Server Certificate",
@@ -1939,32 +1939,32 @@ var coverageConfig = [
         ]
       },
       {
-        "title": "Logs",
+        "title": "Portal Logs",
         "children": [
           {
             "title": "Clean Logs",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Clean_Logs/02r30000028p000000/",
-            "schema": "cleanLogs"
+            "schema": "cleanLogsForPortal"
           },
           {
             "title": "Edit Log Settings",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Edit_Log_Settings/02r300000289000000/",
-            "schema": "editLogSettings"
+            "schema": "editLogSettingsForPortal"
           },
           {
             "title": "Log Settings",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Log_Settings/02r300000299000000/",
-            "schema": "getLogSettings"
+            "schema": "getLogSettingsForPortal"
           },
           {
             "title": "Logs",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Logs/02r30000028t000000/",
-            "schema": "getLogs"
+            "schema": "getLogsForPortal"
           },
           {
             "title": "Query Logs",
             "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/Query_Logs/02r30000028v000000/",
-            "schema": "queryLogs"
+            "schema": "queryLogsForPortal"
           }
         ]
       }
@@ -2186,7 +2186,7 @@ var coverageConfig = [
       {
         "title": "FeatureSet object",
         "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/FeatureSet_object/02r3000002mn000000/",
-        "schema": "featureSet"
+        "schema": "featureSetObject"
       },
       {
         "title": "Geodata transformation objects",
@@ -2592,7 +2592,7 @@ var coverageConfig = [
               {
                 "title": "featureSet",
                 "url": "http://resources.arcgis.com/en/help/arcgis-rest-api/#/featureSet/02r300000047000000/",
-                "schema": "featureSet"
+                "schema": "featureSetWebMapObject"
               },
               {
                 "title": "field",
