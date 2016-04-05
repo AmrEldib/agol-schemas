@@ -1326,7 +1326,186 @@
       "currentVersion"
     ]
   },
-  "getPortal": {
+  "getPortalAppInfo": {
+    "type": "object",
+    "description": "Information about the Application through which this resource was accessed. This information is based on the token used to access this resource. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Portal_Self/02r3000001m7000000/",
+    "title": "portalAppInfo",
+    "properties": {
+      "appID": {
+        "type": "string",
+        "description": "The AppID of the registered Application. This is also the OAuth client_id"
+      },
+      "itemId": {
+        "type": "string",
+        "description": "The item ID of the registered Application"
+      },
+      "appOwner": {
+        "type": "string",
+        "description": "The owner of the Application"
+      },
+      "orgId": {
+        "type": "string",
+        "description": "The organization to which the Application owner belongs"
+      },
+      "appTitle": {
+        "type": "string",
+        "description": "The title of the Application"
+      }
+    },
+    "required": [
+      "appID",
+      "itemId",
+      "appOwner",
+      "orgId",
+      "appTitle"
+    ]
+  },
+  "getPortalFeaturedGroup": {
+    "type": "object",
+    "description": "The featured groups for the organization. These are the groups that will be highlighted on the Groups page. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Portal_Self/02r3000001m7000000/",
+    "title": "portalFeaturedGroup",
+    "properties": {
+      "owner": {
+        "type": "string",
+        "description": "The owner of the featured group"
+      },
+      "title": {
+        "type": "string",
+        "description": "The title of the featured group"
+      }
+    },
+    "required": [
+      "owner",
+      "title"
+    ]
+  },
+  "getPortalLanguage": {
+    "type": "object",
+    "description": "Available language. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Languages/02r300000095000000/",
+    "title": "language",
+    "properties": {
+      "language": {
+        "type": "string",
+        "description": "Language's name"
+      },
+      "culture": {
+        "type": "string",
+        "description": "Language's culture"
+      },
+      "localizedName": {
+        "type": "string",
+        "description": "Language's localized name"
+      }
+    },
+    "required": [
+      "language",
+      "culture",
+      "localizedName"
+    ]
+  },
+  "getPortalLanguages": {
+    "type": "array",
+    "description": "Lists the available languages. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Languages/02r300000095000000/",
+    "title": "languages",
+    "items": {
+      "$ref": "#/definitions/getPortalLanguage"
+    }
+  },
+  "getPortalRegion": {
+    "type": "object",
+    "description": "Available region. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Regions/02r300000099000000/",
+    "title": "region",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "Region's name"
+      },
+      "region": {
+        "type": "string",
+        "description": "Region's short name"
+      },
+      "localizedName": {
+        "type": "string",
+        "description": "Region's localized name"
+      }
+    },
+    "required": [
+      "name",
+      "region",
+      "localizedName"
+    ]
+  },
+  "getPortalRegions": {
+    "type": "array",
+    "description": "Lists the available regions. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Regions/02r300000099000000/",
+    "title": "regions",
+    "items": {
+      "$ref": "#/definitions/getPortalRegion"
+    }
+  },
+  "getPortalResource": {
+    "type": "object",
+    "description": "resource objects that contain the key, size, and created date of the resource. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Resources/02r30000009r000000/",
+    "title": "resource",
+    "properties": {
+      "key": {
+        "type": "string",
+        "description": "The ID of the comment"
+      },
+      "size": {
+        "type": "integer",
+        "description": "Size of the resource"
+      },
+      "created": {
+        "type": "integer",
+        "description": "The date and time the resource was created. Shown in UNIX time"
+      }
+    },
+    "required": [
+      "key",
+      "size",
+      "created"
+    ]
+  },
+  "getPortalResources": {
+    "type": "object",
+    "description": "Resources lists all file resources for the organization. The start and num paging parameters are supported. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Resources/02r30000009r000000/",
+    "title": "resources",
+    "properties": {
+      "total": {
+        "type": "integer",
+        "description": "The total number of results found"
+      },
+      "start": {
+        "type": "integer",
+        "description": "The number of the first entry in the result set response. The index number is 1-based"
+      },
+      "num": {
+        "type": "integer",
+        "description": "The number of results included in this result set response"
+      },
+      "nextStart": {
+        "type": "integer",
+        "description": "The next entry index if the current result set doesn't contain all results"
+      },
+      "resources": {
+        "type": "array",
+        "description": "A JSON array of resource objects that contain the key, size, and created date of the resource",
+        "minLength": 0,
+        "items": {
+          "$ref": "#/definitions/getPortalResource"
+        }
+      }
+    },
+    "required": [
+      "total",
+      "start",
+      "num",
+      "nextStart",
+      "resources"
+    ]
+  },
+  "getPortalSelf": {
     "type": "object",
     "description": "The Portal Self resource is used to return the view of the portal as seen by the current user, anonymous or logged in. It includes information such as the name, logo, featured items, and supported protocols (HTTP vs. HTTPS) for this portal. If the user is not logged in, this call will return the default view of the portal. If the user is logged in, the view of the returned portal will be specific to the organization to which the user belongs. The default view of the portal is dependent on the culture of the user, which is obtained from the user's profile. A parameter to pass in the locale/culture is available for anonymous users. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Portal_Self/02r3000001m7000000/",
     "title": "portal",
@@ -1916,185 +2095,6 @@
       "urlKey",
       "useStandardizedQuery",
       "user"
-    ]
-  },
-  "getPortalAppInfo": {
-    "type": "object",
-    "description": "Information about the Application through which this resource was accessed. This information is based on the token used to access this resource. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Portal_Self/02r3000001m7000000/",
-    "title": "portalAppInfo",
-    "properties": {
-      "appID": {
-        "type": "string",
-        "description": "The AppID of the registered Application. This is also the OAuth client_id"
-      },
-      "itemId": {
-        "type": "string",
-        "description": "The item ID of the registered Application"
-      },
-      "appOwner": {
-        "type": "string",
-        "description": "The owner of the Application"
-      },
-      "orgId": {
-        "type": "string",
-        "description": "The organization to which the Application owner belongs"
-      },
-      "appTitle": {
-        "type": "string",
-        "description": "The title of the Application"
-      }
-    },
-    "required": [
-      "appID",
-      "itemId",
-      "appOwner",
-      "orgId",
-      "appTitle"
-    ]
-  },
-  "getPortalFeaturedGroup": {
-    "type": "object",
-    "description": "The featured groups for the organization. These are the groups that will be highlighted on the Groups page. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Portal_Self/02r3000001m7000000/",
-    "title": "portalFeaturedGroup",
-    "properties": {
-      "owner": {
-        "type": "string",
-        "description": "The owner of the featured group"
-      },
-      "title": {
-        "type": "string",
-        "description": "The title of the featured group"
-      }
-    },
-    "required": [
-      "owner",
-      "title"
-    ]
-  },
-  "getPortalLanguage": {
-    "type": "object",
-    "description": "Available language. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Languages/02r300000095000000/",
-    "title": "language",
-    "properties": {
-      "language": {
-        "type": "string",
-        "description": "Language's name"
-      },
-      "culture": {
-        "type": "string",
-        "description": "Language's culture"
-      },
-      "localizedName": {
-        "type": "string",
-        "description": "Language's localized name"
-      }
-    },
-    "required": [
-      "language",
-      "culture",
-      "localizedName"
-    ]
-  },
-  "getPortalLanguages": {
-    "type": "array",
-    "description": "Lists the available languages. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Languages/02r300000095000000/",
-    "title": "languages",
-    "items": {
-      "$ref": "#/definitions/getPortalLanguage"
-    }
-  },
-  "getPortalRegion": {
-    "type": "object",
-    "description": "Available region. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Regions/02r300000099000000/",
-    "title": "region",
-    "properties": {
-      "name": {
-        "type": "string",
-        "description": "Region's name"
-      },
-      "region": {
-        "type": "string",
-        "description": "Region's short name"
-      },
-      "localizedName": {
-        "type": "string",
-        "description": "Region's localized name"
-      }
-    },
-    "required": [
-      "name",
-      "region",
-      "localizedName"
-    ]
-  },
-  "getPortalRegions": {
-    "type": "array",
-    "description": "Lists the available regions. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Regions/02r300000099000000/",
-    "title": "regions",
-    "items": {
-      "$ref": "#/definitions/getPortalRegion"
-    }
-  },
-  "getPortalResource": {
-    "type": "object",
-    "description": "resource objects that contain the key, size, and created date of the resource. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Resources/02r30000009r000000/",
-    "title": "resource",
-    "properties": {
-      "key": {
-        "type": "string",
-        "description": "The ID of the comment"
-      },
-      "size": {
-        "type": "integer",
-        "description": "Size of the resource"
-      },
-      "created": {
-        "type": "integer",
-        "description": "The date and time the resource was created. Shown in UNIX time"
-      }
-    },
-    "required": [
-      "key",
-      "size",
-      "created"
-    ]
-  },
-  "getPortalResources": {
-    "type": "object",
-    "description": "Resources lists all file resources for the organization. The start and num paging parameters are supported. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Resources/02r30000009r000000/",
-    "title": "resources",
-    "properties": {
-      "total": {
-        "type": "integer",
-        "description": "The total number of results found"
-      },
-      "start": {
-        "type": "integer",
-        "description": "The number of the first entry in the result set response. The index number is 1-based"
-      },
-      "num": {
-        "type": "integer",
-        "description": "The number of results included in this result set response"
-      },
-      "nextStart": {
-        "type": "integer",
-        "description": "The next entry index if the current result set doesn't contain all results"
-      },
-      "resources": {
-        "type": "array",
-        "description": "A JSON array of resource objects that contain the key, size, and created date of the resource",
-        "minLength": 0,
-        "items": {
-          "$ref": "#/definitions/getPortalResource"
-        }
-      }
-    },
-    "required": [
-      "total",
-      "start",
-      "num",
-      "nextStart",
-      "resources"
     ]
   },
   "getPortalServer": {

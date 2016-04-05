@@ -1,7 +1,7 @@
 ### Coverage  
-Completed items: 67  
+Completed items: 58  
 Total items: 488  
-Completed: 14 %  
+Completed: 12 %  
 
 
 **Managing your organization**  
@@ -165,7 +165,7 @@ Completed: 14 %
 ✖ [Create Kmz](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Kmz/02r3000001tm000000/)  
 ✖ [Kml](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Kml/02r3000001pq000000/)  
 ✖ [Kmz File](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Kmz_File/02r3000001v4000000/)  
-**Logs**  
+**Server Logs**  
 ✖ [Clean Logs](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Clean_Logs/02r3000001s2000000/)  
 ✖ [Count Error Reports](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Count_Error_Reports/02r3000001z2000000/)  
 ✖ [Edit Log Settings](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Edit_Log_Settings/02r300000206000000/)  
@@ -193,7 +193,7 @@ Completed: 14 %
 **Mode**  
 ✖ [Mode](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Mode/02r3000002p0000000/)  
 ✖ [Update Site Mode](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Site_Mode/02r3000002q4000000/)  
-**Security**  
+**Server Security**  
 ✖ [Add Role](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_Role/02r3000001qm000000/)  
 ✖ [Add User](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_User/02r3000001s4000000/)  
 ✖ [Add Users To Role](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_Users_To_Role/02r3000001vz000000/)  
@@ -206,16 +206,16 @@ Completed: 14 %
 ✖ [Get Roles](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Get_Roles/02r3000001qz000000/)  
 ✖ [Get Roles By Privilege](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Get_Roles_By_Privilege/02r30000020q000000/)  
 ✖ [Get Roles For User](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Get_Roles_For_User/02r3000001sp000000/)  
-✔ [Get Users](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Get_Users/02r3000001r8000000/)  
+✖ [Get Users](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Get_Users/02r3000001r8000000/)  
 ✖ [Get Users Within Role](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Get_Users_Within_Role/02r3000001t7000000/)  
 ✖ [Primary Site Administrator](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Primary_Site_Administrator/02r3000001z4000000/)  
 ✖ [Remove Role](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Remove_Role/02r3000001w2000000/)  
 ✖ [Remove Roles](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Remove_Roles/02r3000001v1000000/)  
 ✖ [Remove User](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Remove_User/02r3000001rq000000/)  
 ✖ [Remove Users From Role](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Remove_Users_From_Role/02r3000001v8000000/)  
-✖ [Roles](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Roles/02r300000210000000/)  
+✖ [Total Roles](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Roles/02r300000210000000/)  
 ✖ [Search Roles](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Search_Roles/02r3000001sv000000/)  
-✔ [Search Users](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Search_Users/02r3000001zr000000/)  
+✖ [Search Users](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Search_Users/02r3000001zr000000/)  
 ✖ [Security](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Security/02r3000001wr000000/)  
 ✖ [Security Configuration](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Security_Configuration/02r3000001t9000000/)  
 ✖ [Test Identity Store](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Test_Identity_Store/02r3000001z3000000/)  
@@ -225,14 +225,14 @@ Completed: 14 %
 ✖ [Update Role](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Role/02r3000001s8000000/)  
 ✖ [Update Security Configuration](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Security_Configuration/02r3000001rw000000/)  
 ✖ [Update Token Configuration](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Token_Configuration/02r3000001v3000000/)  
-✔ [Update User](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_User/02r3000001sm000000/)  
-✔ [Users](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Users/02r3000001ps000000/)  
-**Services**  
+✖ [Update User](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_User/02r3000001sm000000/)  
+✖ [Total Users](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Users/02r3000001ps000000/)  
+**Server Services**  
 ✖ [Add Permission](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Add_Permission/02r3000001pw000000/)  
 ✖ [Clean Permissions](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Clean_Permissions/02r3000001z1000000/)  
-✔ [Create Folder](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Folder/02r3000001t4000000/)  
-✔ [Create Service](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Service/02r3000001tr000000/)  
-✔ [Delete Folder](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Folder/02r3000001s1000000/)  
+✖ [Create Folder](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Folder/02r3000001t4000000/)  
+✖ [Create Service](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Service/02r3000001tr000000/)  
+✖ [Delete Folder](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Folder/02r3000001s1000000/)  
 ✖ [Delete Item Information](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Item_Information/02r3000001rz000000/)  
 ✖ [Delete Service](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Service/02r3000001zq000000/)  
 ✖ [Edit Item Information](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Edit_Item_Information/02r3000001w6000000/)  
@@ -261,16 +261,16 @@ Completed: 14 %
 ✖ [Unregister Extension](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Unregister_Extension/02r3000001pz000000/)  
 ✖ [Update Extension](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Extension/02r300000203000000/)  
 ✖ [Upload Item Information File](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Upload_Item_Information_File/02r3000001t1000000/)  
-**Site**  
+**Server Site**  
 ✖ [Create Site](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Site/02r3000001zs000000/)  
 ✖ [Delete Site](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Site/02r3000001zv000000/)  
 ✖ [Export Site](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Export_Site/02r30000020s000000/)  
-✔ [Generate Token](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Generate_Token/02r3000001w0000000/)  
+✖ [Generate Token](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Generate_Token/02r3000001w0000000/)  
 ✖ [Import Site](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Import_Site/02r30000020p000000/)  
 ✖ [Join Site](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Join_Site/02r300000205000000/)  
 ✖ [Public Key](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Public_Key/02r3000001wp000000/)  
 ✖ [Site](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Site/02r3000001pr000000/)  
-**System**  
+**Server System**  
 ✖ [Clean Directory](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Clean_Directory/02r3000001vq000000/)  
 ✖ [Clear Rest Cache](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Clear_Rest_Cache/02r3000001w3000000/)  
 ✖ [Configuration Store](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Configuration_Store/02r300000202000000/)  
@@ -290,7 +290,7 @@ Completed: 14 %
 ✖ [Server Directory](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Server_Directory/02r3000001q2000000/)  
 ✖ [Server Properties](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Server_Properties/02r300000209000000/)  
 ✖ [Services Directory](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Services_Directory/02r3000001q9000000/)  
-✖ [System]()  
+✖ [System](http://resources.arcgis.com/en/help/arcgis-rest-api/#/System/02r3000001r5000000/)  
 ✖ [Unregister Directory](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Unregister_Directory/02r3000001rs000000/)  
 ✖ [Unregister Web Adaptor](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Unregister_Web_Adaptor/02r3000001rv000000/)  
 ✖ [Update Server Properties](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Server_Properties/02r3000001v6000000/)  
@@ -327,7 +327,7 @@ Completed: 14 %
 ✖ [Portal Administration Root](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Portal_Administration_Root/02r300000253000000/)  
 ✖ [Status](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Status/02r3000002pm000000/)  
 ✖ [Unregister Machine](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Unregister_Machine/02r3000002p2000000/)  
-**System**  
+**Portal System**  
 ✖ [Database](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Database/02r30000025n000000/)  
 ✖ [Directories](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Directories/02r30000024r000000/)  
 ✖ [Directory](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Directory/02r30000025q000000/)  
@@ -353,7 +353,7 @@ Completed: 14 %
 ✖ [Web Adaptors](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Web_Adaptors/02r300000248000000/)  
 ✖ [Web Adaptors Configuration](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Web_Adaptors_Configuration/02r300000259000000/)  
 ✖ [Web Adaptor](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Web_Adaptor/02r30000025p000000/)  
-**Security**  
+**Portal Security**  
 ✖ [Change App ID](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Change_App_ID/02r300000291000000/)  
 ✖ [Create User](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_User/02r30000024z000000/)  
 ✖ [Delete Certificate](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Certificate/02r3000002mm000000/)  
@@ -377,7 +377,7 @@ Completed: 14 %
 ✖ [SSL Certificates](http://resources.arcgis.com/en/help/arcgis-rest-api/#/SSL_Certificates/02r3000002m5000000/)  
 ✖ [Test Identity Store](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Test_Identity_Store/02r300000297000000/)  
 ✖ [Token Configuration](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Token_Configuration/02r300000265000000/)  
-✔ [Users](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Users/02r300000250000000/)  
+✖ [Registered Members](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Users/02r300000250000000/)  
 ✖ [Update App Info](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_App_Info/02r30000028m000000/)  
 ✖ [Update Enterprise User](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Enterprise_User/02r3000002n3000000/)  
 ✖ [Update Identity Store](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Identity_Store/02r300000249000000/)  
@@ -392,7 +392,7 @@ Completed: 14 %
 ✖ [Update Server](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Update_Server/02r3000002pp000000/)  
 ✖ [Validate Server](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Validate_Server/02r3000002nz000000/)  
 ✖ [Validate Servers](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Validate_Servers/02r3000002q0000000/)  
-**Logs**  
+**Portal Logs**  
 ✖ [Clean Logs](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Clean_Logs/02r30000028p000000/)  
 ✖ [Edit Log Settings](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Edit_Log_Settings/02r300000289000000/)  
 ✖ [Log Settings](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Log_Settings/02r300000299000000/)  

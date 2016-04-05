@@ -69,7 +69,7 @@ var config = {
     ],
     "getRegisteredAppInfo": [],
     "getOrgRoot": [],
-    "getPortal": [
+    "getPortalSelf": [
       "getUser",
       "getExtent",
       "getPortalAppInfo",
