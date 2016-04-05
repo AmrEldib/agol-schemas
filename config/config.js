@@ -128,7 +128,8 @@ var config = {
     "addRating": [],
     "createFolder": [],
     "createService": [],
-    "deleteComment": []
+    "deleteComment": [],
+    "deleteFolder": []
   }
 }
 

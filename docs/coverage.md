@@ -1,7 +1,7 @@
 ### Coverage  
-Completed items: 65  
+Completed items: 67  
 Total items: 488  
-Completed: 13 %  
+Completed: 14 %  
 
 
 **Managing your organization**  
@@ -54,7 +54,7 @@ Completed: 13 %
 ✔ [Create Service](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Service/02r30000027r000000/)  
 ✖ [Create Service (Image Service)](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Service_Image_Service/02r3000002nr000000/)  
 ✔ [Delete Comment](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Comment/02r300000072000000/)  
-✖ [Delete Folder](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Folder/02r30000008m000000/)  
+✔ [Delete Folder](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Folder/02r30000008m000000/)  
 ✖ [Delete Info](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Info/02r3000002nm000000/)  
 ✖ [Delete Item](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Item/02r300000092000000/)  
 ✖ [Delete Items](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Items/02r30000008r000000/)  
@@ -232,7 +232,7 @@ Completed: 13 %
 ✖ [Clean Permissions](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Clean_Permissions/02r3000001z1000000/)  
 ✔ [Create Folder](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Folder/02r3000001t4000000/)  
 ✔ [Create Service](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Create_Service/02r3000001tr000000/)  
-✖ [Delete Folder](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Folder/02r3000001s1000000/)  
+✔ [Delete Folder](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Folder/02r3000001s1000000/)  
 ✖ [Delete Item Information](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Item_Information/02r3000001rz000000/)  
 ✖ [Delete Service](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Service/02r3000001zq000000/)  
 ✖ [Edit Item Information](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Edit_Item_Information/02r3000001w6000000/)  
