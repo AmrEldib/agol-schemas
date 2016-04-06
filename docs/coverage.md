@@ -1,7 +1,7 @@
 ### Coverage  
-Completed items: 65  
+Completed items: 66  
 Total items: 488  
-Completed: 13 %  
+Completed: 14 %  
 
 
 **Managing your organization**  
@@ -241,7 +241,7 @@ Completed: 13 %
 ✖ [Exists](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Exists/02r3000002ps000000/)  
 ✖ [Extensions](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Extensions/02r3000001rr000000/)  
 ✖ [Federate](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Federate/02r30000021p000000/)  
-✖ [Folder](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Folder/02r3000001sn000000/)  
+✔ [Folder](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Folder/02r3000001sn000000/)  
 ✖ [Has Child Permissions Conflict](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Has_Child_Permissions_Conflict/02r3000001r4000000/)  
 ✖ [Item Information](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Item_Information/02r3000001tz000000/)  
 ✖ [Permissions](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Permissions/02r3000001tv000000/)  

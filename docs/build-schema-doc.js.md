@@ -2,9 +2,13 @@
 
 Collect descriptions of all schemas.
 
+Returns **object** Promise. The resolve function has no parameters.
+
 # generateCodeDocs
 
 Generate documentation for code files. It reads the JSDoc comments and generate markdown files for them. One markdown file is generated for each code file.
+
+Returns **object** Promise. The resolve function has no parameters.
 
 # getSchemaDescription
 

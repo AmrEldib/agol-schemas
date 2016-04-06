@@ -1,7 +1,9 @@
-﻿var fs = require('fs');
+var writeFile = require('fs-writefile-promise');
+var readFile = require('fs-readfile-promise');
+var readFiles = require('read-files-promise');
 var path = require('path');
-var readMultipleFiles = require('read-multiple-files');
 var config = require('../config/config');
+var RSVP = require('rsvp');
 
 /**
  * Check if a schema has any dependencies.
@@ -66,36 +68,36 @@ function cleanUpSchema(schema) {
 
 /**
  * Accept a schema name and returns an object of that schema with the 'definitions' object filled out correctly.
- * @param {string} schemaName Name of the schema to modify
- * @param {function} callback A callback function with one parameter of object type representing the schema with definitions.
+ * @param {string} schemaName Name of the schema to modify.
+ * @return {object} Promise. The resolve function has one parameter that represents the schema with definitions.
  */
-function getSchemaWithDefinitions(schemaName, callback) {
+function getSchemaWithDefinitions(schemaName) {
+  return new RSVP.Promise(function (resolve, reject) {
+    // Check if schema name if valid
+    if (config.schemas[schemaName] == undefined) {
+      reject(new Error("Invalid schema name. Name must be one of: " + getSchemaList()));
+    }
 
-  // Check if schema name if valid
-  if (config.schemas[schemaName] == undefined) {
-    throw Error("Invalid schema name. Name must be one of: " + getSchemaList());
-  }
+    // Collect schema refs
+    var schemaRefs = [];
+    if (hasRefs(schemaName)) {
+      schemaRefs = getSchemaRefs(schemaName);
+    }
 
-  // Collect schema refs
-  var schemaRefs = [];
-  if (hasRefs(schemaName)) {
-    schemaRefs = getSchemaRefs(schemaName);
-  }
+    // Get paths of referenced files
+    var schemaRefsFiles = schemaRefs.map(function (ref) {
+      return path.resolve(__dirname, '..', config.schemasFolder + '/' + ref + '.json');
+    });
 
-  // Get paths of referenced files
-  var schemaRefsFiles = schemaRefs.map(function (ref) {
-    return path.resolve(__dirname, '..', config.schemasFolder + '/' + ref + '.json');
-  })
+    var schemaFileLocation = path.resolve(__dirname, '..', config.schemasFolder + '/' + schemaName + '.json');
 
-  // Read schema file
-  fs.readFile(path.resolve(__dirname, '..', config.schemasFolder + '/' + schemaName + '.json'), function (err, schemaFileContent) {
-
-    // Read reference files
-    readMultipleFiles(schemaRefsFiles, 'utf8',
-    (err, contents) => {
-      if (err) {
-        throw err;
-      }
+    RSVP.all([
+      readFile(schemaFileLocation),
+      readFiles(schemaRefsFiles, { encoding: 'utf8' })
+    ])
+    .then(function (buffers) {
+      var schemaFileContent = buffers[0].toString();
+      var contents = buffers[1].map(function (buffer) { return buffer.toString(); });
 
       // Parse schema and refs into JSON objects
       var schema = JSON.parse(schemaFileContent);
@@ -109,12 +111,11 @@ function getSchemaWithDefinitions(schemaName, callback) {
         cleanUpSchema(schemaRef);
         // Add schema reference
         schema.definitions[schemaRefs[index]] = schemaRef;
-      })
+      });
 
-      // return full schema object
-      callback(schema);
-    })
-  })
+      resolve({ name: schemaName, schema: schema});
+    });
+  });
 }
 
 /**
@@ -122,27 +123,38 @@ function getSchemaWithDefinitions(schemaName, callback) {
  * @param {string} schemaName Name of the schema to be written.
  * @param {object} schema Schema object to be written to file.
  * @param {string} [outputFile=""] Path to output file. If nothing is specified, the schema is saved to a file with the schema name under the output folder specified in the fakerConfig file.
+ * @returns {object} Promise. The resolve function has no parameters.
  */
 function writeSchemaToFile(schemaName, schema, outputFile) {
-  // Get path of schema file
-  if (!outputFile) {
-    outputFile = config.outputFolder + '/' + schemaName + '.json';
-  }
+  return new RSVP.Promise(function (resolve, reject) {
+    // Get path of schema file
+    if (!outputFile) {
+      outputFile = config.outputFolder + '/' + schemaName + '.json';
+    }
 
-  // Write fake data to file
-  fs.writeFile(path.resolve(__dirname, '..', outputFile), JSON.stringify(schema, null, 2));
+    // Write fake data to file
+    writeFile(path.resolve(__dirname, '..', outputFile), JSON.stringify(schema, null, 2)).then(function () {
+      resolve();
+    });
+  });
 }
 
 /**
  * Writes output schemas for all available schemas for faker settings
+ * @returns {object} Promise. The resolve function has no parameters.
  */
 function writeFakerSchemas() {
-  var schemas = getSchemaList();
-  schemas.forEach(function (schemaName) {
-    getSchemaWithDefinitions(schemaName, function (schema) {
-      writeSchemaToFile(schemaName, schema);
-    });
-  })
+  return new RSVP.Promise(function (resolve, reject) {
+    var schemas = getSchemaList();
+
+    RSVP.all(schemas.map(function (schema) {
+      return getSchemaWithDefinitions(schema);
+    })).then(function (schemasWithDescArray) {
+      return RSVP.all(schemasWithDescArray.map(function (schemaWithDesc) {
+        return writeSchemaToFile(schemaWithDesc.name, schemaWithDesc.schema);
+      }));
+    }).then(resolve);
+  });
 }
 
 module.exports = {

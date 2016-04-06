@@ -1,8 +1,10 @@
 var fs = require('fs');
+var writeFile = require('fs-writefile-promise');
 var path = require('path');
 var config = require('../config/config');
 var coverageConfig = require('../config/coverage-config');
 var util = require('../util');
+var RSVP = require('rsvp');
 
 /**
  * Determines whether a certain item of the ArcGIS REST API is covered or not
@@ -34,25 +36,27 @@ function getCoverage(coverage, coverageItem) {
 
 /**
  * Collects coverage for all ArcGIS REST API items. Writes results to file specified in config.coverageFile
+ * @returns {object} Promise. The resolve function has no parameters.
  */
 function collectCoverage() {
-  var coverage = {
-    completed: 0,
-    itemsCount: 0,
-    description: ""
-  };
-  coverage = coverageConfig.reduce(getCoverage, coverage);
+  return new RSVP.Promise(function (resolve, reject) {
+    var coverage = {
+      completed: 0,
+      itemsCount: 0,
+      description: ""
+    };
+    coverage = coverageConfig.reduce(getCoverage, coverage);
 
-  var coverageText = "### Coverage  \n"
-  + "Completed items: " + coverage.completed + "  \n"
-  + "Total items: " + coverage.itemsCount + "  \n"
-  + "Completed: " + ((coverage.completed / coverage.itemsCount) * 100).toFixed(0) + " %  \n\n\n"
-  + coverage.description;
+    var coverageText = "### Coverage  \n"
+    + "Completed items: " + coverage.completed + "  \n"
+    + "Total items: " + coverage.itemsCount + "  \n"
+    + "Completed: " + ((coverage.completed / coverage.itemsCount) * 100).toFixed(0) + " %  \n\n\n"
+    + coverage.description;
 
-  // Write to file
-  fs.writeFile(path.resolve(__dirname, '..', config.docFolder + "/" + config.coverageFile), coverageText);
+    // Write to file
+    writeFile(path.resolve(__dirname, '..', config.docFolder + "/" + config.coverageFile), coverageText).then(resolve);
+  });
 }
-
 
 module.exports = {
   collectCoverage: collectCoverage
