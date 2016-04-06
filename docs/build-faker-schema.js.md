@@ -28,8 +28,9 @@ Accept a schema name and returns an object of that schema with the 'definitions'
 
 **Parameters**
 
--   `schemaName` **string** Name of the schema to modify
--   `callback` **function** A callback function with one parameter of object type representing the schema with definitions.
+-   `schemaName` **string** Name of the schema to modify.
+
+Returns **object** Promise. The resolve function has one parameter that represents the schema with definitions.
 
 # hasRefs
 
@@ -45,6 +46,8 @@ Returns **boolean** True if the schema has references, False if not.
 
 Writes output schemas for all available schemas for faker settings
 
+Returns **object** Promise. The resolve function has no parameters.
+
 # writeSchemaToFile
 
 Writes output schema to file
@@ -54,3 +57,5 @@ Writes output schema to file
 -   `schemaName` **string** Name of the schema to be written.
 -   `schema` **object** Schema object to be written to file.
 -   `outputFile` **[string]** Path to output file. If nothing is specified, the schema is saved to a file with the schema name under the output folder specified in the fakerConfig file. (optional, default `""`)
+
+Returns **object** Promise. The resolve function has no parameters.

@@ -38,6 +38,10 @@ Writes output schema to file
 -   `schema` **object** Schema object to be written to file.
 -   `outputFile` **[string]** Path to output file. If nothing is specified, the schema is saved to a file with the schema name under the output folder specified in the fakerConfig file. (optional, default `""`)
 
+Returns **object** Promise. The resolve function has no parameters.
+
 # writeSwaggerDefinitions
 
 Writes output schemas for all available schemas for faker settings
+
+Returns **object** Promise. The resolve function has no parameters.

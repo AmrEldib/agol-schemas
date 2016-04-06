@@ -1,9 +1,11 @@
-var fs = require('fs');
+var writeFile = require('fs-writefile-promise');
+var readFile = require('fs-readfile-promise');
+var readFiles = require('read-files-promise');
 var path = require('path');
-var readMultipleFiles = require('read-multiple-files');
 var config = require('../config/config');
 var util = require('../util');
 var documentation = require('documentation');
+var RSVP = require('rsvp');
 
 /**
  * Takes a block of text and wraps URL into a Markdown link.
@@ -40,45 +42,58 @@ function getSchemaDescription(schema) {
 
 /**
  * Collect descriptions of all schemas.
+ * @returns {object} Promise. The resolve function has no parameters.
  */
 function collectDescriptions() {
-  var schemasWithDesc = "";
-  var schemaFiles = util.getAllFilesFromFolder(config.schemasFolder);
+  return new RSVP.Promise(function (resolve, reject) {
+    var schemasWithDesc = "";
+    var schemaFiles = util.getAllFilesFromFolder(config.schemasFolder);
 
-  // Get path of schema file
-  var schemas = schemaFiles.map(function (sf) {
-    return path.basename(sf, ".json");
-  })
+    // Get path of schema file
+    var schemas = schemaFiles.map(function (sf) {
+      return path.basename(sf, ".json");
+    });
 
-  // Read schema file
-  readMultipleFiles(schemaFiles, 'utf8', (err, contents) => {
-    contents.forEach(function (schemaFileContent, index) {
-      var schema = JSON.parse(schemaFileContent);
-      var schemaDesc = getSchemaDescription(schema);
-      schemasWithDesc += "* **" + schemas[index] + "**: " + schemaDesc + "  \n";
-    })
+    // Read schema file
+    readFiles(schemaFiles, { encoding: 'utf8' }).then(function (contentsBuffers) {
 
-    // Write to file
-    fs.writeFile(path.resolve(__dirname, '..', config.docFolder + "/" + config.schemasDocFile), schemasWithDesc);
+      var contents = contentsBuffers.map(function (buffer) { return buffer.toString(); });
+      contents.forEach(function (schemaFileContent, index) {
+        var schema = JSON.parse(schemaFileContent);
+        var schemaDesc = getSchemaDescription(schema);
+        schemasWithDesc += "* **" + schemas[index] + "**: " + schemaDesc + "  \n";
+      });
+
+      // Write to file
+      writeFile(path.resolve(__dirname, '..', config.docFolder + "/" + config.schemasDocFile), schemasWithDesc).then(function () {
+        resolve();
+      });
+    });
   });
 }
 
 /**
  * Generate documentation for code files. It reads the JSDoc comments and generate markdown files for them. One markdown file is generated for each code file.
+ * @returns {object} Promise. The resolve function has no parameters.
  */
 function generateCodeDocs() {
-  config.codeFiles.map(function (jsFile) {
-    return path.resolve(__dirname, '..', jsFile);
-  })
-    .forEach(function (jsFile) {
-      var jf = [jsFile];
-      documentation(jf, { shallow: true }, function (err, result) {
-        documentation.formats.md(result, {}, function (err, md) {
-          // Write to file
-          fs.writeFile(path.resolve(__dirname, '..', config.docFolder + "/" + jsFile.replace(/^.*[\\\/]/, '') + ".md"), md);
+  return new RSVP.Promise(function (resolve, reject) {
+    var promises = config.codeFiles.map(function (jsFile) {
+      return path.resolve(__dirname, '..', jsFile);
+    })
+    .map(function (jsFile) {
+      return new RSVP.Promise(function (resolve, reject) {
+        var jf = [jsFile];
+        documentation(jf, { shallow: true }, function (err, result) {
+          documentation.formats.md(result, {}, function (err, md) {
+            // Write to file
+            writeFile(path.resolve(__dirname, '..', config.docFolder + "/" + jsFile.replace(/^.*[\\\/]/, '') + ".md"), md).then(resolve);
+          });
         });
       });
     });
+    RSVP.all(promises).then(resolve);
+  });
 }
 
 module.exports = {

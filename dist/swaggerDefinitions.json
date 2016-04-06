@@ -197,9 +197,11 @@
       "group": {
         "type": "object",
         "description": "The JSON group object representing the created group. See the Group response properties for the properties returned",
-        "properties": {
-          "$ref": "#/definitions/getGroup"
-        }
+        "oneOf": [
+          {
+            "$ref": "#/definitions/getGroup"
+          }
+        ]
       }
     },
     "required": [

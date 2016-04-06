@@ -1,6 +1,8 @@
 var fs = require('fs');
+var writeFile = require('fs-writefile-promise');
 var path = require('path');
 var config = require('../config/config');
+var RSVP = require('rsvp');
 
 /**
  * Gets all files from a folder
@@ -70,19 +72,25 @@ function getSchemaForSwagger(schemaName) {
  * @param {string} schemaName Name of the schema to be written.
  * @param {object} schema Schema object to be written to file.
  * @param {string} [outputFile=""] Path to output file. If nothing is specified, the schema is saved to a file with the schema name under the output folder specified in the fakerConfig file.
+ * @returns {object} Promise. The resolve function has no parameters.
  */
 function writeSchemaToFile(schemaName, schema, outputFile) {
-  // Get path of schema file
-  if (!outputFile) {
-    outputFile = config.outputFolder + '/' + schemaName + '.json';
-  }
+  return new RSVP.Promise(function (resolve, reject) {
+    // Get path of schema file
+    if (!outputFile) {
+      outputFile = config.outputFolder + '/' + schemaName + '.json';
+    }
 
-  // Write fake data to file
-  fs.writeFile(path.resolve(__dirname, '..', outputFile), JSON.stringify(schema, null, 2));
+    // Write fake data to file
+    writeFile(path.resolve(__dirname, '..', outputFile), JSON.stringify(schema, null, 2)).then(function () {
+      resolve();
+    })
+  });
 }
 
 /**
  * Writes output schemas for all available schemas for faker settings
+ * @returns {object} Promise. The resolve function has no parameters.
  */
 function writeSwaggerDefinitions() {
   var schemaFiles = getAllFilesFromFolder(config.schemasFolder);
@@ -95,7 +103,7 @@ function writeSwaggerDefinitions() {
     // Add schema reference
     swaggerDefinitions[schemaName] = schema;
   });
-  writeSchemaToFile(config.swaggerFile, swaggerDefinitions);
+  return writeSchemaToFile(config.swaggerFile, swaggerDefinitions);
 }
 
 module.exports = {

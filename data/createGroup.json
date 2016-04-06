@@ -18,9 +18,11 @@
       "id": "group",
       "type": "object",
       "description": "The JSON group object representing the created group. See the Group response properties for the properties returned",
-      "properties": {
-        "$ref": "getGroup"
-      }
+      "oneOf": [
+        {
+          "$ref": "getGroup"
+        }
+      ]
     }
   },
   "required": [

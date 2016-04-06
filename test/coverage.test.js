@@ -62,9 +62,6 @@ function anyDuplicates() {
 describe("coverage-config", function () {
   it("Has duplicate schema names", function () {
     var duplicates = findDuplicates();
-    if (Object.keys(duplicates).length > 0) {
-      console.log(duplicates);
-    }
-    assert.equal(Object.keys(duplicates).length, 0);
+    assert.equal(Object.keys(duplicates).length, 0, "List of duplicated schema names: " + JSON.stringify(duplicates, null, 2));
   });
 });
