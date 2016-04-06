@@ -18,7 +18,7 @@ function getCoverage(coverage, coverageItem) {
     return coverageItem.children.reduce(getCoverage, coverage);
   }
   else if (!coverageItem.hasOwnProperty("children") && coverageItem.title != "") {
-    if (util.checkIfFileExists(config.outputFolder, coverageItem.schema + ".json")) {
+    if (util.checkIfFileExists(config.schemasFolder, coverageItem.schema + ".json")) {
       coverage.description += "✔ ";
       coverage.completed += 1;
     }
