@@ -1,7 +1,7 @@
 {
   "name": "agol-schemas",
-  "version": "0.3.4",
-  "description": "JSON Schemas for ArcGIS Online's requests and responses",
+  "version": "1.0.0",
+  "description": "JSON Schemas for ArcGIS Online's REST API responses",
   "main": "index.js",
   "scripts": {
     "build": "node build/build.js",
@@ -18,6 +18,10 @@
     {
       "name": "Amr Eldib",
       "url": "http://amreldib.com"
+    },
+    {
+      "name": "Adam Marinelli",
+      "url": "https://github.com/amarinelli"
     }
   ],
   "repository": {
