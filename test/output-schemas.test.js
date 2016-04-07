@@ -7,7 +7,7 @@ var util = require('../util');
 var tv4 = require('tv4');
 
 describe("Output schemas", function () {
-  it("Schemas are valid", function (done) {
+  it("Check if schemas are valid", function (done) {
     tv4.addSchema('http://json-schema.org/draft-04/schema', JSON.parse(fs.readFileSync(path.resolve(__dirname + '/jsonSchema'), 'utf8')));
     var jsonSchema = tv4.getSchema('http://json-schema.org/draft-04/schema');
     var schemaFiles = util.getAllFilesFromFolder(path.resolve(__dirname + '/../' + config.outputFolder))
@@ -22,13 +22,33 @@ describe("Output schemas", function () {
         var fileContent = JSON.parse(s);
         var result = {};
         result.name = fileContent.title;
-        result.result = tv4.validate(fileContent, jsonSchema);
+        // the validationResult object (returned from tv4) is described here
+        // https://github.com/geraintluff/tv4#usage-3-multiple-errors
+        // It looks like this
+        //  {
+        //    "valid": false,
+        //    "errors": [
+        //        {...},
+        //        ...
+        //    ],
+        //    "missing": [...]
+        //  }
+        result.validationResult = tv4.validateMultiple(fileContent, jsonSchema);
         return result;
       });
       var invalidSchemas = validationResults.filter(function (result) {
-        return result.result === false;
+        return result.validationResult.valid === false;
       });
-      assert.equal(invalidSchemas, 0, "List of invalid schemas: " + JSON.stringify(invalidSchemas, null, 2));
+      var namesOfInvalidSchemas = invalidSchemas.map(function (invS) {
+        return "*** " + invS.name + ": \n"
+        + invS.validationResult.errors.reduce(function (errorText, error) {
+          return errorText + error.message + "\n" + "At: " + error.dataPath + "\n";
+        }, "");
+      });
+      assert.equal(invalidSchemas, 0, "\nList of invalid schemas: \n"
+        + namesOfInvalidSchemas.reduce(function (text, schemaErrosText) {
+          return text + "\n" + schemaErrosText
+        }, ""));
       done();
     });
   })
