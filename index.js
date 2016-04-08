@@ -1,8 +1,9 @@
-var fs = require('fs');
+var readFile = require('fs-readfile-promise');
+var readFiles = require('read-files-promise');
 var path = require('path');
-var readMultipleFiles = require('read-multiple-files');
 var config = require('./config/config');
 var util = require('./util');
+var RSVP = require('rsvp');
 
 /**
  * Gets a list of all available schemas.
@@ -27,38 +28,19 @@ function listAllSchemas() {
 /**
  * Gets the JSON object of a specific schema.
  * @param {string} schemaName Name of the schema to get.
- * @param {function} callback Callback function. It has one parameter of a JSON object representing the schema.
+ * @returns {object} Promise. The resolve function has one parameter of a JSON object representing the schema.
  */
-function getSchema(schemaName, callback) {
-  fs.readFile(path.resolve(__dirname, config.outputFolder + '/' + schemaName + '.json'),
-    function (err, schemaFileContent) {
-      callback(JSON.parse(schemaFileContent));
-    });
-}
-
-/**
- * Gets an object whose properties are all the schema names and values are JSON objects representing those schemas.
- * @param {function} callback Callback function to be invoked after all schemas are collected. This function has one parameter of the schemas JSON object.
- */
-function getSchemas(callback) {
-  var schemaFiles = util.getAllFilesFromFolder(config.outputFolder)
-    .filter(function (f) {
-      return f.slice(-4) === "json";
-    });
-  var schemaNames = listAllSchemas();
-  readMultipleFiles(schemaFiles, 'utf8', function (err, schemaFilesContent) {
-    var schemas = schemaFilesContent.map(function (s) {
-      return JSON.parse(s);
-    }).reduce(function (allSchemas, currentSchema, currentIndex) {
-      allSchemas[schemaNames[currentIndex]] = currentSchema;
-      return allSchemas;
-    }, {});
-    callback(schemas);
+function getSchema(schemaName) {
+  return new RSVP.Promise(function (resolve, reject) {
+    readFile(path.resolve(__dirname, config.outputFolder + '/' + schemaName + '.json'))
+      .then(function (buffer) {
+      var schemaFileContent = buffer.toString();
+      resolve(JSON.parse(schemaFileContent));
+    })
   });
 }
 
 module.exports = {
   listAllSchemas: listAllSchemas,
-  getSchema: getSchema,
-  getSchemas: getSchemas
+  getSchema: getSchema
 };

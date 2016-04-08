@@ -1,3 +1,8 @@
+## 1.0.1
+- Fixed getSchema to use Promises
+- Added test for getSchema
+- Removed getAllSchemas
+
 ## 1.0.0
 - Switched library's API to use Promises
 - Added new schemas
