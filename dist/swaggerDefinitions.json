@@ -197,11 +197,7 @@
       "group": {
         "type": "object",
         "description": "The JSON group object representing the created group. See the Group response properties for the properties returned",
-        "oneOf": [
-          {
-            "$ref": "#/definitions/getGroup"
-          }
-        ]
+        "$ref": "#/definitions/getGroup"
       }
     },
     "required": [
@@ -560,11 +556,7 @@
     "maxLength": 2,
     "items": {
       "type": "object",
-      "oneOf": [
-        {
-          "$ref": "#/definitions/getCoordinate"
-        }
-      ]
+      "$ref": "#/definitions/getCoordinate"
     }
   },
   "getFolder": {

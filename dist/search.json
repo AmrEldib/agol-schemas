@@ -523,11 +523,7 @@
       "maxLength": 2,
       "items": {
         "type": "object",
-        "oneOf": [
-          {
-            "$ref": "#/definitions/getCoordinate"
-          }
-        ]
+        "$ref": "#/definitions/getCoordinate"
       }
     },
     "getCoordinate": {

@@ -1,5 +1,6 @@
 ﻿var assert = require('assert');
 var agolSchemas = require('../index');
+var RSVP = require('rsvp');
 
 describe("agol-schemas", function () {
   it("Can list all schemas", function () {
@@ -7,6 +8,8 @@ describe("agol-schemas", function () {
   });
 
   it("Can get a schema", function () {
-    assert.notEqual(agolSchemas.getSchema(agolSchemas.listAllSchemas()[0]), '');
+    return agolSchemas.getSchema(agolSchemas.listAllSchemas()[0]).then(function (s) {
+      return  assert.notEqual(s, '');
+    })
   });
 });
