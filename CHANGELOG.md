@@ -1,3 +1,7 @@
+## 1.0.2
+- Fixed schemas: createGroup and getExtent
+- Fixed getSchema test
+
 ## 1.0.1
 - Fixed getSchema to use Promises
 - Added test for getSchema
