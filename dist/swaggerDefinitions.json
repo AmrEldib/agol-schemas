@@ -413,6 +413,20 @@
       "groupId"
     ]
   },
+  "deleteInfo": {
+    "type": "object",
+    "description": "This is available for all items and allows you to delete an individual file from an item's esriinfo folder. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Info/02r3000002nm000000/",
+    "title": "deleteInfo",
+    "properties": {
+      "success": {
+        "type": "boolean",
+        "description": "Indicates if the operation was successful"
+      }
+    },
+    "required": [
+      "success"
+    ]
+  },
   "deleteNotification": {
     "type": "object",
     "description": "The Delete Notification operation (POST only) is available only to the user who receives the notification. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Notification/02r3000000mv000000/",
