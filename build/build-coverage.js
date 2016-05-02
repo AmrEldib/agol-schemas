@@ -1,4 +1,3 @@
-var fs = require('fs');
 var writeFile = require('fs-writefile-promise');
 var path = require('path');
 var config = require('../config/config');
