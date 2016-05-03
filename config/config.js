@@ -130,7 +130,8 @@ var config = {
     "createService": [],
     "deleteComment": [],
     "deleteFolder": [],
-    "deleteInfo": []
+    "deleteInfo": [],
+    "deleteItem": []
   }
 }
 

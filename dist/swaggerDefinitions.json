@@ -427,6 +427,25 @@
       "success"
     ]
   },
+  "deleteItem": {
+    "type": "object",
+    "description": "The Delete Item operation (POST only) removes both the item and its link from the user's folder by default. This operation is available to the user and to the administrator of the organization to which the user belongs. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Item/02r300000092000000/",
+    "title": "deleteItem",
+    "properties": {
+      "success": {
+        "type": "boolean",
+        "description": "Indicates if the operation was successful"
+      },
+      "itemId": {
+        "type": "string",
+        "description": "The ID of the deleted item"
+      }
+    },
+    "required": [
+      "success",
+      "itemId"
+    ]
+  },
   "deleteNotification": {
     "type": "object",
     "description": "The Delete Notification operation (POST only) is available only to the user who receives the notification. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Notification/02r3000000mv000000/",
