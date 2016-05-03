@@ -131,7 +131,8 @@ var config = {
     "deleteComment": [],
     "deleteFolder": [],
     "deleteInfo": [],
-    "deleteItem": []
+    "deleteItem": [],
+    "deleteItems": []
   }
 }
 

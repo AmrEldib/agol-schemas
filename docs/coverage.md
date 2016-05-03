@@ -1,7 +1,7 @@
 ### Coverage  
-Completed items: 60  
+Completed items: 61  
 Total items: 488  
-Completed: 12 %  
+Completed: 13 %  
 
 
 **Managing your organization**  
@@ -57,7 +57,7 @@ Completed: 12 %
 ✔ [Delete Folder](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Folder/02r30000008m000000/)  
 ✔ [Delete Info](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Info/02r3000002nm000000/)  
 ✔ [Delete Item](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Item/02r300000092000000/)  
-✖ [Delete Items](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Items/02r30000008r000000/)  
+✔ [Delete Items](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Items/02r30000008r000000/)  
 ✖ [Delete Proxies](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Proxies/02r3000002qv000000/)  
 ✖ [Delete Rating](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Rating/02r30000008p000000/)  
 ✖ [Delete Relationship](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Relationship/02r30000007n000000/)  

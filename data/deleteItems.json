@@ -1,0 +1,59 @@
+{
+  "id": "deleteItems",
+  "type": "object",
+  "description": "Deletes a batch of items owned or administered by the calling user. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Items/02r30000008r000000/",
+  "title": "deleteItems",
+  "properties": {
+    "results": {
+      "id": "results",
+      "type": "array",
+      "description": "An array of JSON objects, one for each item requested. Each object is made up of the itemId and a success flag to indicate if the item was successfully deleted. If an error occurs when deleting an item, an error object is also returned.",
+      "minLength": 0,
+      "items": {
+        "itemId": {
+          "id": "itemId",
+          "type": "string",
+          "description": "The ID of the deleted item",
+          "chance": "hash"
+        },
+        "success": {
+          "id": "success",
+          "type": "boolean",
+          "description": "Indicates if the operation was successful",
+          "chance": {
+            "bool": {
+              "likelihood": 95
+            }
+          }
+        },
+        "error": {
+          "id": "error",
+          "type": "object",
+          "description": "If an error occurs, and error object is also returned",
+          "properties": {
+            "code": {
+              "id": "code",
+              "type": "integer",
+              "description": "Returned error code",
+              "chance": {
+                "integer": {
+                  "min": 100,
+                  "max": 999
+                }
+              }
+            },
+            "message": {
+              "id": "message",
+              "type": "string",
+              "description": "Returned error message",
+              "chance": "sentence"
+            }
+          },
+          "required": ["code", "message"]
+        }
+      },
+      "required": ["success", "itemId"]
+    }
+  },
+  "required": ["results"]
+}
