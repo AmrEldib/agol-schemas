@@ -132,7 +132,8 @@ var config = {
     "deleteFolder": [],
     "deleteInfo": [],
     "deleteItem": [],
-    "deleteItems": []
+    "deleteItems": [],
+    "deleteRating": []
   }
 }
 

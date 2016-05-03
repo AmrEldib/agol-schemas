@@ -1,5 +1,5 @@
 ### Coverage  
-Completed items: 61  
+Completed items: 62  
 Total items: 488  
 Completed: 13 %  
 
@@ -59,7 +59,7 @@ Completed: 13 %
 ✔ [Delete Item](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Item/02r300000092000000/)  
 ✔ [Delete Items](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Items/02r30000008r000000/)  
 ✖ [Delete Proxies](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Proxies/02r3000002qv000000/)  
-✖ [Delete Rating](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Rating/02r30000008p000000/)  
+✔ [Delete Rating](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Rating/02r30000008p000000/)  
 ✖ [Delete Relationship](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Relationship/02r30000007n000000/)  
 ✖ [Export Item](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Export_Item/02r30000008s000000/)  
 ✖ [Generate](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Generate/02r300000083000000/)  
