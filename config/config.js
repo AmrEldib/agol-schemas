@@ -133,7 +133,8 @@ var config = {
     "deleteInfo": [],
     "deleteItem": [],
     "deleteItems": [],
-    "deleteRating": []
+    "deleteRating": [],
+    "exportItem": []
   }
 }
 
