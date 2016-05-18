@@ -454,39 +454,43 @@
       "results": {
         "type": "array",
         "description": "An array of JSON objects, one for each item requested. Each object is made up of the itemId and a success flag to indicate if the item was successfully deleted. If an error occurs when deleting an item, an error object is also returned.",
-        "minLength": 0,
         "items": {
-          "itemId": {
-            "type": "string",
-            "description": "The ID of the deleted item"
-          },
-          "success": {
-            "type": "boolean",
-            "description": "Indicates if the operation was successful"
-          },
-          "error": {
-            "type": "object",
-            "description": "If an error occurs, and error object is also returned",
-            "properties": {
-              "code": {
-                "type": "integer",
-                "description": "Returned error code"
-              },
-              "message": {
-                "type": "string",
-                "description": "Returned error message"
-              }
+          "type": "object",
+          "description": "The results object",
+          "title": "results",
+          "properties": {
+            "itemId": {
+              "type": "string",
+              "description": "The ID of the deleted item"
             },
-            "required": [
-              "code",
-              "message"
-            ]
-          }
-        },
-        "required": [
-          "success",
-          "itemId"
-        ]
+            "success": {
+              "type": "boolean",
+              "description": "Indicates if the operation was successful"
+            },
+            "error": {
+              "type": "object",
+              "description": "If an error occurs, and error object is also returned",
+              "properties": {
+                "code": {
+                  "type": "integer",
+                  "description": "Returned error code"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "Returned error message"
+                }
+              },
+              "required": [
+                "code",
+                "message"
+              ]
+            }
+          },
+          "required": [
+            "itemId",
+            "success"
+          ]
+        }
       }
     },
     "required": [
