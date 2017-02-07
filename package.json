@@ -31,14 +31,12 @@
   "bugs": "https://github.com/AmrEldib/agol-schemas/issues",
   "license": "MIT",
   "dependencies": {
-    "fs-readfile-promise": "^2.0.1",
-    "read-files-promise": "^1.1.1",
+    "mz": "^2.6.0",
     "read-multiple-files": "^1.1.1",
     "rsvp": "^3.2.1"
   },
   "devDependencies": {
     "documentation": "^3.0.4",
-    "fs-writefile-promise": "^1.0.3",
     "mocha": "^2.4.5",
     "tv4": "^1.2.7"
   }

@@ -1,5 +1,4 @@
-var fs = require('fs');
-var writeFile = require('fs-writefile-promise');
+var fs = require('mz/fs');
 var path = require('path');
 var config = require('../config/config');
 var RSVP = require('rsvp');
@@ -82,7 +81,7 @@ function writeSchemaToFile(schemaName, schema, outputFile) {
     }
 
     // Write fake data to file
-    writeFile(path.resolve(__dirname, '..', outputFile), JSON.stringify(schema, null, 2)).then(function () {
+    fs.writeFile(path.resolve(__dirname, '..', outputFile), JSON.stringify(schema, null, 2)).then(function () {
       resolve();
     })
   });

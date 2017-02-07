@@ -1,5 +1,4 @@
-var readFile = require('fs-readfile-promise');
-var readFiles = require('read-files-promise');
+var fs = require('mz/fs');
 var path = require('path');
 var config = require('./config/config');
 var util = require('./util');
@@ -32,7 +31,7 @@ function listAllSchemas() {
  */
 function getSchema(schemaName) {
   return new RSVP.Promise(function (resolve, reject) {
-    readFile(path.resolve(__dirname, config.outputFolder + '/' + schemaName + '.json'))
+    fs.readFile(path.resolve(__dirname, config.outputFolder + '/' + schemaName + '.json'))
       .then(function (buffer) {
       var schemaFileContent = buffer.toString();
       resolve(JSON.parse(schemaFileContent));

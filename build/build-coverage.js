@@ -1,4 +1,4 @@
-var writeFile = require('fs-writefile-promise');
+var fs = require('mz/fs');
 var path = require('path');
 var config = require('../config/config');
 var coverageConfig = require('../config/coverage-config');
@@ -53,7 +53,7 @@ function collectCoverage() {
     + coverage.description;
 
     // Write to file
-    writeFile(path.resolve(__dirname, '..', config.docFolder + "/" + config.coverageFile), coverageText).then(resolve);
+    fs.writeFile(path.resolve(__dirname, '..', config.docFolder + "/" + config.coverageFile), coverageText).then(resolve);
   });
 }
 

@@ -1,5 +1,4 @@
-var writeFile = require('fs-writefile-promise');
-var readFile = require('fs-readfile-promise');
+var fs = require('mz/fs');
 var readFiles = require('read-files-promise');
 var path = require('path');
 var config = require('../config/config');
@@ -65,7 +64,7 @@ function collectDescriptions() {
       });
 
       // Write to file
-      writeFile(path.resolve(__dirname, '..', config.docFolder + "/" + config.schemasDocFile), schemasWithDesc).then(function () {
+      fs.writeFile(path.resolve(__dirname, '..', config.docFolder + "/" + config.schemasDocFile), schemasWithDesc).then(function () {
         resolve();
       });
     });
@@ -87,7 +86,7 @@ function generateCodeDocs() {
         documentation(jf, { shallow: true }, function (err, result) {
           documentation.formats.md(result, {}, function (err, md) {
             // Write to file
-            writeFile(path.resolve(__dirname, '..', config.docFolder + "/" + jsFile.replace(/^.*[\\\/]/, '') + ".md"), md).then(resolve);
+            fs.writeFile(path.resolve(__dirname, '..', config.docFolder + "/" + jsFile.replace(/^.*[\\\/]/, '') + ".md"), md).then(resolve);
           });
         });
       });

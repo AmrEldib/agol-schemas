@@ -1,6 +1,5 @@
-var writeFile = require('fs-writefile-promise');
-var readFile = require('fs-readfile-promise');
 var readFiles = require('read-files-promise');
+var fs = require('mz/fs');
 var path = require('path');
 var config = require('../config/config');
 var RSVP = require('rsvp');
@@ -92,7 +91,7 @@ function getSchemaWithDefinitions(schemaName) {
     var schemaFileLocation = path.resolve(__dirname, '..', config.schemasFolder + '/' + schemaName + '.json');
 
     RSVP.all([
-      readFile(schemaFileLocation),
+      fs.readFile(schemaFileLocation),
       readFiles(schemaRefsFiles, { encoding: 'utf8' })
     ])
     .then(function (buffers) {
@@ -133,7 +132,7 @@ function writeSchemaToFile(schemaName, schema, outputFile) {
     }
 
     // Write fake data to file
-    writeFile(path.resolve(__dirname, '..', outputFile), JSON.stringify(schema, null, 2)).then(function () {
+    fs.writeFile(path.resolve(__dirname, '..', outputFile), JSON.stringify(schema, null, 2)).then(function () {
       resolve();
     });
   });
