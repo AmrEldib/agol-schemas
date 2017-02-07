@@ -30,13 +30,13 @@
     },
     "guid": {
       "id": "guid",
-      "type": [ "string", "null" ],
+      "type": ["string", "null"],
       "description": "Unique global ID",
       "chance": "guid"
     },
     "name": {
       "id": "name",
-      "type": [ "string", "null" ],
+      "type": ["string", "null"],
       "description": "The file name of the item for file types. Read-only",
       "chance": "word"
     },
@@ -130,8 +130,7 @@
         "Code Sample",
         "Desktop Add In",
         "Explorer Add In"
-      ],
-      "pattern": "Web Map|CityEngine Web Scene|Web Scene|Pro Map|Feature Service|Map Service|Image Service|KML|WMS|Feature Collection|Feature Collection Template|Geodata Service|Globe Service|Geometry Service|Geocoding Service|Network Analysis Service|Geoprocessing Service|Workflow Manager Service|Web Mapping Application|Mobile Application|Code Attachment|Operations Dashboard Add In|Operation View|Operations Dashboard Extension|Native Application|Native Application Template|Native Application Installer|Symbol Set|Color Set|Shapefile|File geodatabase|CSV|CAD Drawing|Service Definition|Document Link|Microsoft Word|Microsoft Powerpoint|Microsoft Excel|PDF|Image|Visio Document|iWork Keynote|iWork Pages|iWork Numbers|Map Document|Map Package|Mobile Basemap Package|Tile Package|Project Package|Task File|ArcPad Package|Explorer Map|Globe Document|Scene Document|Published Map|Map Template|Windows Mobile Package|Layout|Project Template|Layer|Layer Package|Explorer Layer|Desktop Style|Geoprocessing Package|Geoprocessing Package (Pro Version)|Geoprocessing Sample|Locator Package|Rule Package|Raster function template|Workflow Manager Package|Desktop Application|Desktop Application Template|Code Sample|Desktop Add In|Explorer Add In"
+      ]
     },
     "typeKeywords": {
       "id": "typeKeywords",
@@ -145,10 +144,12 @@
     },
     "description": {
       "id": "description",
-      "type": [ "string", "null" ],
+      "type": ["string", "null"],
       "description": "Item's description",
       "chance": {
-        "paragraph": { "sentences": 7 }
+        "paragraph": {
+          "sentences": 7
+        }
       }
     },
     "tags": {
@@ -163,25 +164,25 @@
     },
     "snippet": {
       "id": "snippet",
-      "type": [ "string", "null" ],
+      "type": ["string", "null"],
       "description": "A short summary description of the item",
       "chance": "sentence"
     },
     "thumbnail": {
       "id": "thumbnail",
-      "type": [ "string", "null" ],
+      "type": ["string", "null"],
       "description": "The URL to the thumbnail used for the item. Relative to Item's URL",
       "faker": "image.cats"
     },
     "largeThumbnail": {
       "id": "largeThumbnail",
-      "type": [ "string", "null" ],
+      "type": ["string", "null"],
       "description": "Primarily applies to thumbnails associated with an application. The URL to the thumbnail used for the application. Relative to Item's URL",
       "faker": "image.nature"
     },
     "banner": {
       "id": "banner",
-      "type": [ "string", "null" ],
+      "type": ["string", "null"],
       "description": "Primarily applies to the banner associated with an application. The URL to the banner used for the application. Relative to Item's URL",
       "faker": "image.abstract"
     },
@@ -199,24 +200,28 @@
     },
     "spatialReference": {
       "id": "spatialReference",
-      "type": [ "string", "null" ],
+      "type": ["string", "null"],
       "description": "The coordinate system of the item",
       "chance": "word"
     },
     "accessInformation": {
       "id": "accessInformation",
-      "type": [ "string", "null" ],
+      "type": ["string", "null"],
       "description": "Information on the source of the item and its copyright status",
       "chance": {
-        "paragraph": { "sentences": 15 }
+        "paragraph": {
+          "sentences": 15
+        }
       }
     },
     "licenseInfo": {
       "id": "licenseInfo",
-      "type": [ "string", "null" ],
+      "type": ["string", "null"],
       "description": "Any license information or restrictions",
       "chance": {
-        "paragraph": { "sentences": 10 }
+        "paragraph": {
+          "sentences": 10
+        }
       }
     },
     "culture": {
@@ -244,7 +249,7 @@
     },
     "url": {
       "id": "url",
-      "type": [ "string", "null" ],
+      "type": ["string", "null"],
       "description": "The URL for the resource represented by the item. Applies only to items that represent web-accessible resources such as map services",
       "format": "uri",
       "chance": "url"
@@ -253,8 +258,7 @@
       "id": "access",
       "type": "string",
       "description": "Indicates the level of access to this item: private, shared, org, or public",
-      "enum": [ "private", "shared", "org", "public" ],
-      "pattern": "private|shared|org|public"
+      "enum": ["private", "shared", "org", "public"]
     },
     "size": {
       "id": "size",

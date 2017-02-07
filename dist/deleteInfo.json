@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "description": "This is available for all items and allows you to delete an individual file from an item's esriinfo folder. http://resources.arcgis.com/en/help/arcgis-rest-api/#/Delete_Info/02r3000002nm000000/",
+  "title": "deleteInfo",
+  "properties": {
+    "success": {
+      "type": "boolean",
+      "description": "Indicates if the operation was successful",
+      "chance": {
+        "bool": {
+          "likelihood": 95
+        }
+      }
+    }
+  },
+  "required": [
+    "success"
+  ],
+  "definitions": {}
+}
