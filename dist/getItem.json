@@ -127,8 +127,7 @@
         "Code Sample",
         "Desktop Add In",
         "Explorer Add In"
-      ],
-      "pattern": "Web Map|CityEngine Web Scene|Web Scene|Pro Map|Feature Service|Map Service|Image Service|KML|WMS|Feature Collection|Feature Collection Template|Geodata Service|Globe Service|Geometry Service|Geocoding Service|Network Analysis Service|Geoprocessing Service|Workflow Manager Service|Web Mapping Application|Mobile Application|Code Attachment|Operations Dashboard Add In|Operation View|Operations Dashboard Extension|Native Application|Native Application Template|Native Application Installer|Symbol Set|Color Set|Shapefile|File geodatabase|CSV|CAD Drawing|Service Definition|Document Link|Microsoft Word|Microsoft Powerpoint|Microsoft Excel|PDF|Image|Visio Document|iWork Keynote|iWork Pages|iWork Numbers|Map Document|Map Package|Mobile Basemap Package|Tile Package|Project Package|Task File|ArcPad Package|Explorer Map|Globe Document|Scene Document|Published Map|Map Template|Windows Mobile Package|Layout|Project Template|Layer|Layer Package|Explorer Layer|Desktop Style|Geoprocessing Package|Geoprocessing Package (Pro Version)|Geoprocessing Sample|Locator Package|Rule Package|Raster function template|Workflow Manager Package|Desktop Application|Desktop Application Template|Code Sample|Desktop Add In|Explorer Add In"
+      ]
     },
     "typeKeywords": {
       "type": "array",
@@ -273,8 +272,7 @@
         "shared",
         "org",
         "public"
-      ],
-      "pattern": "private|shared|org|public"
+      ]
     },
     "size": {
       "type": "integer",

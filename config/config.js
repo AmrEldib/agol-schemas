@@ -129,7 +129,12 @@ var config = {
     "createFolder": [],
     "createService": [],
     "deleteComment": [],
-    "deleteFolder": []
+    "deleteFolder": [],
+    "deleteInfo": [],
+    "deleteItem": [],
+    "deleteItems": [],
+    "deleteRating": [],
+    "exportItem": []
   }
 }
 
